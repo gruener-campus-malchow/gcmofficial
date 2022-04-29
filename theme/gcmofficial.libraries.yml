@@ -1,0 +1,12 @@
+global-styling:
+  version: 1.x
+  js:
+    js/script.js: {}
+  css:
+    theme:
+      css/fonts.css: {}
+      css/style.css: {}
+      css/breaks/mobile.css: {media: all and (max-aspect-ratio: 7/10)}
+      css/breaks/small.css: {media: all and (min-aspect-ratio: 7/10)}
+      css/breaks/desktop-small.css: {media: all and (min-aspect-ratio: 121/100)}
+      css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
