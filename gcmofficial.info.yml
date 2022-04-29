@@ -1,0 +1,14 @@
+name: GCMofficialStandard
+type: theme
+description: 'Standard-Theme für die Schulwebsite'
+package: Other
+core_version_requirement: ^8 || ^9
+libraries:
+  - gcmofficial/global-styling
+
+base theme: classy
+regions:
+  branding: Branding
+  navigation: Main navigation
+  content: Content
+  footer: Footer Main
