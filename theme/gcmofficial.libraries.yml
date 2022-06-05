@@ -4,6 +4,7 @@ global-styling:
     js/script.js: {}
   css:
     theme:
+      https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap: {type: external}
       css/fonts.css: {}
       css/style.css: {}
       css/breaks/mobile.css: {media: all and (max-aspect-ratio: 7/10)}

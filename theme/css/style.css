@@ -1,27 +1,104 @@
-header {
-    width: 100%;
+:root {
+    --darkgreen: #588a1c;
+    --green: #73b245;
+    --lightgreen: #d9f4b7;
+    --themelightgreen: #9ec553;
 }
 
-header .region-branding {
-    width: 80%;
-    margin: 0 10%;
-    display: flex;
-    justify-content: space-between;
-}
-
-#main {
-    width: 100%;
-    margin-top: 10vw;
-}
-
-#main .region-content {
-    margin: 0 10%;
-}
-
+header,
+#main,
 footer {
     width: 100%;
 }
 
+header .region-branding,
+header #block-hauptnavigation,
+#main .region-content,
 footer .region-footer {
+    width: 80%;
     margin: 0 10%;
+}
+
+header .region-branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#block-gcmofficial-branding {
+    flex: 0 1 72%;
+}
+
+header .site-name {
+    float: right;
+    margin-top: 5%;
+}
+
+.site-name a {
+    color: black;
+    text-decoration: none;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 2.2vw;
+}
+
+header .site-logo img {
+    width: 12vw;
+    padding: 0.5vw 0;
+}
+
+#block-gcmofficial-search h2 {
+    display: none;
+}
+
+#block-gcmofficial-search input[type=search] {
+    width: 10vw;
+}
+
+#block-gcmofficial-search input[type=submit],
+#block-gcmofficial-search input[type=search] {
+    font-size: 1.4vw;
+}
+
+header .region-navigation {
+    background-color: var(--darkgreen);
+}
+
+#block-hauptnavigation ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: space-between;
+}
+
+#block-hauptnavigation li {
+    background-color: var(--darkgreen);
+    transition: background-color 0.2s;
+}
+
+#block-hauptnavigation li:hover {
+    background-color: var(--green);
+}
+
+#superfish-main li a,
+#superfish-main li span {
+    color: white;
+    padding: 1.5vw 2vw;
+}
+
+#superfish-main .is-active {
+    color: var(--lightgreen);
+}
+
+#superfish-main li span::after {
+    content: '⌵';
+    margin-left: 0.6em;
+}
+
+#superfish-main li ul {
+    margin-top: 1vw;
+}
+
+#main {
+    margin-top: 10vw;
 }
