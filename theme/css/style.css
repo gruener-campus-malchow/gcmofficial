@@ -1,0 +1,27 @@
+header {
+    width: 100%;
+}
+
+header .region-branding {
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main {
+    width: 100%;
+    margin-top: 10vw;
+}
+
+#main .region-content {
+    margin: 0 10%;
+}
+
+footer {
+    width: 100%;
+}
+
+footer .region-footer {
+    margin: 0 10%;
+}
