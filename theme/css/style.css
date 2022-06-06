@@ -10,6 +10,7 @@ header,
 #main,
 footer {
     width: 100%;
+    font-size: 1.4vw;
 }
 
 header .region-branding,
@@ -68,11 +69,6 @@ h5 {
     text-align: center;
 }
 
-#block-gcmofficial-search input[type=submit],
-#block-gcmofficial-search input[type=search] {
-    font-size: 1.4vw;
-}
-
 header .region-navigation {
     background-color: var(--darkgreen);
 }
@@ -109,9 +105,14 @@ header .region-navigation {
 }
 
 #superfish-main li ul {
-    margin-top: calc(2.72vw - 21px);
+    margin-top: 0.91vw;
 }
 
 #main {
     margin-top: 10vw;
+}
+
+#main .region-content img {
+    max-width: 100%;
+    height: 100%;
 }
