@@ -3,6 +3,7 @@
     --green: #73b245;
     --lightgreen: #d9f4b7;
     --themelightgreen: #9ec553;
+    --blue: #2e5caa;
 }
 
 header,
@@ -47,12 +48,24 @@ header .site-logo img {
     padding: 0.5vw 0;
 }
 
-#block-gcmofficial-search h2 {
-    display: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--blue);
 }
 
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
+}
+
+#block-gcmofficial-search input[type=submit] {
+    background-color: var(--darkgreen);
+    border: none;
+    color: white;
+    padding: 0.2vw 1vw;
+    text-align: center;
 }
 
 #block-gcmofficial-search input[type=submit],

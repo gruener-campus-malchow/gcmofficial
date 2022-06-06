@@ -1,0 +1,7 @@
+#block-gcmofficial-page-title {
+    display: none;
+}
+
+#titelbild {
+    height: calc(100vh - 13vw);
+}
