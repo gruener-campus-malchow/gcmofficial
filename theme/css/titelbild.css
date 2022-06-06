@@ -14,3 +14,13 @@
 #main {
     margin-top: 0;
 }
+
+#block-gcmofficial-page-title,
+#block-gcmofficial-breadcrumbs {
+    position: absolute;
+    margin-top: 27vw;
+}
+
+.field--name-body {
+    margin-top: 9vw;
+}
