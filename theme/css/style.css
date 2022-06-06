@@ -96,7 +96,7 @@ header .region-navigation {
 }
 
 #superfish-main li ul {
-    margin-top: 1vw;
+    margin-top: calc(2.72vw - 21px);
 }
 
 #main {
