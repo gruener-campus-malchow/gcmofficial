@@ -6,3 +6,17 @@
     height: calc(100vh - 13vw);
     max-height: 66.64vw;
 }
+
+#herobox {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--darkgreen-transparent);
+    padding: 1.2vw 2vw;
+    margin-top: calc(20vw - 100vh);
+    color: white;
+}
+
+#herobox h2 {
+    color: white;
+}
