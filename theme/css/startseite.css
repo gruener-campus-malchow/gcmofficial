@@ -13,10 +13,15 @@
     height: fit-content;
     background-color: var(--darkgreen-transparent);
     padding: 1.2vw 2vw;
-    margin-top: calc(20vw - 100vh);
+    margin-top: calc(15vw - 100vh);
     color: white;
 }
 
-#herobox h2 {
+#herobox h2,
+#herobox a {
     color: white;
+}
+
+#herobox a::before {
+    content: '→ ';
 }
