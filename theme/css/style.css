@@ -136,6 +136,15 @@ footer .site-name {
     float: right;
 }
 
+footer .menu--footer ul li {
+    float: left;
+    margin-left: 2vw;
+}
+
+footer .menu--footer ul li:first-child {
+    margin-left: unset;
+}
+
 /* .menu--footer if account menu and footer menu are switched */
 footer .menu--account {
     float: right;
