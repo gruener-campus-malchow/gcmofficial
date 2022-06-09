@@ -108,6 +108,10 @@ header .region-navigation {
     margin-top: 0.91vw;
 }
 
+ul.sf-menu::after {
+    display: none;
+}
+
 #main {
     margin-top: 10vw;
 }
