@@ -21,6 +21,15 @@ footer .region-footer {
     margin: 0 10%;
 }
 
+/* remove Safari's default design of buttons */
+input[type=button],
+input[type=submit],
+button,
+select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
 input[type=submit],
 select {
     background-color: var(--darkgreen);
@@ -150,6 +159,16 @@ ul.sf-menu::after {
 }
 
 /* Ansichten */
+
+.form-type-select::after {
+    content: '⌵';
+    color: white;
+}
+
+.form-type-select {
+    background-color: var(--darkgreen);
+    padding-right: 1vw;
+}
 
 .view-content {
     display: flex;
