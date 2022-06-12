@@ -2,7 +2,7 @@
     margin-left: -12.5%;
     width: 125%;
     height: 25vw;
-    overflow: clip;
+    overflow: hidden;
 }
 
 #titelbild img {
