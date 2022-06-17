@@ -1,0 +1,81 @@
+header,
+#main,
+footer {
+    font-size: 3.1vw;
+}
+
+header .region-branding,
+header #block-hauptnavigation,
+#main .region-content,
+footer .region-footer {
+    width: 90%;
+    margin: 0 5%;
+}
+
+header .region-branding {
+    display: unset;
+}
+
+header .site-name {
+    float: none;
+    text-align: center;
+    margin: 3vw 0;
+}
+
+header .site-name a {
+    font-size: 3.1vw;
+}
+
+.site-logo img {
+    position: absolute;
+    margin: -4vw 0;
+    width: 18vw;
+    margin-left: 3%;
+}
+
+header .site-logo img {
+    padding: 0;
+}
+
+#block-gcmofficial-search {
+    display: none;
+}
+
+#superfish-main-toggle {
+    position: absolute;
+    text-align: right;
+    width: 90%;
+    margin-top: -10.9vw;
+}
+
+#superfish-main-toggle span {
+    display: none;
+}
+
+#superfish-main-toggle::after {
+    content: 'Menü';
+}
+
+#block-hauptnavigation.mobile-extentmenu {
+    min-height: calc(100vh - 7.48vw);
+}
+
+#block-hauptnavigation ul {
+    margin-left: -5.56%;
+    width: 111.11%;
+    flex-direction: column;
+}
+
+#block-hauptnavigation ul ul {
+    margin-left: 0;
+    width: 100%;
+}
+
+#block-hauptnavigation li a,
+#block-hauptnavigation li span {
+    padding: 6vw 5%;
+}
+
+#block-hauptnavigation ul ul li {
+    background-color: var(--green);
+}
