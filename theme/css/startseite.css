@@ -25,3 +25,10 @@
 #herobox a::before {
     content: '→ ';
 }
+
+@media all and (max-aspect-ratio: 7/10) {
+    #herobox {
+        margin: -56vw 0 0 17%;
+        text-align: center;
+    }
+}

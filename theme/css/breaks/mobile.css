@@ -44,16 +44,21 @@ header .site-logo img {
 #superfish-main-toggle {
     position: absolute;
     text-align: right;
-    width: 90%;
-    margin-top: -10.9vw;
+    width: 7%;
+    height: 7vw;
+    margin: -12.4vw 0 0 83%;
+    background-image: url("../../assets/menuicon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#superfish-main-toggle.sf-expanded {
+    background-image: url("../../assets/menuicon-expanded.svg");
 }
 
 #superfish-main-toggle span {
     display: none;
-}
-
-#superfish-main-toggle::after {
-    content: 'Menü';
 }
 
 #block-hauptnavigation.mobile-extentmenu {
@@ -78,4 +83,33 @@ header .site-logo img {
 
 #block-hauptnavigation ul ul li {
     background-color: var(--green);
+}
+
+#block-brandingderwebsitefooter {
+    padding-bottom: 6.5vw;
+}
+
+footer .site-logo {
+    margin-left: -5%;
+}
+
+footer .site-name {
+    margin: 1vw 0 0 0;
+}
+
+footer .menu--account {
+    display: none;
+}
+
+footer ul.menu {
+    margin-left: 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .menu--footer ul li {
+    margin-left: unset;
+    padding: 0 2% 2vw 2%;
 }
