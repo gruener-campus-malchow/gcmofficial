@@ -6,8 +6,8 @@ global-styling:
     theme:
       css/fonts.css: {}
       css/style.css: {}
-      css/breaks/mobile.css: {media: all and (max-aspect-ratio: 7/10)}
-      css/breaks/small.css: {media: all and (min-aspect-ratio: 7/10)}
+      css/breaks/mobile.css: {media: all and (max-width: 500px)}
+      css/breaks/small.css: {media: all and (min-width: 500px)}
       css/breaks/desktop-small.css: {media: all and (min-aspect-ratio: 121/100)}
       css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
 
@@ -20,10 +20,10 @@ startseite:
   css:
     theme:
       css/startseite.css: {}
-      css/breaks/startseite-mobile.css: {media: all and (max-aspect-ratio: 7/10)}
+      css/breaks/startseite-mobile.css: {media: all and (max-width: 500px)}
 
 titelbild:
   css:
     theme:
       css/titelbild.css: {}
-      css/breaks/titelbild-mobile.css: {media: all and (max-aspect-ratio: 7/10)}
+      css/breaks/titelbild-mobile.css: {media: all and (max-width: 500px)}

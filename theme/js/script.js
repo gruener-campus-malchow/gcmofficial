@@ -1,7 +1,7 @@
 // ensure that every element has been loaded
 window.onload = function () {
     // mobile browsers only
-    if (window.innerWidth / window.innerHeight <= 0.7) {
+    if (window.innerWidth <= 500) {
         var toggle = document.getElementById("superfish-main-toggle");
         var menu = document.getElementById("block-hauptnavigation");
 
