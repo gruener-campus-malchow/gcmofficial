@@ -37,7 +37,7 @@ header .site-logo img {
     padding: 0;
 }
 
-#block-gcmofficial-search {
+.region-branding #block-gcmofficial-search {
     display: none;
 }
 
@@ -83,6 +83,20 @@ header .site-logo img {
 
 #block-hauptnavigation ul ul li {
     background-color: var(--green);
+}
+
+#block-hauptnavigation form {
+    padding: 6vw 5% 3vw 5%;
+}
+
+#block-hauptnavigation form input[type=search] {
+    width: 80%;
+}
+
+#block-hauptnavigation form input[type=submit] {
+    background-color: white;
+    color: var(--darkgreen);
+    padding: 0.6vw 3%;
 }
 
 #block-brandingderwebsitefooter {
