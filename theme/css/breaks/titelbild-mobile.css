@@ -1,0 +1,13 @@
+#titelbild {
+    height: 50vw;
+}
+
+#block-gcmofficial-page-title,
+#block-gcmofficial-breadcrumbs {
+    position: absolute;
+    margin-top: 55vw;
+}
+
+.field--name-body {
+    margin-top: 22vw;
+}

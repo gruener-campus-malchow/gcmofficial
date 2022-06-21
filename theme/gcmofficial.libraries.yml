@@ -20,8 +20,10 @@ startseite:
   css:
     theme:
       css/startseite.css: {}
+      css/breaks/startseite-mobile.css: {media: all and (max-aspect-ratio: 7/10)}
 
 titelbild:
   css:
     theme:
       css/titelbild.css: {}
+      css/breaks/titelbild-mobile.css: {media: all and (max-aspect-ratio: 7/10)}
