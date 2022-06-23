@@ -9,9 +9,10 @@ Folgendes gilt für alle Ansichten:
 Aktuelles:
 
 * Zusammenfassung oder gekürzt: 300 Zeichen
+* Anzeige verlinken -> Url: /berichte
 
 Berichte, Projekte:
 
-* Tags bzw. Thematik: Jeweils passend beschriftet + Einen Doppelpunkt nach der Beschriftung anfügen (checkbox), Verhalten, wenn keine Ergebnisse vorliegen: Ausblenden, falls leer
+* "Tags" bzw. "Thematik" (Felder): Jeweils passend beschriftet + Einen Doppelpunkt nach der Beschriftung anfügen (checkbox), Verhalten, wenn keine Ergebnisse vorliegen: Ausblenden, falls leer
 
-* Titel (Felder) -> Design-Einstellungen: HTML-Code des Feldes anpassen -> H2
+* "Titel" (Felder) -> Design-Einstellungen: HTML-Code des Feldes anpassen -> H2
