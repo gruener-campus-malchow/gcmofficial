@@ -1,6 +1,12 @@
 #herobox {
-    margin: -56vw 0 0 17%;
+    margin: -56vw 0 0 10%;
+    width: 66%;
+    height: 36vw;
     text-align: center;
+}
+
+#titelbild {
+    width: 118%;
 }
 
 .field--name-body {

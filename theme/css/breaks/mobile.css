@@ -1,7 +1,7 @@
 header,
 #main,
 footer {
-    font-size: 3.1vw;
+    font-size: 3.3vw;
 }
 
 header .region-branding,
@@ -10,6 +10,10 @@ header #block-hauptnavigation,
 footer .region-footer {
     width: 90%;
     margin: 0 5%;
+}
+
+h2 {
+    font-size: 5.5vw;
 }
 
 header .region-branding {
@@ -111,6 +115,10 @@ header .site-logo img {
 
 /* End Ansichten */
 
+footer {
+    margin-top: 10vw;
+}
+
 #block-brandingderwebsitefooter {
     padding-bottom: 6.5vw;
 }
@@ -137,5 +145,5 @@ footer ul.menu {
 
 footer .menu--footer ul li {
     margin-left: unset;
-    padding: 0 2% 2vw 2%;
+    padding-bottom: 2vw;
 }
