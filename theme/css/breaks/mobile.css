@@ -103,6 +103,18 @@ header .site-logo img {
     padding: 0.6vw 3%;
 }
 
+.aside-container {
+    display: unset;
+}
+
+.aside-container aside {
+    margin: 10vw 0 0 0;
+}
+
+.aside-container aside h2 {
+    font-size: 4vw;
+}
+
 /* Ansichten */
 
 .view-content {

@@ -1,3 +1,5 @@
+/* general section */
+
 :root {
     --darkgreen: #588a1c;
     --darkgreen-transparent: #588a1cdd;
@@ -39,6 +41,24 @@ select {
     text-align: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--blue);
+}
+
+a {
+    color: var(--green);
+}
+
+a:visited {
+    color: var(--darkgreen);
+}
+
+/* End general section */
+
 header .region-branding {
     display: flex;
     justify-content: space-between;
@@ -71,14 +91,6 @@ header .site-name a {
 
 header .site-logo img {
     padding: 0.5vw 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    color: var(--blue);
 }
 
 #block-gcmofficial-search input[type=search] {
@@ -158,6 +170,33 @@ ul.sf-menu::after {
     margin: 1vw 0;
 }
 
+.aside-container {
+    display: flex;
+    width: 100%;
+}
+
+.aside-container aside {
+    flex: 0 1 130%;
+    margin-left: 3vw;
+    font-size: 70%;
+    padding: 2vw;
+    background-color: var(--darkgreen);
+    color: white;
+}
+
+.aside-container aside a {
+    color: var(--lightgreen);
+}
+
+.aside-container aside a:visited {
+    color: white;
+}
+
+.aside-container aside h2,
+.aside-container aside h3 {
+    color: white;
+}
+
 /* Ansichten */
 
 .form-type-select::after {
@@ -185,6 +224,10 @@ ul.sf-menu::after {
 
 .view-content .views-row h2 {
     font-size: 1.8vw;
+}
+
+.view-content a {
+    color: var(--blue);
 }
 
 /* End Ansichten */
