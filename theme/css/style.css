@@ -175,11 +175,17 @@ ul.sf-menu::after {
     width: 100%;
 }
 
+.aside-container main,
+.aside-container div {
+    flex: 2;
+}
+
 .aside-container aside {
-    flex: 0 1 130%;
-    margin-left: 3vw;
+    flex: 1;
+    margin: 6vw 0 0 3vw;
     font-size: 70%;
     padding: 2vw;
+    height: fit-content;
     background-color: var(--darkgreen);
     color: white;
 }
@@ -213,13 +219,12 @@ ul.sf-menu::after {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .views-row {
-    flex: 0 1 47%;
-    height: 20vw;
-    overflow: hidden;
+    flex: 0 1 30%;
 }
 
 .view-content .views-row h2 {

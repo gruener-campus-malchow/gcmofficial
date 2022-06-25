@@ -3,6 +3,12 @@
 <div id="titelbild">
     {{ content.field_titelbild }}
 </div>
-{{ content.body }}
+<div class="aside-container">
+<div>{{ content.body }}</div>
+<aside>
+    {{ view }}
+    {{ content.field_links }}
+</aside>
+</div>
 {{ content.field_schuelerarbeiten }}
 {{ content.field_bildergalerie }}

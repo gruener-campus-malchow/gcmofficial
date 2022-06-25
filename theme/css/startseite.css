@@ -25,3 +25,7 @@
 #herobox a::before {
     content: '→ ';
 }
+
+.views-row {
+    flex: 0 1 47%;
+}
