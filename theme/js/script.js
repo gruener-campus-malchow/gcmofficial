@@ -1,6 +1,6 @@
 // ensure that every element has been loaded
-window.onload = function () {
-    // mobile browsers only
+document.addEventListener("DOMContentLoaded", () => {
+    // mobile clients only
     if (window.innerWidth <= 500) {
         var toggle = document.getElementById("superfish-main-toggle");
         var menu = document.getElementById("block-hauptnavigation");
@@ -19,4 +19,4 @@ window.onload = function () {
         listitem.appendChild(search);
         menulist.prepend(listitem);
     }
-};
+});

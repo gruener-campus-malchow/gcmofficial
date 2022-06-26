@@ -12,6 +12,8 @@ global-styling:
       css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
 
 fachbereich:
+  js:
+    js/fachbereich.js: {}
   css:
     theme:
       css/fachbereich.css: {}
