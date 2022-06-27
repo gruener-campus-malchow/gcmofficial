@@ -12,7 +12,12 @@ footer .region-footer {
     margin: 0 5%;
 }
 
-h2 {
+.btn-like {
+    padding: 1.5vw 3vw;
+}
+
+h2,
+.field__label {
     font-size: 5.5vw;
 }
 
@@ -111,7 +116,8 @@ header .site-logo img {
     margin: 10vw 0 0 0;
 }
 
-.aside-container aside h2 {
+.aside-container aside h2,
+.aside-container aside .field__label {
     font-size: 4vw;
 }
 

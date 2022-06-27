@@ -4,11 +4,29 @@
     {{ content.field_titelbild }}
 </div>
 <div class="aside-container">
-<div>{{ content.body }}</div>
+<div>
+    <p>Springe zu:</p>
+    <ul>
+        {% if content.field_dateien|render %}
+            <li><a href="#anchor-dateien">Dateien</a></li>
+        {% endif %}
+        {% if content.field_schuelerarbeiten|render %}
+            <li><a href="#anchor-schuelerarbeiten">Schüler*innenarbeiten</a></li>
+        {% endif %}
+        {% if content.field_bildergalerie|render %}
+            <li><a href="#anchor-bildergalerie">Bildergalerie</a></li>
+        {% endif %}
+    </ul>
+    {{ content.body }}
+</div>
 <aside>
     {{ view }}
     {{ content.field_links }}
 </aside>
 </div>
+<div id="anchor-dateien"></div>
+{{ content.field_dateien }}
+<div id="anchor-schuelerarbeiten"></div>
 {{ content.field_schuelerarbeiten }}
+<div id="anchor-bildergalerie"></div>
 {{ content.field_bildergalerie }}

@@ -61,8 +61,14 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.field__label {
     color: var(--blue);
+}
+
+.field__label {
+    font-size: 1.9vw;
+    margin: 0.8em 0;
 }
 
 a {
@@ -228,8 +234,13 @@ ul.sf-menu::after {
 }
 
 .aside-container aside h2,
-.aside-container aside h3 {
+.aside-container aside h3,
+.aside-container aside .field__label {
     color: white;
+}
+
+.aside-container aside .field__label {
+    font-size: 1.4vw;
 }
 
 /* Ansichten */

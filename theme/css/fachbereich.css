@@ -1,3 +1,21 @@
+.field--name-body {
+    margin-top: 0;
+}
+
+.aside-container div:first-child {
+    margin-top: 9vw;
+}
+
+@media all and (max-width: 500px) {
+    .aside-container div:first-child {
+        margin-top: 22vw;
+    }
+}
+
+.aside-container aside div:first-child {
+    margin-top: 0;
+}
+
 .field--name-field-bildergalerie .field__items {
     display: flex;
     flex-wrap: wrap;
