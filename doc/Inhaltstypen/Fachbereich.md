@@ -12,13 +12,19 @@ Alt-Feld ist erforderlich
 
 body -> Text (formatiert, lang, mit Zusammenfassung)
 
+## Dateien
+
+field_dateien -> Datei
+
+Erlaubte Anzahl von Werten: Begrenzt (10)
+
+Zulässige Dateiendungen: txt, pdf, docx, odt, odp, pptx, xlsx, ods, mp4, avi
+
 ## Links
 
 field_links -> Link
 
 Erlaubte Anzahl von Werten: Unbegrenzt
-
-
 
 ## Schüler*innenarbeiten
 
