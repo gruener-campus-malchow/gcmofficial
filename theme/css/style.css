@@ -32,13 +32,29 @@ select {
     -webkit-border-radius: 0;
 }
 
+input[type=button],
 input[type=submit],
-select {
+button,
+select,
+.btn-like {
     background-color: var(--darkgreen);
     border: none;
     color: white;
     padding: 0.2vw 1vw;
     text-align: center;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+button:hover,
+select:hover,
+.btn-like:hover {
+    background-color: var(--green);
+}
+
+.btn-like {
+    padding: 0.5vw 1.3vw;
+    text-decoration: none;
 }
 
 h1,
@@ -55,6 +71,10 @@ a {
 
 a:visited {
     color: var(--darkgreen);
+}
+
+a.btn-like:visited {
+    color: white;
 }
 
 /* End general section */
@@ -196,6 +216,15 @@ ul.sf-menu::after {
 
 .aside-container aside a:visited {
     color: white;
+}
+
+.aside-container aside .btn-like {
+    background-color: white;
+    color: var(--green);
+}
+
+.aside-container aside a.btn-like:visited {
+    color: var(--green);
 }
 
 .aside-container aside h2,
