@@ -29,3 +29,8 @@ titelbild:
     theme:
       css/titelbild.css: {}
       css/breaks/titelbild-mobile.css: {media: all and (max-width: 500px)}
+
+standort:
+  css:
+    theme:
+      css/standort.css: {}

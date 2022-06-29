@@ -1,0 +1,25 @@
+.site img {
+    width: 40%;
+    float: left;
+    margin-right: 10%;
+}
+
+.site {
+    height: 22vw;
+    margin-bottom: 14vw;
+}
+
+.site div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22vw;
+}
+
+.site p:first-child {
+    margin-top: 0;
+}
+
+.site p:last-child {
+    margin-bottom: 0;
+}
