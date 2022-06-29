@@ -24,3 +24,7 @@
 .field--name-body {
     margin-top: 9vw;
 }
+
+.cssfile {
+    ---file: "titelbild";
+}
