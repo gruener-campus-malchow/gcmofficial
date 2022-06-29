@@ -1,6 +1,8 @@
 {
     "require": {
         "drupal/superfish": "^1.4",
-        "drupal/pathauto": "^1.10"
+        "drupal/pathauto": "^1.10",
+        "drupal/ctools": "^3.7",
+        "drupal/token": "^1.10"
     }
 }
