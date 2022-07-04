@@ -6,12 +6,6 @@
     margin-top: 9vw;
 }
 
-@media all and (max-width: 500px) {
-    .aside-container div:first-child {
-        margin-top: 22vw;
-    }
-}
-
 .aside-container aside div:first-child {
     margin-top: 0;
 }
@@ -24,6 +18,7 @@
 .field--name-field-bildergalerie .field__item {
     flex: 30%;
     height: fit-content;
+    margin: 0.5vw;
 }
 
 .field--name-field-bildergalerie .field__item img {
@@ -50,4 +45,14 @@
     height: auto;
     width: unset !important;
     direction: ltr;
+}
+
+@media all and (max-width: 500px) {
+    .aside-container div:first-child {
+        margin-top: 22vw;
+    }
+
+    .field--name-field-bildergalerie .field__item {
+        margin: 2vw;
+    }
 }
