@@ -35,7 +35,7 @@ select {
 input[type=button],
 input[type=submit],
 button,
-select,
+.form-type-select,
 .btn-like {
     background-color: var(--darkgreen);
     border: none;
@@ -47,9 +47,14 @@ select,
 input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
-select:hover,
+.form-type-select:hover,
 .btn-like:hover {
     background-color: var(--green);
+}
+
+select {
+    border: none;
+    background-color: inherit;
 }
 
 .btn-like {
