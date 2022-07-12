@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", main());
-document.getElementById('slideshow').onclick = toggle();
+document.getElementById('titelbild').onclick = toggle();
 // Switches SLides every 5 seconds
 async function autoswitch() {
     slideIndex = 1
