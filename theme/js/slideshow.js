@@ -4,7 +4,8 @@ document.getElementById('titelbild').onclick = toggle();
 async function autoswitch() {
     slideIndex = 1
     return setInterval(function () {
-        let slides = document.getElementById("titelbild").document.getElementsByClassName("field__item");
+        console.log(document.getElementsByClassName("field__item").document.getElementsByClassName("field field--name-field-titelbild field--type-image field--label-hidden field__items").document.getElementById("titelbild"));
+        let slides = document.getElementsByClassName("field__item").document.getElementById("titelbild");
         if (slideIndex == slides.length-1) {
             slideIndex = 0
         } else {
@@ -16,6 +17,15 @@ async function autoswitch() {
 // imideatly switches slides
 function toggle() {
     window.clearInterval(timerID);
+    console.log(document.getElementById("titelbild"));
+    let slides = document.getElementById("titelbild").childNodes;
+    console.log(slides)
+    if (slideIndex == slides.length-1) {
+        slideIndex = 0
+    } else {
+        slideIndex += 1;
+    }
+    showslide(slideIndex)
 }
 // shows current slide
 function showslide(slideIndex) {
