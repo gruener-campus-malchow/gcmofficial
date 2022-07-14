@@ -1,24 +1,37 @@
-document.addEventListener("DOMContentLoaded", main());
-document.getElementById('titelbild').onclick = toggle();
+let slideIndex = 1;
+const slides = document.getElementsByClassName("field__item");
+const slidearray = Array.from(slides);
+let i = 0;
+let autoswitch = setInterval(slideSwitch, 5000);
+document.addEventListener("load", main());
+document.getElementsByClassName('field__item').onclick = toggle();
+
 // Switches SLides every 5 seconds
-async function autoswitch() {
-    slideIndex = 1
-    return setInterval(function () {
-        console.log(document.getElementsByClassName("field__item").document.getElementsByClassName("field field--name-field-titelbild field--type-image field--label-hidden field__items").document.getElementById("titelbild"));
-        let slides = document.getElementsByClassName("field__item").document.getElementById("titelbild");
-        if (slideIndex == slides.length-1) {
-            slideIndex = 0
-        } else {
-            slideIndex += 1;
-        }
-        showslide(slideIndex)
-    }, 5000);
+
+function showslide() {
+    i = 0;
+    while (i < slidearray.length-1) {
+        slidearray[i].style.display = "none";
+        console.log("Slidearray[i]: " ,slidearray[i]);
+        i++;
+    };
+    slidearray[slideIndex].style.display = "inline";
+    console.log(slidearray[slideIndex]);
+}
+function slideSwitch() {
+    if (slideIndex == slidearray.length-2) {
+        slideIndex = 0;
+    } else {
+        slideIndex += 1;
+    }
+    showslide();
 }
 // imideatly switches slides
-function toggle() {
-    window.clearInterval(timerID);
-    console.log(document.getElementById("titelbild"));
-    let slides = document.getElementById("titelbild").childNodes;
+
+async function toggle(slideIndex = 1) {
+    window.clearInterval(autoswitch);
+    console.log(document.getElementsByClassName("field__item"));
+    let slides = document.getElementsByClassName("field__item");
     console.log(slides)
     if (slideIndex == slides.length-1) {
         slideIndex = 0
@@ -27,15 +40,7 @@ function toggle() {
     }
     showslide(slideIndex)
 }
-// shows current slide
-function showslide(slideIndex) {
-    let slides = document.getElementsByClassName("field__item");
-    let i = 0
-    for (i in slides.length-1){slides[i].style.visibility = "hidden";}
-    slides[slideIndex].style.display = "visible";
-}
-// executed main function on content load
+
 function main() {
-    timerID = autoswitch();
-    autoswitch();
+    console.log("done and dusted!")
 }
