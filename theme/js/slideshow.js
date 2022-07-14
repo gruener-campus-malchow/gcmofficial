@@ -3,10 +3,8 @@ const slides = document.getElementsByClassName("field__item");
 const slidearray = Array.from(slides);
 let i = 0;
 let autoswitch = setInterval(slideSwitch, 5000);
-document.addEventListener("load", main());
-document.getElementsByClassName('field__item').onclick = toggle();
 
-// Switches SLides every 5 seconds
+document.getElementsByClassName('field__item').onclick = toggle();
 
 function showslide() {
     i = 0;
@@ -39,8 +37,4 @@ async function toggle(slideIndex = 1) {
         slideIndex += 1;
     }
     showslide(slideIndex)
-}
-
-function main() {
-    console.log("done and dusted!")
 }
