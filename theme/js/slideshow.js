@@ -1,3 +1,4 @@
+addEventListener('load',main());
 function showslide() {
     i = 0;
     while (i < slidearray.length-1) {
@@ -18,10 +19,9 @@ function slideSwitch() {
 }
 // imideatly switches slides
 
-async function toggle(slideIndex, slides,slidearray) {
+async function toggle(slideIndex) {
     window.clearInterval(autoswitch);
-    console.log(document.getElementsByClassName("field__item"));
-    let slides = document.getElementsByClassName("field__item");
+    let slides = document.querySelectorAll("#titelbild .field__item");
     console.log(slides)
     if (slideIndex == slides.length-1) {
         slideIndex = 0
@@ -29,4 +29,8 @@ async function toggle(slideIndex, slides,slidearray) {
         slideIndex += 1;
     }
     showslide(slideIndex)
+}
+function main() {
+    setInterval(toggle(slideIndex), 5000)
+
 }
