@@ -1,11 +1,3 @@
-let slideIndex = 1;
-const slides = document.getElementsByClassName("field__item");
-const slidearray = Array.from(slides);
-let i = 0;
-let autoswitch = setInterval(slideSwitch, 5000);
-
-document.getElementsByClassName('field__item').onclick = toggle();
-
 function showslide() {
     i = 0;
     while (i < slidearray.length-1) {
@@ -26,7 +18,7 @@ function slideSwitch() {
 }
 // imideatly switches slides
 
-async function toggle(slideIndex = 1) {
+async function toggle(slideIndex, slides,slidearray) {
     window.clearInterval(autoswitch);
     console.log(document.getElementsByClassName("field__item"));
     let slides = document.getElementsByClassName("field__item");
