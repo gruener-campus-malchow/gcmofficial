@@ -1,36 +1,38 @@
 addEventListener('load',main());
-function showslide() {
-    i = 0;
-    while (i < slidearray.length-1) {
-        slidearray[i].style.display = "none";
-        console.log("Slidearray[i]: " ,slidearray[i]);
-        i++;
+function showslide(slideIndex,slides) {
+    for (let i=0;i < slides.length;i++) {
+        slides[i].style.display = "none";
+        console.log("Slides[i]: " ,slides[i]);
     };
-    slidearray[slideIndex].style.display = "inline";
-    console.log(slidearray[slideIndex]);
+    slides[slideIndex].style.display = "inline";
+    console.log(slideIndex)
+    console.log(slides[slideIndex]);
 }
-function slideSwitch() {
-    if (slideIndex == slidearray.length-2) {
+//function slideSwitch() {
+//    if (slideIndex == slidearray.length-2) {
+//        slideIndex = 0;
+//    } else {
+//        slideIndex += 1;
+//    }
+//    showslide(slideIndex,slides);
+//}
+// imideatly switches slides
+
+function toggle(slideIndex) {
+    if (slideIndex == undefined) {
+        console.log("defined slideindex");
+        let slideIndex = 0;
+    };
+    let slides = document.querySelectorAll("#titelbild .field__item");
+    console.log(slides)
+    if (slideIndex == slides.length-1) {
         slideIndex = 0;
     } else {
         slideIndex += 1;
     }
-    showslide();
-}
-// imideatly switches slides
-
-async function toggle(slideIndex) {
-    window.clearInterval(autoswitch);
-    let slides = document.querySelectorAll("#titelbild .field__item");
-    console.log(slides)
-    if (slideIndex == slides.length-1) {
-        slideIndex = 0
-    } else {
-        slideIndex += 1;
-    }
-    showslide(slideIndex)
+    showslide(slideIndex,slides)
 }
 function main() {
-    setInterval(toggle(slideIndex), 5000)
+    let autoswitch = setInterval(toggle, 5000);
 
 }
