@@ -1,15 +1,15 @@
 addEventListener('load',main());
-//function slideSwitch() {
-//    if (slideIndex == slidearray.length-2) {
-//        slideIndex = 0;
-//    } else {
-//        slideIndex += 1;
-//    }
-//    showslide(slideIndex,slides);
-//}
-// imideatly switches slides
-let slideIndex = 0;
 
+function slideSwitch() {
+    if (slideIndex == slidearray.length-2) {
+        slideIndex = 0;
+    } else {
+        slideIndex += 1;
+    }
+    showslide(slideIndex,slides);
+}
+// imideatly switches slides
+let slideIndex = 1;
 function toggle() {
     let slides = document.querySelectorAll("#titelbild .field__item");
     console.log(slides);
@@ -20,10 +20,13 @@ function toggle() {
         slideIndex += 1;
     }
     for (let i=0;i < slides.length;i++) {
-        slides[i].style.display = "none";
-        console.log("Slides[i]: " ,slides[i]);
+        if (i != slideIndex) {
+            slides[i].style.display = "none";
+            console.log("Slides[i]: " ,slides[i]);
+        } else {
+            slides[i].style.display = "inline";
+        }
     };
-    slides[slideIndex].style.display = "inline";
     console.log(slideIndex)
     console.log(slides[slideIndex]);
 }
