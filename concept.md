@@ -2,7 +2,7 @@
 
 ### Stand
 
-* Slideshow (50%)
+* Slideshow (100%)
 * grobes Layout fertiggestellt
 * Beispieltartikel mit Leertext
 * Layoutdefinition fertig
@@ -38,7 +38,7 @@ Emil|Marco|Aaron
         * wir sind nicht zweimal in der woche in der schule, obwohl wir seit zwei jahren raussind *ähem* *lorenzo*
             * Aufgaben abschieben
             * Padawane ausbilden
-    * Mitglieder: Großmeiser: Emil, Meister: Avidan,Marco,Aaron,Herr Baldauf Jedi-Ritter: Lorenzo
+    * Mitglieder: Großmeiser: Emil, Meister: Avidan,Marco,Aaron,Herr Baldauf,Maximillian Jedi-Ritter: Lorenzo
     * Donnerstag: 11. / 12. Stunde, Herr Baldauf sucht Schlüsselsklave
 
 ### Zeitplan
