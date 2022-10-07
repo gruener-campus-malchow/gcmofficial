@@ -8,7 +8,7 @@ function slideSwitch() {
     }
     showslide(slideIndex,slides);
 }
-// imideatly switches slides
+// imideatly switches slidess
 let slideIndex = 1;
 function toggle() {
     let slides = document.querySelectorAll("#titelbild .field__item");
