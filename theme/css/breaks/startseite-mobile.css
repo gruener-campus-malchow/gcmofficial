@@ -1,5 +1,6 @@
 #herobox {
     margin: -56vw 0 0 10%;
+    top: unset;
     width: 66%;
     height: 36vw;
     text-align: center;

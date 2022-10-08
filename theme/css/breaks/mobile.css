@@ -147,6 +147,8 @@ footer .site-logo {
 
 footer .site-name {
     margin: 1vw 0 0 0;
+    font-size: inherit;
+    width: unset;
 }
 
 footer .menu--account {

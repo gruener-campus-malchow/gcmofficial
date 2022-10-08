@@ -9,11 +9,11 @@
 
 #herobox {
     position: absolute;
+    top: 50vh;
     width: fit-content;
     height: fit-content;
     background-color: var(--darkgreen-transparent);
-    padding: 1.2vw 2vw;
-    margin-top: calc(15vw - 100vh);
+    padding: 1rem 1.6rem;
     color: white;
 }
 
@@ -29,6 +29,7 @@
 .views-row {
     flex: 0 1 47%;
 }
+
 .cssfile {
     --file: "startseite";
 }
