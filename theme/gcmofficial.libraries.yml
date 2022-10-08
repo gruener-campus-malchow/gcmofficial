@@ -23,6 +23,7 @@ startseite:
     theme:
       css/startseite.css: {}
       css/breaks/startseite-mobile.css: {media: all and (max-width: 730px)}
+      css/breaks/startseite-desktop.css: {media: all and (min-aspect-ratio: 121/100)}
 
 titelbild:
   css:
