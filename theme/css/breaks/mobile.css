@@ -1,7 +1,7 @@
 header,
 #main,
 footer {
-    font-size: 3.3vw;
+    font-size: 1em;
 }
 
 header .region-branding,
@@ -13,12 +13,12 @@ footer .region-footer {
 }
 
 .btn-like {
-    padding: 1.5vw 3vw;
+    padding: 0.4em 0.8em;
 }
 
 h2,
 .field__label {
-    font-size: 5.5vw;
+    font-size: 1.5em;
 }
 
 header .region-branding {
@@ -32,7 +32,7 @@ header .site-name {
 }
 
 header .site-name a {
-    font-size: 3.1vw;
+    font-size: 3.2vw;
 }
 
 .site-logo img {
@@ -99,13 +99,16 @@ header .site-logo img {
 }
 
 #block-hauptnavigation form input[type=search] {
-    width: 80%;
+    width: 75%;
+    border: none;
 }
 
 #block-hauptnavigation form input[type=submit] {
     background-color: white;
     color: var(--darkgreen);
-    padding: 0.6vw 3%;
+    padding: 0.4vw 0 0.4vw 0;
+    width: 16%;
+    text-align: center;
 }
 
 .aside-container {
@@ -116,19 +119,18 @@ header .site-logo img {
     margin: 10vw 0 0 0;
 }
 
-.aside-container aside h2,
-.aside-container aside .field__label {
-    font-size: 4vw;
-}
-
 /* Ansichten */
+
+.view-filters input {
+    max-width: 87vw;
+}
 
 .view-content {
     flex-direction: column;
 }
 
 .view-content .views-row h2 {
-    font-size: 4vw;
+    font-size: min(1.3em, 6vw);
 }
 
 /* End Ansichten */
@@ -165,5 +167,10 @@ footer ul.menu {
 
 footer .menu--footer ul li {
     margin-left: unset;
-    padding-bottom: 2vw;
+    padding-bottom: 0.6em;
+    padding-right: 0.2em;
+}
+
+footer .menu--footer ul li:last-child {
+    padding-right: 0;
 }

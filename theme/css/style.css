@@ -12,7 +12,7 @@ header,
 #main,
 footer {
     width: 100%;
-    font-size: 1em;
+    font-size: min(1em, 1.8vw);
 }
 
 header .region-branding,
@@ -26,6 +26,7 @@ footer .region-footer {
 /* remove Safari's default design of buttons */
 input[type=button],
 input[type=submit],
+input[type=search],
 button,
 select {
     -webkit-appearance: none;
@@ -126,6 +127,7 @@ header .site-logo img {
 
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
+    border: 1.5px solid var(--darkgreen);
 }
 
 header .region-navigation {
