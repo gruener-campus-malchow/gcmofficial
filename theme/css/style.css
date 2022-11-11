@@ -223,6 +223,15 @@ ul.sf-menu::after {
     color: white;
 }
 
+input[type="button"],
+input[type="submit"],
+button,
+.form-type-select,
+.btn-like,
+.aside-container aside {
+    border-radius: 0.2rem;
+}
+
 .aside-container aside a {
     color: var(--lightgreen);
 }

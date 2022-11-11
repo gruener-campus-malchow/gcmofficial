@@ -16,6 +16,7 @@
     background-color: var(--darkgreen-transparent);
     padding: 1rem 1.6rem;
     color: white;
+    border-radius: 0.2rem;
     font-size: 1.4em;
     right: 10%;
 }
