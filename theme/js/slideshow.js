@@ -12,6 +12,9 @@ function slideSwitch() {
 let slideIndex = 1;
 function toggle() {
     let slides = document.querySelectorAll("#titelbild .field__item");
+    if (slides.length<=1){
+        return true
+    }
     console.log(slides);
     console.log(slideIndex);
     if (slideIndex == slides.length-1) {
