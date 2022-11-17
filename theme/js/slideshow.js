@@ -1,26 +1,28 @@
 addEventListener('load',main());
+document.getElementById('fwbutton').onclick = fwimtog();
+document.getElementById('bwbutton').onclick = bwimtog();
 
-function slideSwitch() {
-    if (slideIndex == slidearray.length-2) {
-        slideIndex = 0;
-    } else {
-        slideIndex += 1;
-    }
-    showslide(slideIndex,slides);
-}
 // imideatly switches slidess
 let slideIndex = 1;
-function toggle() {
+function toggle(fw) {
     let slides = document.querySelectorAll("#titelbild .field__item");
     if (slides.length<=1){
         return true
     }
     console.log(slides);
     console.log(slideIndex);
-    if (slideIndex == slides.length-1) {
-        slideIndex = 0;
+    if(fw){
+        if (slideIndex == slides.length-1) {
+            slideIndex = 0;
+        } else {
+            slideIndex += 1;
+        }
     } else {
-        slideIndex += 1;
+        if (slideIndex == 0) {
+            slideIndex = slides.length-1;
+        } else {
+            slideIndex -= 1;
+        }
     }
     for (let i=0;i < slides.length;i++) {
         if (i != slideIndex) {
@@ -33,6 +35,22 @@ function toggle() {
     console.log(slideIndex)
     console.log(slides[slideIndex]);
 }
-function main() {
-    let autoswitch = setInterval(toggle, 5000);
+function togglefw(){
+    toggle(true);
 }
+function togglebw(){
+    toggle(false);
+}
+function main() {
+    let autoswitch = setInterval(togglefw, 5000);
+}
+function fwimtog(){
+    clearInterval(autoswitch);
+    togglefw();
+    main();
+}
+function bwimtog(){
+    clearInterval(autoswitch);
+    togglebw();
+    main();
+}   
