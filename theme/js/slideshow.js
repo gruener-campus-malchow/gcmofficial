@@ -55,5 +55,11 @@ function bwimtog(){
     main();
 }
 function ontheload(){
+    const button = document.createElement('fwbutton');
+    fwbutton.innerText = '>';
+    const button = document.createElement('bwbutton');
+    bwbutton.innerText = '<';
+    document.body.appendChild(fwbutton);
+    document.body.appendChild(bwbutton);   
     setTimeout(main, 2000);
 }
