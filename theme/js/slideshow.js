@@ -1,4 +1,4 @@
-addEventListener('load',main());
+addEventListener('load',ontheload());
 document.getElementById('fwbutton').onclick = fwimtog();
 document.getElementById('bwbutton').onclick = bwimtog();
 
@@ -53,4 +53,7 @@ function bwimtog(){
     clearInterval(autoswitch);
     togglebw();
     main();
-}   
+}
+function ontheload(){
+    setTimeout(main, 2000);
+}
