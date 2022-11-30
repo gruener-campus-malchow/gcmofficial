@@ -26,6 +26,8 @@ startseite:
       css/breaks/startseite-desktop.css: {media: all and (min-aspect-ratio: 121/100)}
 
 titelbild:
+  js:
+    js/slideshow.js: {media: screen and (min-width: 500px)}
   css:
     theme:
       css/titelbild.css: {}

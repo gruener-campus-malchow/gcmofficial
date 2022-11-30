@@ -1,11 +1,11 @@
 /* general section */
 
 :root {
-    --darkgreen: #588a1c;
-    --darkgreen-transparent: #588a1cdd;
+    --darkgreen: #507f1a;
+    --darkgreen-transparent: #507f1add;
     --green: #75a73a;
-    --lightgreen: #d5faa4;
-    --blue: #2e5caa;
+    --lightgreen: #ecffc7;
+    --blue: #2c56a0;
 }
 
 header,
