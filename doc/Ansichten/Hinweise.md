@@ -26,3 +26,5 @@
 * Geschrieben von: Beschriftung nicht (!) mit der referenzierten Entität verlinken
 
 * Link zum Inhalt: Gibt die URL als Text aus
+
+* Überprüfen mit [W3C Feed Validation Service, for Atom and RSS](https://validator.w3.org/feed/)
