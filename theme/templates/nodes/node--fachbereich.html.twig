@@ -1,10 +1,28 @@
-{{ attach_library('gcmofficial/fachbereich') }}
+﻿{{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
 <div id="titelbild">
     {{ content.field_titelbild }}
 </div>
 <div class="aside-container">
 <div>
+    <div class="stufen">
+	    <a class="btn-like"
+        {% if content.field_stufe[0]|render == "Grundstufe" %}
+            id="currentgrade"
+        {% endif %}
+        href="/dev/gcmofficial/grundstufe/fachbereich/{{ node.label }}">Grundstufe</a>
+        <a class="btn-like"
+        {% if content.field_stufe[0]|render == "Mittelstufe" %}
+            id="currentgrade"
+        {% endif %}
+        href="/dev/gcmofficial/mittelstufe/fachbereich/{{ node.label }}">Mittelstufe</a>
+        <a class="btn-like"
+        {% if content.field_stufe[0]|render == "Oberstufe" %}
+            id="currentgrade"
+        {% endif %}
+        href="/dev/gcmofficial/oberstufe/fachbereich/{{ node.label }}">Oberstufe</a>
+    </div>
+    <p><strong>Kontakt:</strong> {{ content.field_kontakt }}</p>
     <p>Springe zu:</p>
     <ul>
         {% if content.field_dateien|render %}
@@ -19,10 +37,12 @@
     </ul>
     {{ content.body }}
 </div>
+{% if content.field_links|render %}
 <aside>
     {{ view }}
     {{ content.field_links }}
 </aside>
+{% endif %}
 </div>
 <div id="anchor-dateien"></div>
 {{ content.field_dateien }}

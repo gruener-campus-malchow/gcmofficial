@@ -291,6 +291,15 @@ button,
     color: var(--blue);
 }
 
+.feed-icon {
+    margin-top: 2em;
+    padding-top: 0.1em;
+    width: 15em;
+    height: 1.4em;
+    text-indent: 2em;
+    background-size: contain;
+}
+
 /* End Ansichten */
 
 footer {

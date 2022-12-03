@@ -10,6 +10,27 @@
     margin-top: 0;
 }
 
+#titelbild {margin-top: -18.4px;}
+
+.stufen {
+  margin-top: 0 !important;
+  max-width: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stufen a {
+  text-decoration: none;
+  text-align: center;
+  width: 25%;
+}
+
+#currentgrade {
+  background-color: white;
+  color: var(--darkgreen);
+  box-shadow: inset 0 0 0 2px var(--darkgreen);
+}
+
 .field--name-field-bildergalerie .field__items {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +73,12 @@
         margin-top: 22vw;
     }
 
+    .stufen {
+        max-width: unset;
+    }
+
     .field--name-field-bildergalerie .field__item {
         margin: 2vw;
     }
+
 }
