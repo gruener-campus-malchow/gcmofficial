@@ -218,7 +218,7 @@ ul.sf-menu::after {
     margin: 6vw 0 0 3vw;
     font-size: 0.7em;
     padding: 2.2em;
-    height: fit-content;
+    height: min-content;
     background-color: var(--darkgreen);
     color: white;
 }
