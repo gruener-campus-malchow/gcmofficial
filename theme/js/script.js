@@ -23,8 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (feed != undefined) {
         feed.onclick = (e) => {
             e.preventDefault();
-            navigator.clipboard.writeText(feed.href);
-            alert("Der Link zum Feed wurde in die Zwischenablage kopiert!");
+            navigator.clipboard.writeText(feed.href).then(
+                () => {
+                    // successful
+                    alert("Der Link zum Feed wurde erfolgreich in die Zwischenablage kopiert!");
+                },
+                () => {
+                    // failed
+                    alert("Um den RSS-Feed zu abonieren, kopieren Sie bitte folgende Addresse und übergeben sie Ihrem RSS-Feed-Leser: " + feed.href);
+                }
+            );
         };
     }
 });
