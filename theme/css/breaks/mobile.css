@@ -104,6 +104,9 @@ header .site-logo img {
 }
 
 #block-hauptnavigation form input[type=submit] {
+    right: 5%;
+    position: absolute;
+    margin-top: -0.2vw;
     background-color: white;
     color: var(--darkgreen);
     padding: 0.4vw 0 0.4vw 0;
