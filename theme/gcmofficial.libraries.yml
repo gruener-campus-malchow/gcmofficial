@@ -37,3 +37,10 @@ standort:
   css:
     theme:
       css/standort.css: {}
+
+ueberuns:
+  css:
+    theme:
+      css/ueber-uns.css: {}
+      css/breaks/ueber-uns-mobile.css: {media: all and (max-width: 730px)}
+        
