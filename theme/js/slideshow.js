@@ -26,10 +26,16 @@ function toggle(fw) {
     }
     for (let i=0;i < slides.length;i++) {
         if (i != slideIndex) {
-            slides[i].style.display = "none";
+            for (let z=100;z > 0;z-=1) {
+                slides[i].style.opacity = z;
+                console.log("OpacityOfInactive: ",slides[i].style.opacity);            
+            }
             console.log("Slides[i]: " ,slides[i]);
         } else {
-            slides[i].style.display = "inline";
+            for (let m=0;m < 100;m-=1) {
+                slides[i].style.opacity = m;
+                console.log("OpacityOfActive: ",slides[i].style.opacity);
+            }
         }
     };
     console.log(slideIndex)
@@ -59,7 +65,7 @@ function ontheload(){
     fwbutton.innerText = '>';
     const button = document.createElement('bwbutton');
     bwbutton.innerText = '<';
-    document.body.appendChild(fwbutton);
-    document.body.appendChild(bwbutton);   
+    document.getElementById("titelbild").appendChild(fwbutton);
+    document.getElementById("titelbild").appendChild(bwbutton);   
     setTimeout(main, 2000);
 }
