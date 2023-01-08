@@ -16,3 +16,12 @@
 .columns div:nth-child(2) {
     margin: 1em 0 1em 0;
 }
+
+.columns h3 {
+    position: relative;
+    width: unset;
+}
+
+.columns ul {
+    margin-top: 0;
+}

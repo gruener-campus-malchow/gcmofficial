@@ -242,11 +242,15 @@ button,
 
 .aside-container aside .btn-like {
     background-color: white;
-    color: var(--green);
+    color: var(--darkgreen);
+}
+
+.aside-container aside .btn-like:hover {
+    background-color: #eee;
 }
 
 .aside-container aside a.btn-like:visited {
-    color: var(--green);
+    color: var(--darkgreen);
 }
 
 .aside-container aside h2,

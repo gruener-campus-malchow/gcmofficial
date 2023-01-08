@@ -1,12 +1,14 @@
 .site img {
     width: 40%;
+    height: auto !important;
     float: left;
     margin-right: 10%;
 }
 
 .site {
     height: 22vw;
-    margin-bottom: 14vw;
+    min-height: 8.6em;
+    margin-bottom: 5.5em;
 }
 
 .site div:last-child {

@@ -16,7 +16,7 @@
     background-color: var(--darkgreen-transparent);
     padding: 1rem 1.6rem;
     color: white;
-    border-radius: 0.2rem;
+    border-radius: 0.15rem;
     font-size: 1.4em;
     right: 10%;
 }
@@ -28,6 +28,18 @@
 
 #herobox a::before {
     content: '⇨ ';
+}
+
+.kontakt-links {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.kontakt-links .btn-like {
+    margin-top: 1em;
+    font-weight: bold;
 }
 
 .views-row {
