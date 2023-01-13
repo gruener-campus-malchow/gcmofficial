@@ -61,9 +61,9 @@ function bwimtog(){
     main();
 }
 function ontheload(){
-    const button = document.createElement('fwbutton');
+    const fwbutton = document.createElement('fwbutton');
     fwbutton.innerText = '>';
-    const button = document.createElement('bwbutton');
+    const bwbutton = document.createElement('bwbutton');
     bwbutton.innerText = '<';
     document.getElementById("titelbild").appendChild(fwbutton);
     document.getElementById("titelbild").appendChild(bwbutton);   
