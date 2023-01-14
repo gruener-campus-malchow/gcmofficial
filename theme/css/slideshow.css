@@ -1,0 +1,7 @@
+#titelbild .field__item {
+    transition: opacity 1s;
+}
+
+#titelbild .field__item.slideshow-hidden {
+    opacity: 0;
+}

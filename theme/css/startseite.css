@@ -2,7 +2,8 @@
     display: none;
 }
 
-#titelbild {
+#titelbild,
+#titelbild .field__item {
     height: calc(100vh - 13vw);
     max-height: 66.64vw;
     min-height: 45vw;

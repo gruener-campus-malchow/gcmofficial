@@ -32,6 +32,7 @@ titelbild:
     theme:
       css/titelbild.css: {}
       css/breaks/titelbild-mobile.css: {media: all and (max-width: 730px)}
+      css/slideshow.css: {}
 
 standort:
   css:

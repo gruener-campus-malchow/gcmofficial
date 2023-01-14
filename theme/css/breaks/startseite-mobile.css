@@ -1,15 +1,19 @@
 #herobox {
-    top: 28vw;
-    left: 11.5%;
-    width: 66%;
-    height: fit-content;
-    max-height: 40vw;
-    text-align: center;
-    font-size: min(1.15em, 4vw);
+    top: max(35vh, 28vw);
+    left: 10%;
+    height: min-content;
+    max-width: 66%;
+    max-height: max(30vh, 26.4vw);
+}
+
+#herobox p {
+    font-size: max(min(0.8em, 2.6vh), 2.5vw);
+    text-align: left;
 }
 
 #herobox h2 {
-    font-size: min(1.3em, 4.6vw);
+    font-size: max(min(1.3em, 3vh), 2.7vw);
+    text-align: center;
 }
 
 #titelbild {

@@ -1,11 +1,17 @@
-#titelbild {
-    height: 50vw;
+#titelbild,
+#titelbild .field__item {
+    height: calc(70vh - 21vw) !important;
+    max-height: unset !important;
+}
+
+#titelbild .field__item {
+    width: unset;
 }
 
 #block-gcmofficial-page-title,
 #block-gcmofficial-breadcrumbs {
     position: absolute;
-    margin-top: 55vw;
+    margin-top: calc(70vh - 19vw);
 }
 
 .field--name-body {
