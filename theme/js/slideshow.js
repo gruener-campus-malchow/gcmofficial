@@ -3,7 +3,7 @@ document.getElementById('fwbutton').onclick = fwimtog();
 document.getElementById('bwbutton').onclick = bwimtog();
 
 // imideatly switches slidess
-let slideIndex = 1;
+var slideIndex = 1;
 function toggle(fw) {
     let slides = document.querySelectorAll("#titelbild .field__item");
     if (slides.length<=1){
@@ -26,13 +26,13 @@ function toggle(fw) {
     }
     for (let i=0;i < slides.length;i++) {
         if (i != slideIndex) {
-            for (let z=100;z > 0;z-=1) {
-                slides[i].style.opacity = z;
+            for (let z=0;z < 100;z++) {
+                slides[i].style.opacity = 100-z;
                 console.log("OpacityOfInactive: ",slides[i].style.opacity);            
             }
             console.log("Slides[i]: " ,slides[i]);
         } else {
-            for (let m=0;m < 100;m-=1) {
+            for (let m=0;m < 100;m++) {
                 slides[i].style.opacity = m;
                 console.log("OpacityOfActive: ",slides[i].style.opacity);
             }
@@ -61,11 +61,11 @@ function bwimtog(){
     main();
 }
 function ontheload(){
-    const fwbutton = document.createElement('fwbutton');
-    fwbutton.innerText = '>';
-    const bwbutton = document.createElement('bwbutton');
-    bwbutton.innerText = '<';
-    document.getElementById("titelbild").appendChild(fwbutton);
-    document.getElementById("titelbild").appendChild(bwbutton);   
+    window.fwbutton = document.createElement('fwbutton');
+    window.fwbutton.innerText = '>';
+    window.bwbutton = document.createElement('bwbutton');
+    window.bwbutton.innerText = '<';
+    document.getElementById("titelbild").appendChild(winow.fwbutton);
+    document.getElementById("titelbild").appendChild(window.bwbutton);   
     setTimeout(main, 2000);
 }
