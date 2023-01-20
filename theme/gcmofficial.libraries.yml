@@ -35,9 +35,14 @@ titelbild:
       css/slideshow.css: {}
 
 standort:
+  js:
+    https://unpkg.com/leaflet@1.9.3/dist/leaflet.js: {type: external, attributes: { integrity: sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=, crossorigin: true }}
+    js/standortkarte.js: {}
   css:
     theme:
+      https://unpkg.com/leaflet@1.9.3/dist/leaflet.css: {type: external, attributes: { integrity: sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=, crossorigin: true }}
       css/standort.css: {}
+      css/standortkarte.css: {}
 
 ueberuns:
   css:
