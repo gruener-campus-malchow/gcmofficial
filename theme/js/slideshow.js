@@ -1,10 +1,10 @@
 var autoswitch = null;
-window.fwbutton = document.createElement('button');
-window.fwbutton.innerText = '>';
-window.bwbutton = document.createElement('button');
-window.bwbutton.innerText = '<';
-window.fwbutton.onclick = fwimtog();
-window.bwbutton.onclick = bwimtog();
+var fwbutton = document.createElement('button');
+fwbutton.innerText = '>';
+var bwbutton = document.createElement('button');
+bwbutton.innerText = '<';
+fwbutton.onclick = fwimtog();
+bwbutton.onclick = bwimtog();
 window.onload = ontheload();
 
 // imideatly switches slidess
@@ -60,7 +60,7 @@ function bwimtog() {
 }
 
 function ontheload() {
-    document.getElementById("titelbild").appendChild(window.fwbutton);
-    document.getElementById("titelbild").appendChild(window.bwbutton);
+    document.getElementById("titelbild").appendChild(fwbutton);
+    document.getElementById("titelbild").appendChild(bwbutton);
     setTimeout(main, 2000);
 }
