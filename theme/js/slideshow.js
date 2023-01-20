@@ -1,13 +1,13 @@
 var autoswitch = null;
 var fwbutton = document.createElement('button');
-fwbutton.innerText = '>';
+fwbutton.innerText = '→';
 var bwbutton = document.createElement('button');
-bwbutton.innerText = '<';
-fwbutton.onclick = fwimtog();
-bwbutton.onclick = bwimtog();
+bwbutton.innerText = '←';
+fwbutton.onclick = fwimtog;
+bwbutton.onclick = bwimtog;
 window.onload = ontheload();
 
-// imideatly switches slidess
+// immediately switches slides
 var slideIndex = 1;
 function toggle(fw) {
     let slides = document.querySelectorAll("#titelbild .field__item");
@@ -60,7 +60,10 @@ function bwimtog() {
 }
 
 function ontheload() {
-    document.getElementById("titelbild").appendChild(fwbutton);
-    document.getElementById("titelbild").appendChild(bwbutton);
+    var buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+    buttonContainer.appendChild(bwbutton); // first element added will appear on the left
+    buttonContainer.appendChild(fwbutton); // will appear on the right
+    document.getElementById("titelbild").appendChild(buttonContainer);
     setTimeout(main, 2000);
 }
