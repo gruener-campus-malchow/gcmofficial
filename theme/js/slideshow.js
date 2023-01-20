@@ -1,6 +1,15 @@
 document.addEventListener('load', ontheload());
 
 var autoswitch = null;
+var window.fwbutton = document.createElement('button');
+window.fwbutton.innerText = '>';
+var window.bwbutton = document.createElement('button');
+window.bwbutton.innerText = '<';
+document.getElementById("titelbild").appendChild(window.fwbutton);
+document.getElementById("titelbild").appendChild(window.bwbutton);
+window.fwbutton.onclick = fwimtog();
+window.bwbutton.onclick = bwimtog();
+
 
 // imideatly switches slidess
 var slideIndex = 1;
@@ -55,13 +64,5 @@ function bwimtog() {
 }
 
 function ontheload() {
-    window.fwbutton = document.createElement('button');
-    window.fwbutton.innerText = '>';
-    window.bwbutton = document.createElement('button');
-    window.bwbutton.innerText = '<';
-    window.fwbutton.onclick = fwimtog();
-    window.bwbutton.onclick = bwimtog();
-    document.getElementById("titelbild").appendChild(window.fwbutton);
-    document.getElementById("titelbild").appendChild(window.bwbutton);
     setTimeout(main, 2000);
 }
