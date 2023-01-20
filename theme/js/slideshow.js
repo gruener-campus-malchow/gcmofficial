@@ -27,13 +27,12 @@ function toggle(fw) {
     for (let i = 0; i < slides.length; i++) {
         if (i != slideIndex) {
             slides[i].classList.add("slideshow-hidden");
-            console.log("Slides[i]: ", slides[i]);
         } else {
             slides[i].classList.remove("slideshow-hidden");
         }
     };
-    console.log(slideIndex)
-    console.log(slides[slideIndex]);
+    console.log("slide index: ", slideIndex)
+    console.log("current slide: ", slides[slideIndex]);
 }
 function togglefw() {
     toggle(true);
