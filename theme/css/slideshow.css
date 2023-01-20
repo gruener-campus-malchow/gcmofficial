@@ -1,5 +1,5 @@
 #titelbild .field__item {
-    transition: opacity 1s;
+    transition: opacity 0.6s;
 }
 
 #titelbild .field__item.slideshow-hidden {
