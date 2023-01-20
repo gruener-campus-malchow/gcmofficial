@@ -38,7 +38,7 @@ function toggle(fw) {
             slides[i].classList.remove("slideshow-hidden");
         }
     };
-    console.log("slide index: ", slideIndex)
+    console.log("slide index: ", slideIndex);
     console.log("current slide: ", slides[slideIndex]);
 }
 function togglefw() {
