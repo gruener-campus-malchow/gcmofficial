@@ -1,0 +1,5 @@
+@media all and (min-width: 1000px) {
+    #herobox {
+        top: max(50vh, 15vw);
+    }
+}

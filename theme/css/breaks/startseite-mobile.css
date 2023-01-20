@@ -1,7 +1,18 @@
 #herobox {
-    margin: -56vw 0 0 10%;
-    width: 66%;
-    height: 36vw;
+    top: max(35vh, 28vw);
+    left: 10%;
+    height: min-content;
+    max-width: 66%;
+    max-height: max(30vh, 26.4vw);
+}
+
+#herobox p {
+    font-size: max(min(0.8em, 2.6vh), 2.5vw);
+    text-align: left;
+}
+
+#herobox h2 {
+    font-size: max(min(1.3em, 3vh), 2.7vw);
     text-align: center;
 }
 

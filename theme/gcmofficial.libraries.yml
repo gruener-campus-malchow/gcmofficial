@@ -6,8 +6,8 @@ global-styling:
     theme:
       css/fonts.css: {}
       css/style.css: {}
-      css/breaks/mobile.css: {media: all and (max-width: 500px)}
-      css/breaks/small.css: {media: all and (min-width: 500px)}
+      css/breaks/mobile.css: {media: all and (max-width: 730px)}
+      css/breaks/small.css: {media: all and (min-width: 730px)}
       css/breaks/desktop-small.css: {media: all and (min-aspect-ratio: 121/100)}
       css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
 
@@ -22,10 +22,26 @@ startseite:
   css:
     theme:
       css/startseite.css: {}
-      css/breaks/startseite-mobile.css: {media: all and (max-width: 500px)}
+      css/breaks/startseite-mobile.css: {media: all and (max-width: 730px)}
+      css/breaks/startseite-desktop.css: {media: all and (min-aspect-ratio: 121/100)}
 
 titelbild:
+  js:
+    js/slideshow.js: {media: screen and (min-width: 500px)}
   css:
     theme:
       css/titelbild.css: {}
-      css/breaks/titelbild-mobile.css: {media: all and (max-width: 500px)}
+      css/breaks/titelbild-mobile.css: {media: all and (max-width: 730px)}
+      css/slideshow.css: {}
+
+standort:
+  css:
+    theme:
+      css/standort.css: {}
+
+ueberuns:
+  css:
+    theme:
+      css/ueber-uns.css: {}
+      css/breaks/ueber-uns-mobile.css: {media: all and (max-width: 730px)}
+        

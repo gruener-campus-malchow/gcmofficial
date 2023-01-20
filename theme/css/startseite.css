@@ -2,19 +2,24 @@
     display: none;
 }
 
-#titelbild {
+#titelbild,
+#titelbild .field__item {
     height: calc(100vh - 13vw);
     max-height: 66.64vw;
+    min-height: 45vw;
 }
 
 #herobox {
     position: absolute;
+    top: min(max(50vh, 16vw), 45vw);
     width: fit-content;
     height: fit-content;
     background-color: var(--darkgreen-transparent);
-    padding: 1.2vw 2vw;
-    margin-top: calc(15vw - 100vh);
+    padding: 1rem 1.6rem;
     color: white;
+    border-radius: 0.15rem;
+    font-size: 1.4em;
+    right: 10%;
 }
 
 #herobox h2,
@@ -23,9 +28,25 @@
 }
 
 #herobox a::before {
-    content: '→ ';
+    content: '⇨ ';
+}
+
+.kontakt-links {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.kontakt-links .btn-like {
+    margin-top: 1em;
+    font-weight: bold;
 }
 
 .views-row {
     flex: 0 1 47%;
+}
+
+.cssfile {
+    --file: "startseite";
 }

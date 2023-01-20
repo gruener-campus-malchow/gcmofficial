@@ -1,18 +1,18 @@
 /* general section */
 
 :root {
-    --darkgreen: #588a1c;
-    --darkgreen-transparent: #588a1cdd;
+    --darkgreen: #507f1a;
+    --darkgreen-transparent: #507f1add;
     --green: #75a73a;
-    --lightgreen: #d5faa4;
-    --blue: #2e5caa;
+    --lightgreen: #ecffc7;
+    --blue: #2c56a0;
 }
 
 header,
 #main,
 footer {
     width: 100%;
-    font-size: 1.4vw;
+    font-size: min(1em, 1.8vw);
 }
 
 header .region-branding,
@@ -26,6 +26,7 @@ footer .region-footer {
 /* remove Safari's default design of buttons */
 input[type=button],
 input[type=submit],
+input[type=search],
 button,
 select {
     -webkit-appearance: none;
@@ -35,21 +36,26 @@ select {
 input[type=button],
 input[type=submit],
 button,
-select,
+.form-type-select,
 .btn-like {
     background-color: var(--darkgreen);
     border: none;
     color: white;
-    padding: 0.2vw 1vw;
+    padding: 0.16rem 0.8rem;
     text-align: center;
 }
 
 input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
-select:hover,
+.form-type-select:hover,
 .btn-like:hover {
     background-color: var(--green);
+}
+
+select {
+    border: none;
+    background-color: inherit;
 }
 
 .btn-like {
@@ -121,6 +127,7 @@ header .site-logo img {
 
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
+    border: 1.5px solid var(--darkgreen);
 }
 
 header .region-navigation {
@@ -209,11 +216,20 @@ ul.sf-menu::after {
 .aside-container aside {
     flex: 1;
     margin: 6vw 0 0 3vw;
-    font-size: 70%;
-    padding: 2vw;
-    height: fit-content;
+    font-size: 0.7em;
+    padding: 2.2em;
+    height: min-content;
     background-color: var(--darkgreen);
     color: white;
+}
+
+input[type="button"],
+input[type="submit"],
+button,
+.form-type-select,
+.btn-like,
+.aside-container aside {
+    border-radius: 0.2rem;
 }
 
 .aside-container aside a {
@@ -226,11 +242,15 @@ ul.sf-menu::after {
 
 .aside-container aside .btn-like {
     background-color: white;
-    color: var(--green);
+    color: var(--darkgreen);
+}
+
+.aside-container aside .btn-like:hover {
+    background-color: #eee;
 }
 
 .aside-container aside a.btn-like:visited {
-    color: var(--green);
+    color: var(--darkgreen);
 }
 
 .aside-container aside h2,
@@ -268,11 +288,20 @@ ul.sf-menu::after {
 }
 
 .view-content .views-row h2 {
-    font-size: 1.8vw;
+    font-size: 1.4em;
 }
 
 .view-content a {
     color: var(--blue);
+}
+
+.feed-icon {
+    margin-top: 2em;
+    padding-top: 0.1em;
+    width: 15em;
+    height: 1.4em;
+    text-indent: 2em;
+    background-size: contain;
 }
 
 /* End Ansichten */
@@ -282,7 +311,9 @@ footer {
 }
 
 footer .site-name {
-    margin: 4vw 42vw 0 0;
+    width: 65vw;
+    margin: 4vw 0 0 0;
+    font-size: 1.4vw;
     float: right;
 }
 

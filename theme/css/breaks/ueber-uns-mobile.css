@@ -1,0 +1,27 @@
+.grid {
+    margin-top: unset;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid p {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: 2;
+}
+
+.columns {
+    flex-direction: column;
+}
+
+.columns div:nth-child(2) {
+    margin: 1em 0 1em 0;
+}
+
+.columns h3 {
+    position: relative;
+    width: unset;
+}
+
+.columns ul {
+    margin-top: 0;
+}

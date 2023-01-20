@@ -1,11 +1,40 @@
 {{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
+{% set faecherInGrundstufe = ['Mathe', 'Deutsch', 'Englisch', 'Musik'] %}
+{% set faecherNurOberstufe = ['Psychologie'] %}
+{% set faecherNurMittelstufe = ['Französisch'] %}
 <div id="titelbild">
     {{ content.field_titelbild }}
 </div>
 <div class="aside-container">
 <div>
+    <div class="stufen">
+        {% if node.label in faecherInGrundstufe %}
+            <a class="btn-like"
+            {% if content.field_stufe[0]|render == "Grundstufe" %}
+                id="currentgrade"
+            {% endif %}
+            href="/dev/gcmofficial/grundstufe/fachbereich/{{ node.label }}">Grundstufe</a>
+        {% endif %}
+        {% if node.label not in faecherNurOberstufe %}
+            <a class="btn-like"
+            {% if content.field_stufe[0]|render == "Mittelstufe" %}
+                id="currentgrade"
+            {% endif %}
+            href="/dev/gcmofficial/mittelstufe/fachbereich/{{ node.label }}">Mittelstufe</a>
+        {% endif %}
+        {% if node.label not in faecherNurMittelstufe %}
+            <a class="btn-like"
+            {% if content.field_stufe[0]|render == "Oberstufe" %}
+                id="currentgrade"
+            {% endif %}
+            href="/dev/gcmofficial/oberstufe/fachbereich/{{ node.label }}">Oberstufe</a>
+        {% endif %}
+    </div>
+    <p><strong>Kontakt:</strong> {{ content.field_kontakt }}</p>
+    {% if content.field_dateien|render or content.field_schuelerarbeiten|render or content.field_bildergalerie|render %}
     <p>Springe zu:</p>
+    {% endif %}
     <ul>
         {% if content.field_dateien|render %}
             <li><a href="#anchor-dateien">Dateien</a></li>
@@ -19,10 +48,12 @@
     </ul>
     {{ content.body }}
 </div>
+{% if content.field_links|render %}
 <aside>
     {{ view }}
     {{ content.field_links }}
 </aside>
+{% endif %}
 </div>
 <div id="anchor-dateien"></div>
 {{ content.field_dateien }}

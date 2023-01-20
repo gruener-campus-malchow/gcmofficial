@@ -1,0 +1,57 @@
+:root {
+    --rows: 3;
+}
+
+.grid {
+    margin-top: 9em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.grid p {
+    margin-top: 0;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-row-end: var(--rows);
+    text-align: justify;
+}
+
+.grid img {
+    height: auto !important;
+}
+
+h2 {
+    margin-top: 3em;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.columns ul {
+    padding-left: inherit;
+    margin-top: 6em;
+}
+
+.columns div {
+    background-color: #588a1c;
+    background-color: var(--darkgreen);
+    color: white;
+    padding: 1em;
+    flex-basis: 1px;
+    flex-grow: 1;
+}
+
+.columns div:nth-child(2) {
+    margin: 0 1em 0 1em;
+}
+
+.columns h3 {
+    color: white;
+    position: absolute;
+    width: 24%;
+}
