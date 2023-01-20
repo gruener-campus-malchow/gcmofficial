@@ -5,8 +5,6 @@ var window.fwbutton = document.createElement('button');
 window.fwbutton.innerText = '>';
 var window.bwbutton = document.createElement('button');
 window.bwbutton.innerText = '<';
-document.getElementById("titelbild").appendChild(window.fwbutton);
-document.getElementById("titelbild").appendChild(window.bwbutton);
 window.fwbutton.onclick = fwimtog();
 window.bwbutton.onclick = bwimtog();
 
@@ -64,5 +62,7 @@ function bwimtog() {
 }
 
 function ontheload() {
+    document.getElementById("titelbild").appendChild(window.fwbutton);
+    document.getElementById("titelbild").appendChild(window.bwbutton);
     setTimeout(main, 2000);
 }
