@@ -42,7 +42,7 @@ function togglebw() {
     toggle(false);
 }
 function main() {
-    autoswitch = setInterval(togglefw, 5000);
+    autoswitch = setInterval(togglefw, 10000);
 }
 function fwimtog() {
     clearInterval(autoswitch);
