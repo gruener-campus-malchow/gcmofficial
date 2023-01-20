@@ -5,6 +5,8 @@ var window.fwbutton = document.createElement('button');
 window.fwbutton.innerText = '>';
 var window.bwbutton = document.createElement('button');
 window.bwbutton.innerText = '<';
+window.fwbutton.classList.add("togglebuttons");
+window.bwbutton.classList.add("togglebuttons");
 window.fwbutton.onclick = fwimtog();
 window.bwbutton.onclick = bwimtog();
 
