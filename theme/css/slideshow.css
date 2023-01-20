@@ -5,3 +5,10 @@
 #titelbild .field__item.slideshow-hidden {
     opacity: 0;
 }
+#titelbild .togglebuttons {
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+#titelbild .togglebuttons:hover {
+    opacity: 70%;
+}
