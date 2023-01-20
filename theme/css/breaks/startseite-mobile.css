@@ -1,8 +1,9 @@
 #herobox {
     top: max(35vh, 28vw);
-    left: 10%;
+    left: 12.5%;
     height: min-content;
-    max-width: 66%;
+    width: 66%;
+    width: calc(75% - 3.2rem);
     max-height: max(30vh, 26.4vw);
 }
 
