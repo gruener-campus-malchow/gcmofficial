@@ -1,4 +1,4 @@
-document.addEventListener('load', ontheload());
+window.onload = ontheload();
 
 var autoswitch = null;
 window.fwbutton = document.createElement('button');
