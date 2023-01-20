@@ -1,5 +1,3 @@
-window.onload = ontheload();
-
 var autoswitch = null;
 window.fwbutton = document.createElement('button');
 window.fwbutton.innerText = '>';
@@ -7,7 +5,7 @@ window.bwbutton = document.createElement('button');
 window.bwbutton.innerText = '<';
 window.fwbutton.onclick = fwimtog();
 window.bwbutton.onclick = bwimtog();
-
+window.onload = ontheload();
 
 // imideatly switches slidess
 var slideIndex = 1;
