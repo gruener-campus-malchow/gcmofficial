@@ -1,9 +1,9 @@
 document.addEventListener('load', ontheload());
 
 var autoswitch = null;
-var window.fwbutton = document.createElement('button');
+window.fwbutton = document.createElement('button');
 window.fwbutton.innerText = '>';
-var window.bwbutton = document.createElement('button');
+window.bwbutton = document.createElement('button');
 window.bwbutton.innerText = '<';
 window.fwbutton.onclick = fwimtog();
 window.bwbutton.onclick = bwimtog();
