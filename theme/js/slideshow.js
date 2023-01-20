@@ -54,14 +54,15 @@ function bwimtog() {
     togglebw();
     main();
 }
+
 function ontheload() {
-    const fwbutton = document.createElement('button');
-    fwbutton.innerText = '>';
-    const bwbutton = document.createElement('button');
-    bwbutton.innerText = '<';
-    fwbutton.onclick = fwimtog();
-    bwbutton.onclick = bwimtog();
-    document.getElementById("titelbild").appendChild(fwbutton);
-    document.getElementById("titelbild").appendChild(bwbutton);
+    window.fwbutton = document.createElement('button');
+    window.fwbutton.innerText = '>';
+    window.bwbutton = document.createElement('button');
+    window.bwbutton.innerText = '<';
+    window.fwbutton.onclick = fwimtog();
+    window.bwbutton.onclick = bwimtog();
+    document.getElementById("titelbild").appendChild(window.fwbutton);
+    document.getElementById("titelbild").appendChild(window.bwbutton);
     setTimeout(main, 2000);
 }
