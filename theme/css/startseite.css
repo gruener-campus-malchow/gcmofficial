@@ -43,6 +43,14 @@
     font-weight: bold;
 }
 
+.field--name-body {
+    margin-top: 0 !important;
+}
+
+.aside-container {
+    margin-top: 9vw;
+}
+
 .views-row {
     flex: 0 1 47%;
 }
