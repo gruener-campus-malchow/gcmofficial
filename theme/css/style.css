@@ -73,7 +73,7 @@ h5,
 }
 
 .field__label {
-    font-size: 1.9vw;
+    font-size: 1.44em;
     margin: 0.8em 0;
 }
 
@@ -260,7 +260,7 @@ button,
 }
 
 .aside-container aside .field__label {
-    font-size: 1.4vw;
+    font-size: 1.4em;
 }
 
 /* Ansichten */

@@ -38,6 +38,7 @@ standort:
   css:
     theme:
       css/standort.css: {}
+      css/breaks/standort-mobile.css: {media: all and (max-width: 730px)}
 
 ueberuns:
   css:

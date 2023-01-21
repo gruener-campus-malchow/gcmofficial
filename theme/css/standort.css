@@ -6,16 +6,16 @@
 }
 
 .site {
-    height: 22vw;
+    height: min-content;
     min-height: 8.6em;
-    margin-bottom: 5.5em;
+    margin-bottom: 10.5em;
 }
 
 .site div:last-child {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 22vw;
+    height: min-content;
 }
 
 .site p:first-child {
