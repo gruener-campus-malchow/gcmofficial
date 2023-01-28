@@ -11,7 +11,7 @@
 
 #herobox {
     position: absolute;
-    top: min(max(50vh, 16vw), 45vw);
+    top: min(max(30vh, 16vw), 30vw);
     width: fit-content;
     height: fit-content;
     background-color: var(--darkgreen-transparent);

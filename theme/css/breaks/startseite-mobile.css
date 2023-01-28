@@ -1,10 +1,10 @@
 #herobox {
-    top: max(35vh, 28vw);
+    top: max(30vh, 28vw);
     left: 12.5%;
     height: min-content;
     width: 66%;
     width: calc(75% - 3.2rem);
-    max-height: max(30vh, 26.4vw);
+    max-height: max(35vh, 26.4vw);
 }
 
 #herobox p {
