@@ -1,12 +1,15 @@
 var autoswitch = null;
 var slides_out_func = document.querySelectorAll("#titelbild .field__item");
-if (slides_out_func.length>1 && screen.width>360){
-    var fwbutton = document.createElement('button');
-    fwbutton.innerText = '→';
-    var bwbutton = document.createElement('button');
-    bwbutton.innerText = '←';
-    fwbutton.onclick = fwimtog;
-    bwbutton.onclick = bwimtog;
+var width = screen.width;
+if (slides_out_func.length>1){
+    if (width>360) {
+        var fwbutton = document.createElement('button');
+        fwbutton.innerText = '→';
+        var bwbutton = document.createElement('button');
+        bwbutton.innerText = '←';
+        fwbutton.onclick = fwimtog;
+        bwbutton.onclick = bwimtog;
+    }
     window.onload = ontheload();
 }
 // immediately switches slides
