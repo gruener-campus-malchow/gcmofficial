@@ -1,12 +1,14 @@
 var autoswitch = null;
-var fwbutton = document.createElement('button');
-fwbutton.innerText = '→';
-var bwbutton = document.createElement('button');
-bwbutton.innerText = '←';
-fwbutton.onclick = fwimtog;
-bwbutton.onclick = bwimtog;
-window.onload = ontheload();
-
+var slides_out_func = document.querySelectorAll("#titelbild .field__item");
+if (slides_out_func.length<=1){
+    var fwbutton = document.createElement('button');
+    fwbutton.innerText = '→';
+    var bwbutton = document.createElement('button');
+    bwbutton.innerText = '←';
+    fwbutton.onclick = fwimtog;
+    bwbutton.onclick = bwimtog;
+    window.onload = ontheload();
+}
 // immediately switches slides
 var slideIndex = 1;
 function toggle(fw) {
