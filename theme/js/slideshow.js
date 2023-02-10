@@ -1,6 +1,6 @@
 var autoswitch = null;
 var slides_out_func = document.querySelectorAll("#titelbild .field__item");
-if (slides_out_func.length<=1){
+if (slides_out_func.length>1 && screen.width>360){
     var fwbutton = document.createElement('button');
     fwbutton.innerText = '→';
     var bwbutton = document.createElement('button');
