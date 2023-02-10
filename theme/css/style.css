@@ -5,7 +5,7 @@
     --darkgreen-transparent: #507f1add;
     --green: #75a73a;
     --lightgreen: #ecffc7;
-    --blue: #2c56a0;
+    --blue: #285dbf;
 }
 
 header,
@@ -73,7 +73,7 @@ h5,
 }
 
 .field__label {
-    font-size: 1.9vw;
+    font-size: 1.44em;
     margin: 0.8em 0;
 }
 
@@ -215,7 +215,7 @@ ul.sf-menu::after {
 
 .aside-container aside {
     flex: 1;
-    margin: 6vw 0 0 3vw;
+    margin: 6em 0 0 3vw;
     font-size: 0.7em;
     padding: 2.2em;
     height: min-content;
@@ -260,7 +260,7 @@ button,
 }
 
 .aside-container aside .field__label {
-    font-size: 1.4vw;
+    font-size: 1.4em;
 }
 
 /* Ansichten */

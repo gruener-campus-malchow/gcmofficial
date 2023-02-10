@@ -1,0 +1,20 @@
+{{ attach_library('gcmofficial/titelbild') }}
+{{ attach_library('gcmofficial/startseite') }}
+<div id="titelbild">
+    {{ content.field_titelbild }}
+</div>
+<div id="herobox">
+    {{ content.field_banner }}
+</div>
+<div class="aside-container">
+    <main>
+        {{ content.body }}
+    </main>
+    <aside id="contact">
+        {{ content.field_kontaktbox }}
+        <div class="kontakt-links">
+            <a class="btn-like" href="/dev/gcmofficial/kontakt">Zur Kontaktseite</a>
+            <a class="btn-like" href="/dev/gcmofficial/standort">Zur Standortseite</a>
+        </div>
+    </aside>
+</div>
