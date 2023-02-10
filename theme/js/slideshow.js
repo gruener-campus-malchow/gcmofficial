@@ -10,7 +10,7 @@ if (slides_out_func.length>1){
         fwbutton.onclick = fwimtog;
         bwbutton.onclick = bwimtog;
     }
-    document.addEventListener("load", ontheload);
+    document.addEventListener("DOMContentLoaded", ontheload);
 }
 // immediately switches slides
 var slideIndex = 1;
