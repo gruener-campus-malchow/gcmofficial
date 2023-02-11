@@ -2,7 +2,7 @@
 name: 'Feature request: German'
 about: Eine Idee für dieses Projekt vorschlagen
 title: "[FEATURE]"
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---

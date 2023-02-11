@@ -2,7 +2,7 @@
 name: 'Bug report: German'
 about: Erstellen Sie einen Bericht, der uns hilft, Verbesserungen vorzunehmen
 title: "[BUG]"
-labels: ''
+labels: bug
 assignees: ''
 
 ---
