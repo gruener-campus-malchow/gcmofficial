@@ -4,8 +4,9 @@
     max-height: unset !important;
 }
 
-#titelbild .field__item {
-    width: unset;
+#titelbild {
+    margin-left: -5.5%; 
+    width: 111%;
 }
 
 #block-gcmofficial-page-title,
