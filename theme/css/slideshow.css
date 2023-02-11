@@ -15,10 +15,10 @@
 }
 
 #titelbild button {
-  padding: 20px;
+  padding: min(1em, 2.5vw);
   z-index: 2;
   transition: 0.07s;
-  margin: 15px;
+  margin: 2.4%;
   opacity: 0.6;
 }
 #titelbild button:hover {
@@ -28,29 +28,4 @@
 #titelbild button:active {
   transform: scale(1.3);
   opacity: 1;
-}
-
-@media(max-width: 729px){
-  #titelbild button {
-    padding: 1.8vw;
-    margin: 65px;
-  }
-}
-@media(max-width: 540px){
-  #titelbild button {
-    padding: 1.8vw;
-    margin: 50px;
-  }
-}
-@media(max-width: 450px){
-  #titelbild button {
-    padding: 2vw;
-    margin: 40px;
-  }
-}
-@media(max-width: 385px){
-  #titelbild button {
-    padding: 2.2vw;
-    margin: 35px;
-  }
 }
