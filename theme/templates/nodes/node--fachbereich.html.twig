@@ -1,7 +1,7 @@
-{{ attach_library('gcmofficial/fachbereich') }}
+﻿{{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
-{% set faecherInGrundstufe = ['Mathe', 'Deutsch', 'Englisch', 'Musik'] %}
-{% set faecherNurOberstufe = ['Psychologie'] %}
+{% set faecherInGrundstufe = ['Mathematik', 'Deutsch', 'Englisch', 'Musik', 'Sport'] %}
+{% set faecherNurOberstufe = ['Psychologie', 'Philosophie'] %}
 {% set faecherNurMittelstufe = ['Französisch'] %}
 <div id="titelbild">
     {{ content.field_titelbild }}
@@ -32,9 +32,7 @@
         {% endif %}
     </div>
     <p><strong>Kontakt:</strong> {{ content.field_kontakt }}</p>
-    {% if content.field_dateien|render or content.field_schuelerarbeiten|render or content.field_bildergalerie|render %}
-    <p>Springe zu:</p>
-    {% endif %}
+    <p>Gehe zu:</p>
     <ul>
         {% if content.field_dateien|render %}
             <li><a href="#anchor-dateien">Dateien</a></li>
@@ -45,6 +43,8 @@
         {% if content.field_bildergalerie|render %}
             <li><a href="#anchor-bildergalerie">Bildergalerie</a></li>
         {% endif %}
+        <li><a href="/dev/gcmofficial/berichte?field_tags_target_id={{ node.label }}">Aktuelles zum Fachbereich</a></li>
+        <li><a href="/dev/gcmofficial/projekte?field_thema_target_id={{ node.label }}">Projekte</a></li>
     </ul>
     {{ content.body }}
 </div>
