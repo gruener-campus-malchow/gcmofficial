@@ -29,6 +29,7 @@ startseite:
 titelbild:
   js:
     js/slideshow.js: {media: screen and (min-width: 500px)}
+    js/titelbild.js: {}
   css:
     theme:
       css/titelbild.css: {}
