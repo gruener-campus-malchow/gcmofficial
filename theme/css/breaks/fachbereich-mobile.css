@@ -1,3 +1,13 @@
+#titelbild,
+#titelbild .field__item {
+  height: calc(40vh - 21vw) !important;
+}
+
+#block-gcmofficial-page-title,
+#block-gcmofficial-breadcrumbs {
+  margin-top: calc(40vh - 19vw);
+}
+
 .stufen {
   flex-direction: column;
 }
