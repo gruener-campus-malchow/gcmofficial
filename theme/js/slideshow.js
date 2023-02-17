@@ -1,8 +1,18 @@
-document.addEventListener('load', ontheload());
-
 var autoswitch = null;
-
-// imideatly switches slidess
+var slides_out_func = document.querySelectorAll("#titelbild .field__item");
+var width = screen.width;
+if (slides_out_func.length>1){
+    if (width>360) {
+        var fwbutton = document.createElement('button');
+        fwbutton.innerText = '→';
+        var bwbutton = document.createElement('button');
+        bwbutton.innerText = '←';
+        fwbutton.onclick = fwimtog;
+        bwbutton.onclick = bwimtog;
+    }
+    document.addEventListener("DOMContentLoaded", ontheload);
+}
+// immediately switches slides
 var slideIndex = 1;
 function toggle(fw) {
     let slides = document.querySelectorAll("#titelbild .field__item");
@@ -27,13 +37,12 @@ function toggle(fw) {
     for (let i = 0; i < slides.length; i++) {
         if (i != slideIndex) {
             slides[i].classList.add("slideshow-hidden");
-            console.log("Slides[i]: ", slides[i]);
         } else {
             slides[i].classList.remove("slideshow-hidden");
         }
     };
-    console.log(slideIndex)
-    console.log(slides[slideIndex]);
+    console.log("slide index: ", slideIndex);
+    console.log("current slide: ", slides[slideIndex]);
 }
 function togglefw() {
     toggle(true);
@@ -42,7 +51,7 @@ function togglebw() {
     toggle(false);
 }
 function main() {
-    autoswitch = setInterval(togglefw, 5000);
+    autoswitch = setInterval(togglefw, 10000);
 }
 function fwimtog() {
     clearInterval(autoswitch);
@@ -56,13 +65,10 @@ function bwimtog() {
 }
 
 function ontheload() {
-    window.fwbutton = document.createElement('button');
-    window.fwbutton.innerText = '>';
-    window.bwbutton = document.createElement('button');
-    window.bwbutton.innerText = '<';
-    window.fwbutton.onclick = fwimtog();
-    window.bwbutton.onclick = bwimtog();
-    document.getElementById("titelbild").appendChild(window.fwbutton);
-    document.getElementById("titelbild").appendChild(window.bwbutton);
+    var buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+    buttonContainer.appendChild(bwbutton); // first element added will appear on the left
+    buttonContainer.appendChild(fwbutton); // will appear on the right
+    document.getElementById("titelbild").appendChild(buttonContainer);
     setTimeout(main, 2000);
 }
