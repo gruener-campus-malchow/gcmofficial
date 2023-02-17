@@ -4,6 +4,10 @@
     height: 25vw;
 }
 
+#titelbild .field--name-field-titelbild {
+    width: 100%;
+}
+
 #titelbild .field__item {
     position: absolute;
     width: 100%;

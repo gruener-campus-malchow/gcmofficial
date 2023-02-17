@@ -17,6 +17,7 @@ fachbereich:
   css:
     theme:
       css/fachbereich.css: {}
+      css/breaks/fachbereich-mobile.css: {media: all and (max-width: 730px)}
 
 startseite:
   css:
@@ -28,6 +29,7 @@ startseite:
 titelbild:
   js:
     js/slideshow.js: {media: screen and (min-width: 500px)}
+    js/titelbild.js: {}
   css:
     theme:
       css/titelbild.css: {}

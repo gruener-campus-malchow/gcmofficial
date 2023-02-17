@@ -136,9 +136,13 @@ header .region-navigation {
 
 #block-hauptnavigation ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 0;
     justify-content: space-between;
+}
+
+#block-hauptnavigation ul#superfish-main {
+    flex-direction: row;
 }
 
 #block-hauptnavigation li {

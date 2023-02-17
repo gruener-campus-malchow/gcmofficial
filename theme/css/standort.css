@@ -8,7 +8,7 @@
 .site {
     height: min-content;
     min-height: 8.6em;
-    margin-bottom: 10.5em;
+    margin-bottom: max(10.5em, 19vw);
 }
 
 .site div:last-child {
@@ -25,3 +25,39 @@
 .site p:last-child {
     margin-bottom: 0;
 }
+
+/*@media(max-width: 1500px){
+  .site{
+    margin-bottom: 13em
+  }
+}
+@media(max-width: 1360px){
+  .site{
+    margin-bottom: 11em;
+  }
+}
+@media(max-width: 1220px){
+  .site{
+    margin-bottom: 9em;
+  }
+}
+@media(max-width: 1080px){
+  .site{
+    margin-bottom: 7em;
+  }
+}
+@media(max-width: 940px){
+  .site{
+    margin-bottom: 5em;
+  }
+}
+@media(max-width: 800px){
+  .site{
+    margin-bottom: 3em;
+  }
+}
+@media(max-width: 660px){
+  .site{
+    margin-bottom: 1em;
+  }
+}*/
