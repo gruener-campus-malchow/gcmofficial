@@ -20,6 +20,9 @@
   transition: 0.07s;
   margin: 2.4%;
   opacity: 0.6;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #titelbild button:hover {
   transform: scale(1.1);
