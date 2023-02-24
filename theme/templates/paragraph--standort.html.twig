@@ -40,6 +40,7 @@
 #}
 {%
   set classes = [
+    'site',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -49,7 +50,23 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content|without('field_longitude', 'field_latitude', 'field_roomnumber_radio') }}
+      <h2>{{ content.field_location_title }}</h2>
+      {{ content.field_location_image }}
+      <div>
+          <div>
+              {{ content.field_adresse }}
+              <noscript>
+                {{ content.field_longitude }}
+                {{ content.field_latitude }}
+              </noscript>
+              <button>Auf Karte markieren</button>
+              {{ content.field_body }}
+          </div>
+          {# see gcmofficial.theme -> gcmofficial_preprocess_paragraph__standort for variable "roomnumbers" #}
+          {% if roomnumbers == 1 %}
+              <a href="#roomnumbers">Raumnummern erklären</a>
+          {% endif %}
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

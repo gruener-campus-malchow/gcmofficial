@@ -1,15 +1,17 @@
-#map, .leaflet-container {
-  width: 100%;
-  aspect-ratio: 1.7;
+#map,
+.leaflet-container {
+    width: 100%;
+    aspect-ratio: 1.7;
 }
 
 .leaflet-container {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .site button {
-  display: block;
-  margin-top: 0.4em;
-  max-width: 100%;
+    display: block;
+    margin: 0.4em 0 1em 0;
+    width: max-content;
+    max-width: 100%;
 }
