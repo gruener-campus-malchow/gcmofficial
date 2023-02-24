@@ -13,7 +13,7 @@ if (slides_out_func.length>1){
     document.addEventListener("DOMContentLoaded", ontheload);
 }
 // immediately switches slides
-var slideIndex = 1;
+var slideIndex = 0;
 function toggle(fw) {
     let slides = document.querySelectorAll("#titelbild .field__item");
     if (slides.length <= 1) {
