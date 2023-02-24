@@ -10,6 +10,10 @@
     margin-top: 0;
 }
 
+.aside-container aside div {
+	margin-top: 1em;
+}
+
 #titelbild {
     margin-top: -18.4px;
 }
