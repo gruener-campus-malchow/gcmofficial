@@ -51,7 +51,7 @@ function togglebw() {
     toggle(false);
 }
 function main() {
-    autoswitch = setInterval(togglefw, 10000);
+    autoswitch = setInterval(togglefw, 8000);
 }
 function fwimtog() {
     clearInterval(autoswitch);
@@ -70,5 +70,5 @@ function ontheload() {
     buttonContainer.appendChild(bwbutton); // first element added will appear on the left
     buttonContainer.appendChild(fwbutton); // will appear on the right
     document.getElementById("titelbild").appendChild(buttonContainer);
-    setTimeout(main, 2000);
+    main();
 }
