@@ -1,0 +1,6 @@
+name: gcmofficial (module)
+description: Module to enhance the school website
+type: module
+package: Custom
+core_version_requirement: ^8 || ^9
+version: 1.0
