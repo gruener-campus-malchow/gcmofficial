@@ -1,14 +1,16 @@
 var autoswitch = null;
 var slides_out_func = document.querySelectorAll("#titelbild .field__item");
-var titelbild = document.getElementById("titelbild");
+var slideimages = document.querySelectorAll("#titelbild .field__item img");
 var width = screen.width;
 window.addEventListener('scroll', () => {
     let { scrollY } = window;
-    titelbild.style.top = 0.5 * scrollY + 'px';
+    slideimages.forEach((slideimage) => {
+        slideimage.style.top = 0.5 * scrollY + 'px';
+    });
 });
 
-if (slides_out_func.length>1){
-    if (width>360) {
+if (slides_out_func.length > 1) {
+    if (width > 360) {
         var fwbutton = document.createElement('button');
         fwbutton.innerText = '→';
         var bwbutton = document.createElement('button');
