@@ -20,6 +20,8 @@ fachbereich:
       css/breaks/fachbereich-mobile.css: {media: all and (max-width: 730px)}
 
 startseite:
+  js:
+    js/startseite.js: {}
   css:
     theme:
       css/startseite.css: {}

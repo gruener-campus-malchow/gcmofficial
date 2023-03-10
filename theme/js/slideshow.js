@@ -1,13 +1,6 @@
 var autoswitch = null;
 var slides_out_func = document.querySelectorAll("#titelbild .field__item");
-var slideimages = document.querySelectorAll("#titelbild .field__item img");
 var width = screen.width;
-window.addEventListener('scroll', () => {
-    let { scrollY } = window;
-    slideimages.forEach((slideimage) => {
-        slideimage.style.top = 0.5 * scrollY + 'px';
-    });
-});
 
 if (slides_out_func.length > 1) {
     if (width > 360) {

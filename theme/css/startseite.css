@@ -2,36 +2,16 @@
     display: none;
 }
 
-#titelbild {
-
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  perspective: 1px;
-
-}
-
-#titelbild .field__item {
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}   
-
-#titelbild .field__item img {
-       
-  transform: translateZ(-1px);
-    
-}
-    
-}
-
 #titelbild,
 #titelbild .field__item {
     height: calc(100vh - 13vw);
     max-height: 66.64vw;
     min-height: 45vw;
+}
+
+#titelbild img {
+    position: relative;
+    transform: scale(1.3);
 }
 
 #herobox {
