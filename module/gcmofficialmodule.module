@@ -33,9 +33,9 @@ function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Fo
        $form['created_wrapper']['created_op']['#options']['='] = t("am");
        $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
        $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
-       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("gehört zu einem von");
-       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("gehört zu allen von");
-       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("gehört zu keinem von");
+       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
+       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("enthält alle");
+       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
       }
      $form['actions']['submit']['#value'] = t('Filter anwenden');
     } catch (Exception $ex) {
