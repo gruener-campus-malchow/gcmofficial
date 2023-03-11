@@ -2,9 +2,19 @@
 /**
  * @param $vars
  */
-function gcmofficial_preprocess_node(&$vars) {
 
-  $news = views_embed_view('aktuelles_informatik', 'block_1');
-  $vars['view'] = 'test';
+function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$vars) {
+    $view = $vars['view'];
+    $rows = $vars['rows'];
+    $grouped = [];
+    foreach ($rows as $id => $row) {
+      $row_title = $view->result[$id]->node_field_data_title; // get fachbereich of row
+      // add row to fachbereich group
+      if (!array_key_exists($row_title, $grouped)) {
+        $grouped[$row_title] = [];
+      }
+      array_push($grouped[$row_title], $vars['rows'][$id]);
+    }
+    $vars['grouped'] = $grouped;
 }
 ?>
