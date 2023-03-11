@@ -164,9 +164,13 @@ header .region-navigation {
     color: var(--lightgreen);
 }
 
-#block-hauptnavigation li span::after {
+#block-hauptnavigation a.menuparent::after,
+#block-hauptnavigation span.menuparent::after {
+    display: inline-block;
     content: '⌵';
-    margin-left: 0.6em;
+    margin-left: 0.5em;
+    transform: translateY(-0.1em);
+    text-decoration: none;
 }
 
 #superfish-main li ul {

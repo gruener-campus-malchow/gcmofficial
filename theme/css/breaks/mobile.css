@@ -90,6 +90,10 @@ header .site-logo img {
     padding: 6vw 5%;
 }
 
+#block-hauptnavigation li a.menuparent {
+    text-decoration: none;
+}
+
 #block-hauptnavigation ul ul li {
     background-color: var(--green);
 }
