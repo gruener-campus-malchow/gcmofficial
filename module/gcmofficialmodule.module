@@ -27,22 +27,41 @@
 
  */
 
-function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-    try {
-     if ($form['#id'] == 'views-exposed-form-berichte-page-1') {
-       $form['created_wrapper']['created_op']['#options']['='] = t("am");
-       $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
-       $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
-       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
-       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("enthält alle");
-       $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
+function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+   try {
+      if ($form['#id'] == 'views-exposed-form-berichte-page-1') {
+         $form['created_wrapper']['created_op']['#options']['='] = t("am");
+         $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
+         $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
+         $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
+         $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("enthält alle");
+         $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
       }
-     $form['actions']['submit']['#value'] = t('Filter anwenden');
-    } catch (Exception $ex) {
-     $form['debug_info'] = [
-      '#type' => 'checkbox',
-      '#title' => t('DEBUG: Some error occured'),
-      '#required' => TRUE,
-     ];
-    }
+      $form['actions']['submit']['#value'] = t('Filter anwenden');
+   } catch (Exception $ex) {
+      $form['debug_info'] = [
+         '#type' => 'checkbox',
+         '#title' => t('DEBUG: Some error occured'),
+         '#required' => TRUE,
+      ];
+   }
+}
+
+function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+   $allowedRole = "administrator";
+   $roles = \Drupal::currentUser()->getRoles();
+   $allowed = in_array($allowedRole, $roles);
+   if (!$allowed) {
+      $form["title"]["widget"][0]["value"]["#attributes"]["readonly"] = "readonly";
+      array_push($form["title"]["#attributes"]["class"], "form-disabled");  // .form-disabled as used by (Core:)Seven -theme
+      $stufeDefault = $form["field_stufe"]["widget"]["#default_value"][0];
+      foreach (array_keys($form["field_stufe"]["widget"]["#options"]) as $key) {
+         if ($key != $stufeDefault) {
+            unset($form["field_stufe"]["widget"]["#options"][$key]);
+         }
+      }
+      array_push($form["field_stufe"]["#attributes"]["class"], "form-disabled");  // .form-disabled as used by (Core:)Seven -theme
+   }
 }
