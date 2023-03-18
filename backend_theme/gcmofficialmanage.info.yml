@@ -1,0 +1,9 @@
+name: GCMofficialManage
+type: theme
+description: 'Verwaltungs-Theme-Erweiterung für die Schulwebsite. Basiert auf Seven.'
+package: Other
+core_version_requirement: ^8 || ^9
+libraries:
+  - gcmofficialmanage/global-styling
+
+base theme: seven
