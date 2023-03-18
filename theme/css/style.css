@@ -49,12 +49,28 @@ input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
 .form-type-select:hover,
+.form-type-select:focus-within,
 .btn-like:hover {
     background-color: var(--green);
 }
 
+.form-type-select {
+    pointer-events: none;
+}
+
 select {
     border: none;
+    background-color: transparent;
+    width: 7em;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+select:focus {
+    background-color: inherit;
+}
+
+select option {
     background-color: inherit;
 }
 
@@ -276,6 +292,13 @@ button,
 .form-type-select::after {
     content: '⌵';
     color: white;
+    position: absolute;
+    margin-left: -1em;
+    transform: translateY(-0.1em);
+}
+
+.form-type-select select {
+    position: relative;
 }
 
 .form-type-select {
