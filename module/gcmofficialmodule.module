@@ -55,13 +55,13 @@ function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal
    $allowed = in_array($allowedRole, $roles);
    if (!$allowed) {
       $form["title"]["widget"][0]["value"]["#attributes"]["readonly"] = "readonly";
-      array_push($form["title"]["#attributes"]["class"], "form-disabled");  // .form-disabled as used by (Core:)Seven -theme
+      array_push($form["title"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
       $stufeDefault = $form["field_stufe"]["widget"]["#default_value"][0];
       foreach (array_keys($form["field_stufe"]["widget"]["#options"]) as $key) {
          if ($key != $stufeDefault) {
             unset($form["field_stufe"]["widget"]["#options"][$key]);
          }
       }
-      array_push($form["field_stufe"]["#attributes"]["class"], "form-disabled");  // .form-disabled as used by (Core:)Seven -theme
+      array_push($form["field_stufe"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
    }
 }
