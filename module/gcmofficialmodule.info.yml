@@ -1,5 +1,5 @@
-name: gcmofficial (module)
-description: Module to enhance the school website
+name: GCMofficialModule
+description: Modul zur Erweiterung der Schulwebsite
 type: module
 package: Custom
 core_version_requirement: ^8 || ^9
