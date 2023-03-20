@@ -199,6 +199,11 @@ ul.sf-menu::after {
     display: none;
 }
 
+.node__meta {
+    color: #666;
+    font-style: italic;
+}
+
 #main {
     margin-top: 10vw;
 }
