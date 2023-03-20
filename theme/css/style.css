@@ -12,7 +12,8 @@ header,
 #main,
 footer {
     width: 100%;
-    font-size: min(1em, 1.8vw);
+    font-size: max(min(1.05em, 1.8vw), 16px);
+    line-height: 1.5em;
 }
 
 header .region-branding,
@@ -119,13 +120,14 @@ header .region-branding {
 
 header .site-name {
     float: right;
-    margin-top: 5%;
+    margin-top: 6.5%;
 }
 
 .site-name a {
     color: black;
     text-decoration: none;
     font-family: Poppins;
+    letter-spacing: 0.03em;
 }
 
 header .site-name a {
@@ -240,7 +242,8 @@ ul.sf-menu::after {
 .aside-container aside {
     flex: 1;
     margin: 6em 0 0 3vw;
-    font-size: 0.7em;
+    font-size: 0.8em;
+    line-height: 1.3em;
     padding: 2.2em;
     height: min-content;
     background-color: var(--darkgreen);

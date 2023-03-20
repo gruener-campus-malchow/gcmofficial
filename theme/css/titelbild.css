@@ -31,6 +31,10 @@
     max-width: unset;
 }
 
+.field--name-body {
+    margin-top: 9em;
+}
+
 #main {
     margin-top: 0;
 }
@@ -41,8 +45,8 @@
     margin-top: 27vw;
 }
 
-.field--name-body {
-    margin-top: 9vw;
+#block-gcmofficial-page-title {
+    margin-top: calc(27vw + 1em);
 }
 
 .cssfile {
