@@ -27,10 +27,6 @@
     color: white;
 }
 
-#herobox a::before {
-    content: '⇨ ';
-}
-
 .kontakt-links {
     margin-top: 1em;
     display: flex;
