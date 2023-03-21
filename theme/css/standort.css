@@ -1,14 +1,17 @@
+.field--name-field-standort {
+    display: flex;
+    flex-direction: column;
+}
+
+.field--name-field-standort > .field__item {
+    margin: 2.5em 0;
+}
+
 .site img {
     width: 40%;
     height: auto !important;
     float: left;
     margin-right: 10%;
-}
-
-.site {
-    height: min-content;
-    min-height: 8.6em;
-    margin-bottom: max(10.5em, 19vw);
 }
 
 .site div:last-child {
