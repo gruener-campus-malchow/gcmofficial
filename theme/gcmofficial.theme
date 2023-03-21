@@ -1,20 +1,34 @@
 <?php
+
 /**
  * @param $vars
  */
 
-function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$vars) {
-    $view = $vars['view'];
-    $rows = $vars['rows'];
-    $grouped = [];
-    foreach ($rows as $id => $row) {
-      $row_title = $view->result[$id]->node_field_data_title; // get fachbereich of row
-      // add row to fachbereich group
-      if (!array_key_exists($row_title, $grouped)) {
-        $grouped[$row_title] = [];
-      }
-      array_push($grouped[$row_title], $vars['rows'][$id]);
+function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$vars)
+{
+  $view = $vars['view'];
+  $rows = $vars['rows'];
+  $grouped = [];
+  foreach ($rows as $id => $row) {
+    $row_title = $view->result[$id]->node_field_data_title; // get fachbereich of row
+    // add row to fachbereich group
+    if (!array_key_exists($row_title, $grouped)) {
+      $grouped[$row_title] = [];
     }
-    $vars['grouped'] = $grouped;
+    array_push($grouped[$row_title], $vars['rows'][$id]);
+  }
+  $vars['grouped'] = $grouped;
 }
-?>
+
+function gcmofficial_preprocess_responsive_image(&$variables)
+{
+  $eager_styles = [
+    'wide',
+  ];
+
+  // disables lazy loading of images with the image styles $eager_styles by setting the img element attribute "loading" to "eager"
+  // (Drupal loads every image lazily by default)
+  if (in_array($variables['responsive_image_style_id'], $eager_styles, TRUE)) {
+    $variables['img_element']['#attributes']['loading'] = 'eager';
+  }
+}
