@@ -78,18 +78,3 @@
     width: unset !important;
     direction: ltr;
 }
-
-@media all and (max-width: 500px) {
-    .aside-container div:first-child {
-        margin-top: 22vw;
-    }
-
-    .stufen {
-        max-width: unset;
-    }
-
-    .field--name-field-bildergalerie .field__item {
-        margin: 2vw;
-    }
-
-}

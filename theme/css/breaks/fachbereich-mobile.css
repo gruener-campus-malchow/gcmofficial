@@ -3,9 +3,12 @@
   height: calc(40vh - 21vw) !important;
 }
 
-#block-gcmofficial-page-title,
 #block-gcmofficial-breadcrumbs {
   margin-top: calc(40vh - 19vw);
+}
+
+#block-gcmofficial-page-title {
+  margin-top: calc(40vh - 19vw + 1em);
 }
 
 .stufen {
@@ -20,4 +23,19 @@
 
 .stufen a:nth-child(1) {
   margin-top: 0;
+}
+
+@media all and (max-width: 500px) {
+  .aside-container div:first-child {
+    margin-top: 22vw;
+  }
+
+  .stufen {
+    max-width: unset;
+  }
+
+  .field--name-field-bildergalerie .field__item {
+    margin: 2vw;
+  }
+
 }

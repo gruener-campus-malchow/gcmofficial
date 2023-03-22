@@ -87,6 +87,7 @@ h4,
 h5,
 .field__label {
     color: var(--blue);
+    line-height: 1em;
 }
 
 .field__label {
