@@ -6,6 +6,7 @@
     --green: #75a73a;
     --lightgreen: #ecffc7;
     --blue: #285dbf;
+    --lightblue: #dde7f8;
 }
 
 header,
@@ -340,6 +341,30 @@ button,
     color: var(--blue);
 }
 
+.views-field-created {
+  color: #666;
+  font-style: italic;
+}
+
+.views-field-field-stufe-tag a,
+.views-field-field-faecher-tag a,
+.field--name-field-stufe-tag a,
+.field--name-field-faecher-tag a {
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  color: black;
+  font-weight: bold;
+  padding: 0.5em 0.8em;
+  line-height: 2.5em;
+  border-radius: 2em;
+  font-size: 0.8em
+}
+
+.views-field-field-faecher-tag a,
+.field--name-field-faecher-tag a {
+  background-color: var(--lightblue);
+}
+
 .feed-icon {
     margin-top: 2em;
     padding-top: 0.1em;
@@ -350,6 +375,17 @@ button,
 }
 
 /* End Ansichten */
+
+.field--name-field-stufe-tag .field__item,
+.field--name-field-faecher-tag .field__item {
+    display: inline;
+}
+
+.field--name-field-stufe-tag {
+    float: left;
+    margin-right: 1em;
+}
+
 
 footer {
     margin-top: 5vw;
