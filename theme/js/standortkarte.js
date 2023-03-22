@@ -7,11 +7,11 @@ window.onload = () => {
     var HG = [52.57212, 13.48466, "Hauptgebäude"];
     var SpH = [52.55679, 13.48977, "Sportplatz Hansastr."];
     var TH4 = [52.57204, 13.50318, "Turnhalle FG4"];
-	
+
     var markerFG1 = L.marker([FG1[0], FG1[1]]).addTo(map);
     var markerFG2 = L.marker([FG2[0], FG2[1]]).addTo(map);
     var markerFG3 = L.marker([FG3[0], FG3[1]]).addTo(map);
-    var markerHG = L.marker([HG[0], HG[1]],{title: HG[2]}).addTo(map);
+    var markerHG = L.marker([HG[0], HG[1]], { title: HG[2] }).addTo(map);
     var markerSpH = L.marker([SpH[0], SpH[1]]).addTo(map);
     var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
     
@@ -26,7 +26,7 @@ window.onload = () => {
         if (scrollToMap) {
             document.getElementById("map").scrollIntoView();
         }
-        marker.bindPopup("<b>" + site[2] + "</b><br><a href=https://www.openstreetmap.org/directions?from=&to=" + site[0] + "%2C" + site[1] + "&route=%3B#map=16/" + site[0] + "/" + site[1] + ">Route</a>").openPopup();
+        marker.bindPopup("<b>" + site[2] + "</b><br><p>Route: <a href=https://www.openstreetmap.org/directions?from=&to=" + site[0] + "%2C" + site[1] + "&route=%3B#map=16/" + site[0] + "/" + site[1] + ">OSM</a> / <a href='https://www.google.com/maps/dir//" + site[0] + "," + site[1] + "'>Google Maps</a></p>").openPopup();
     }
     
     btnFG1.onclick = () => {
