@@ -46,25 +46,25 @@ function gcmofficial_preprocess_responsive_image(&$variables)
 }
 
 function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-	// Add a checkbox to toggle the breadcrumb trail.
+	// Add fields to change Fächer in Stufen
 	$form['grundstufe_faecher'] = [
 		'#type' => 'textfield',
 		'#title' => t('Fächer der Grundstufe'),
 		'#default_value' => theme_get_setting('grundstufe_faecher'),
 		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-  ];
-  $form['mittelstufe_faecher'] = [
+	];
+	$form['mittelstufe_faecher'] = [
 		'#type' => 'textfield',
 		'#title' => t('Fächer der Mittelstufe'),
 		'#default_value' => theme_get_setting('mittelstufe_faecher'),
 		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-  ];
-  $form['oberstufe_faecher'] = [
+	];
+	$form['oberstufe_faecher'] = [
 		'#type' => 'textfield',
 		'#title' => t('Fächer der Oberstufe'),
 		'#default_value' => theme_get_setting('oberstufe_faecher'),
 		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-  ];
+	];
 }
 function gcmofficial_preprocess_node__fachbereich(&$variables) {
 	$variables['grundstufe_faecher'] = theme_get_setting('grundstufe_faecher');
