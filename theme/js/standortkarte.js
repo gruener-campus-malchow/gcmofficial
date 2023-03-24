@@ -31,7 +31,9 @@ window.onload = () => {
         }
         marker.bindPopup("<b>" + site[2] + "</b><br><a href=https://www.openstreetmap.org/directions?from=&to=" + site[0] + "%2C" + site[1] + "&route=%3B#map=16/" + site[0] + "/" + site[1] + ">Route</a>").openPopup();
     }
-    
+    function mark(mark_dings, gebaeude){
+        markSite(mark_dings, gebaeude, true);
+    }
     btnFG1.onclick = () => {
         mark(markerFG1, FG1);
     };
@@ -50,9 +52,6 @@ window.onload = () => {
     btnTH4.onclick = () => {
         mark(markerTH4, TH4);
     };
-    function mark(mark_dings, gebaeude){
-        markSite(mark_dings, gebaeude, true);
-    }
     markerFG1.on("mousedown", markSite(markerFG1, FG1, false));
     markerFG2.on("mousedown", markSite(markerFG2, FG2, false));
     markerFG3.on("mousedown", markSite(markerFG3, FG3, false));
