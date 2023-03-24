@@ -1,6 +1,13 @@
-﻿{{ attach_library('gcmofficial/fachbereich') }}
+﻿{#
+ Variables provided by custom theme:
+ grundstufe_faecher: list of subjects in Grundstufe
+ 
+ @see gcmofficial_preprocess_node__fachbereich()
+#}
+
+
+{{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
-{% set faecherInGrundstufe = ['Mathematik', 'Deutsch', 'Englisch', 'Musik', 'Sport'] %}
 {% set faecherNurOberstufe = ['Psychologie', 'Philosophie'] %}
 {% set faecherNurMittelstufe = ['Französisch', 'Willkommensklasse'] %}
 <div id="titelbild">
@@ -9,7 +16,7 @@
 <div class="aside-container">
     <div>
         <div class="stufen">
-            {% if node.label in faecherInGrundstufe %}
+            {% if node.label == grundstufe_faecher %}
             <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe" %} id="currentgrade" {% endif %}
                 href="/dev/gcmofficial/grundstufe/fach/{{ node.label }}">Grundstufe</a>
             {% endif %}
