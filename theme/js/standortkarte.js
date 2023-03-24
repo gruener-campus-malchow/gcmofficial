@@ -18,10 +18,15 @@ window.onload = () => {
     for (i in gebaeude_divs) {
         var node = gebaeude_divs[i].firstChild.lastChild;
         var buttonel = document.createElement('button');
+        var buttoncop = document.createElement('button');
         buttonel.setAttribute("id", "btn" + gebaeude[i]);
+        buttoncop.setAttribute("id", "btncop" + gebaeude[i]);
         var buttontext = document.TextNode("Auf Karte markieren");
+        var buttoncoptext = document.TextNode("Adresse kopieren");
         buttonel.appendChild(buttontext);
+        buttoncop.appendChild(buttoncoptext);
         node.appendChild(buttonel);
+        node.appendChild(buttoncop);
     }
     let btnFG1 = document.getElementById("btnFG1");
     let btnFG2 = document.getElementById("btnFG2");
@@ -29,6 +34,12 @@ window.onload = () => {
     let btnHG = document.getElementById("btnHG");
     let btnSpH = document.getElementById("btnSpH");
     let btnTH4 = document.getElementById("btnTH4");
+    let btncopFG1 = document.getElementById("btncopFG1");
+    let btncopFG2 = document.getElementById("btncopFG2");
+    let btncopFG3 = document.getElementById("btncopFG3");
+    let btncopHG = document.getElementById("btncopHG");
+    let btncopSpH = document.getElementById("btncopSpH");
+    let btncopTH4 = document.getElementById("btncopTH4");
     function markSite(marker, site, scrollToMap = true) {
         if (scrollToMap) {
             document.getElementById("map").scrollIntoView();
@@ -37,6 +48,14 @@ window.onload = () => {
     }
     function mark(mark_dings, gebaeude){
         markSite(mark_dings, gebaeude, true);
+    }
+    function docopy(gebaeude){
+        // down below is experimental, not the way its supposed to be later on
+        var copyText = gebaeude[2];
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+        alert("Adresse "+gebaeude[2]+" kopiert.");
     }
     btnFG1.onclick = () => {
         mark(markerFG1, FG1);
@@ -55,6 +74,24 @@ window.onload = () => {
     };
     btnTH4.onclick = () => {
         mark(markerTH4, TH4);
+    };
+    btncopFG1.onclick = () => {
+        docopy(FGI);
+    };
+    btncopFG2.onclick = () => {
+        docopy(FG2);
+    };
+    btncopFG3.onclick = () => {
+        docopy(FG3);
+    };
+    btncopHG.onclick = () => {
+        docopy(HG);
+    };
+    btncopSpH.onclick = () => {
+        docopy(SpH);
+    };
+    btncopTH4.onclick = () => {
+        docopy(TH4);
     };
     markerFG1.on("mousedown", markSite(markerFG1, FG1, false));
     markerFG2.on("mousedown", markSite(markerFG2, FG2, false));
