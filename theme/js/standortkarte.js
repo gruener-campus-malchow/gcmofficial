@@ -1,7 +1,7 @@
 window.onload = () => {
 
     const map = L.map('map').setView([52.5670, 13.4950], 14);
-    const gebaeude_divs = document.querySelectorAll(".site paragraph paragraph--type--standort paragraph--view-mode--default");
+    const gebaeude_divs = document.querySelectorAll(".field__item");
     const gebaeude = ["FG1","FG2","FG3","HG","SpH","TH4"];
     var FG1 = [52.56992, 13.49212, "Fontane Gebäude 1"];
     var FG2 = [52.56921, 13.49181, "Fontane Gebäude 2"];
@@ -16,8 +16,9 @@ window.onload = () => {
     var markerSpH = L.marker([SpH[0], SpH[1]]).addTo(map);
     var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
     for (i in gebaeude_divs) {
+        var node = i[gebaeude_divs].firstChild.lastChild.firstChild;
         buttonhtml = '<button id="btn' + gebaeude[i] + '">Auf Karte markieren</button>';
-        i[gebaeude_divs].innerHTML += buttonhtml;
+        node.appendChild(buttonhtml);
     }
     let btnFG1 = document.getElementById("btnFG1");
     let btnFG2 = document.getElementById("btnFG2");
