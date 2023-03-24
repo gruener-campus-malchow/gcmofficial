@@ -1,7 +1,7 @@
 window.onload = () => {
 
     const map = L.map('map').setView([52.5670, 13.4950], 14);
-    const gebaeude_divs = document.querySelectorAll(".field__item");
+    const gebaeude_divs = document.querySelectorAll(".site");
     const gebaeude = ["FG1","FG2","FG3","HG","SpH","TH4"];
     var FG1 = [52.56992, 13.49212, "Fontane Gebäude 1"];
     var FG2 = [52.56921, 13.49181, "Fontane Gebäude 2"];
