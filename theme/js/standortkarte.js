@@ -17,8 +17,11 @@ window.onload = () => {
     var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
     for (i in gebaeude_divs) {
         var node = gebaeude_divs[i].firstChild.lastChild;
-        buttonhtml = '<button id="btn' + gebaeude[i] + '">Auf Karte markieren</button>';
-        node.appendChild(buttonhtml);
+        var buttonel = document.createElement('button');
+        buttonel.setAttribute("id", "btn" + gebaeude[i]);
+        var buttontext = document.TextNode("Auf Karte markieren");
+        buttonel.appendChild(buttontext);
+        node.appendChild(buttonel);
     }
     let btnFG1 = document.getElementById("btnFG1");
     let btnFG2 = document.getElementById("btnFG2");
