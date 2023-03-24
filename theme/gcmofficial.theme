@@ -4,6 +4,18 @@
  * @param $vars
  */
 
+function gcmofficial_preprocess_paragraph__standort(&$variables)
+{
+  $paragraph = $variables['paragraph'];
+
+  if (!$paragraph->field_roomnumber_radio->isEmpty()) {
+    $roomnumbers = $paragraph->field_roomnumber_radio->value;
+    if (!empty($roomnumbers)) {
+      $variables['roomnumbers'] = $roomnumbers;
+    }
+  }
+}
+
 function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$vars)
 {
   $view = $vars['view'];
@@ -31,4 +43,31 @@ function gcmofficial_preprocess_responsive_image(&$variables)
   if (in_array($variables['responsive_image_style_id'], $eager_styles, TRUE)) {
     $variables['img_element']['#attributes']['loading'] = 'eager';
   }
+}
+
+function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	// Add a checkbox to toggle the breadcrumb trail.
+	$form['grundstufe_faecher'] = [
+		'#type' => 'textfield',
+		'#title' => t('Fächer der Grundstufe'),
+		'#default_value' => theme_get_setting('grundstufe_faecher'),
+		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+  $form['mittelstufe_faecher'] = [
+		'#type' => 'textfield',
+		'#title' => t('Fächer der Mittelstufe'),
+		'#default_value' => theme_get_setting('mittelstufe_faecher'),
+		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+  $form['oberstufe_faecher'] = [
+		'#type' => 'textfield',
+		'#title' => t('Fächer der Oberstufe'),
+		'#default_value' => theme_get_setting('oberstufe_faecher'),
+		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+}
+function gcmofficial_preprocess_node__fachbereich(&$variables) {
+	$variables['grundstufe_faecher'] = theme_get_setting('grundstufe_faecher');
+	$variables['mittelstufe_faecher'] = theme_get_setting('mittelstufe_faecher');
+	$variables['oberstufe_faecher'] = theme_get_setting('oberstufe_faecher');
 }
