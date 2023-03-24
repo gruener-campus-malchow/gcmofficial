@@ -16,7 +16,7 @@ window.onload = () => {
     var markerSpH = L.marker([SpH[0], SpH[1]]).addTo(map);
     var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
     for (i in gebaeude_divs) {
-        var node = gebaeude_divs[i].firstChild.lastChild.firstChild;
+        var node = gebaeude_divs[i].firstChild.lastChild;
         buttonhtml = '<button id="btn' + gebaeude[i] + '">Auf Karte markieren</button>';
         node.appendChild(buttonhtml);
     }
