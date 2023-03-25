@@ -1,14 +1,5 @@
 /* general section */
 
-:root {
-    --darkgreen: #507f1a;
-    --darkgreen-transparent: #507f1add;
-    --green: #75a73a;
-    --lightgreen: #ecffc7;
-    --blue: #285dbf;
-    --lightblue: #dde7f8;
-}
-
 header,
 #main,
 footer {

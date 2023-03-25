@@ -84,3 +84,15 @@ function gcmofficial_preprocess_node__fachbereich(&$variables)
   $variables['mittelstufe_faecher'] = theme_get_setting('mittelstufe_faecher');
   $variables['oberstufe_faecher'] = theme_get_setting('oberstufe_faecher');
 }
+
+// -> every page
+function gcmofficial_preprocess_page(&$variables)
+{
+  // set theme colors to be added to inline CSS by Twig template (page.html.twig)
+  $variables['themecolor_darkgreen'] = "#507f1a";
+  $variables['themecolor_darkgreen_transparent'] = "#507f1add";
+  $variables['themecolor_green'] = "#75a73a";
+  $variables['themecolor_lightgreen'] = "#ecffc7";
+  $variables['themecolor_blue'] = "#285dbf";
+  $variables['themecolor_lightblue'] = "#dde7f8";
+}
