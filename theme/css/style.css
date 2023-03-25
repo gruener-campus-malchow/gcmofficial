@@ -356,6 +356,28 @@ button,
   background-color: var(--lightblue);
 }
 
+.view-fachbereiche .view-content a {
+  display: block;
+  border: 2px solid var(--darkgreen);
+  color: var(--darkgreen);
+  border-radius: 0.2rem;
+  text-decoration: none;
+  padding: 0.5em 0;
+  width: 100%;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.view-fachbereiche .view-content a:hover, .view-fachbereiche .view-content a:active {
+  border-color: var(--green);
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.view-fachbereiche .views-row {
+  margin-bottom: 3em;
+}
+
 .feed-icon {
     margin-top: 2em;
     padding-top: 0.1em;
