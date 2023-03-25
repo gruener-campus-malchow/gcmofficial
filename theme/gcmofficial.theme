@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @param $vars
+ * @param $variables
  */
 
 // -> content type "standort", checks if there should be an explanation of roomnumbers
@@ -19,10 +19,10 @@ function gcmofficial_preprocess_paragraph__standort(&$variables)
 }
 
 // -> view fachbereiche ("Fachbereichuebersicht")
-function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$vars)
+function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$variables)
 {
-  $view = $vars['view'];
-  $rows = $vars['rows'];
+  $view = $variables['view'];
+  $rows = $variables['rows'];
   $grouped = [];
   // groups view rows (= every fachbereich page) by fachbereich title
   // ([ Informatik-Mittelstufe, Informatik-Oberstufe, Mathematik-Grundstufe ] -> [ "Informatik"=>[Informatik-Mittelstufe, Informatik-Oberstufe], "Mathematik"=>[Mathematik-Grundstufe] ])
@@ -32,9 +32,9 @@ function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$vars)
     if (!array_key_exists($row_title, $grouped)) {
       $grouped[$row_title] = [];
     }
-    array_push($grouped[$row_title], $vars['rows'][$id]);
+    array_push($grouped[$row_title], $variables['rows'][$id]);
   }
-  $vars['grouped'] = $grouped; // add associative array to variables to be accessed by by Twig template (view-view-unformatted--fachbereiche.html.twig)
+  $variables['grouped'] = $grouped; // add associative array to variables to be accessed by by Twig template (view-view-unformatted--fachbereiche.html.twig)
 }
 
 // administered through Responsive Image module
@@ -52,29 +52,35 @@ function gcmofficial_preprocess_responsive_image(&$variables)
   }
 }
 
-function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-	// Add fields to change Fächer in Stufen
-	$form['grundstufe_faecher'] = [
-		'#type' => 'textfield',
-		'#title' => t('Fächer der Grundstufe'),
-		'#default_value' => theme_get_setting('grundstufe_faecher'),
-		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-	];
-	$form['mittelstufe_faecher'] = [
-		'#type' => 'textfield',
-		'#title' => t('Fächer der Mittelstufe'),
-		'#default_value' => theme_get_setting('mittelstufe_faecher'),
-		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-	];
-	$form['oberstufe_faecher'] = [
-		'#type' => 'textfield',
-		'#title' => t('Fächer der Oberstufe'),
-		'#default_value' => theme_get_setting('oberstufe_faecher'),
-		'#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-	];
+// change settings of GCMofficialStandard (Drupal UI -> Manage -> Design / Theme -> GCMofficialStandard -> settings)
+function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  // add fields to change subject conditions in stufen and save to theme settings
+  $form['grundstufe_faecher'] = [
+    '#type' => 'textfield',
+    '#title' => t('Fächer der Grundstufe'),
+    '#default_value' => theme_get_setting('grundstufe_faecher'),
+    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+  $form['mittelstufe_faecher'] = [
+    '#type' => 'textfield',
+    '#title' => t('Fächer der Mittelstufe'),
+    '#default_value' => theme_get_setting('mittelstufe_faecher'),
+    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+  $form['oberstufe_faecher'] = [
+    '#type' => 'textfield',
+    '#title' => t('Fächer der Oberstufe'),
+    '#default_value' => theme_get_setting('oberstufe_faecher'),
+    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
 }
-function gcmofficial_preprocess_node__fachbereich(&$variables) {
-	$variables['grundstufe_faecher'] = theme_get_setting('grundstufe_faecher');
-	$variables['mittelstufe_faecher'] = theme_get_setting('mittelstufe_faecher');
-	$variables['oberstufe_faecher'] = theme_get_setting('oberstufe_faecher');
+
+// -> all pages of content type fachbereich (UI name: Fach)
+function gcmofficial_preprocess_node__fachbereich(&$variables)
+{
+  // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
+  $variables['grundstufe_faecher'] = theme_get_setting('grundstufe_faecher');
+  $variables['mittelstufe_faecher'] = theme_get_setting('mittelstufe_faecher');
+  $variables['oberstufe_faecher'] = theme_get_setting('oberstufe_faecher');
 }
