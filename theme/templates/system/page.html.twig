@@ -1,19 +1,4 @@
-﻿{#
-/**
- * Variables available through custom theme:
- * themecolor
- *           _darkgreen
- *           _darkgreen_transparent
- *           _green
- *           _lightgreen
- *           _blue
- *           _lightblue
- *
- * @see gcmofficial_preprocess_page()
- */
-#}
-
-<header aria-label="Site header">
+﻿<header aria-label="Site header">
    {{ page.branding }}
    {{ page.navigation }}
 </header>
@@ -23,13 +8,3 @@
 <footer aria-label="Site footer">
    {{ page.footer }}
 </footer>
-<style>
-:root {
-    --darkgreen: {{ themecolor_darkgreen }};
-    --darkgreen-transparent: {{ themecolor_darkgreen_transparent }};
-    --green: {{ themecolor_green }};
-    --lightgreen: {{ themecolor_lightgreen }};
-    --blue: {{ themecolor_blue }};
-    --lightblue: {{ themecolor_lightblue }};
-}
-</style>
