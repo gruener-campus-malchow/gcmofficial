@@ -21,10 +21,8 @@ window.onload = () => {
         var buttoncop = document.createElement('button');
         buttonel.setAttribute("id", "btn" + gebaeude[i]);
         buttoncop.setAttribute("id", "btncop" + gebaeude[i]);
-        var buttontext = document.TextNode("Auf Karte markieren");
-        var buttoncoptext = document.TextNode("Adresse kopieren");
-        buttonel.appendChild(buttontext);
-        buttoncop.appendChild(buttoncoptext);
+        buttonel.innerText = "Auf Karte markieren";
+        buttoncop.innerText = "Adresse kopieren";
         node.appendChild(buttonel);
         node.appendChild(buttoncop);
     }
