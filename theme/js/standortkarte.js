@@ -16,7 +16,7 @@ window.onload = () => {
     var markerSpH = L.marker([SpH[0], SpH[1]]).addTo(map);
     var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
     for (i in gebaeude_divs) {
-        var node = gebaeude_divs[i].getElementsByTagName("div")[2].firstChild;
+        var node = gebaeude_divs[i].getElementsByTagName("div")[2];
         var buttonel = document.createElement('button');
         var buttoncop = document.createElement('button');
         buttonel.setAttribute("id", "btn" + gebaeude[i]);
