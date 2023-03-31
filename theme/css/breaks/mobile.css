@@ -12,7 +12,7 @@ footer .region-footer {
 }
 
 header .region-branding {
-   margin: 0;
+    margin: 0;
 }
 
 .btn-like {
@@ -120,6 +120,7 @@ header .site-logo img {
 }
 
 #block-hauptnavigation ul ul li {
+    background-color: green;
     background-color: var(--green);
 }
 
@@ -137,6 +138,7 @@ header .site-logo img {
     position: absolute;
     margin-top: -0.2vw;
     background-color: white;
+    color: darkgreen;
     color: var(--darkgreen);
     padding: 0.4vw 0 0.4vw 0;
     width: 16%;

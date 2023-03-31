@@ -1,4 +1,12 @@
 /* general section */
+:root {
+    --darkgreen: darkgreen;
+    --darkgreen-transparent: darkgreen;
+    --green: green;
+    --lightgreen: palegreen;
+    --blue: royalblue;
+    --lightblue: powderblue;
+}
 
 header,
 #main,
@@ -31,6 +39,7 @@ input[type=submit],
 button,
 .form-type-select,
 .btn-like {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     border: none;
     color: white;
@@ -44,6 +53,7 @@ button:hover,
 .form-type-select:hover,
 .form-type-select:focus-within,
 .btn-like:hover {
+    background-color: green;
     background-color: var(--green);
 }
 
@@ -78,6 +88,7 @@ h3,
 h4,
 h5,
 .field__label {
+    color: royalblue;
     color: var(--blue);
     line-height: 1em;
 }
@@ -88,10 +99,12 @@ h5,
 }
 
 a {
+    color: green;
     color: var(--green);
 }
 
 a:visited {
+    color: darkgreen;
     color: var(--darkgreen);
 }
 
@@ -143,10 +156,12 @@ header .site-logo img {
 
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
+    border: 1.5px solid darkgreen;
     border: 1.5px solid var(--darkgreen);
 }
 
 header .region-navigation {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
 }
 
@@ -162,11 +177,13 @@ header .region-navigation {
 }
 
 #block-hauptnavigation li {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     transition: background-color 0.2s;
 }
 
 #block-hauptnavigation li:hover {
+    background-color: green;
     background-color: var(--green);
 }
 
@@ -177,6 +194,7 @@ header .region-navigation {
 }
 
 #block-hauptnavigation .is-active {
+    color: palegreen;
     color: var(--lightgreen);
 }
 
@@ -249,6 +267,7 @@ ul.sf-menu::after {
     line-height: 1.3em;
     padding: 2.2em;
     height: min-content;
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     color: white;
 }
@@ -263,6 +282,7 @@ button,
 }
 
 .aside-container aside a {
+    color: palegreen;
     color: var(--lightgreen);
 }
 
@@ -272,6 +292,7 @@ button,
 
 .aside-container aside .btn-like {
     background-color: white;
+    color: darkgreen;
     color: var(--darkgreen);
 }
 
@@ -280,6 +301,7 @@ button,
 }
 
 .aside-container aside a.btn-like:visited {
+    color: darkgreen;
     color: var(--darkgreen);
 }
 
@@ -308,6 +330,7 @@ button,
 }
 
 .form-type-select {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     padding-right: 1vw;
 }
@@ -329,53 +352,61 @@ button,
 }
 
 .view-content a {
+    color: royalblue;
     color: var(--blue);
 }
 
 .views-field-created {
-  color: #666;
-  font-style: italic;
+    color: #666;
+    font-style: italic;
 }
 
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
 .field--name-field-stufe-tag a,
 .field--name-field-faecher-tag a {
-  text-decoration: none;
-  background-color: var(--lightgreen);
-  color: black;
-  font-weight: bold;
-  padding: 0.5em 0.8em;
-  line-height: 2.5em;
-  border-radius: 2em;
-  font-size: 0.8em
+    text-decoration: none;
+    background-color: palegreen;
+    background-color: var(--lightgreen);
+    color: black;
+    font-weight: bold;
+    padding: 0.5em 0.8em;
+    line-height: 2.5em;
+    border-radius: 2em;
+    font-size: 0.8em
 }
 
 .views-field-field-faecher-tag a,
 .field--name-field-faecher-tag a {
-  background-color: var(--lightblue);
+    background-color: powderblue;
+    background-color: var(--lightblue);
 }
 
 .view-fachbereiche .view-content a {
-  display: block;
-  border: 2px solid var(--darkgreen);
-  color: var(--darkgreen);
-  border-radius: 0.2rem;
-  text-decoration: none;
-  padding: 0.5em 0;
-  width: 100%;
-  margin-bottom: 0.5em;
-  text-align: center;
+    display: block;
+    border: 2px solid darkgreen;
+    border: 2px solid var(--darkgreen);
+    color: darkgreen;
+    color: var(--darkgreen);
+    border-radius: 0.2rem;
+    text-decoration: none;
+    padding: 0.5em 0;
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
-.view-fachbereiche .view-content a:hover, .view-fachbereiche .view-content a:active {
-  border-color: var(--green);
-  color: var(--green);
-  text-decoration: underline;
+.view-fachbereiche .view-content a:hover,
+.view-fachbereiche .view-content a:active {
+    border-color: green;
+    border-color: var(--green);
+    color: green;
+    color: var(--green);
+    text-decoration: underline;
 }
 
 .view-fachbereiche .views-row {
-  margin-bottom: 3em;
+    margin-bottom: 3em;
 }
 
 .feed-icon {

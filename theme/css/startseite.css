@@ -14,6 +14,7 @@
     top: min(max(30vh, 16vw), 30vw);
     width: fit-content;
     height: fit-content;
+    background-color: darkgreen;
     background-color: var(--darkgreen-transparent);
     padding: 1rem 1.6rem;
     color: white;
