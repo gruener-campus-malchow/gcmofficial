@@ -65,3 +65,15 @@ function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal
       array_push($form["field_stufe"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
    }
 }
+
+// -> every node if rendered
+function gcmofficialmodule_node_view(array &$build, $entity, $display, $view_mode)
+{
+   // after the node is processed and rendered
+   $build['#post_render'][] = function ($html, array $elements) {
+      // wraps every table in a wrapper div with the class "table-wrapper"
+      $replaced = str_replace('<table', '<div class="table-wrapper"><table', $html);
+      $replaced = str_replace('</table>', '</table></div>', $replaced);
+      return $replaced;
+   };
+}
