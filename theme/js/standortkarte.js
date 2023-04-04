@@ -3,6 +3,7 @@ window.onload = () => {
     const map = L.map('map').setView([52.5670, 13.4950], 14);
     const gebaeude_divs = document.querySelectorAll(".site");
     const gebaeude = ["FG1","FG2","FG3","HG","SpH","TH4"];
+    const gebaeude_sort = ["HG","FG1","FG2","FG3","TH4","SpH"];
     var FG1 = [52.56992, 13.49212, "Fontane Gebäude 1"];
     var FG2 = [52.56921, 13.49181, "Fontane Gebäude 2"];
     var FG3 = [52.56872, 13.49251, "Fontane Gebäude 3"];
@@ -19,8 +20,8 @@ window.onload = () => {
         var node = gebaeude_divs[i].getElementsByTagName("div")[2];
         var buttonel = document.createElement('button');
         var buttoncop = document.createElement('button');
-        buttonel.setAttribute("id", "btn" + gebaeude[i]);
-        buttoncop.setAttribute("id", "btncop" + gebaeude[i]);
+        buttonel.setAttribute("id", "btn" + gebaeude_sort[i]);
+        buttoncop.setAttribute("id", "btncop" + gebaeude_sort[i]);
         buttonel.innerText = "Auf Karte markieren";
         buttoncop.innerText = "Adresse kopieren";
         node.appendChild(buttonel);
@@ -47,13 +48,11 @@ window.onload = () => {
     function mark(mark_dings, gebaeude){
         markSite(mark_dings, gebaeude, true);
     }
-    function docopy(gebaeude){
+    function docopy(gebaeude_forcop){
         // down below is experimental, not the way its supposed to be later on
-        var copyText = gebaeude[2];
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(copyText.value);
-        alert("Adresse "+gebaeude[2]+" kopiert.");
+        var copyText = gebaeude_forcop[2];
+        navigator.clipboard.writeText(copyText);
+        alert("Adresse "+gebaeude_forcop[2]+" kopiert.");
     }
     btnFG1.onclick = () => {
         mark(markerFG1, FG1);
