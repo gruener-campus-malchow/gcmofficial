@@ -3,12 +3,12 @@ window.onload = () => {
     const map = L.map('map').setView([52.5670, 13.4950], 14);
     const gebaeude_divs = document.querySelectorAll(".site");
     const gebaeude_sort = ["HG", "FG1", "FG2", "FG3", "TH4", "SpH"];
-    var FG1 = [52.56992, 13.49212, "Fontane Gebäude 1"];
-    var FG2 = [52.56921, 13.49181, "Fontane Gebäude 2"];
-    var FG3 = [52.56872, 13.49251, "Fontane Gebäude 3"];
-    var HG = [52.57212, 13.48466, "Hauptgebäude"];
-    var SpH = [52.55679, 13.48977, "Sportplatz Hansastr."];
-    var TH4 = [52.57204, 13.50318, "Turnhalle FG4"];
+    var FG1 = [52.56992, 13.49212, "Fontane Gebäude 1","Doberaner Str. 58, 13051 Berlin"];
+    var FG2 = [52.56921, 13.49181, "Fontane Gebäude 2","Doberaner Str. 55, 13051 Berlin"];
+    var FG3 = [52.56872, 13.49251, "Fontane Gebäude 3","Doberaner Str. 53, 13051 Berlin"];
+    var HG = [52.57212, 13.48466, "Hauptgebäude","Malchower Ch 2, 13051 Berlin"];
+    var SpH = [52.55679, 13.48977, "Sportplatz Hansastr.","Hansastraße 190, 13088 Berlin"];
+    var TH4 = [52.57204, 13.50318, "Turnhalle FG4","Ribnitzer Str. 1, 13051 Berlin"];
 
     var markerFG1 = L.marker([FG1[0], FG1[1]]).addTo(map);
     var markerFG2 = L.marker([FG2[0], FG2[1]]).addTo(map);
@@ -56,7 +56,7 @@ window.onload = () => {
 
     function docopy(gebaeude_forcop) {
         // down below is experimental, not the way its supposed to be later on
-        var copyText = gebaeude_forcop[2];
+        var copyText = gebaeude_forcop[3];
         navigator.clipboard.writeText(copyText).then(
             () => {
                 // successful
