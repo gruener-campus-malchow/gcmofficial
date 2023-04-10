@@ -389,8 +389,8 @@ button,
 
 .view-fachbereiche .view-content a {
     display: block;
-    border: 2px solid darkgreen;
-    border: 2px solid var(--darkgreen);
+    box-shadow: 0 0 0 2px darkgreen inset;
+    box-shadow: 0 0 0 2px var(--darkgreen) inset;
     color: darkgreen;
     color: var(--darkgreen);
     border-radius: 0.2rem;
@@ -403,8 +403,8 @@ button,
 
 .view-fachbereiche .view-content a:hover,
 .view-fachbereiche .view-content a:active {
-    border-color: green;
-    border-color: var(--green);
+    box-shadow: 0 0 0 1.5px green inset;
+    box-shadow: 0 0 0 1.5px var(--green) inset;
     color: green;
     color: var(--green);
     text-decoration: underline;
