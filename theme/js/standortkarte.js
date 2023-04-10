@@ -88,7 +88,7 @@ window.onload = () => {
         markSite(markerTH4, TH4);
     };
     btncopFG1.onclick = () => {
-        docopy(FGI);
+        docopy(FG1);
     };
     btncopFG2.onclick = () => {
         docopy(FG2);
