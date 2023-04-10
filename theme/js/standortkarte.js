@@ -57,8 +57,16 @@ window.onload = () => {
     function docopy(gebaeude_forcop) {
         // down below is experimental, not the way its supposed to be later on
         var copyText = gebaeude_forcop[2];
-        navigator.clipboard.writeText(copyText);
-        alert("Adresse "+gebaeude_forcop[2]+" kopiert.");
+        navigator.clipboard.writeText(copyText).then(
+            () => {
+                // successful
+                alert("Adresse " + gebaeude_forcop[2] + " kopiert.");
+            },
+            () => {
+                // failed
+                alert("Die Adresse konnte nicht kopiert werden.");
+            }
+        );
     }
 
     btnFG1.onclick = () => {
