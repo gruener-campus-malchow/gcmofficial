@@ -60,7 +60,7 @@ window.onload = () => {
         navigator.clipboard.writeText(copyText).then(
             () => {
                 // successful
-                alert("Adresse " + gebaeude_forcop[2] + " kopiert.");
+                alert("Adresse " + gebaeude_forcop[3] + " kopiert.");
             },
             () => {
                 // failed
