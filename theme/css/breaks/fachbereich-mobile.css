@@ -13,9 +13,6 @@
   margin-top: calc(40vh - 19vw + 3em);
 }
 
-.aside-container div:first-child {
-  margin-top: 2em;
-}
 
 .stufen {
   flex-direction: column;
@@ -31,9 +28,13 @@
   margin-top: 0;
 }
 
+.aside-container div:first-child {
+  margin-top: calc(15vw + 3em);
+}
+
 @media all and (max-width: 500px) {
   .aside-container div:first-child {
-    margin-top: calc(22vw + 2em);
+    margin-top: calc(22vw + 3em);
   }
 
   .stufen {

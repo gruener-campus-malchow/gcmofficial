@@ -3,7 +3,7 @@
 }
 
 .aside-container div:first-child {
-    margin-top: 9vw;
+    margin-top: calc(9vw + 2em);
 }
 
 .aside-container aside div:first-child {
