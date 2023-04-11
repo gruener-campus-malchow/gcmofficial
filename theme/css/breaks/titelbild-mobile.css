@@ -12,9 +12,13 @@
 #block-gcmofficial-page-title,
 #block-gcmofficial-breadcrumbs {
     position: absolute;
-    margin-top: calc(70vh - 19vw);
+    margin-top: calc(70vh - 19vw + 0.5em);
+}
+
+#block-gcmofficial-page-title {
+    margin-top: calc(70vh - 19vw + 3em);
 }
 
 .field--name-body {
-    margin-top: 22vw;
+    margin-top: calc(22vw + 2em);
 }

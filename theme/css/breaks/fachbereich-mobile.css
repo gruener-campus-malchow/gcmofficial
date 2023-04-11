@@ -1,14 +1,20 @@
+/* height equals 40% of the viewports' height minus the height of the header */
 #titelbild,
 #titelbild .field__item {
   height: calc(40vh - 21vw) !important;
 }
 
+/* term used in calc() uses height of #titelbild */
 #block-gcmofficial-breadcrumbs {
-  margin-top: calc(40vh - 19vw);
+  margin-top: calc(40vh - 19vw + 0.5em);
 }
 
 #block-gcmofficial-page-title {
-  margin-top: calc(40vh - 19vw + 1em);
+  margin-top: calc(40vh - 19vw + 3em);
+}
+
+.aside-container div:first-child {
+  margin-top: 2em;
 }
 
 .stufen {
@@ -27,7 +33,7 @@
 
 @media all and (max-width: 500px) {
   .aside-container div:first-child {
-    margin-top: 22vw;
+    margin-top: calc(22vw + 2em);
   }
 
   .stufen {
