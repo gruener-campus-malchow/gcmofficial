@@ -118,9 +118,9 @@ hr {
 }
 
 /* prevent tables from protruding beyond the page */
-.view-content, .table-wrapper {
+.table-wrapper {
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 /* End general section */
