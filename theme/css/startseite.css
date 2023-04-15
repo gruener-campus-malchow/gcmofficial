@@ -9,7 +9,7 @@
     min-height: 45vw;
 }
 
-#titelbild img {
+#titelbild img, #titelbild video {
     position: relative;
     transform: scale(1.3);
 }

@@ -1,4 +1,4 @@
-var slideimages = document.querySelectorAll("#titelbild .field__item img");
+var slideimages = document.querySelectorAll("#titelbild .field__item img, #titelbild .field__item video");
 window.addEventListener('scroll', () => {
     let { scrollY } = window;
     slideimages.forEach((slideimage) => {

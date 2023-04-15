@@ -1,10 +1,36 @@
 <?php
 /**
- * @param $vars
+ * @param $variables
  */
 function gcmofficial_preprocess_node(&$vars) {
 
   $news = views_embed_view('aktuelles_informatik', 'block_1');
   $vars['view'] = 'test';
+function gcmofficial_preprocess_node__startseite(&$variables)
+{
+  // gather all relevant information of files in field_diashow for render in node--startseite.html.twig
+  $variables["slideshow"] = [];
+  $field_name = "field_diashow";
+  if ($variables["node"]->hasField($field_name)) {
+    $field = $variables["node"]->get($field_name);
+    if (!$field->isEmpty()) {
+      foreach ($field as $file) {
+        $fileuri = $file->entity->getFileUri();
+        $filetype = $file->entity->getMimeType();
+        $filedesc = null;
+        if (isset($file->description)) {
+          $filedesc = $file->description;
+        }
+        array_push($variables["slideshow"], array(
+          "title" => $file->entity->getFilename(),
+          "uri" => $fileuri,
+          "url" => file_create_url($fileuri),
+          "type" => $filetype, // e.g. 'video/mp4'
+          "format" => explode("/", $filetype, 2)[0], // should be either 'image' or 'video'
+          "alt" => $filedesc
+        ));
+      }
+    }
+  }
 }
 ?>
