@@ -6,6 +6,8 @@ function gcmofficial_preprocess_node(&$vars) {
 
   $news = views_embed_view('aktuelles_informatik', 'block_1');
   $vars['view'] = 'test';
+}
+
 function gcmofficial_preprocess_node__startseite(&$variables)
 {
   // gather all relevant information of files in field_diashow for render in node--startseite.html.twig
