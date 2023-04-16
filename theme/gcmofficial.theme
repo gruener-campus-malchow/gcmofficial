@@ -10,7 +10,7 @@ function gcmofficial_preprocess_node(&$vars) {
 
 function gcmofficial_preprocess_node__startseite(&$variables)
 {
-  // gather all relevant information of files in field_diashow for render in node--startseite.html.twig
+  // gather all relevant information of files in field_diashow for rendering in node--startseite.html.twig
   $variables["slideshow"] = [];
   $field_name = "field_diashow";
   if ($variables["node"]->hasField($field_name)) {

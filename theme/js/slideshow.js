@@ -65,11 +65,39 @@ function bwimtog() {
     main();
 }
 
+var videos = [];
 function ontheload() {
+    // add buttons to manually switch slides
     var buttonContainer = document.createElement("div");
     buttonContainer.classList.add("button-container");
     buttonContainer.appendChild(bwbutton); // first element added will appear on the left
     buttonContainer.appendChild(fwbutton); // will appear on the right
     document.getElementById("titelbild").appendChild(buttonContainer);
-    main();
+
+    // stop slideshow if a video is playing
+    videos = document.querySelectorAll("#titelbild video");
+    videos.forEach((video) => {
+        video.addEventListener("play", () => { clearInterval(autoswitch); });
+        video.addEventListener("pause", () => { if (document.fullscreenElement === null) { main(); } });
+    });
+    // stop slideshow if fullscreen mode is enabled
+    document.addEventListener("fullscreenchange", (e) => {
+        if (document.fullscreenElement !== null) {
+            // The document is in fullscreen mode
+            clearInterval(autoswitch);
+        } else {
+            // The document is not in fullscreen mode
+            videoPlaying = false;
+            videos.forEach((video) => {
+                if (!(video.paused || video.ended)) {
+                    videoPlaying = true;
+                }
+            });
+            if (!videoPlaying) {
+                main();
+            }
+        }
+    });
+
+    main(); // start slideshow
 }
