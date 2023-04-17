@@ -3,15 +3,19 @@
 }
 
 .aside-container div:first-child {
-    margin-top: 9vw;
+    margin-top: calc(9vw + 2em);
 }
 
 .aside-container aside div:first-child {
     margin-top: 0;
 }
 
+.aside-container aside div {
+    margin-top: 1em;
+}
+
 #titelbild {
-    margin-top: -18.4px;
+    margin-top: -1.5em;
 }
 
 .stufen {
@@ -33,7 +37,9 @@
 
 #currentgrade {
     background-color: white;
+    color: darkgreen;
     color: var(--darkgreen);
+    box-shadow: inset 0 0 0 2px darkgreen;
     box-shadow: inset 0 0 0 2px var(--darkgreen);
     cursor: default;
 }
@@ -73,19 +79,4 @@
     height: auto;
     width: unset !important;
     direction: ltr;
-}
-
-@media all and (max-width: 500px) {
-    .aside-container div:first-child {
-        margin-top: 22vw;
-    }
-
-    .stufen {
-        max-width: unset;
-    }
-
-    .field--name-field-bildergalerie .field__item {
-        margin: 2vw;
-    }
-
 }

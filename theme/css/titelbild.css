@@ -2,6 +2,7 @@
     margin-left: -12.5%;
     width: 125%;
     height: 25vw;
+    border-bottom: 2px solid #666;
 }
 
 #titelbild .field--name-field-titelbild {
@@ -39,7 +40,7 @@
 }
 
 .field--name-body {
-    margin-top: 9vw;
+    margin-top: 9em;
 }
   
 #main { 
@@ -50,6 +51,10 @@
 #block-gcmofficial-breadcrumbs { 
     position: absolute; 
     margin-top: 27vw; 
+}
+
+#block-gcmofficial-page-title {
+    margin-top: calc(27vw + 1em);
 }
 
 .cssfile {

@@ -1,11 +1,102 @@
 <?php
+
 /**
  * @param $variables
  */
-function gcmofficial_preprocess_node(&$vars) {
 
-  $news = views_embed_view('aktuelles_informatik', 'block_1');
-  $vars['view'] = 'test';
+// -> content type "standort", checks if there should be an explanation of roomnumbers
+// which is specified by a checkbox-input in Drupal UI (inside a Paragraph element -> see Paragraph module)
+function gcmofficial_preprocess_paragraph__standort(&$variables)
+{
+  $paragraph = $variables['paragraph'];
+
+  if (!$paragraph->field_roomnumber_radio->isEmpty()) { // would produce error if empty, checks if there is a checkbox input
+    $roomnumbers = $paragraph->field_roomnumber_radio->value; // bool: whether or not there should be a link
+    if (!empty($roomnumbers)) {
+      $variables['roomnumbers'] = $roomnumbers; // add bool to variables to be accessed by Twig template (paragraph--standort.html.twig)
+    }
+  }
+}
+
+// -> view fachbereiche ("Fachbereichuebersicht")
+function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$variables)
+{
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+  $grouped = [];
+  // groups view rows (= every fachbereich page) by fachbereich title
+  // ([ Informatik-Mittelstufe, Informatik-Oberstufe, Mathematik-Grundstufe ] -> [ "Informatik"=>[Informatik-Mittelstufe, Informatik-Oberstufe], "Mathematik"=>[Mathematik-Grundstufe] ])
+  foreach ($rows as $id => $row) {
+    $row_title = $view->result[$id]->node_field_data_title; // get fachbereich title of row
+    // add row to fachbereich group
+    if (!array_key_exists($row_title, $grouped)) {
+      $grouped[$row_title] = [];
+    }
+    array_push($grouped[$row_title], $variables['rows'][$id]);
+  }
+  $variables['grouped'] = $grouped; // add associative array to variables to be accessed by by Twig template (view-view-unformatted--fachbereiche.html.twig)
+}
+
+// administered through Responsive Image module
+function gcmofficial_preprocess_responsive_image(&$variables)
+{
+  // have to be responsive image types
+  $eager_styles = [
+    'wide',
+  ];
+
+  // disables lazy loading of images with the image styles $eager_styles by setting the img element attribute "loading" to "eager"
+  // (Drupal loads every image lazily by default)
+  if (in_array($variables['responsive_image_style_id'], $eager_styles, TRUE)) {
+    $variables['img_element']['#attributes']['loading'] = 'eager';
+  }
+}
+
+// change settings of GCMofficialStandard (Drupal UI -> Manage -> Design / Theme -> GCMofficialStandard -> settings)
+function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  // add fields to change subject conditions in stufen and save to theme settings
+  $form['grundstufe_faecher'] = [
+    '#type' => 'textfield',
+    '#title' => t('Fächer der Grundstufe'),
+    '#default_value' => theme_get_setting('grundstufe_faecher'),
+    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+  $form['mittelstufe_faecher'] = [
+    '#type' => 'textfield',
+    '#title' => t('Fächer der Mittelstufe'),
+    '#default_value' => theme_get_setting('mittelstufe_faecher'),
+    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+  $form['oberstufe_faecher'] = [
+    '#type' => 'textfield',
+    '#title' => t('Fächer der Oberstufe'),
+    '#default_value' => theme_get_setting('oberstufe_faecher'),
+    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
+  ];
+}
+
+// -> all pages of content type fachbereich (UI name: Unterrichtsfach)
+function gcmofficial_preprocess_node__fachbereich(&$variables)
+{
+  // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
+  $variables['grundstufe_faecher'] = explode(',',theme_get_setting('grundstufe_faecher'));
+  $variables['mittelstufe_faecher'] = explode(',',theme_get_setting('mittelstufe_faecher'));
+  $variables['oberstufe_faecher'] = explode(',',theme_get_setting('oberstufe_faecher'));
+}
+
+// -> every page
+function gcmofficial_preprocess_html(&$variables)
+{
+  // set theme colors to be added to inline CSS by Twig template (html.html.twig)
+  // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
+  //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
+  $variables['themecolor_darkgreen'] = "#507f1a";
+  $variables['themecolor_darkgreen_transparent'] = "#507f1add";
+  $variables['themecolor_green'] = "#75a73a";
+  $variables['themecolor_lightgreen'] = "#ecffc7";
+  $variables['themecolor_blue'] = "#285dbf";
+  $variables['themecolor_lightblue'] = "#dde7f8";
 }
 
 function gcmofficial_preprocess_node__startseite(&$variables)

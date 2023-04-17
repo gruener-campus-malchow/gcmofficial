@@ -1,59 +1,60 @@
-﻿{{ attach_library('gcmofficial/fachbereich') }}
+﻿{#
+ Variables provided by custom theme:
+ grundstufe_faecher: list of subjects in Grundstufe
+ 
+ @see gcmofficial_preprocess_node__fachbereich()
+#}
+
+
+{{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
-{% set faecherInGrundstufe = ['Mathematik', 'Deutsch', 'Englisch', 'Musik', 'Sport'] %}
 {% set faecherNurOberstufe = ['Psychologie', 'Philosophie'] %}
-{% set faecherNurMittelstufe = ['Französisch'] %}
+{% set faecherNurMittelstufe = ['Französisch', 'Willkommensklasse'] %}
 <div id="titelbild">
     {{ content.field_titelbild }}
 </div>
 <div class="aside-container">
-<div>
-    <div class="stufen">
-        {% if node.label in faecherInGrundstufe %}
-            <a class="btn-like"
-            {% if content.field_stufe[0]|render == "Grundstufe" %}
-                id="currentgrade"
+    <div>
+        <div class="stufen">
+            {% if node.label in grundstufe_faecher %}
+            <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe" %} id="currentgrade" {% endif %}
+                href="/dev/gcmofficial/fach/grundstufe/{{ node.label }}">Grundstufe</a>
             {% endif %}
-            href="/dev/gcmofficial/grundstufe/fachbereich/{{ node.label }}">Grundstufe</a>
-        {% endif %}
-        {% if node.label not in faecherNurOberstufe %}
-            <a class="btn-like"
-            {% if content.field_stufe[0]|render == "Mittelstufe" %}
-                id="currentgrade"
+            {% if node.label in mittelstufe_faecher %}
+            <a class="btn-like" {% if content.field_stufe[0]|render=="Mittelstufe" %} id="currentgrade" {% endif %}
+                href="/dev/gcmofficial/fach/mittelstufe/{{ node.label }}">Mittelstufe</a>
             {% endif %}
-            href="/dev/gcmofficial/mittelstufe/fachbereich/{{ node.label }}">Mittelstufe</a>
-        {% endif %}
-        {% if node.label not in faecherNurMittelstufe %}
-            <a class="btn-like"
-            {% if content.field_stufe[0]|render == "Oberstufe" %}
-                id="currentgrade"
+            {% if node.label in oberstufe_faecher %}
+            <a class="btn-like" {% if content.field_stufe[0]|render=="Oberstufe" %} id="currentgrade" {% endif %}
+                href="/dev/gcmofficial/fach/oberstufe/{{ node.label }}">Oberstufe</a>
             {% endif %}
-            href="/dev/gcmofficial/oberstufe/fachbereich/{{ node.label }}">Oberstufe</a>
-        {% endif %}
-    </div>
-    <p><strong>Kontakt:</strong> {{ content.field_kontakt }}</p>
-    <p>Gehe zu:</p>
-    <ul>
-        {% if content.field_dateien|render %}
+        </div>
+        <p><strong>Kontakt:</strong> {{ content.field_kontakt }}</p>
+        <p>
+            <strong>Hier finden Sie weitere Inhalte:</strong>
+        </p>
+        <ul>
+            {% if content.field_dateien|render %}
             <li><a href="#anchor-dateien">Dateien</a></li>
-        {% endif %}
-        {% if content.field_schuelerarbeiten|render %}
+            {% endif %}
+            {% if content.field_schuelerarbeiten|render %}
             <li><a href="#anchor-schuelerarbeiten">Schüler*innenarbeiten</a></li>
-        {% endif %}
-        {% if content.field_bildergalerie|render %}
+            {% endif %}
+            {% if content.field_bildergalerie|render %}
             <li><a href="#anchor-bildergalerie">Bildergalerie</a></li>
-        {% endif %}
-        <li><a href="/dev/gcmofficial/berichte?field_tags_target_id={{ node.label }}">Aktuelles zum Fachbereich</a></li>
-        <li><a href="/dev/gcmofficial/projekte?field_thema_target_id={{ node.label }}">Projekte</a></li>
-    </ul>
-    {{ content.body }}
-</div>
-{% if content.field_links|render %}
-<aside>
-    {{ view }}
-    {{ content.field_links }}
-</aside>
-{% endif %}
+            {% endif %}
+            <li><a href="/dev/gcmofficial/berichte?field_faecher_tag_target_id={{ node.label }}">Aktuelles zum Fachbereich</a>
+            </li>
+            <li><a href="/dev/gcmofficial/projekte?field_faecher_tag_target_id={{ node.label }}">Projekte</a></li>
+        </ul>
+        {{ content.body }}
+    </div>
+    {% if content.field_links|render %}
+    <aside>
+        {{ content.field_notes }}
+        {{ content.field_links }}
+    </aside>
+    {% endif %}
 </div>
 <div id="anchor-dateien"></div>
 {{ content.field_dateien }}

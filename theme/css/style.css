@@ -1,18 +1,19 @@
 /* general section */
-
 :root {
-    --darkgreen: #507f1a;
-    --darkgreen-transparent: #507f1add;
-    --green: #75a73a;
-    --lightgreen: #ecffc7;
-    --blue: #285dbf;
+    --darkgreen: darkgreen;
+    --darkgreen-transparent: darkgreen;
+    --green: green;
+    --lightgreen: palegreen;
+    --blue: royalblue;
+    --lightblue: powderblue;
 }
 
 header,
 #main,
 footer {
     width: 100%;
-    font-size: min(1em, 1.8vw);
+    font-size: max(min(1.05em, 1.8vw), 16px);
+    line-height: 1.5em;
 }
 
 header .region-branding,
@@ -38,6 +39,7 @@ input[type=submit],
 button,
 .form-type-select,
 .btn-like {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     border: none;
     color: white;
@@ -49,12 +51,29 @@ input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
 .form-type-select:hover,
+.form-type-select:focus-within,
 .btn-like:hover {
+    background-color: green;
     background-color: var(--green);
+}
+
+.form-type-select {
+    pointer-events: none;
 }
 
 select {
     border: none;
+    background-color: transparent;
+    width: 7em;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+select:focus {
+    background-color: inherit;
+}
+
+select option {
     background-color: inherit;
 }
 
@@ -69,7 +88,9 @@ h3,
 h4,
 h5,
 .field__label {
+    color: royalblue;
     color: var(--blue);
+    line-height: 1em;
 }
 
 .field__label {
@@ -78,15 +99,28 @@ h5,
 }
 
 a {
+    color: green;
     color: var(--green);
 }
 
 a:visited {
+    color: darkgreen;
     color: var(--darkgreen);
 }
 
 a.btn-like:visited {
     color: white;
+}
+
+hr {
+    margin: 2em auto;
+    border-color: #ddd;
+}
+
+/* prevent tables from protruding beyond the page */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* End general section */
@@ -103,13 +137,14 @@ header .region-branding {
 
 header .site-name {
     float: right;
-    margin-top: 5%;
+    margin-top: 6.5%;
 }
 
 .site-name a {
     color: black;
     text-decoration: none;
     font-family: Poppins;
+    letter-spacing: 0.03em;
 }
 
 header .site-name a {
@@ -127,10 +162,12 @@ header .site-logo img {
 
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
+    border: 1.5px solid darkgreen;
     border: 1.5px solid var(--darkgreen);
 }
 
 header .region-navigation {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
 }
 
@@ -146,11 +183,13 @@ header .region-navigation {
 }
 
 #block-hauptnavigation li {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     transition: background-color 0.2s;
 }
 
 #block-hauptnavigation li:hover {
+    background-color: green;
     background-color: var(--green);
 }
 
@@ -161,12 +200,17 @@ header .region-navigation {
 }
 
 #block-hauptnavigation .is-active {
+    color: palegreen;
     color: var(--lightgreen);
 }
 
-#block-hauptnavigation li span::after {
+#block-hauptnavigation a.menuparent::after,
+#block-hauptnavigation span.menuparent::after {
+    display: inline-block;
     content: '⌵';
-    margin-left: 0.6em;
+    margin-left: 0.5em;
+    transform: translateY(-0.1em);
+    text-decoration: none;
 }
 
 #superfish-main li ul {
@@ -175,6 +219,11 @@ header .region-navigation {
 
 ul.sf-menu::after {
     display: none;
+}
+
+.node__meta {
+    color: #666;
+    font-style: italic;
 }
 
 #main {
@@ -220,9 +269,11 @@ ul.sf-menu::after {
 .aside-container aside {
     flex: 1;
     margin: 6em 0 0 3vw;
-    font-size: 0.7em;
+    font-size: 0.8em;
+    line-height: 1.3em;
     padding: 2.2em;
     height: min-content;
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     color: white;
 }
@@ -237,6 +288,7 @@ button,
 }
 
 .aside-container aside a {
+    color: palegreen;
     color: var(--lightgreen);
 }
 
@@ -246,6 +298,7 @@ button,
 
 .aside-container aside .btn-like {
     background-color: white;
+    color: darkgreen;
     color: var(--darkgreen);
 }
 
@@ -254,6 +307,7 @@ button,
 }
 
 .aside-container aside a.btn-like:visited {
+    color: darkgreen;
     color: var(--darkgreen);
 }
 
@@ -272,9 +326,17 @@ button,
 .form-type-select::after {
     content: '⌵';
     color: white;
+    position: absolute;
+    margin-left: -1em;
+    transform: translateY(-0.1em);
+}
+
+.form-type-select select {
+    position: relative;
 }
 
 .form-type-select {
+    background-color: darkgreen;
     background-color: var(--darkgreen);
     padding-right: 1vw;
 }
@@ -284,7 +346,6 @@ button,
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 .views-row {
@@ -296,7 +357,61 @@ button,
 }
 
 .view-content a {
+    color: royalblue;
     color: var(--blue);
+}
+
+.views-field-created {
+    color: #666;
+    font-style: italic;
+}
+
+.views-field-field-stufe-tag a,
+.views-field-field-faecher-tag a,
+.field--name-field-stufe-tag a,
+.field--name-field-faecher-tag a {
+    text-decoration: none;
+    background-color: palegreen;
+    background-color: var(--lightgreen);
+    color: black;
+    font-weight: bold;
+    padding: 0.5em 0.8em;
+    line-height: 2.5em;
+    border-radius: 2em;
+    font-size: 0.8em
+}
+
+.views-field-field-faecher-tag a,
+.field--name-field-faecher-tag a {
+    background-color: powderblue;
+    background-color: var(--lightblue);
+}
+
+.view-fachbereiche .view-content a {
+    display: block;
+    box-shadow: 0 0 0 2px darkgreen inset;
+    box-shadow: 0 0 0 2px var(--darkgreen) inset;
+    color: darkgreen;
+    color: var(--darkgreen);
+    border-radius: 0.2rem;
+    text-decoration: none;
+    padding: 0.5em 0;
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.view-fachbereiche .view-content a:hover,
+.view-fachbereiche .view-content a:active {
+    box-shadow: 0 0 0 1.5px green inset;
+    box-shadow: 0 0 0 1.5px var(--green) inset;
+    color: green;
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.view-fachbereiche .views-row {
+    margin-bottom: 3em;
 }
 
 .feed-icon {
@@ -309,6 +424,17 @@ button,
 }
 
 /* End Ansichten */
+
+.field--name-field-stufe-tag .field__item,
+.field--name-field-faecher-tag .field__item {
+    display: inline;
+}
+
+.field--name-field-stufe-tag {
+    float: left;
+    margin-right: 1em;
+}
+
 
 footer {
     margin-top: 5vw;
