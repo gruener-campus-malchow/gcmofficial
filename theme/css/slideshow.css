@@ -1,9 +1,6 @@
-#titelbild .field__item {
-    transition: opacity 1s;
-}
-
-#titelbild .field__item.slideshow-hidden {
-    opacity: 0;
+#titelbild .field__item,
+#titelbild .button-container {
+  transition: opacity 1s;
 }
 
 #titelbild .button-container {
@@ -14,12 +11,19 @@
   align-items: center;
 }
 
+.slideshow-hidden {
+  opacity: 0;
+}
+
 #titelbild button {
   padding: min(1em, 2.5vw);
   z-index: 2;
   transition: 0.07s;
   margin: 2.4%;
   opacity: 0.6;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #titelbild button:hover {
   transform: scale(1.1);

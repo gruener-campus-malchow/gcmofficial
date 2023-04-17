@@ -1,8 +1,9 @@
 var autoswitch = null;
 var slides_out_func = document.querySelectorAll("#titelbild .field__item");
 var width = screen.width;
-if (slides_out_func.length>1){
-    if (width>360) {
+
+if (slides_out_func.length > 1) {
+    if (width > 360) {
         var fwbutton = document.createElement('button');
         fwbutton.innerText = '→';
         var bwbutton = document.createElement('button');
@@ -13,7 +14,7 @@ if (slides_out_func.length>1){
     document.addEventListener("DOMContentLoaded", ontheload);
 }
 // immediately switches slides
-var slideIndex = 1;
+var slideIndex = 0;
 function toggle(fw) {
     let slides = document.querySelectorAll("#titelbild .field__item");
     if (slides.length <= 1) {
@@ -51,7 +52,7 @@ function togglebw() {
     toggle(false);
 }
 function main() {
-    autoswitch = setInterval(togglefw, 10000);
+    autoswitch = setInterval(togglefw, 8000);
 }
 function fwimtog() {
     clearInterval(autoswitch);
@@ -64,11 +65,39 @@ function bwimtog() {
     main();
 }
 
+var videos = [];
 function ontheload() {
+    // add buttons to manually switch slides
     var buttonContainer = document.createElement("div");
     buttonContainer.classList.add("button-container");
     buttonContainer.appendChild(bwbutton); // first element added will appear on the left
     buttonContainer.appendChild(fwbutton); // will appear on the right
     document.getElementById("titelbild").appendChild(buttonContainer);
-    setTimeout(main, 2000);
+
+    // stop slideshow if a video is playing
+    videos = document.querySelectorAll("#titelbild video");
+    videos.forEach((video) => {
+        video.addEventListener("play", () => { clearInterval(autoswitch); });
+        video.addEventListener("pause", () => { if (document.fullscreenElement === null) { main(); } });
+    });
+    // stop slideshow if fullscreen mode is enabled
+    document.addEventListener("fullscreenchange", (e) => {
+        if (document.fullscreenElement !== null) {
+            // The document is in fullscreen mode
+            clearInterval(autoswitch);
+        } else {
+            // The document is not in fullscreen mode
+            videoPlaying = false;
+            videos.forEach((video) => {
+                if (!(video.paused || video.ended)) {
+                    videoPlaying = true;
+                }
+            });
+            if (!videoPlaying) {
+                main();
+            }
+        }
+    });
+
+    main(); // start slideshow
 }

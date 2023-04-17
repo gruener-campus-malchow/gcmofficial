@@ -2,6 +2,38 @@
 {{ attach_library('gcmofficial/startseite') }}
 <div id="titelbild">
     {{ content.field_titelbild }}
+    {% if slideshow|length > 0 %}
+        <div class="field field--name-field-titelbild field--type-image field--type-video field--label-hidden field__items">
+        {% for file in slideshow %}
+            <div class="field__item">
+                {% if file.format == "image" %}
+                    {% set image = {
+                        "#theme": "responsive_image",
+                        "#responsive_image_style_id": "wide",
+                        "#uri": file.uri,
+                        "#attributes": { "alt": file.alt },
+                        }
+                    %}
+                    {{ image }}
+                {% elseif file.format == "video" %}
+                    <video muted="true" width="100%">
+                        <source src="{{ file.url }}" type="{{ file.type }}">
+                        <p>{{ file.alt }}: <a href="{{ file.url }}">Video herunterladen</a></p>
+                    </video>
+                    <ul class="video-controls">
+                        <li><button class="play">Abspielen</button></li>
+                        <li><button class="unmute">Ton ein</button></li>
+                        <li><button class="volinc">Lautstärke+</button></li>
+                        <li><button class="voldec">Lautstärke-</button></li>
+                        <li><button class="fullscreen">Vollbild</button></li>
+                    </ul>
+                {% else %}
+                    <a href="{{ file.url }}">{{ file.title }}</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
 </div>
 <div id="herobox">
     {{ content.field_banner }}

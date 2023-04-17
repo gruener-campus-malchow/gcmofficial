@@ -9,7 +9,41 @@
     min-height: 45vw;
 }
 
-#herobox {
+#titelbild img,
+#titelbild video {
+    position: relative;
+    transform: scale(1.3);
+}
+
+#titelbild .field__item[data-fullscreen=true] video {
+    transform: none;
+    top: unset !important;
+}
+
+#titelbild .video-controls {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: #00000077;
+}
+
+#titelbild .slideshow-hidden .video-controls {
+    display: none;
+}
+
+.video-controls button {
+  margin: 0;
+  padding: 0.4em 1em !important;
+  background-color: transparent;
+  white-space: nowrap;
+}
+  
+#herobox { 
     position: absolute;
     top: min(max(30vh, 16vw), 30vw);
     width: fit-content;
@@ -21,6 +55,7 @@
     border-radius: 0.15rem;
     font-size: 1.4em;
     right: 10%;
+    transition: opacity 1s;
 }
 
 #herobox h2,
