@@ -1,12 +1,29 @@
+{#
+ Variables provided by custom theme:
+ slideshow: list of the data of all files to be displayed in #titelbild as slideshow
+            each element (file) consists of:
+             - title: the title or name of the file
+             - uri: the location of the file in Drupal's file system
+             - url: the address to the file
+             - type: the filetype, e.g. "image/png" or "video/mp4"
+             - format: simple filetype, "image" or "video"
+             - alt: description of the file, used for "alt" attribute of images
+
+ @see gcmofficial_preprocess_node__startseite()
+#}
+
 {{ attach_library('gcmofficial/titelbild') }}
 {{ attach_library('gcmofficial/startseite') }}
 <div id="titelbild">
     {{ content.field_titelbild }}
     {% if slideshow|length > 0 %}
+        {# following div imitates div created by content.field_titelbild #}
         <div class="field field--name-field-titelbild field--type-image field--type-video field--label-hidden field__items">
         {% for file in slideshow %}
             <div class="field__item">
                 {% if file.format == "image" %}
+                    {# rendered by Responsive Image module
+                       @see gcmofficial_preprocess_responsive_image() #}
                     {% set image = {
                         "#theme": "responsive_image",
                         "#responsive_image_style_id": "wide",
@@ -18,7 +35,7 @@
                 {% elseif file.format == "video" %}
                     <video muted="true" width="100%">
                         <source src="{{ file.url }}" type="{{ file.type }}">
-                        <p>{{ file.alt }}: <a href="{{ file.url }}">Video herunterladen</a></p>
+                        <p>{{ file.alt }}: <a href="{{ file.url }}">Video {{ file.title }} herunterladen</a></p>
                     </video>
                     <ul class="video-controls">
                         <li><button class="play">Abspielen</button></li>

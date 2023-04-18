@@ -99,6 +99,7 @@ function gcmofficial_preprocess_html(&$variables)
   $variables['themecolor_lightblue'] = "#dde7f8";
 }
 
+// -> Homepage
 function gcmofficial_preprocess_node__startseite(&$variables)
 {
   // gather all relevant information of files in field_diashow for rendering in node--startseite.html.twig
