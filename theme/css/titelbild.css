@@ -17,6 +17,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    text-align: center;
+    color: white;
 }
 
 #titelbild .field__item img,
