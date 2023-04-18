@@ -80,9 +80,9 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
 function gcmofficial_preprocess_node__fachbereich(&$variables)
 {
   // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
-  $variables['grundstufe_faecher'] = explode(',',theme_get_setting('grundstufe_faecher'));
-  $variables['mittelstufe_faecher'] = explode(',',theme_get_setting('mittelstufe_faecher'));
-  $variables['oberstufe_faecher'] = explode(',',theme_get_setting('oberstufe_faecher'));
+  $variables['grundstufe_faecher'] = explode(',', theme_get_setting('grundstufe_faecher'));
+  $variables['mittelstufe_faecher'] = explode(',', theme_get_setting('mittelstufe_faecher'));
+  $variables['oberstufe_faecher'] = explode(',', theme_get_setting('oberstufe_faecher'));
 }
 
 // -> every page
@@ -126,4 +126,3 @@ function gcmofficial_preprocess_node__startseite(&$variables)
     }
   }
 }
-?>

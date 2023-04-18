@@ -37,13 +37,13 @@
 }
 
 .video-controls button {
-  margin: 0;
-  padding: 0.4em 1em !important;
-  background-color: transparent;
-  white-space: nowrap;
+    margin: 0;
+    padding: 0.4em 1em !important;
+    background-color: transparent;
+    white-space: nowrap;
 }
-  
-#herobox { 
+
+#herobox {
     position: absolute;
     top: min(max(30vh, 16vw), 30vw);
     width: fit-content;
