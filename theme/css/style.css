@@ -284,7 +284,7 @@ button,
 .form-type-select,
 .btn-like,
 .aside-container aside {
-    border-radius: 0.2rem;
+    border-radius: 3px;
 }
 
 .aside-container aside a {
@@ -393,7 +393,7 @@ button,
     box-shadow: 0 0 0 2px var(--darkgreen) inset;
     color: darkgreen;
     color: var(--darkgreen);
-    border-radius: 0.2rem;
+    border-radius: 3px;
     text-decoration: none;
     padding: 0.5em 0;
     width: 100%;
