@@ -1,19 +1,26 @@
 var videos = [];
+var slideimages = null;
+var lastScrollY = 0;
+var ticking = false;
 
 window.addEventListener("DOMContentLoaded", () => {
     // add parallax effect
-    var slideimages = document.querySelectorAll("#titelbild .field__item img, #titelbild .field__item video");
+    slideimages = document.querySelectorAll("#titelbild .field__item img, #titelbild .field__item video");
     window.addEventListener('scroll', () => {
-        let { scrollY } = window;
-        slideimages.forEach((slideimage) => {
-            slideimage.style.top = 0.5 * scrollY + 'px';
-        });
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                parallax(lastScrollY);
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
     // video constrols
     // guideline: https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player
     videos = Array.from(document.querySelectorAll('#titelbild video'));
-    for (var i = 0; i < videos.length; i++) {
+    for (let i = 0; i < videos.length; i++) {
         let videoContainer = videos[i].parentNode; // .field__item : contains <video> and .video-controls
         videoContainer.getElementsByClassName("play")[0].addEventListener("click", togglePlayback);
         videoContainer.getElementsByClassName("unmute")[0].addEventListener("click", toggleMute);
@@ -26,6 +33,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+function parallax(scrollY) {
+    slideimages.forEach((slideimage) => {
+        slideimage.style.top = 0.5 * scrollY + 'px';
+    });
+}
 
 function getVideoContainer_Video(target) {
     var videoContainer = target;
