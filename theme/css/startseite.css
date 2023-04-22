@@ -37,51 +37,51 @@
 }
 
 .video-controls button {
-  margin: 0;
-  padding: 0.4em 0 0.4em 2em !important;
-  width: 0;
-  background-color: transparent;
-  background-size: 1em;
-  background-repeat: no-repeat;
-  background-position: 0.5em;
-  overflow: hidden;
-  white-space: nowrap;
+    margin: 0;
+    padding: 0.4em 0 0.4em 2em !important;
+    width: 0;
+    background-color: transparent;
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: 0.5em;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .video-controls .play {
-  background-image: url("../assets/play.svg");
+    background-image: url("../assets/play.svg");
 }
 
 .video-controls .pause {
-  background-image: url("../assets/pause.svg");
+    background-image: url("../assets/pause.svg");
 }
 
 .video-controls .pause {
-  background-image: url("../assets/pause.svg");
+    background-image: url("../assets/pause.svg");
 }
 
 .video-controls .mute {
-  background-image: url("../assets/mute.svg");
+    background-image: url("../assets/mute.svg");
 }
 
 .video-controls .unmute {
-  background-image: url("../assets/unmute.svg");
+    background-image: url("../assets/unmute.svg");
 }
 
 .video-controls .volinc {
-  background-image: url("../assets/volinc.svg");
+    background-image: url("../assets/volinc.svg");
 }
 
 .video-controls .voldec {
-  background-image: url("../assets/voldec.svg");
+    background-image: url("../assets/voldec.svg");
 }
 
 .video-controls .fullscreen {
-  background-image: url("../assets/fs-expand.svg");
+    background-image: url("../assets/fs-expand.svg");
 }
 
 #titelbild .field__item[data-fullscreen=true] .video-controls .fullscreen {
-  background-image: url("../assets/fs-shrink.svg");
+    background-image: url("../assets/fs-shrink.svg");
 }
 
 #herobox {
