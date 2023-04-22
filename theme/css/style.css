@@ -197,6 +197,16 @@ header .region-navigation {
 #block-hauptnavigation li span {
     color: white;
     padding: 1.5vw 2vw;
+    text-decoration: none;
+}
+
+#block-hauptnavigation li span {
+    cursor: default;
+    cursor: context-menu;
+}
+
+#block-hauptnavigation li a:hover {
+    text-decoration: underline;
 }
 
 #block-hauptnavigation .is-active {
