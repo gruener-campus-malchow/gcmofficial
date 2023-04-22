@@ -174,8 +174,9 @@ header .region-navigation {
 #block-hauptnavigation ul {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     margin: 0;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #block-hauptnavigation ul#superfish-main {
@@ -198,6 +199,7 @@ header .region-navigation {
     color: white;
     padding: 1.5vw 2vw;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 #block-hauptnavigation li span {
