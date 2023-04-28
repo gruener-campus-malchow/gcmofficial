@@ -29,6 +29,6 @@ function outputPinns(){
         console.log(lat);
         i = i + 1;
     }
-    console.log(alleGebaeude);
+    return alleGebaeude;
 
-}
+
