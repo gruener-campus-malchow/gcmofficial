@@ -45,7 +45,7 @@ window.onload = () => {
     var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
 
     for (let i = 0; i < gebaeude_divs.length; i++) {
-        var node = gebaeude_divs[i].getElementsByTagName("div")[2];
+        var node = gebaeude_divs[i].getElementsByTagName("div")[4];
         var buttonel = document.createElement('button');
         var buttoncop = document.createElement('button');
         buttonel.setAttribute("id", "btn" + gebaeude_sort[i]);
