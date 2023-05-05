@@ -47,13 +47,15 @@ window.onload = () => {
     for (let i = 0; i < gebaeude_divs.length; i++) {
         var node = gebaeude_divs[i].getElementsByTagName("div")[4];
         var buttonel = document.createElement('button');
-        var buttoncop = document.createElement('button');
         buttonel.setAttribute("id", "btn" + gebaeude_sort[i]);
-        buttoncop.setAttribute("id", "btncop" + gebaeude_sort[i]);
         buttonel.innerText = "Auf Karte markieren";
-        buttoncop.innerText = "Adresse kopieren";
         node.appendChild(buttonel);
-        node.appendChild(buttoncop);
+        if(navigator.clipboard){
+            var buttoncop = document.createElement('button');
+            buttoncop.setAttribute("id", "btncop" + gebaeude_sort[i]);
+            buttoncop.innerText = "Adresse kopieren";
+            node.appendChild(buttoncop);
+        }
     }
 
     let btnFG1 = document.getElementById("btnFG1");
@@ -83,7 +85,6 @@ window.onload = () => {
     }
 
     function docopy(gebaeude_forcop) {
-        // down below is experimental, not the way its supposed to be later on
         var copyText = gebaeude_forcop[3];
         navigator.clipboard.writeText(copyText).then(
             () => {
