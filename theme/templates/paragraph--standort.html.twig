@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Theme implementation to display a paragraph.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -32,8 +32,12 @@
  *   current user is a logged-in member.
  * - is_admin: Flag for admin user status. Will be true when the current user
  *   is an administrator.
+
+ * Available variables through custom theme:
+ * - roomnumbers: (bool) whether or not there should be a link to the section explaining the roomnumbers
  *
  * @see template_preprocess_paragraph()
+ * @see gcmofficial_preprocess_paragraph__standort()
  *
  * @ingroup themeable
  */
@@ -58,6 +62,9 @@
               <noscript>
                 {{ content.field_longitude }}
                 {{ content.field_latitude }}
+                <style>
+                  .site button {display: none;}
+                </style>
               </noscript>
               <button>Auf Karte markieren</button>
               {{ content.field_body }}
