@@ -15,6 +15,7 @@
 </div>
 <div class="aside-container">
     <div>
+        {# create menu to switch stufe of unterrichtsfach #}
         <div class="stufen">
             {% if node.label in grundstufe_faecher %}
             <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe" %} id="currentgrade" {% endif %}
