@@ -124,10 +124,13 @@
     margin-top: 9vw;
 }
 
+#block-views-block-aktuelles-block-1 {
+    margin-top: 8em;
+}
+
 .views-row {
     flex: 0 1 47%;
 }
-
 .cssfile {
     --file: "startseite";
 }

@@ -11,6 +11,10 @@ footer .region-footer {
     margin: 0 5%;
 }
 
+header {
+    border-bottom: 3px green solid;
+}
+
 header .region-branding {
     margin: 0;
 }
@@ -19,9 +23,13 @@ header .region-branding {
     padding: 0.4em 0.8em;
 }
 
+h1 {
+    font-size: 1.8em;
+}
+
 h2,
 .field__label {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 header .region-branding {
@@ -145,20 +153,12 @@ header .site-logo img {
     text-align: center;
 }
 
-.field--name-body p {
-    text-align: justify;
-}
-
 .aside-container {
     display: unset;
 }
 
 .aside-container aside {
     margin: 10vw 0 0 0;
-}
-
-.field--name-body aside p {
-    text-align: unset;
 }
 
 /* Ansichten */
