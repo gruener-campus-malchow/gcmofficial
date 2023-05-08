@@ -1,6 +1,6 @@
 ﻿{#
  Variables provided by custom theme:
- grundstufe_faecher: list of subjects in Grundstufe
+ stufen: List of Stufen of this Fachbereich
  
  @see gcmofficial_preprocess_node__fachbereich()
 #}
@@ -8,8 +8,6 @@
 
 {{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
-{% set faecherNurOberstufe = ['Psychologie', 'Philosophie'] %}
-{% set faecherNurMittelstufe = ['Französisch', 'Willkommensklasse'] %}
 <div id="titelbild">
     {{ content.field_titelbild }}
 </div>
@@ -17,15 +15,15 @@
     <div>
         {# create menu to switch stufe of unterrichtsfach #}
         <div class="stufen">
-            {% if node.label in grundstufe_faecher %}
+            {% if "grundstufe" in stufen %}
             <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe" %} id="currentgrade" {% endif %}
                 href="/dev/gcmofficial/fach/grundstufe/{{ node.label }}">Grundstufe</a>
             {% endif %}
-            {% if node.label in mittelstufe_faecher %}
+            {% if "mittelstufe" in stufen %}
             <a class="btn-like" {% if content.field_stufe[0]|render=="Mittelstufe" %} id="currentgrade" {% endif %}
                 href="/dev/gcmofficial/fach/mittelstufe/{{ node.label }}">Mittelstufe</a>
             {% endif %}
-            {% if node.label in oberstufe_faecher %}
+            {% if "oberstufe" in stufen %}
             <a class="btn-like" {% if content.field_stufe[0]|render=="Oberstufe" %} id="currentgrade" {% endif %}
                 href="/dev/gcmofficial/fach/oberstufe/{{ node.label }}">Oberstufe</a>
             {% endif %}

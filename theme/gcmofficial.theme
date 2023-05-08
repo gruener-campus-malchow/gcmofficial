@@ -74,6 +74,36 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
     '#default_value' => theme_get_setting('oberstufe_faecher'),
     '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
   ];
+  $form['themecolor_darkgreen'] = [
+    '#type' => 'color',
+    '#title' => t('Dunkelgrün'),
+    '#default_value' => theme_get_setting('themecolor_darkgreen'),
+    '#description' => t('Bitte dunkelgrün angeben.'),
+  ];
+  $form['themecolor_green'] = [
+    '#type' => 'color',
+    '#title' => t('Grün'),
+    '#default_value' => theme_get_setting('themecolor_green'),
+    '#description' => t('Bitte Grün angeben.'),
+  ];
+  $form['themecolor_lightgreen'] = [
+    '#type' => 'color',
+    '#title' => t('Hellgrün'),
+    '#default_value' => theme_get_setting('themecolor_lightgreen'),
+    '#description' => t('Bitte hellgrün angeben.'),
+  ];
+  $form['themecolor_blue'] = [
+    '#type' => 'color',
+    '#title' => t('Blau'),
+    '#default_value' => theme_get_setting('themecolor_blue'),
+    '#description' => t('Bitte blau angeben.'),
+  ];
+  $form['themecolor_lightblue'] = [
+    '#type' => 'color',
+    '#title' => t('Hellblau'),
+    '#default_value' => theme_get_setting('themecolor_lightblue'),
+    '#description' => t('Bitte hellblau angeben.'),
+  ];
 }
 
 // -> all pages of content type fachbereich (UI name: Unterrichtsfach)
@@ -83,6 +113,15 @@ function gcmofficial_preprocess_node__fachbereich(&$variables)
   $variables['grundstufe_faecher'] = explode(',', theme_get_setting('grundstufe_faecher'));
   $variables['mittelstufe_faecher'] = explode(',', theme_get_setting('mittelstufe_faecher'));
   $variables['oberstufe_faecher'] = explode(',', theme_get_setting('oberstufe_faecher'));
+  $view = views_get_view_result('fachbereiche');
+  $variables['stufen'] = [];
+  foreach ($view as $v) {
+	$title = get_object_vars($v)['_entity']->get('title')->getValue()[0]['value'];
+	if ($variables['node']->getTitle()===$title) {
+		// BIG and I mean BIG pain in the...
+		array_push($variables['stufen'], get_object_vars($v)['_entity']->get('field_stufe')->getValue()[0]['value']);
+	}
+  }
 }
 
 // -> every page
@@ -91,12 +130,12 @@ function gcmofficial_preprocess_html(&$variables)
   // set theme colors to be added to inline CSS by Twig template (html.html.twig)
   // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
   //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
-  $variables['themecolor_darkgreen'] = "#507f1a";
-  $variables['themecolor_darkgreen_transparent'] = "#507f1add";
-  $variables['themecolor_green'] = "#75a73a";
-  $variables['themecolor_lightgreen'] = "#ecffc7";
-  $variables['themecolor_blue'] = "#285dbf";
-  $variables['themecolor_lightblue'] = "#dde7f8";
+  $variables['themecolor_darkgreen'] = theme_get_setting('themecolor_darkgreen');
+  $variables['themecolor_darkgreen_transparent'] = theme_get_setting('themecolor_darkgreen')."dd";
+  $variables['themecolor_green'] = theme_get_setting('themecolor_green');
+  $variables['themecolor_lightgreen'] = theme_get_setting('themecolor_lightgreen');
+  $variables['themecolor_blue'] = theme_get_setting('themecolor_blue');
+  $variables['themecolor_lightblue'] = theme_get_setting('themecolor_lightblue');
 }
 
 // -> Homepage
