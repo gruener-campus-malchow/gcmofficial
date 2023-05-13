@@ -257,15 +257,22 @@ ul.sf-menu::after {
     padding: 0.5vw;
 }
 
-#main fieldset {
+.form--inline fieldset {
     border: none;
     padding: 0;
-    float: left;
     width: 30%;
 }
 
+.form--inline fieldset legend {
+    float: left;
+    margin-top: 1vw;
+    margin-right: 1em;
+    padding: 0.16rem 0;
+    line-height: 1.65em;
+}
+
 .form--inline .form-item {
-    margin: 1vw 0;
+    margin-top: 1vw;
 }
 
 .aside-container {
@@ -334,6 +341,18 @@ button,
 }
 
 /* Ansichten */
+
+.views-exposed-form .form-item {
+    display: inline-block;
+    margin-right: 2em;
+    float: none;
+}
+
+.views-exposed-form .form-item input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.2em 0.32em;
+}
 
 .form-type-select::after {
     content: '⌵';
