@@ -39,6 +39,15 @@
     background-color: black;
 }
 
+#map.deactivated .leaflet-pane {
+    display: none;
+}
+
+#map.deactivated .leaflet-tile-pane,
+.leaflet-map-pane {
+    display: initial !important;
+}
+
 .site button {
     display: block;
     margin-top: 0.4em;
