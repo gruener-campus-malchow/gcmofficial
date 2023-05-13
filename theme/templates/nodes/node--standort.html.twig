@@ -1,7 +1,14 @@
 {{ attach_library('gcmofficial/standort') }}
+{# following script initiates variable used in paragraph--standort.html.twig #}
+<script>
+var sitesBook = [];
+</script>
 <div id="map" class="deactivated"></div>
 <noscript>
     {{ content.field_beschreibung_karte }}
+    <style>
+        #map { display: none }
+    </style>
 </noscript>
 {{ content.field_standort }}
 <div id="roomnumbers">
