@@ -99,22 +99,22 @@ window.onload = () => {
     }
 
     btnFG1.onclick = () => {
-        markSite(markerFG1, FG1);
+        markSite(L.marker([sitesBook[1].latitude, sitesBook[1].longitude]).addTo(map), sitesBook[1]);
     };
     btnFG2.onclick = () => {
-        markSite(markerFG2, FG2);
+        markSite(L.marker([sitesBook[2].latitude, sitesBook[2].longitude]).addTo(map), sitesBook[2]);
     };
     btnFG3.onclick = () => {
-        markSite(markerFG3, FG3);
+        markSite(L.marker([sitesBook[3].latitude, sitesBook[3].longitude]).addTo(map), sitesBook[3]);
     };
     btnHG.onclick = () => {
-        markSite(markerHG, HG);
+        markSite(L.marker([sitesBook[0].latitude, sitesBook[0].longitude]).addTo(map), sitesBook[0]);
     };
     btnSpH.onclick = () => {
-        markSite(markerSpH, SpH);
+        markSite(L.marker([sitesBook[5].latitude, sitesBook[5].longitude]).addTo(map), sitesBook[5]);
     };
     btnTH4.onclick = () => {
-        markSite(markerTH4, TH4);
+        markSite(L.marker([sitesBook[4].latitude, sitesBook[4].longitude]).addTo(map), sitesBook[4]);
     };
     btncopFG1.onclick = () => {
         docopy(FG1);
