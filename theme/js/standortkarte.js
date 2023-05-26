@@ -37,12 +37,12 @@ window.onload = () => {
     var SpH = [52.55679, 13.48977, "Sportplatz Hansastr.", "Hansastraße 190, 13088 Berlin"];
     var TH4 = [52.57204, 13.50318, "Turnhalle FG4", "Ribnitzer Str. 1, 13051 Berlin"];
 
-    var markerFG1 = L.marker([FG1[0], FG1[1]]).addTo(map);
-    var markerFG2 = L.marker([FG2[0], FG2[1]]).addTo(map);
-    var markerFG3 = L.marker([FG3[0], FG3[1]]).addTo(map);
-    var markerHG = L.marker([HG[0], HG[1]], { title: HG[2] }).addTo(map);
-    var markerSpH = L.marker([SpH[0], SpH[1]]).addTo(map);
-    var markerTH4 = L.marker([TH4[0], TH4[1]]).addTo(map);
+    let x = 0;
+    while (x < sitesBook.length) {
+        var marker = L.marker([sitesBook[x].latitude, sitesBook[x].longitude]).addTo(map);
+        marker.on("mousedown", markSite(marker, sitesBook[x], false));
+        x++;
+    }
 
     for (let i = 0; i < gebaeude_divs.length; i++) {
         var node = gebaeude_divs[i].getElementsByTagName("div")[4];
@@ -76,11 +76,11 @@ window.onload = () => {
             document.getElementById("map").scrollIntoView();
             activateMap();
         }
-        let popupText = "<b>" + site[2] +
+        let popupText = "<b>" + site.title +
             "</b><br><p>Route: <a href=https://www.openstreetmap.org/directions?from=&to=" +
-            site[0] + "%2C" + site[1] + "&route=%3B#map=16/" + site[0] + "/" +
-            site[1] + ">OSM</a> / <a href='https://www.google.com/maps/dir//" +
-            site[0] + "," + site[1] + "'>Google Maps</a></p>";
+            site.latitude + "%2C" + site.longitude + "&route=%3B#map=16/" + site.latitude + "/" +
+            site.longitude + ">OSM</a> / <a href='https://www.google.com/maps/dir//" +
+            site.latitude + "," + site.longitude + "'>Google Maps</a></p>";
         marker.bindPopup(popupText).openPopup();
     }
 
@@ -134,12 +134,5 @@ window.onload = () => {
     btncopTH4.onclick = () => {
         docopy(TH4);
     };
-
-    markerFG1.on("mousedown", markSite(markerFG1, FG1, false));
-    markerFG2.on("mousedown", markSite(markerFG2, FG2, false));
-    markerFG3.on("mousedown", markSite(markerFG3, FG3, false));
-    markerHG.on("mousedown", markSite(markerHG, HG, false));
-    markerSpH.on("mousedown", markSite(markerSpH, SpH, false));
-    markerTH4.on("mousedown", markSite(markerTH4, TH4, false));
 
 };
