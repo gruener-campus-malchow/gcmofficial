@@ -1,6 +1,7 @@
 <?php
+
 /**
- * @param $vars
+ * @param $variables
  */
 
 // -> content type "standort", checks if there should be an explanation of roomnumbers
@@ -26,4 +27,3 @@ function gcmofficial_preprocess_paragraph__standort(&$variables)
     'address' => $address
   ];
 }
-?>
