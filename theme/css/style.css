@@ -381,6 +381,7 @@ button,
 
 .views-row {
     flex: 0 1 30%;
+    margin-bottom: 4vw;
 }
 
 .view-content .views-row h2 {
@@ -464,6 +465,31 @@ button,
 .field--name-field-stufe-tag {
     float: left;
     margin-right: 1em;
+}
+
+.views-field-field-beginn,
+.views-field-field-ende {
+    display: flex;
+    color: gray;
+    margin-right: 2em;
+}
+
+.views-field-field-beginn {
+    float: left;
+}
+
+.views-field-field-beginn + .views-field-field-ende {
+    text-transform: lowercase;
+}
+
+.views-field-field-beginn .field-content,
+.views-field-field-ende .field-content {
+    padding-left: 0.2em;
+}
+
+.views-field-field-beginn ~ .views-field-body {
+    float: left;
+    width: 100%;
 }
 
 
