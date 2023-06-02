@@ -38,6 +38,7 @@ window.onload = () => {
     var TH4 = [52.57204, 13.50318, "Turnhalle FG4", "Ribnitzer Str. 1, 13051 Berlin"];
 
     let x = 0;
+    // array 'sitesBook' built with Twig, inspect via browser console
     while (x < sitesBook.length) {
         var marker = L.marker([sitesBook[x].latitude, sitesBook[x].longitude]).addTo(map);
         marker.on("mousedown", markSite(marker, sitesBook[x], false));
