@@ -45,23 +45,29 @@
     <style>
         :root {
         {# check if themecolor variables exist and are not empty, then add them to :root #}
-        {% if themecolor_darkgreen|default %}
-            --darkgreen: {{ themecolor_darkgreen }};
+        {% if themecolor_text|default %}
+            --text: {{ themecolor_text }};
         {% endif %}
-        {% if themecolor_darkgreen_transparent|default %}
-            --darkgreen-transparent: {{ themecolor_darkgreen_transparent }};
+        {% if themecolor_primaryDark|default %}
+            --primary-dark: {{ themecolor_primaryDark }};
         {% endif %}
-        {% if themecolor_green|default %}
-            --green: {{ themecolor_green }};
+        {% if themecolor_primaryDarkTransparent|default %}
+            --primary-dark-transparent: {{ themecolor_primaryDarkTransparent }};
         {% endif %}
-        {% if themecolor_lightgreen|default %}
-            --lightgreen: {{ themecolor_lightgreen }};
+        {% if themecolor_primary|default %}
+            --primary: {{ themecolor_primary }};
         {% endif %}
-        {% if themecolor_blue|default %}
-            --blue: {{ themecolor_blue }};
+        {% if themecolor_primaryLight|default %}
+            --primary-light: {{ themecolor_primaryLight }};
         {% endif %}
-        {% if themecolor_lightblue|default %}
-            --lightblue: {{ themecolor_lightblue }};
+        {% if themecolor_textOnPrimary|default %}
+            --text-on-primary: {{ themecolor_textOnPrimary }};
+        {% endif %}
+        {% if themecolor_accent|default %}
+            --accent: {{ themecolor_accent }};
+        {% endif %}
+        {% if themecolor_accentLight|default %}
+            --accent-light: {{ themecolor_accentLight }};
         {% endif %}
         }
     </style>

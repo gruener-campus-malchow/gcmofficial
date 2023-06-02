@@ -56,53 +56,47 @@ function gcmofficial_preprocess_responsive_image(&$variables)
 function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
 {
   // add fields to change subject conditions in stufen and save to theme settings
-  $form['grundstufe_faecher'] = [
-    '#type' => 'textfield',
-    '#title' => t('Fächer der Grundstufe'),
-    '#default_value' => theme_get_setting('grundstufe_faecher'),
-    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-  ];
-  $form['mittelstufe_faecher'] = [
-    '#type' => 'textfield',
-    '#title' => t('Fächer der Mittelstufe'),
-    '#default_value' => theme_get_setting('mittelstufe_faecher'),
-    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-  ];
-  $form['oberstufe_faecher'] = [
-    '#type' => 'textfield',
-    '#title' => t('Fächer der Oberstufe'),
-    '#default_value' => theme_get_setting('oberstufe_faecher'),
-    '#description' => t('Bitte Fächer mit Komma getrennt angeben.'),
-  ];
-  $form['themecolor_darkgreen'] = [
+  $form['themecolor_primaryDark'] = [
     '#type' => 'color',
-    '#title' => t('Dunkelgrün'),
-    '#default_value' => theme_get_setting('themecolor_darkgreen'),
-    '#description' => t('Bitte dunkelgrün angeben.'),
+    '#title' => t('Primärfarbe (dunkel)'),
+    '#default_value' => theme_get_setting('themecolor_primaryDark'),
+    '#description' => t('Geben Sie hier einen dunklen Ton der Primärfarbe an. Dieser wird sehr häufig genutzt.'),
   ];
-  $form['themecolor_green'] = [
+  $form['themecolor_primary'] = [
     '#type' => 'color',
-    '#title' => t('Grün'),
-    '#default_value' => theme_get_setting('themecolor_green'),
-    '#description' => t('Bitte Grün angeben.'),
+    '#title' => t('Primärfarbe'),
+    '#default_value' => theme_get_setting('themecolor_primary'),
+    '#description' => t('Geben Sie hier die Primärfarbe an. Die Primärfarbe ist die am häufigst genutzte Farbe des Farbschemas und sollte den GCM repräsentieren.'),
   ];
-  $form['themecolor_lightgreen'] = [
+  $form['themecolor_primaryLight'] = [
     '#type' => 'color',
-    '#title' => t('Hellgrün'),
-    '#default_value' => theme_get_setting('themecolor_lightgreen'),
-    '#description' => t('Bitte hellgrün angeben.'),
+    '#title' => t('Primärfarbe (hell)'),
+    '#default_value' => theme_get_setting('themecolor_primaryLight'),
+    '#description' => t('Geben Sie hier einen hellen Ton der Primärfarbe an.'),
   ];
-  $form['themecolor_blue'] = [
+  $form['themecolor_accent'] = [
     '#type' => 'color',
-    '#title' => t('Blau'),
-    '#default_value' => theme_get_setting('themecolor_blue'),
-    '#description' => t('Bitte blau angeben.'),
+    '#title' => t('Akzentfarbe'),
+    '#default_value' => theme_get_setting('themecolor_accent'),
+    '#description' => t('Geben Sie hier die Akzentfarbe an. Die Akzentfarbe wird nur an Stellen benutzt, die besonderer Hervorhebung bedürfen. Sie sollte sich von der Primärfarbe abheben aber trotzdem mit ihr harmonieren.'),
   ];
-  $form['themecolor_lightblue'] = [
+  $form['themecolor_accentLight'] = [
     '#type' => 'color',
-    '#title' => t('Hellblau'),
-    '#default_value' => theme_get_setting('themecolor_lightblue'),
-    '#description' => t('Bitte hellblau angeben.'),
+    '#title' => t('Akzentfarbe (hell)'),
+    '#default_value' => theme_get_setting('themecolor_accentLight'),
+    '#description' => t('Geben Sie hier einen hellen Ton der Akzentfarbe an.'),
+  ];
+  $form['themecolor_text'] = [
+    '#type' => 'color',
+    '#title' => t('Text'),
+    '#default_value' => theme_get_setting('themecolor_text'),
+    '#description' => t('Geben Sie hier die Farbe an, in der der Großteil des Textes erscheinen soll. Sie sollte einen hohen Kontrast zum Hintergund der Seite haben.'),
+  ];
+  $form['themecolor_textOnPrimary'] = [
+    '#type' => 'color',
+    '#title' => t('Text auf Flächen'),
+    '#default_value' => theme_get_setting('themecolor_textOnPrimary'),
+    '#description' => t('Geben Sie hier die Farbe an, in der der Text erscheinen soll, der sich auf mit der Primärfarbe oder ihrem dunklen Ton gefärbten Flächen befindet. Sie sollte einen hohen Kontrast zur Primärfarbe haben.'),
   ];
 }
 
@@ -130,12 +124,14 @@ function gcmofficial_preprocess_html(&$variables)
   // set theme colors to be added to inline CSS by Twig template (html.html.twig)
   // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
   //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
-  $variables['themecolor_darkgreen'] = theme_get_setting('themecolor_darkgreen');
-  $variables['themecolor_darkgreen_transparent'] = theme_get_setting('themecolor_darkgreen')."dd";
-  $variables['themecolor_green'] = theme_get_setting('themecolor_green');
-  $variables['themecolor_lightgreen'] = theme_get_setting('themecolor_lightgreen');
-  $variables['themecolor_blue'] = theme_get_setting('themecolor_blue');
-  $variables['themecolor_lightblue'] = theme_get_setting('themecolor_lightblue');
+  $variables['themecolor_primaryDark'] = theme_get_setting('themecolor_primaryDark');
+  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark')."dd";
+  $variables['themecolor_primary'] = theme_get_setting('themecolor_primary');
+  $variables['themecolor_primaryLight'] = theme_get_setting('themecolor_primaryLight');
+  $variables['themecolor_accent'] = theme_get_setting('themecolor_accent');
+  $variables['themecolor_accentLight'] = theme_get_setting('themecolor_accentLight');
+  $variables['themecolor_text'] = theme_get_setting('themecolor_text');
+  $variables['themecolor_textOnPrimary'] = theme_get_setting('themecolor_textOnPrimary');
 }
 
 // -> Homepage

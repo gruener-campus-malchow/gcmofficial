@@ -1,11 +1,13 @@
 /* general section */
 :root {
-    --darkgreen: darkgreen;
-    --darkgreen-transparent: darkgreen;
-    --green: green;
-    --lightgreen: palegreen;
-    --blue: royalblue;
-    --lightblue: powderblue;
+    --text: black;
+    --primary-dark: darkgreen;
+    --primary-dark-transparent: darkgreen;
+    --primary: green;
+    --primary-light: palegreen;
+    --text-on-primary: white;
+    --accent: royalblue;
+    --accent-light: powderblue;
 }
 
 header,
@@ -14,6 +16,7 @@ footer {
     width: 100%;
     font-size: max(min(1.05em, 1.8vw), 16px);
     line-height: 1.5em;
+    color: var(--text);
 }
 
 header .region-branding,
@@ -40,9 +43,10 @@ button,
 .form-type-select,
 .btn-like {
     background-color: darkgreen;
-    background-color: var(--darkgreen);
+    background-color: var(--primary-dark);
     border: none;
     color: white;
+    color: var(--text-on-primary);
     padding: 0.16rem 0.8rem;
     text-align: center;
 }
@@ -54,7 +58,7 @@ button:hover,
 .form-type-select:focus-within,
 .btn-like:hover {
     background-color: green;
-    background-color: var(--green);
+    background-color: var(--primary);
 }
 
 .form-type-select {
@@ -89,7 +93,7 @@ h4,
 h5,
 .field__label {
     color: royalblue;
-    color: var(--blue);
+    color: var(--accent);
     line-height: 1em;
 }
 
@@ -100,16 +104,17 @@ h5,
 
 a {
     color: green;
-    color: var(--green);
+    color: var(--primary);
 }
 
 a:visited {
     color: darkgreen;
-    color: var(--darkgreen);
+    color: var(--primary-dark);
 }
 
 a.btn-like:visited {
     color: white;
+    color: var(--text-on-primary);
 }
 
 hr {
@@ -142,6 +147,7 @@ header .site-name {
 
 .site-name a {
     color: black;
+    color: var(--text);
     text-decoration: none;
     font-family: Poppins;
     letter-spacing: 0.03em;
@@ -163,12 +169,12 @@ header .site-logo img {
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
     border: 1.5px solid darkgreen;
-    border: 1.5px solid var(--darkgreen);
+    border: 1.5px solid var(--primary-dark);
 }
 
 header .region-navigation {
     background-color: darkgreen;
-    background-color: var(--darkgreen);
+    background-color: var(--primary-dark);
 }
 
 #block-hauptnavigation ul {
@@ -185,18 +191,19 @@ header .region-navigation {
 
 #block-hauptnavigation li {
     background-color: darkgreen;
-    background-color: var(--darkgreen);
+    background-color: var(--primary-dark);
     transition: background-color 0.2s;
 }
 
 #block-hauptnavigation li:hover {
     background-color: green;
-    background-color: var(--green);
+    background-color: var(--primary);
 }
 
 #block-hauptnavigation li a,
 #block-hauptnavigation li span {
     color: white;
+    color: var(--text-on-primary);
     padding: 1.5vw 2vw;
     text-decoration: none;
     white-space: nowrap;
@@ -213,7 +220,7 @@ header .region-navigation {
 
 #block-hauptnavigation .is-active {
     color: palegreen;
-    color: var(--lightgreen);
+    color: var(--primary-light);
 }
 
 #block-hauptnavigation a.menuparent::after,
@@ -254,6 +261,7 @@ ul.sf-menu::after {
 #main .region-content th,
 #main .region-content td {
     border: 0.1vw solid black;
+    border: 0.1vw solid var(--text);
     padding: 0.5vw;
 }
 
@@ -293,7 +301,7 @@ ul.sf-menu::after {
     padding: 2.2em;
     height: min-content;
     background-color: darkgreen;
-    background-color: var(--darkgreen);
+    background-color: var(--primary-dark);
     color: white;
 }
 
@@ -308,17 +316,18 @@ button,
 
 .aside-container aside a {
     color: palegreen;
-    color: var(--lightgreen);
+    color: var(--primary-light);
 }
 
 .aside-container aside a:visited {
     color: white;
+    color: var(--text-on-primary);
 }
 
 .aside-container aside .btn-like {
     background-color: white;
     color: darkgreen;
-    color: var(--darkgreen);
+    color: var(--primary-dark);
 }
 
 .aside-container aside .btn-like:hover {
@@ -327,13 +336,14 @@ button,
 
 .aside-container aside a.btn-like:visited {
     color: darkgreen;
-    color: var(--darkgreen);
+    color: var(--primary-dark);
 }
 
 .aside-container aside h2,
 .aside-container aside h3,
 .aside-container aside .field__label {
     color: white;
+    color: var(--text-on-primary);
 }
 
 .aside-container aside .field__label {
@@ -357,6 +367,7 @@ button,
 .form-type-select::after {
     content: '⌵';
     color: white;
+    color: var(--text-on-primary);
     position: absolute;
     margin-left: -1em;
     transform: translateY(-0.1em);
@@ -368,7 +379,7 @@ button,
 
 .form-type-select {
     background-color: darkgreen;
-    background-color: var(--darkgreen);
+    background-color: var(--primary-dark);
     padding-right: 1vw;
 }
 
@@ -390,7 +401,7 @@ button,
 
 .view-content a {
     color: royalblue;
-    color: var(--blue);
+    color: var(--accent);
 }
 
 .views-field-created {
@@ -404,8 +415,9 @@ button,
 .field--name-field-faecher-tag a {
     text-decoration: none;
     background-color: palegreen;
-    background-color: var(--lightgreen);
+    background-color: var(--primary-light);
     color: black;
+    color: var(--text);
     font-weight: bold;
     padding: 0.5em 0.8em;
     line-height: 2.5em;
@@ -416,15 +428,15 @@ button,
 .views-field-field-faecher-tag a,
 .field--name-field-faecher-tag a {
     background-color: powderblue;
-    background-color: var(--lightblue);
+    background-color: var(--accent-light);
 }
 
 .view-fachbereiche .view-content a {
     display: block;
     box-shadow: 0 0 0 2px darkgreen inset;
-    box-shadow: 0 0 0 2px var(--darkgreen) inset;
+    box-shadow: 0 0 0 2px var(--primary-dark) inset;
     color: darkgreen;
-    color: var(--darkgreen);
+    color: var(--primary-dark);
     border-radius: 3px;
     text-decoration: none;
     padding: 0.5em 0;
@@ -436,9 +448,9 @@ button,
 .view-fachbereiche .view-content a:hover,
 .view-fachbereiche .view-content a:active {
     box-shadow: 0 0 0 1.5px green inset;
-    box-shadow: 0 0 0 1.5px var(--green) inset;
+    box-shadow: 0 0 0 1.5px var(--primary) inset;
     color: green;
-    color: var(--green);
+    color: var(--primary);
     text-decoration: underline;
 }
 
@@ -516,4 +528,8 @@ footer .menu--footer ul li:first-child {
 /* .menu--footer if account menu and footer menu are switched */
 footer .menu--account {
     float: right;
+}
+
+ul.menu a.is-active {
+    color: var(--text);
 }

@@ -1,7 +1,3 @@
-:root {
-    --rows: 3;
-}
-
 #main menu {
     --spacing: 1em;
     width: 100%;
@@ -15,9 +11,9 @@
 
 #main menu a {
     border: 2px solid darkgreen;
-    border: 2px solid var(--darkgreen);
+    border: 2px solid var(--primary-dark);
     color: darkgreen;
-    color: var(--darkgreen);
+    color: var(--primary-dark);
     flex: 1 1 1px;
     white-space: nowrap;
     margin-right: 1em;
@@ -33,9 +29,9 @@
 #main menu a:hover,
 #main menu a:active {
     border-color: green;
-    border-color: var(--green);
+    border-color: var(--primary);
     color: green;
-    color: var(--green);
+    color: var(--primary);
     text-decoration: underline;
 }
 
@@ -55,8 +51,9 @@ h2 {
 
 .columns div {
     background-color: darkgreen;
-    background-color: var(--darkgreen);
+    background-color: var(--primary-dark);
     color: white;
+    color: var(--text-on-primary);
     padding: 1em;
     flex-basis: 1px;
     flex-grow: 1;
@@ -68,6 +65,7 @@ h2 {
 
 .columns h3 {
     color: white;
+    color: var(--text-on-primary);
     position: absolute;
     width: 24%;
 }

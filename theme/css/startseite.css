@@ -90,9 +90,10 @@
     width: fit-content;
     height: fit-content;
     background-color: darkgreen;
-    background-color: var(--darkgreen-transparent);
+    background-color: var(--primary-dark-transparent);
     padding: 1rem 1.6rem;
     color: white;
+    color: var(--text-on-primary);
     border-radius: 2.5px;
     font-size: 1.4em;
     right: 10%;
@@ -102,6 +103,7 @@
 #herobox h2,
 #herobox a {
     color: white;
+    color: var(--text-on-primary);
 }
 
 .kontakt-links {
