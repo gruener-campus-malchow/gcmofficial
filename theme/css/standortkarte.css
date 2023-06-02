@@ -50,6 +50,7 @@
 
 .site button {
     display: block;
-    margin-top: 0.4em;
+    margin: 0.4em 0 1em 0;
+    width: max-content;
     max-width: 100%;
 }
