@@ -473,6 +473,15 @@ button,
 .field--name-field-faecher-tag .field__item {
     display: inline;
 }
+.field--name-field-ende, .field--name-field-beginn{
+    color: gray;
+    font-style: italic;
+}
+
+.field--name-field-beginn{
+    float: left;
+    margin-right: 1em;
+}
 
 .field--name-field-stufe-tag {
     float: left;
