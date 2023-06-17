@@ -3,7 +3,7 @@
 	src: url('../assets/Poppins-Bold.ttf');
 	font-weight: 700;
 	font-style: normal;
-	font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 	src: url('../assets/Poppins-SemiBold.ttf');
 	font-weight: 600;
 	font-style: normal;
-	font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
@@ -19,5 +19,42 @@
 	src: url('../assets/Poppins-ExtraBold.ttf');
 	font-weight: 800;
 	font-style: normal;
-	font-display: swap;
+    font-display: swap;
 }
+
+/* see MaterialSymbols_README.md */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/MaterialSymbolsRounded.woff2') format('woff2'),
+    url('../assets/MaterialSymbolsRounded.ttf') format('truetype');
+}
+
+.symbol {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+

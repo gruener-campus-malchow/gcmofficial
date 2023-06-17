@@ -5,9 +5,11 @@ var width = screen.width;
 if (slides_out_func.length > 1) {
     if (width > 360) {
         var fwbutton = document.createElement('button');
-        fwbutton.innerText = '→';
+        fwbutton.classList.add("symbol");
+        fwbutton.innerText = 'arrow_forward_ios';
         var bwbutton = document.createElement('button');
-        bwbutton.innerText = '←';
+        bwbutton.classList.add("symbol");
+        bwbutton.innerText = 'arrow_back_ios';
         fwbutton.onclick = fwimtog;
         bwbutton.onclick = bwimtog;
     }

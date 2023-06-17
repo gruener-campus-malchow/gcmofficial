@@ -15,6 +15,7 @@
 {{ attach_library('gcmofficial/titelbild') }}
 {{ attach_library('gcmofficial/startseite') }}
 <div id="titelbild">
+    {# add every image or video in field_titelbild or slideshow to the page #}
     {{ content.field_titelbild }}
     {% if slideshow|length > 0 %}
         {# following div imitates div created by content.field_titelbild #}

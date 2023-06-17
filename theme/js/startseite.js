@@ -6,16 +6,18 @@ var ticking = false;
 window.addEventListener("DOMContentLoaded", () => {
     // add parallax effect
     slideimages = document.querySelectorAll("#titelbild .field__item img, #titelbild .field__item video");
-    window.addEventListener('scroll', () => {
-        lastScrollY = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                parallax(lastScrollY);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
+    if (window.innerWidth > 500) { // no mobile because of lagging
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    parallax(lastScrollY);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
 
     // video constrols
     // guideline: https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player
