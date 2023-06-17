@@ -16,25 +16,7 @@ function gcmofficial_preprocess_paragraph__standort(&$variables)
       $variables['roomnumbers'] = $roomnumbers; // add bool to variables to be accessed by Twig template (paragraph--standort.html.twig)
     }
   }
-}
 
-// -> view fachbereiche ("Fachbereichuebersicht")
-function gcmofficial_preprocess_views_view_unformatted__fachbereiche(&$variables)
-{
-  $view = $variables['view'];
-  $rows = $variables['rows'];
-  $grouped = [];
-  // groups view rows (= every fachbereich page) by fachbereich title
-  // ([ Informatik-Mittelstufe, Informatik-Oberstufe, Mathematik-Grundstufe ] -> [ "Informatik"=>[Informatik-Mittelstufe, Informatik-Oberstufe], "Mathematik"=>[Mathematik-Grundstufe] ])
-  foreach ($rows as $id => $row) {
-    $row_title = $view->result[$id]->node_field_data_title; // get fachbereich title of row
-    // add row to fachbereich group
-    if (!array_key_exists($row_title, $grouped)) {
-      $grouped[$row_title] = [];
-    }
-    array_push($grouped[$row_title], $variables['rows'][$id]);
-  }
-  $variables['grouped'] = $grouped; // add associative array to variables to be accessed by by Twig template (view-view-unformatted--fachbereiche.html.twig)
 }
 
 // administered through Responsive Image module
@@ -104,17 +86,14 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
 function gcmofficial_preprocess_node__fachbereich(&$variables)
 {
   // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
-  $variables['grundstufe_faecher'] = explode(',', theme_get_setting('grundstufe_faecher'));
-  $variables['mittelstufe_faecher'] = explode(',', theme_get_setting('mittelstufe_faecher'));
-  $variables['oberstufe_faecher'] = explode(',', theme_get_setting('oberstufe_faecher'));
   $view = views_get_view_result('fachbereiche');
   $variables['stufen'] = [];
   foreach ($view as $v) {
-	$title = get_object_vars($v)['_entity']->get('title')->getValue()[0]['value'];
-	if ($variables['node']->getTitle()===$title) {
-		// BIG and I mean BIG pain in the...
-		array_push($variables['stufen'], get_object_vars($v)['_entity']->get('field_stufe')->getValue()[0]['value']);
-	}
+    $title = get_object_vars($v)['_entity']->get('title')->getValue()[0]['value'];
+    if ($variables['node']->getTitle() === $title) {
+      // BIG and I mean BIG pain in the...
+      array_push($variables['stufen'], get_object_vars($v)['_entity']->get('field_stufe')->getValue()[0]['value']);
+    }
   }
 }
 
@@ -125,7 +104,7 @@ function gcmofficial_preprocess_html(&$variables)
   // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
   //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
   $variables['themecolor_primaryDark'] = theme_get_setting('themecolor_primaryDark');
-  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark')."dd";
+  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark') . "dd";
   $variables['themecolor_primary'] = theme_get_setting('themecolor_primary');
   $variables['themecolor_primaryLight'] = theme_get_setting('themecolor_primaryLight');
   $variables['themecolor_accent'] = theme_get_setting('themecolor_accent');
