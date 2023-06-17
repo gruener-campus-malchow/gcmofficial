@@ -97,6 +97,14 @@ function gcmofficial_preprocess_node__fachbereich(&$variables)
   }
 }
 
+// -> content type "stufen", rendereed in node--stufen.html.twig
+function gcmofficial_preprocess_node__stufen(&$variables)
+{
+  $node = $variables['node'];
+
+  $variables['kurzform'] = $node->field_kurzform->value;
+}
+
 // -> every page
 function gcmofficial_preprocess_html(&$variables)
 {

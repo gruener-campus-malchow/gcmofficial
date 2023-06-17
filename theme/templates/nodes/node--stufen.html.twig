@@ -1,0 +1,17 @@
+{#
+/**
+ * Variables through custom theme:
+ * - kurzform: short form (machine name) of the node label
+ *
+ * @see gcmofficial_preprocess_node__stufen()
+ */
+#}
+{{ attach_library('gcmofficial/stufen') }}
+{% if content.field_titelbild|render %}
+{{ attach_library('gcmofficial/titelbild') }}
+<div id="titelbild">
+    {{ content.field_titelbild }}
+</div>
+{% endif %}
+<a href="/dev/gcmofficial/fach?field_stufe_value={{ kurzform }}">Zu den Unterrichtsfächern</a>
+{{ content.body }}
