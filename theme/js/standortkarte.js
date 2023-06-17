@@ -1,5 +1,4 @@
 window.onload = () => {
-
     const mapContainer = document.getElementById("map");
     // [top left (x), top left (y), bottom right (x), bottom right (y)]
     const mapDim = [mapContainer.offsetLeft, mapContainer.offsetTop, mapContainer.offsetLeft + mapContainer.offsetWidth, mapContainer.offsetTop + mapContainer.offsetHeight];
@@ -30,33 +29,46 @@ window.onload = () => {
 
     const gebaeude_divs = document.querySelectorAll(".site");
     const gebaeude_sort = ["HG", "FG1", "FG2", "FG3", "TH4", "SpH"];
-    var FG1 = [52.56992, 13.49212, "Fontane Gebäude 1", "Doberaner Str. 58, 13051 Berlin"];
-    var FG2 = [52.56921, 13.49181, "Fontane Gebäude 2", "Doberaner Str. 55, 13051 Berlin"];
-    var FG3 = [52.56872, 13.49251, "Fontane Gebäude 3", "Doberaner Str. 53, 13051 Berlin"];
-    var HG = [52.57212, 13.48466, "Hauptgebäude", "Malchower Ch 2, 13051 Berlin"];
-    var SpH = [52.55679, 13.48977, "Sportplatz Hansastr.", "Hansastraße 190, 13088 Berlin"];
-    var TH4 = [52.57204, 13.50318, "Turnhalle FG4", "Ribnitzer Str. 1, 13051 Berlin"];
 
     let x = 0;
     // array 'sitesBook' built with Twig, inspect via browser console
     while (x < sitesBook.length) {
         var marker = L.marker([sitesBook[x].latitude, sitesBook[x].longitude]).addTo(map);
         marker.on("mousedown", markSite(marker, sitesBook[x], false));
-        x++;
-    }
+        if (x>3) {
+            var node = gebaeude_divs[x].getElementsByTagName("div")[2];
+        } else {
+            var node = gebaeude_divs[x].getElementsByTagName("div")[4];
+        }
 
-    for (let i = 0; i < gebaeude_divs.length; i++) {
-        var node = gebaeude_divs[i].getElementsByTagName("div")[4];
+
         var buttonel = document.createElement('button');
-        buttonel.setAttribute("id", "btn" + gebaeude_sort[i]);
+        buttonel.setAttribute("id", "btn" + gebaeude_sort[x]);
         buttonel.innerText = "Auf Karte markieren";
         node.appendChild(buttonel);
+        document.getElementById("btn" + gebaeude_sort[x]).addEventListener('click', myFunc, false);;
+        document.getElementById("btn" + gebaeude_sort[x]).myParam = sitesBook[x];
+        function myFunc(evt)
+        {
+            console.log(evt.currentTarget.myParam);
+            markSite(L.marker([evt.currentTarget.myParam.latitude, evt.currentTarget.myParam.longitude]).addTo(map), evt.currentTarget.myParam);
+        }
+
+
         if(navigator.clipboard){
             var buttoncop = document.createElement('button');
-            buttoncop.setAttribute("id", "btncop" + gebaeude_sort[i]);
+            buttoncop.setAttribute("id", "btncop" + gebaeude_sort[x]);
             buttoncop.innerText = "Adresse kopieren";
             node.appendChild(buttoncop);
+            document.getElementById("btncop" + gebaeude_sort[x]).addEventListener('click', diehard, false);;
+            document.getElementById("btncop" + gebaeude_sort[x]).dieParam = sitesBook[x];
+            function diehard(evt)
+            {
+                console.log(evt.currentTarget.dieParam);
+                docopy(sitesBook[evt.currentTarget.dieParam]);
+            }
         }
+        x++;
     }
 
     let btnFG1 = document.getElementById("btnFG1");
@@ -86,11 +98,11 @@ window.onload = () => {
     }
 
     function docopy(gebaeude_forcop) {
-        var copyText = gebaeude_forcop[3];
+        var copyText = gebaeude_forcop["address"];
         navigator.clipboard.writeText(copyText).then(
             () => {
                 // successful
-                alert("Adresse " + gebaeude_forcop[3] + " kopiert.");
+                alert("Adresse " + copyText + " kopiert.");
             },
             () => {
                 // failed
@@ -98,42 +110,5 @@ window.onload = () => {
             }
         );
     }
-
-    btnFG1.onclick = () => {
-        markSite(L.marker([sitesBook[1].latitude, sitesBook[1].longitude]).addTo(map), sitesBook[1]);
-    };
-    btnFG2.onclick = () => {
-        markSite(L.marker([sitesBook[2].latitude, sitesBook[2].longitude]).addTo(map), sitesBook[2]);
-    };
-    btnFG3.onclick = () => {
-        markSite(L.marker([sitesBook[3].latitude, sitesBook[3].longitude]).addTo(map), sitesBook[3]);
-    };
-    btnHG.onclick = () => {
-        markSite(L.marker([sitesBook[0].latitude, sitesBook[0].longitude]).addTo(map), sitesBook[0]);
-    };
-    btnSpH.onclick = () => {
-        markSite(L.marker([sitesBook[5].latitude, sitesBook[5].longitude]).addTo(map), sitesBook[5]);
-    };
-    btnTH4.onclick = () => {
-        markSite(L.marker([sitesBook[4].latitude, sitesBook[4].longitude]).addTo(map), sitesBook[4]);
-    };
-    btncopFG1.onclick = () => {
-        docopy(FG1);
-    };
-    btncopFG2.onclick = () => {
-        docopy(FG2);
-    };
-    btncopFG3.onclick = () => {
-        docopy(FG3);
-    };
-    btncopHG.onclick = () => {
-        docopy(HG);
-    };
-    btncopSpH.onclick = () => {
-        docopy(SpH);
-    };
-    btncopTH4.onclick = () => {
-        docopy(TH4);
-    };
 
 };
