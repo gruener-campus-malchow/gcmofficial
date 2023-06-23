@@ -504,6 +504,18 @@ button,
     float: left;
 }
 
+.field--name-field-beginn::before {
+    content: "Ab ";
+}
+
+.field--name-field-ende::before {
+    content: "bis ";
+}
+
+.field--name-field-beginn + .field--name-field-ende {
+    text-transform: lowercase;
+}
+
 .views-field-field-beginn + .views-field-field-ende {
     text-transform: lowercase;
 }
