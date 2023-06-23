@@ -478,7 +478,7 @@ button,
     font-style: italic;
 }
 
-.field--name-field-beginn{
+.field--name-field-beginn {
     float: left;
     margin-right: 1em;
 }
@@ -486,6 +486,11 @@ button,
 .field--name-field-stufe-tag {
     float: left;
     margin-right: 1em;
+}
+
+.field--name-body {
+    float: left;
+    width: 100%;
 }
 
 .views-field-field-beginn,
@@ -525,6 +530,11 @@ footer .site-name {
     float: right;
 }
 
+footer .menu--footer ul {
+    display: flex;
+    align-items: flex-end;
+}
+
 footer .menu--footer ul li {
     float: left;
     margin-left: 2vw;
@@ -532,6 +542,14 @@ footer .menu--footer ul li {
 
 footer .menu--footer ul li:first-child {
     margin-left: unset;
+}
+
+footer .schulpreis img {
+    width: 10vw;
+}
+
+footer .schulpreis p {
+    margin-bottom: 0;
 }
 
 /* .menu--footer if account menu and footer menu are switched */
