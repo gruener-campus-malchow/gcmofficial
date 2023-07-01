@@ -2,7 +2,7 @@
     margin-top: 0;
 }
 
-.aside-container div:first-child {
+.aside-container > div:first-child {
     margin-top: calc(9vw + 2em);
 }
 

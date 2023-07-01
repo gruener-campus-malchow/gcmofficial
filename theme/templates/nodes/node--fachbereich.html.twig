@@ -13,6 +13,10 @@
 </div>
 <div class="aside-container">
     <div>
+        <div class="authoring-information">
+            Geschrieben von <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a> am {{ date }}
+        </div>
+		{# <p class="stufenString">{{ stufenString }}</p> #}
         {# create menu to switch stufe of unterrichtsfach #}
         <div class="stufen">
             {% if "grundstufe" in stufen %}
@@ -28,7 +32,7 @@
                 href="/dev/gcmofficial/fach/oberstufe/{{ node.label }}">Oberstufe</a>
             {% endif %}
         </div>
-        <p><strong>Kontakt:</strong> {{ content.field_kontakt }}</p>
+        <p><strong>Kontakt:</strong> <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a> | {{ content.field_kontakt }}</p>
         <p>
             <strong>Hier finden Sie weitere Inhalte:</strong>
         </p>
