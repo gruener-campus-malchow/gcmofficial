@@ -556,19 +556,61 @@ footer .menu--footer ul li:first-child {
     margin-left: unset;
 }
 
-footer .schulpreis img {
-    width: 10vw;
-}
-
-footer .schulpreis p {
-    margin-bottom: 0;
-}
-
-/* .menu--footer if account menu and footer menu are switched */
+/* .menu--footer if account menu and footer menu are switched
 footer .menu--account {
     float: right;
-}
+} */
 
 ul.menu a.is-active {
     color: var(--text);
+}
+
+.social {
+  width: 100vw;
+  height: 100vh;
+}
+
+.social__media {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.social__icon {
+  height: 100%;
+  list-style: none;
+  margin-inline: 6px;
+}
+
+.social__icon-img {
+  height: 1em;
+}
+
+nav#block-gcmofficial-footer {
+    width: 66%;
+}
+
+div#block-socialmediaicons {
+    float: right;
+}
+
+div#block-schulpreis {
+    width: 100%;
+    float: right;
+    margin-bottom: 1.5em;
+}
+
+div#block-schulpreis a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div#block-schulpreis img {
+    margin-left: 1.5em;
+    width: auto;
+    height: 1.6em;
 }
