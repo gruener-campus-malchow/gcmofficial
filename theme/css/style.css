@@ -17,14 +17,35 @@ footer {
     font-size: max(min(1.05em, 1.8vw), 16px);
     line-height: 1.5em;
     color: var(--text);
+    font-family: "Lato";
 }
 
 header .region-branding,
 header #block-hauptnavigation,
-#main .region-content,
 footer .region-footer {
     width: 80%;
     margin: 0 10%;
+}
+
+/* Grant every block of the page the same padding as the overall page (see above)
+   Exceptions: Breadcrumbs, title, and main content block
+   Instead of the main content block, every element in it, the fields of the page will be granted a padding */
+#main .region-content > *,
+#main .region-content .block-system-main-block > * {
+  padding: 0 10%;
+  width: 80%;
+}
+
+#main .region-content .block-system-breadcrumb-block,
+#main .region-content .block-page-title-block {
+  padding: 0;
+  margin-left: 10%;
+  width: unset;
+}
+
+#main .region-content .block-system-main-block {
+  padding: 0;
+  width: 100%;
 }
 
 /* remove Safari's default design of buttons */
@@ -409,6 +430,16 @@ button,
     font-style: italic;
 }
 
+.views-field-field-beginn ~ .views-field-created {
+    display: none;
+}
+
+.views-field-title {
+    display: block;
+    width: 100%;
+    font-size: 1.15em;
+}
+
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
 .field--name-field-stufe-tag a,
@@ -469,12 +500,17 @@ button,
 
 /* End Ansichten */
 
+.authoring-information {
+    width: 100%;
+    display: block;
+}
+
 .field--name-field-stufe-tag .field__item,
 .field--name-field-faecher-tag .field__item {
     display: inline;
 }
 .field--name-field-ende, .field--name-field-beginn{
-    color: gray;
+    color: #666;
     font-style: italic;
 }
 
@@ -488,15 +524,10 @@ button,
     margin-right: 1em;
 }
 
-.field--name-body {
-    float: left;
-    width: 100%;
-}
-
 .views-field-field-beginn,
 .views-field-field-ende {
     display: flex;
-    color: gray;
+    color: #666;
     margin-right: 2em;
 }
 
@@ -525,11 +556,16 @@ button,
     padding-left: 0.2em;
 }
 
-.views-field-field-beginn ~ .views-field-body {
+.views-field-field-beginn ~ .views-field-body,
+.field--name-field-stufe-tag ~ .field,
+.field--name-field-faecher-tag ~ .field {
     float: left;
     width: 100%;
 }
 
+.field--name-field-stufe-tag ~ .field--name-field-faecher-tag {
+    width: unset;
+}
 
 footer {
     margin-top: 5vw;

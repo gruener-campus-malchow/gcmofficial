@@ -3,13 +3,14 @@ header {
 }
 
 #titelbild,
+#titelbild .field--name-field-titelbild,
 #titelbild .field__item {
     height: calc(70vh - 21vw) !important;
     max-height: unset !important;
 }
 
-#titelbild {
-    margin-left: -5.5%;
+#titelbild .field--name-field-titelbild {
+    margin-left: -5.5%; 
     width: 111%;
 }
 

@@ -1,12 +1,11 @@
 #titelbild {
-    margin-left: -12.5%;
-    width: 125%;
-    height: 25vw;
     border-bottom: 2px solid #666;
 }
 
 #titelbild .field--name-field-titelbild {
-    width: 100%;
+    margin-left: -12.5%;
+    width: 125%;
+    height: 25vw;
 }
 
 #titelbild .field__item {
@@ -42,8 +41,16 @@
     max-height: 100vh !important;
 }
 
-.field--name-body {
+#main .field--name-body, .article-content {
     margin-top: 9em;
+}
+
+#main .aside-container .field--name-body {
+    margin-top: 0;
+}
+
+#main .article-content .field--name-body {
+    margin-top: 0;
 }
 
 #main {

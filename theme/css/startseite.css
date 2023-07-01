@@ -3,8 +3,9 @@
 }
 
 #titelbild,
+#titelbild .field--name-field-titelbild,
 #titelbild .field__item {
-    height: calc(100vh - 13vw);
+    height: calc(100vh - 13vw) !important;
     max-height: 66.64vw;
     min-height: 45vw;
 }
@@ -30,6 +31,7 @@
     justify-content: center;
     list-style: none;
     background-color: #00000077;
+    z-index: 2;
 }
 
 #titelbild .slideshow-hidden .video-controls {
@@ -109,14 +111,18 @@
     content: 'fullscreen_exit';
 }
 
+#titelbild .button-container {
+    margin-top: max( min( calc((100vh - 13vw) * -1), -45vw ), -66.64vw ) !important;
+}
+
 #herobox {
     position: absolute;
     top: min(max(30vh, 16vw), 30vw);
-    width: fit-content;
+    width: fit-content !important;
     height: fit-content;
     background-color: darkgreen;
     background-color: var(--primary-dark-transparent);
-    padding: 1rem 1.6rem;
+    padding: 1rem 1.6rem !important;
     color: white;
     color: var(--text-on-primary);
     border-radius: 2.5px;
@@ -131,8 +137,15 @@
     color: var(--text-on-primary);
 }
 
+#herobox h2 {
+    font-size: 1.8em;
+    /* font-family: "Cabin"; */
+}
+
 #herobox a::before {
-    content: '↗ ';
+    /* content: '↗ '; */
+    content: '☞ ';
+    font-size: 1.2em;
 }
 
 #herobox a {
