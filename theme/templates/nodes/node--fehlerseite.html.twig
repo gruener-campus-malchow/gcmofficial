@@ -1,0 +1,14 @@
+{{ attach_library('gcmofficial/fehlerseite') }}
+<style>
+    .field--name-field-bildergalerie img {
+        display: none;
+    }
+</style>
+{{ content.field_bildergalerie }}
+<script>
+    document.querySelectorAll(".field--name-field-bildergalerie img")[Math.floor(Math.random() * {{ content.field_bildergalerie['#items']|length - 1 }})].style.display = "block";
+</script>
+<noscript>
+    {{ content.field_bildergalerie[0] }}
+</noscript>
+{{ content.body }}

@@ -49,4 +49,10 @@ ueberuns:
     theme:
       css/ueber-uns.css: {}
       css/breaks/ueber-uns-mobile.css: {media: all and (max-width: 730px)}
+
+fehlerseite:
+  css:
+    theme:
+      css/fehlerseite.css: {}
+      css/breaks/fehlerseite-mobile.css: {media: all and (max-width: 730px)}
         
