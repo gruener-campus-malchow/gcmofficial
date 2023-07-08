@@ -49,4 +49,8 @@ ueberuns:
     theme:
       css/ueber-uns.css: {}
       css/breaks/ueber-uns-mobile.css: {media: all and (max-width: 730px)}
+
+views:
+  js:
+    js/view-filters.js: {}
         
