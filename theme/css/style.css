@@ -1,5 +1,6 @@
 /* general section */
 :root {
+    --background: white;
     --text: black;
     --primary-dark: darkgreen;
     --primary-dark-transparent: darkgreen;
@@ -8,6 +9,12 @@
     --text-on-primary: white;
     --accent: royalblue;
     --accent-light: powderblue;
+}
+
+body,
+header,
+footer {
+   background-color: var(--background);
 }
 
 header,
@@ -58,6 +65,10 @@ button,
 select {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
+}
+
+input {
+    background-color: var(--background);
 }
 
 input[type=button],
@@ -349,6 +360,7 @@ button,
 
 .aside-container aside .btn-like {
     background-color: white;
+    background-color: var(--background);
     color: darkgreen;
     color: var(--primary-dark);
 }
