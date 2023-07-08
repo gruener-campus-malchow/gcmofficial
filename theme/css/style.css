@@ -24,7 +24,7 @@ footer {
     font-size: max(min(1.05em, 1.8vw), 16px);
     line-height: 1.5em;
     color: var(--text);
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
 }
 
 header .region-branding,
@@ -277,6 +277,12 @@ ul.sf-menu::after {
 .node__meta {
     color: #666;
     font-style: italic;
+}
+
+.authoring-information {
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+    color: #666;
 }
 
 #main {
