@@ -1,0 +1,10 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 1300px 1300px;
+    color: white;
+}
+#fehlerseitentext {
+    color: white;
+    margin-left: 24vw;
+    margin-right: 6vw;
+}
