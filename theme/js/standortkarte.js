@@ -28,44 +28,44 @@ window.onload = () => {
     }).addTo(map);
 
     const gebaeude_divs = document.querySelectorAll(".site");
-    const gebaeude_sort = ["HG", "FG1", "FG2", "FG3", "TH4", "SpH"];
+
+    function autoId(sitesBook, index, identifier = "btn") {
+        return identifier + (sitesBook[index].latitude * 10000).toString() + (sitesBook[index].longitude * 10000).toString();
+    }
 
     let x = 0;
     // array 'sitesBook' built with Twig, inspect via browser console
+    var allMarkers = {};
     while (x < sitesBook.length) {
         var marker = L.marker([sitesBook[x].latitude, sitesBook[x].longitude]).addTo(map);
         marker.on("mousedown", markSite(marker, sitesBook[x], false));
-        if (x>3) {
-            var node = gebaeude_divs[x].getElementsByTagName("div")[2];
-        } else {
-            var node = gebaeude_divs[x].getElementsByTagName("div")[4];
-        }
+        allMarkers[autoId(sitesBook, x, "marker")] = marker;
+        var node = gebaeude_divs[x].getElementsByClassName("field--name-field-adresse")[0];
 
 
         var buttonel = document.createElement('button');
-        buttonel.setAttribute("id", "btn" + gebaeude_sort[x]);
+        buttonel.setAttribute("id", autoId(sitesBook, x));
         buttonel.innerText = "Auf Karte markieren";
         node.appendChild(buttonel);
-        document.getElementById("btn" + gebaeude_sort[x]).addEventListener('click', myFunc, false);;
-        document.getElementById("btn" + gebaeude_sort[x]).myParam = sitesBook[x];
-        function myFunc(evt)
-        {
+        document.getElementById(autoId(sitesBook, x)).addEventListener('click', myFunc, false);;
+        document.getElementById(autoId(sitesBook, x)).myParam = sitesBook[x];
+        function myFunc(evt) {
             console.log(evt.currentTarget.myParam);
-            markSite(L.marker([evt.currentTarget.myParam.latitude, evt.currentTarget.myParam.longitude]).addTo(map), evt.currentTarget.myParam);
+            markSite(allMarkers[autoId([evt.currentTarget.myParam], 0, "marker")], evt.currentTarget.myParam);
         }
 
 
-        if(navigator.clipboard){
+        if (navigator.clipboard) {
             var buttoncop = document.createElement('button');
-            buttoncop.setAttribute("id", "btncop" + gebaeude_sort[x]);
+            buttoncop.setAttribute("id", autoId(sitesBook, x, "btncop"));
             buttoncop.innerText = "Adresse kopieren";
             node.appendChild(buttoncop);
-            document.getElementById("btncop" + gebaeude_sort[x]).addEventListener('click', diehard, false);;
-            document.getElementById("btncop" + gebaeude_sort[x]).dieParam = sitesBook[x];
-            function diehard(evt)
-            {
-                console.log(evt.currentTarget.dieParam);
-                docopy(sitesBook[evt.currentTarget.dieParam]);
+            document.getElementById(autoId(sitesBook, x, "btncop")).addEventListener('click', diehard, false);;
+            document.getElementById(autoId(sitesBook, x, "btncop")).dieParam = sitesBook[x];
+            function diehard(evt) {
+                passonto = evt.currentTarget.dieParam;
+                console.log(passonto);
+                docopy(passonto);
             }
         }
         x++;
@@ -85,6 +85,7 @@ window.onload = () => {
     }
 
     function docopy(gebaeude_forcop) {
+        console.log(gebaeude_forcop);
         var copyText = gebaeude_forcop["address"];
         navigator.clipboard.writeText(copyText).then(
             () => {
