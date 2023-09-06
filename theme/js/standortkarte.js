@@ -71,19 +71,6 @@ window.onload = () => {
         x++;
     }
 
-    let btnFG1 = document.getElementById("btnFG1");
-    let btnFG2 = document.getElementById("btnFG2");
-    let btnFG3 = document.getElementById("btnFG3");
-    let btnHG = document.getElementById("btnHG");
-    let btnSpH = document.getElementById("btnSpH");
-    let btnTH4 = document.getElementById("btnTH4");
-    let btncopFG1 = document.getElementById("btncopFG1");
-    let btncopFG2 = document.getElementById("btncopFG2");
-    let btncopFG3 = document.getElementById("btncopFG3");
-    let btncopHG = document.getElementById("btncopHG");
-    let btncopSpH = document.getElementById("btncopSpH");
-    let btncopTH4 = document.getElementById("btncopTH4");
-
     function markSite(marker, site, scrollToMap = true) {
         if (scrollToMap) {
             document.getElementById("map").scrollIntoView();
