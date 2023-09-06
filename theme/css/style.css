@@ -11,17 +11,22 @@
     --accent-light: powderblue;
 }
 
+.dialog-off-canvas-main-canvas {
+    /* removes invisible text */
+    font-size: 0;
+}
+
 body,
 header,
 footer {
-   background-color: var(--background);
+    background-color: var(--background);
 }
 
 header,
 #main,
 footer {
     width: 100%;
-    font-size: max(min(1.05em, 1.8vw), 16px);
+    font-size: max(min(1.05rem, 1.8vw), 16px);
     line-height: 1.5em;
     color: var(--text);
     font-family: "Lato", sans-serif;
@@ -622,6 +627,7 @@ button,
 
 footer {
     margin-top: 5vw;
+    padding-top: 1em;
 }
 
 footer .site-name {
