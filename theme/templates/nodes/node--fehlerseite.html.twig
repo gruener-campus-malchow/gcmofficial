@@ -8,9 +8,10 @@
 <script>
     var src = document.querySelectorAll(".field--name-field-bildergalerie img")[Math.floor(Math.random() * {{ content.field_bildergalerie['#items']|length - 1 }})].src;
     console.log(src);
-    document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${src}") no-repeat center`;
-    document.body.style.backgroundSize = "100% 100%"; 
-    document.body.style.color = "white";
+    let content = document.getElementsByClassName("dialog-off-canvas-main-canvas")[0];
+    content.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${src}") no-repeat center`;
+    content.style.backgroundSize = "cover"; 
+    content.style.color = "var(--text-on-primary)";
 </script>
 <noscript>
     {{ content.field_bildergalerie[0] }}
