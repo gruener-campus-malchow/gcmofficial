@@ -1,0 +1,15 @@
+- {{renderer :tocgen2}}
+	- type:: toc
+	  chapter:: 7
+- Hierbei handelt es sich um die Seite: [https://gcm.schule/dev/gcmofficial/admin/content](https://gcm.schule/dev/gcmofficial/admin/content).
+- ### Der Tab ![„Inhalt“]()
+	- Es findet sich eine Übersichtstabelle *(Abb. 5.2)* aller eigenständigen, *nicht automatisch generierten* Seiten im [Bereich „Inhalt“ der Benutzeroberfläche](((64f56fb1-469d-4d81-a0c0-a45926411390))).
+	- In der ersten Spalte findet sich der Name der Seite und eventuell die Zuordnung zu einer Stufe (Grund-, Mittel-, Oberstufe) in Klammern.
+	- In der Spalte rechts daneben findet sich der [Inhaltstyp]([[Inhaltstypen]]) der jeweiligen Seite.
+	- Über Schaltflächen (![Schaltfläche „Bearbeiten“]()) am rechten Ende der Tabelle können die Seiten z.B. bearbeitet oder gelöscht werden. Wenn eine Seite bearbeitet wird, öffnet sich ein neues Formular: Sehen Sie dazu [Kapitel 10]([[Inhaltsänderung]]).
+- ### Der Tab ![„Kommentare“]()
+	- Neben der Inhaltsübersicht gibt es eine Übersicht über alle nicht veröffentlichten Seiten oder nicht veröffentlichten Änderungen von Seiten. Hier können bestimmte Personen diese Änderungen bestätigen und damit veröffentlichen. Mehr dazu im [Kapitel 10]([[Inhaltsänderung]]) und [Kapitel 12.4]().
+- ### Der Tab ![„Dateien“]()
+	- Weiterhin existiert eine Übersicht über alle auf der Website genutzten medialen Inhalte und Dateien.
+	- In dieser Tabelle werden alle diese Dateien aufgeführt. Mit einem Klick auf den Namen sind sie einsehbar. In der Spalte „Verwendet in“ (wenn diese Spalte nicht angezeigt wird, ist eventuell ein Klick auf die Schaltfläche „Alle Spalten zeigen“ notwendig) wird außerdem angezeigt, auf welchen Seiten die Datei sichtbar ist, bzw. verwendet wird.
+- Es handelt sich bei allen Tabs um spezielle [Ansichten]([[Ansichten: Inhalte gefiltert anzeigen]]).
