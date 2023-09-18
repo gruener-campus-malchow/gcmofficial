@@ -3,10 +3,11 @@
 	  chapter:: 11
 - Neben der [Veränderung bestehender Seiten]([[Inhaltsänderung]]) ermöglichen Seitenbearbeitungsformulare ebenso die Erstellung neuer Seiten.
 - ## Bestehender Inhaltstyp
-	- Bei [bestehenden Inhaltstypen](((64f5804b-576f-456d-abc1-66a8688f8cb4))) geschieht dies durch die Schaltfläche ![Neuen Inhalt erstellen]() in der [Inhaltsübersicht]([[Inhaltsübersicht]]) oder in den Verknüpfungen (![Schaltfläche „Verknüpfungen“]().
+	- Bei [bestehenden Inhaltstypen](((64f5804b-576f-456d-abc1-66a8688f8cb4))) geschieht dies durch die Schaltfläche ![Neuen Inhalt erstellen]() in der [Inhaltsübersicht]([[Inhaltsübersicht]]) oder in den Verknüpfungen (![Schaltfläche „Verknüpfungen“]()).
 	- Zunächst muss der [Inhaltstyp]([[Inhaltstypen]]) der zu erstellenden Seite ausgewählt werden. Anschließend öffnet sich ein Seitenbearbeitungsformular, wie durch den Inhaltstyp beschrieben. Mit einem Klick auf die Schaltfläche „speichern“, wird die Seite erstellt. Eventuell ist sie jedoch nicht gleich sichtbar, da wie bei der [Inhaltsänderung]([[Inhaltsänderung]]) erst eine Revision erstellt wird, welche einen [Arbeitsablauf](((64f46814-c36a-4efb-90d1-01413210b08c))) durchlaufen muss.
 	- [#A] Einige [Seiten]([[Alle Seiten o. Aufbau Website]]) weisen Besonderheiten auf und erfordern weitere Schritte:
 		- ### Unterrichtsseiten
+		  id:: 65084207-92a5-45a1-96f3-eeb23334ea86
 			- Der Titel der Unterrichtsseite sollte genau dem Namen des beschriebenen Fachs entsprechen und **keine weiteren Informationen** (wie Alternativen, Abkürzungen oder Stufendifferenzierungen) enthalten.
 			- Jede Stufe, in der das Fach unterrichtet wird, bekommt eine eigene Version – eine eigene Unterrichtsseite – des Fachs. Legen Sie die Stufe/Version der neuen Unterrichtsseite im Feld „Stufe“ des Seitenbearbeitungsformulars fest. Die unterschiedlichen Seiten der Stufen/Versionen müssen für eine fehlerfreie Funktionsweise der Website in ihrem Seitentitel **identisch** sein: Alle drei Seiten des Fachs Deutsch heißen so mit dem Titel „Deutsch“.
 			- Wenn eine neue Unterrichtsseiten erstellt wird, kann kein [Fachleiter]() automatisch darauf zugreifen. Damit der zuständige Fachleiter die Seite weiter bearbeiten kann, muss dieser als Autor der Seite festgelegt werden:
@@ -20,6 +21,32 @@
 			- Falls es sich bei der neuen Unterrichtsseite um ein neues, noch nicht auf der Seite erschienenes Fach handelt, sollte die „Version“ der Unterrichtsseite *mit der niedrigsten Stufe* dem Hauptmenü hinzugefügt werden. Neben dem im [Kapitel 13.1]() beschriebenen Ansatz können Sie dazu auch das Formular im Bereich „Menüeinstellungen“ des Seitenbearbeitungsformulars nutzen. Im Feld „Übergeordneter Link“ sollte dann entweder „-- Unterricht“ oder eine der Unterkategorien (für naturwissenschaftliche Fächer beispielsweise „---- MINT“) ausgewählt werden. Der Linktitel sollte dem Namen des Fachs oder seiner Abkürzung – solange für Laien verständlich – entsprechen.
 		- ### Stufenseiten
 			- Falls es sich bei der neuen Stufenseite um eine neue, noch nicht auf der Seite erschienenen Stufe handelt, muss der **exakte** Wert des Feldes (siehe unten) „Systemname“ als Begriff dem Vokabular „Stufen“ hinzugefügt werden. Lesen Sie dazu [Kapitel 9]([[Taxonomie]]).
+			- ***<Hier Beschreibung der Schritte einfügen>***
+			- **Duplizieren** Sie die [Ansicht]([[Ansichten: Inhalte gefiltert anzeigen]]) "Aktuelles Grundstufe"
+				- Bennen Sie die neue Ansicht nach folgendem Schema: "Aktuelles <Stufenbezeichnung>"
+				  logseq.order-list-type:: number
+				- Ändern Sie in den Filterkriterien die *Inhalt: Stufe* zu der neu Erstellten
+				  logseq.order-list-type:: number
+				- Ändern Sie im Bereich Seitennavigation im Feld *Anzeige verlinken: Benutzerdefinierte URL* die Zahl am Ende (/berichte?field_stufe_tag_target_id=**26**) zu der der Tag ID des neu erstellten Taxonomie-Begriffs.
+				  logseq.order-list-type:: number
+					- Um die ID herauszufinden, öffnen Sie die Seite ["Neuigkeiten"](((64f57700-9a38-4b95-9834-bfc8e420f660))) oder ["Projekte"](((65084206-881e-4ccd-bb2e-6c0e543218bb))) und filtern Sie nach der neuen Stufe. In der URL lässt sich die Tag ID ablesen. Beispiel Grundstufe (Seite "Projekte"): "https://gcm.schule/dev/gcmofficial/projekte?field_thema_target_id=&**field_stufe_tag_target_id=26**&field_faecher_tag_target_id=&field_beginn_value=&field_ende_value=&sort_by=field_beginn_value&sort_order=DESC"
+				- Fügen Sie die Ansicht als neuen Block im [Blocklayout]([[Aufbau der Website verändern]]) hinzu
+				  logseq.order-list-type:: number
+					- Schränken Sie anschließend die Seiten auf die neu erstellte Stufenseite ein.
+					- Schränken Sie außerdem den Inhaltstyp auf Stufen ein.
+			- Wiederholen Sie den obigen Prozess mit der Ansicht "Projekte Grundstufe" bzw. "Projekte <Stufenbezeichnung>"
+			- Im Folgenden müssen die Schaltflächen der [Unterrichtsseiten](((65084207-92a5-45a1-96f3-eeb23334ea86))) angepasst werden *(Abb. )*. Öffnen Sie dazu im [Theme]([[Das Theme verändern]]) die Datei `node--fachbereich.html.twig`
+				- Suchen Sie nach folgender Zeile:
+					- ```html
+					  <div class="stufen">
+					  ```
+				- Fügen Sie innerhalb dieses `div`s folgendes Schema an passender Stelle ein (vergleichen Sie dazu bitte ähnliche Zeilen in diesem `div`) und ändern Sie es gemäß ihrer neu erstellten Stufe ab - Zu ändernde Stellen sind markiert mit `<$ ... $>`:
+					- ```twig
+					  {% if "<$ Systemname (field_kurzform) von Inhaltstyp Stufe (zugehörige Stufen-Seite) $>" in stufen %}
+					  <a class="btn-like" {% if content.field_stufe[0]|render=="<$ Stufe (field_stufe) von Inhaltstyp Unterrichtsfach (der Stufe zugehöriger Begriff in den Listen-Einstellungen nach dem `|`) $>" %} id="currentgrade" {% endif %}
+					      href="/dev/gcmofficial/fach/<$ Systemname (field_kurzform) von Inhaltstyp Stufe (zugehörige Seite) in maschienenlesbarer Form (Gehen Sie auf eine Unterrichtsseite dieser Stufe und betrachten Sie die URL) $>/{{ node.label }}"><$ Von Ihnen gewählte Bezeichnung der Stufe für die Schaltflächen $></a>
+					  {% endif %}
+					  ```
 		- **Erstellen Sie keine neuen Seiten mit den folgenden Inhaltstypen**: Startseite, Standort. – Verändern Sie stattdessen die Bestehenden.
 - ## Neuer Inhaltstyp
   id:: 64f46814-5e6d-4ce3-aeda-0c91acd81873
