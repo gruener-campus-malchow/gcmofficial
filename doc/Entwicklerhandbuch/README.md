@@ -21,3 +21,5 @@ Das Handbuch wurde mithilfe der [Software Logseq](https://logseq.com/) erstellt.
 5. Logseq öffnen und Graphen eventuell neu indizieren
 
 6. Seite "Inhaltsverzeichnis" öffnen und nach gewünschtem Kapitel suchen
+
+7. *(Neben dem Inhaltsverzeichnis eignet sich ebenso die Seite "Aufbau CMS o. Wo finde ich was?" um weitere Inhalte zu finden)*
