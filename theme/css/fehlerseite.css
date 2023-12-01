@@ -5,6 +5,18 @@ body {
 }
 #fehlerseitentext {
     color: white;
+    margin-top: 2vw;
+    margin-left: 24vw;
+    margin-right: 6vw;
+}
+.region-content {
+    color: white;
+}
+.btn-enlarge {
+    display: none !important;
+}
+h1 {
+    color: white !important;
     margin-left: 24vw;
     margin-right: 6vw;
 }
