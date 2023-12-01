@@ -1,7 +1,7 @@
 header,
 #main,
 footer {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 header #block-hauptnavigation,
@@ -14,7 +14,8 @@ footer .region-footer {
    Exceptions: Breadcrumbs, title, and main content block
    Instead of the main content block, every element in it, the fields of the page will be granted a padding */
 #main .region-content > *,
-#main .region-content .block-system-main-block > * {
+#main .region-content .block-system-main-block > *,
+#main .region-content .block-system-main-block > .views-element-container .view > * {
   padding: 0 5%;
   width: 90%;
 }
@@ -26,12 +27,14 @@ footer .region-footer {
   width: unset;
 }
 
-#main .region-content .block-system-main-block {
+#main .region-content .block-system-main-block,
+#main .region-content .block-system-main-block > .views-element-container {
   padding: 0;
   width: 100%;
 }
 
 header {
+    padding-top: 1em;
     border-bottom: 3px green solid;
 }
 
@@ -189,6 +192,14 @@ header .site-logo img {
 
 .view-content {
     flex-direction: column;
+}
+
+.views-field-field-titelbild {
+  height: 32vw;
+}
+
+.views-field-field-titelbild img {
+  transform: translateY(calc(-50% + 16vw));
 }
 
 .view-content .views-row h2 {

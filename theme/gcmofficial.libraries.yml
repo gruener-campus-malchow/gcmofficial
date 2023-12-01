@@ -55,4 +55,7 @@ fehlerseite:
     theme:
       css/fehlerseite.css: {}
       css/breaks/fehlerseite-mobile.css: {media: all and (max-width: 730px)}
+views:
+  js:
+    js/view-filters.js: {}
         

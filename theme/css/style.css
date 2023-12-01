@@ -1,5 +1,6 @@
 /* general section */
 :root {
+    --background: white;
     --text: black;
     --primary-dark: darkgreen;
     --primary-dark-transparent: darkgreen;
@@ -10,14 +11,25 @@
     --accent-light: powderblue;
 }
 
+.dialog-off-canvas-main-canvas {
+    /* removes invisible text */
+    font-size: 0;
+}
+
+body,
+header,
+footer {
+    background-color: var(--background);
+}
+
 header,
 #main,
 footer {
     width: 100%;
-    font-size: max(min(1.05em, 1.8vw), 16px);
+    font-size: max(min(1.05rem, 1.8vw), 16px);
     line-height: 1.5em;
     color: var(--text);
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
 }
 
 header .region-branding,
@@ -31,7 +43,8 @@ footer .region-footer {
    Exceptions: Breadcrumbs, title, and main content block
    Instead of the main content block, every element in it, the fields of the page will be granted a padding */
 #main .region-content > *,
-#main .region-content .block-system-main-block > * {
+#main .region-content .block-system-main-block > *,
+#main .region-content .block-system-main-block > .views-element-container .view > * {
   padding: 0 10%;
   width: 80%;
 }
@@ -43,7 +56,8 @@ footer .region-footer {
   width: unset;
 }
 
-#main .region-content .block-system-main-block {
+#main .region-content .block-system-main-block,
+#main .region-content .block-system-main-block > .views-element-container {
   padding: 0;
   width: 100%;
 }
@@ -56,6 +70,10 @@ button,
 select {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
+}
+
+input {
+    background-color: var(--background);
 }
 
 input[type=button],
@@ -266,6 +284,12 @@ ul.sf-menu::after {
     font-style: italic;
 }
 
+.authoring-information {
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+    color: #666;
+}
+
 #main {
     margin-top: 10vw;
 }
@@ -347,6 +371,7 @@ button,
 
 .aside-container aside .btn-like {
     background-color: white;
+    background-color: var(--background);
     color: darkgreen;
     color: var(--primary-dark);
 }
@@ -372,6 +397,10 @@ button,
 }
 
 /* Ansichten */
+
+.view-filters {
+    margin: 0.5em 0 2em 0;
+}
 
 .views-exposed-form .form-item {
     display: inline-block;
@@ -416,6 +445,28 @@ button,
     margin-bottom: 4vw;
 }
 
+.views-field-field-prioritaet {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: orange;
+}
+
+.views-field-field-titelbild {
+  overflow: hidden;
+  width: 100%;
+  height: 14vw;
+  margin-bottom: 1em;
+}
+
+.views-field-field-titelbild img {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  transform: translateY(calc(-50% + 7vw));
+}
+
 .view-content .views-row h2 {
     font-size: 1.4em;
 }
@@ -438,6 +489,13 @@ button,
     display: block;
     width: 100%;
     font-size: 1.15em;
+}
+
+
+.views-table .views-field-title {
+    display: table-cell;
+    width: unset;
+    font-size: 1em;
 }
 
 .views-field-field-stufe-tag a,
@@ -569,6 +627,7 @@ button,
 
 footer {
     margin-top: 5vw;
+    padding-top: 1em;
 }
 
 footer .site-name {

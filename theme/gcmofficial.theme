@@ -38,6 +38,12 @@ function gcmofficial_preprocess_responsive_image(&$variables)
 function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
 {
   // add fields to change subject conditions in stufen and save to theme settings
+  $form['themecolor_pageBackground'] = [
+    '#type' => 'color',
+    '#title' => t('Seitenhintergrund'),
+    '#default_value' => theme_get_setting('themecolor_pageBackground'),
+    '#description' => t('Geben Sie hier die Farbe des Seitenhintergrunds an.'),
+  ];
   $form['themecolor_primaryDark'] = [
     '#type' => 'color',
     '#title' => t('Primärfarbe (dunkel)'),
@@ -72,7 +78,7 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
     '#type' => 'color',
     '#title' => t('Text'),
     '#default_value' => theme_get_setting('themecolor_text'),
-    '#description' => t('Geben Sie hier die Farbe an, in der der Großteil des Textes erscheinen soll. Sie sollte einen hohen Kontrast zum Hintergund der Seite haben.'),
+    '#description' => t('Geben Sie hier die Farbe an, in der der Großteil des Textes erscheinen soll. Sie sollte einen hohen Kontrast zum Seitenhintergrund haben.'),
   ];
   $form['themecolor_textOnPrimary'] = [
     '#type' => 'color',
@@ -97,7 +103,7 @@ function gcmofficial_preprocess_node__fachbereich(&$variables)
   }
 }
 
-// -> content type "stufen", rendereed in node--stufen.html.twig
+// -> all pages of content type stufen, rendered by node--stufen.html.twig
 function gcmofficial_preprocess_node__stufen(&$variables)
 {
   $node = $variables['node'];
@@ -119,6 +125,7 @@ function gcmofficial_preprocess_html(&$variables)
   $variables['themecolor_accentLight'] = theme_get_setting('themecolor_accentLight');
   $variables['themecolor_text'] = theme_get_setting('themecolor_text');
   $variables['themecolor_textOnPrimary'] = theme_get_setting('themecolor_textOnPrimary');
+  $variables['themecolor_pageBackground'] = theme_get_setting('themecolor_pageBackground');
 }
 
 // -> Homepage

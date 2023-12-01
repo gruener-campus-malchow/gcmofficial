@@ -20,8 +20,9 @@
     {% if slideshow|length > 0 %}
         {# following div imitates div created by content.field_titelbild #}
         <div class="field field--name-field-titelbild field--type-image field--type-video field--label-hidden field__items">
+        {% set firstFile = true %}
         {% for file in slideshow %}
-            <div class="field__item">
+            <div class="field__item{% if (not firstFile) %} slideshow-hidden{% endif %}">
                 {% if file.format == "image" %}
                     {# rendered by Responsive Image module
                        @see gcmofficial_preprocess_responsive_image() #}
@@ -49,6 +50,7 @@
                     <a href="{{ file.url }}">{{ file.title }}</a>
                 {% endif %}
             </div>
+            {% set firstFile = false %}
         {% endfor %}
         </div>
     {% endif %}
