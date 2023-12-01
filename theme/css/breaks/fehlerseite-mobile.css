@@ -1,0 +1,22 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 1300px 1300px;
+    color: white;
+}
+#fehlerseitentext {
+    color: white;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    margin-right: 6vw;
+}
+.region-content {
+    color: white;
+}
+.btn-enlarge {
+    display: none !important;
+}
+h1 {
+    color: white !important;
+    margin-left: 2vw;
+    margin-right: 6vw;
+}

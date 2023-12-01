@@ -1,0 +1,19 @@
+{{ attach_library('gcmofficial/fehlerseite') }}
+<style>
+    .field--name-field-bildergalerie img {
+        display: none;
+    }
+</style>
+{{ content.field_bildergalerie }}
+<script>
+    var src = document.querySelectorAll(".field--name-field-bildergalerie img")[Math.floor(Math.random() * {{ content.field_bildergalerie['#items']|length - 1 }})].src;
+    console.log(src);
+    let content = document.getElementsByClassName("dialog-off-canvas-main-canvas")[0];
+    content.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${src}") no-repeat center`;
+    content.style.backgroundSize = "cover"; 
+    content.style.color = "var(--text-on-primary)";
+</script>
+<noscript>
+    {{ content.field_bildergalerie[0] }}
+</noscript>
+<div id="fehlerseitentext">{{ content.body }}</div>
