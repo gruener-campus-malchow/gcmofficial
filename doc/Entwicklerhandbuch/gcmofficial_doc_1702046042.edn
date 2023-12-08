@@ -1,0 +1,2249 @@
+{:version 1,
+ :blocks
+ ({:block/id #uuid "9ec9a1dc-c0a4-469a-86a6-50ccf4a8431b",
+   :block/page-name "Contents",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084197-8ab9-43b6-ab89-2e1dcb39e881",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content ""})}
+  {:block/id #uuid "656ae861-d4b3-45ff-a197-766cb69fa114",
+   :block/page-name "Alle Seiten o. Aufbau Website",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084206-2c5f-4598-bdd7-59244852f89e",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084206-db92-4b96-b586-f1778f1608c2",
+       :block/properties {:type "toc", :chapter 6},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084206-024a-4008-9bef-7fa4c80aee8e",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die Schulwebsite besteht aus mehreren Unterseiten, welche im Folgenden beschrieben werden sollen. Dazu wird jeweils ebenso der **Typ** der Seite beschrieben, wie er im [Kapitel 8]([[Inhaltstypen]]) erklärt wird. Viele Seiten können direkt durch das [Hauptmenü]() erreicht werden."}
+    {:block/id #uuid "65084206-e631-4bf8-8d32-f1d2561e9f3b",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084206-0714-4e3f-815f-e22547c0705f",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-e768-4f84-b2b5-9d3b73a77771",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Auf der Startseite befinden sich jegliche Informationen und Links, die der Großteil der Websitenutzer am schnellsten benötigt. Ebenso sollten neue Benutzer schnell in die Seite eingewiesen werden und ihr Interesse geweckt werden. Dazu dient in erster Linie der „Hero“, jener Abschnitt unter dem Hauptmenü (Abb. 6.1). Die Startseite besitzt einen eigenen Typ, genannt **Startseite**. Er ist allein für die Startseite gedacht und sollte nicht für andere Seiten verwendet werden. Unten auf der Startseite findet sich zudem die [Ansicht „Aktuelles“](), die als [Block]() ausschließlich der Struktur der Startseite hinzugefügt wurde und die neusten Webseiteninhalte anzeigt: Dabei handelt es sich um eine verkürzte Version der Seite „Neuigkeiten“."}],
+       :block/content
+       "### Die Startseite ([öffnen](https://gcm.schule/dev/gcmofficial/))"}
+      {:block/id #uuid "65084206-1a8e-4c13-a646-50241efe026c",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-1c13-43c1-bfdb-010c6f009663",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hierbei handelt es sich um eine Übersichtsseite über alle Unterrichtsseiten (siehe unten). Es ist eine automatisch generierte Seite – eine [**Ansicht** mit dem Namen „Fachbereichsübersicht“](). Nichtsdestotrotz besitzt sie durch das [Theme]([[Das Theme verändern]]) ein besonderes Aussehen und folgt nicht dem, für Ansichten typisches Aussehen. Ebenso sind ihre Einträge durch eine Einstellung in der Benutzeroberfläche nach Fächern gruppiert."}],
+       :block/content
+       "### Die Seite „Unterrichtsfächer“/„Fächerübersicht“ ([öffnen](https://gcm.schule/dev/gcmofficial/fach))"}
+      {:block/id #uuid "64f575c7-d11a-48ca-83e6-7c79e03520ff",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-0de6-4b68-8cb4-7f006625adf7",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Auf den Unterrichtsseiten, wie „Deutsch“, „Mathematik“ und „Englisch“, finden sich Informationen zu den jeweiligen Unterrichtsfächern. Die Informationen werden von den jeweiligen Fachleitern (als angemeldete Benutzer) verwaltet, welche nur ihre eigenen Fachseiten bearbeiten können. Genaueres finden Sie im [Kapitel 10]([[Inhaltsänderung]]) und [Kapitel 12.4]()."}
+        {:block/id #uuid "65084206-1e11-460e-81cd-db5b662248f1",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die Unterrichtsseiten sind dabei nach den Stufen gegliedert: Von jeder Unterrichtsseite gibt es für jede Stufe (Grund-, Mittel-, Oberstufe) in der es das Fach gibt eine eigene Version; Es gibt damit zum Beispiel drei Seiten mit dem Namen „Mathematik“, die jedoch unterschiedlichen Stufen zugeordnet sind. In der [[Inhaltsübersicht]] ist die Zuordnung zu einer Stufe in Klammern hinter dem Namen erkennbar (dies ist eine benutzerdefinierte Einstellung, die in der [Ansicht „Inhalt“]() eingestellt wurde). Ebenso ist die Zuordnung in der URL jeder Unterrichtsseite erkennbar, die folgendem [Schema]() folgt: `/fach/<Stufe>/<Name des Fachs>`. Welcher Stufe eine Unterrichtsseite angehört, wird im jeweiligen [Bearbeitungsformular]([[Inhaltserstellung]]) durch das [Feld](((64f89b14-fe90-4cd3-a797-1ad8abdf1670))) „Stufe“ durch einen Administrator festgelegt. Websitenutzer können über automatisch im [Theme]([[Das Theme verändern]]) durch [Twig]() generierte Schaltflächen (Abb. 6.2) auf den Unterrichtsseiten zu einer anderen Version, also zu dem gleichen Fach in einer anderen Stufe, wechseln."}
+        {:block/id #uuid "64fd608b-8af7-42f9-9814-0c58972ff06b",
+         :block/properties {},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084206-bdee-48b6-b084-d229224158dc",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Bei dem im Bereich „Kontakt“ angegebenen [Benutzer]([[Benutzerverwaltung]]) handelt es sich um denjenigen, welchem die Seite gehört (Das ist standardmäßig der Ersteller der Seite, allerdings lässt sich dies verändern wie [hier]() dargestellt)."}],
+         :block/content
+         "Unterhalb der Schaltflächen für einen Stufenwechsel finden sich die Bereiche „Kontakt“ und „Hier finden Sie weitere Inhalte“. Diese Bereiche werden automatisch durch das Theme hinzugefügt und erscheinen deswegen auch nicht im Seitenbearbeitungsformular."}
+        {:block/id #uuid "65084206-acdf-4b26-9352-74e521f2ce8c",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Alle Unterrichtsseiten gehören dem Typ **Unterrichtsfach** an. Der [Systemname]() dieses Inhaltstyps lautet hingegen „fachbereich“."}],
+       :block/content
+       "### Die Unterrichtsseiten ([Beispiel öffnen](https://gcm.schule/dev/gcmofficial/fach/grundstufe/mathematik))"}
+      {:block/id #uuid "64f57626-0c5f-40a9-ae65-2f60591e5327",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-3c4a-496a-a068-488c18bf2a2f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Bei dieser Seite handelt es sich um eine \"Über Uns\" Seite, auf welcher der Charakter und die Besonderheiten des GCM beschrieben werden. Es handelt sich dabei um den Typ **Einfache Seite** mit benutzerdefinierten HTML. Bei den „Besonderheiten“ unten auf der Seite handelt es sich um die [Ansicht „Besonderheiten“](), welche als [Block]() ausschließlich dieser Seite hinzugefügt wurde."}],
+       :block/content
+       "### Die Seite „Der GCM“ ([öffnen](https://gcm.schule/dev/gcmofficial/ueber-uns))"}
+      {:block/id #uuid "65084206-7167-4ff9-84e8-b8deab969ab9",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-20b5-4b87-bebc-b807c3edde85",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Diese Seiten gehören zum Typ **Einfache Seite**."}
+        {:block/id #uuid "65084206-5e39-42b9-addf-2629094248ba",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Auf der Organisationseite stehen Informationen zur Organisation der Schule, also dem rechtlichen Format, den Verantwortlichen, Ansprechpartner und weiterem. Außerdem findet sich hier eine Übersicht über alle Beschäftigten und deren Hierarchie."}
+        {:block/id #uuid "65084206-fba0-451f-9eda-f30b8d530621",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die GEV ist eine Seite, die die gleiche Aufgabe besitzt wie die Organisationsseite. Sie wird von dem/der gewählten Elternvertreter*in verwaltet. Auch finden sich hier alle übrigen, die GEV betreffenden, Informationen."}],
+       :block/content
+       "### Die Seiten „Organisation“ ([öffnen](https://gcm.schule/dev/gcmofficial/organisation)) und „GEV“ ([öffnen](https://gcm.schule/dev/gcmofficial/node/51))"}
+      {:block/id #uuid "65084206-3bf8-4f07-a3f0-09cbbffb60fb",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-c91c-4ef2-9479-07bbba7ad5bd",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Auf der Standortseite werden Nutzer über die Lage der einzelnen Gebäude des GCM informiert. Die Seite hat den Typ **Standort**, der nur für diese Seite verwendet werden sollte."}
+        {:block/id #uuid "65084206-5353-4eeb-a9a3-8982827531e9",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Im oberen Bereich findet sich eine interaktive Karte, welche automatisch aus den restlichen Informationen auf der Seite mithilfe von JavaScript erstellt wird. Sehen Sie dazu im [Theme]([[Das Theme verändern]]) „js/map.js“. In dem [Bearbeitungsformular]([[Inhaltsänderung]]) wird die Karte nicht angezeigt, da sie erst später mit [Twig]() hinzugefügt wird. Das Gleiche gilt für die Schaltflächen bei den Orten (siehe unten), welche zusätzlich durch „js/standort.js“ beschrieben werden."}
+        {:block/id #uuid "65084206-0c3e-424e-9b97-40665985836c",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Unterhalb der Karte findet sich eine Liste aller mit dem GCM verbundenen Orte. Diese Liste wird mithilfe von [Seitenabschnittstypen](((64f46814-8758-4012-b88e-7d06b8ccc162))) des [Moduls]() „Paragraphs“ umgesetzt. Der betroffene Seitenabschnittstyp lautet „Standort“."}
+        {:block/id #uuid "65084206-5b61-4daf-9d67-1d2aa21676e1",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Bei einigen Orten erscheint ein Link, der unten in der Seite zu einer Erklärung der Raumnummerierung führt. Dieser wird mithilfe von [Twig]() nachträglich im [Theme]([[Das Theme verändern]]) erstellt, solange im Bearbeitungsformular des Ortes ein Häckchen bei „Raumnummern erklären?“ gesetzt wurde: ![Seitenabschnittsformular: Checkbox „Raumnummern erklären?“]()"}],
+       :block/content
+       "### Die Standortseite ([öffnen](https://gcm.schule/dev/gcmofficial/standort))"}
+      {:block/id #uuid "65084206-c5f6-4e40-a135-06301c8787cc",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-d684-43f8-b4af-f49984f2e577",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier finden sich Kontaktinformationen (der Sekreteriate) und die E-Mails von Ansprechpartnern. Es handelt sich dabei um den Typ **Einfache Seite**."}],
+       :block/content
+       "### Die Kontaktseite ([öffnen](https://gcm.schule/dev/gcmofficial/kontakt))"}
+      {:block/id #uuid "64f576d3-2a3d-49b5-963c-8dec2cc3813a",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-30b9-42ba-ba44-18f112371cb6",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Auf diesen Seiten werden alle Informationen angezeigt, die eine bestimmte Stufe (Grund-, Mittel- oder Oberstufe) betreffen. Hier finden sich dazu auch die Stundenzeiten in den jeweiligen Stufen. Die Stufenseiten gehören dem Typ **Stufen** an."}
+        {:block/id #uuid "65084206-03a9-424f-8f30-f5575d607320",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Der Link „Zu den Unterrichtsfächern“ im oberen Teil der Seite ist automatisch durch das [Theme]([[Das Theme verändern]]), unter Benutzung des [Feldes](((64f89b14-fe90-4cd3-a797-1ad8abdf1670))) „Systemname“, generiert."}
+        {:block/id #uuid "65084206-68b0-4c71-bf77-216efbb1eb4c",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Unterhalb eines Textes finden sich zwei [Ansichten]([[Ansichten: Inhalte gefiltert anzeigen]]), die Berichte und Projekte (sehen Sie dazu [Kapitel 8]([[Inhaltstypen]])) der jeweiligen Stufen anzeigen. Sie wurden als [Blöcke]() nur der jeweiligen Stufenseite hinzugefügt. Die Namen der Ansichten folgen dem Schema: „Aktuelles **Stufe**“ bzw. „Projekte **Stufe**“."}],
+       :block/content
+       "### Die Stufenseiten ([Beispiel öffnen](https://gcm.schule/dev/gcmofficial/grundstufe-juel))"}
+      {:block/id #uuid "64f57700-9a38-4b95-9834-bfc8e420f660",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-26ae-40d0-8c14-066e026faf1f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hierbei handelt es sich um eine Übersichtsseite über alle Berichte (siehe unten). Es ist eine automatisch generierte Seite – eine [**Ansicht** mit dem Namen „Berichte“]()."}
+        {:block/id #uuid "65084206-2819-43b2-bc53-0a9f0ae40bbe",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die Einträge in der Ansicht sind dabei neben dem Veröffentlichungszeitpunkt auch nach ihrer *Relevanz* sortiert (siehe Einstellungen der Ansicht). Die *Relevanz* ist dabei jener Zeitpunkt, an dem der Bericht an Relevanz verliert; Berichte sind so sortiert, dass solche mit aktueller oder weiter in der Zukunft liegender *Relevanz* als erstes erscheinen. Außerdem lassen sich Berichte priorisieren - sie erscheinen ganz oben in der Ansicht und werden mit einem extra Hinweis zu ihrer Wichtigkeit versehen. Beide beschriebenen Aspekte lassen sich durch Felder in ihrem [Bearbeitungsformular]([[Inhaltsänderung]]) anpassen."}],
+       :block/content
+       "### Die Seite „Neuigkeiten“ ([öffnen](https://gcm.schule/dev/gcmofficial/berichte))"}
+      {:block/id #uuid "65084206-1720-483f-ab90-b18eba1bb684",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-9e7a-44c3-b588-ea1dc7b2ba82",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die Berichte sind zeitkritische Informationen, welche an einem bestimmten Zeitpunkt veröffentlicht werden und für diesen gelten. Sie gehören dem Typ **Artikel** an. Weitere Informationen finden Sie im [Kapitel 8]([[Inhaltstypen]])."}],
+       :block/content
+       "### Die Berichte ([Beispiel öffnen](https://gcm.schule/dev/gcmofficial/berichte/berliner-schulsportpreis-2019))"}
+      {:block/id #uuid "65084206-881e-4ccd-bb2e-6c0e543218bb",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-c6d4-48e3-80e7-01443cdf919e",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hierbei handelt es sich um eine Übersichtsseite über alle Projektseiten (siehe unten). Es ist eine automatisch generierte Seite – eine [**Ansicht** mit dem Namen „Projekte“]()."}
+        {:block/id #uuid "65084206-9887-40bc-9acc-7218f29f963c",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die Projekte sind in der Ansicht nach ihrem Start- und Endzeitpunkt sortiert. Auch hier lassen sich wie auf der Seite „Neuigkeiten“ Projekte priorisieren (siehe Einstellungen der Ansicht)."}],
+       :block/content
+       "### Die Seite „Projekte“ ([öffnen](https://gcm.schule/dev/gcmofficial/projekte))"}
+      {:block/id #uuid "64f57766-c81e-44cc-a9e7-5cdabf41fdb2",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-54e5-4cfd-b0bf-4f04a15523ee",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Auf den Projektseiten werden die Projekte am GCM vorgestellt, sowie zeitlich begrenzte Informationen, welche keine Berichte sind, vermittelt. Sie gehören dem Typ **Projekt** an. Weitere Informationen finden Sie im [Kapitel 8]([[Inhaltstypen]])."}],
+       :block/content
+       "### Die Projektseiten ([Beispiel öffnen](https://gcm.schule/dev/gcmofficial/projekte/die-knirpsenfarm))"}
+      {:block/id #uuid "65084206-3fb4-496d-bab9-5e76df6bdf14",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-f458-4897-acf6-5999b8f4e974",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Diese Seite dient als Übersichtsseite über alle Arbeitsgemeinschaften am GCM und dient desweiteren der Vermittlung aller darauf bezogenen Informationen. Sie gehört dem Typ **Einfache Seite** an."}],
+       :block/content
+       "### Die Seite „Arbeitsgemeinschaften“/„AG“ ([öffnen](https://gcm.schule/dev/gcmofficial/node/46))"}
+      {:block/id #uuid "65084206-36a3-4ab1-9cf2-8bf37ee59928",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-7641-4130-aa4e-7bd840119d52",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Diese Seite erscheint, wenn die Website einen [404-Fehler](https://de.m.wikipedia.org/wiki/HTTP_404) ausgiebt. Sie ist vom Typ **Fehlerseite**. Damit das CMS weiß, dass diese Seite bei einem 404-Fehler ausgegeben werden soll, wurde im [Bereich „Konfiguration“ der Benutzeroberfläche](((64f5701f-9136-48f0-8c35-481f6ab7074d))) diese Seite in den [Grundeinstellungen der Website](https://gcm.schule/dev/gcmofficial/admin/config/system/site-information) als 404-Fehlerseite angegeben."}],
+       :block/content
+       "### Die 404-Fehlerseite ([öffnen](https://gcm.schule/dev/gcmofficial/node/57))"}],
+     :block/content "## Bestehende Seiten"})}
+  {:block/id #uuid "656ae861-2cf1-4af3-8943-688c339daeee",
+   :block/page-name "Inhaltstypen",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-5f4a-426e-8fc8-4f37dd391daf",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-3001-4525-8a8e-b19e395bd286",
+       :block/properties {:type "toc", :chapter 8},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084207-9077-4ae0-a4f8-4e5b013a45ca",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Einige [Seiten]([[Alle Seiten o. Aufbau Website]]) auf der Website sind einander in ihrem Aufbau so ähnlich, dass sie zusammengefasst werden können, um ihre Bearbeitung zu erleichtern. Ein Beispiel sind die Unterrichtsseiten. Um ähnliche Seiten zusammenzufassen, wird sich eines sogenannten „Inhaltstyps“ bedient, der wie eine Blaupause für Seiten fungiert."}
+    {:block/id #uuid "65084207-35d7-46b6-bcb5-57dda0ec64e3",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Alle Inhaltstypen sind im [Bereich „Struktur“ der Benutzeroberfläche](((64f56fc5-43a2-4a01-85b2-cf0a516965e3))) auf der Seite [https://gcm.schule/dev/gcmofficial/admin/structure/types](https://gcm.schule/dev/gcmofficial/admin/structure/types) einsehbar."}
+    {:block/id #uuid "65084207-9276-49bd-b455-debbf66f935e",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Für einen Inhaltstyp können bestimmte Einstellungen getroffen werden, sowie die Struktur und das Aussehen einer Seite dieses Inhaltstyps festgelegt werden. Die Einstellungen, die Struktur und das Aussehen gelten dann für alle Seiten, die diesem Typ angehören."}
+    {:block/id #uuid "65084207-1ae2-4a59-9bde-1f9288b89156",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Jeder Inhaltstyp besitzt ein anderes [Seitenbearbeitungsformular]([[Inhaltsänderung]]): Durch die Felder in diesem Formular lässt sich genau bestimmen, wo auf einer Seite dieses Inhaltstyps die Informationen erscheinen sollen. Die Seite lässt sich damit in Abschnitte teilen, die durch und für jeden Inhaltstyp vorbestimmt sind. Wie Sie einen neuen Inhaltstyp und damit auch sein Seitenbearbeitungsformular erstellen können, erfahren Sie in [Kapitel 11.2]()."}
+    {:block/id #uuid "65084207-dce7-4595-a3df-8317a6fa6e12",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die Abschnitte/Felder, in die ein Inhaltstyp gegliedert ist, lassen sich mit einem Klick auf die Schaltfläche „Felder verwalten“ erfahren und verändern."}
+    {:block/id #uuid "65084207-440d-484f-9b9a-3dedffd7fe1c",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Um einzelne Felder auszublenden aber dennoch durch das Bearbeitungsformular mit Inhalt füllen zu können, ziehen Sie bitte das jeweilige Feld in den Einstellungen „Anzeige verwalten“ des Inhaltstyps in den Abschnitt „deaktiviert“. **Achtung!** Beinahe alle Inhaltstypen werden im Nachhinein – auch in ihrer Struktur – durch das [Theme]([[Das Theme verändern]]) verändert. Zu Beachten ist hierbei, dass diejenigen Felder, die durch eine Datei im Theme benutzt werden, nicht deaktiviert werden sollten, da dann auch das Theme nicht mehr (auf einfachem Wege) auf die Felder zugreifen kann. Die betroffenen Felder können allerdings weiterhin *durch das Theme* ausgeblendet werden."}
+    {:block/id #uuid "65084207-8cf5-429f-ac2d-4afb40dde2be",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Um das Aussehen und die Struktur eines Inhaltstyps weiter zu verändern, lesen Sie bitte [Kapitel 16.2]()."}
+    {:block/id #uuid "65084207-dc8f-42ef-aa51-7861deeec0a0",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "[#A] **Hinweis: Bei einigen Fällen wird ein Inhaltstyp auf dieser Website auch nur für eine *einzelne* Seite genutzt; für diese Seiten wird nicht der Typ *Einfache Seite* genutzt.** Der Grund dafür liegt darin, dass sich nur so das Seitenbearbeitungsformular anpassen lässt und damit die Benutzerfreundlichkeit (in Bezug auf Website Autoren) für besondere Seiten erhöht wird, da die Struktur bereits festgelegt ist und nicht aus Versehen verändert werden kann. Außerdem kann so die Struktur der Seite leichter im Theme verändert werden."}
+    {:block/id #uuid "65084207-f877-4b81-ac4e-d910cfd623e8",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Welchem Inhaltstyp eine Seite angehört, können Sie in der [Inhaltsübersicht]([[Inhaltsübersicht]]) einsehen."}
+    {:block/id #uuid "65084207-835f-4359-bd31-cc9abfd7607a",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die Website bedient sich bereits mehreren Inhaltstypen:"}
+    {:block/id #uuid "64f5804b-576f-456d-abc1-66a8688f8cb4",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-d457-40b5-b54b-1f65a859084b",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-b348-4078-8c64-d8ee44394929",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp ist der standardmäßige Inhaltstyp für alle Seiten, die keinem anderen Typ zugeordnet werden können. Er sieht nur einen Seitentitel und einen „Textkörper“ vor, in dem sämtliche Inhalte in einer beliebigen Struktur (welche durch HTML umgesetzt werden muss) präsentiert werden können."}],
+       :block/content "### Einfache Seite"}
+      {:block/id #uuid "65084207-f326-4cc1-b9f8-2842c2f04d55",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-3e70-47fa-9922-56d98f7a307f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp ist für Seiten mit zeitkritischen Inhalten gedacht. Im Grunde handelt es sich dabei um eine Seite des Typs *Einfache Seite*, allerdings lassen sich zusätzlich Elemente festlegen, die den Inhalt der Seite kategorisieren: mehr dazu im [Kapitel 9]([[Taxonomie]]). Außerdem erscheint der Zeitpunkt der Veröffentlichung auf einer Artikel-Seite. Desweiteren lässt sich ein Relevanzzeitraum und eine Priorisierung festlegen, deren Effekt bei der [Beschreibung der Seite „Neuigkeiten“](((64f57700-9a38-4b95-9834-bfc8e420f660))) nachzulesen ist."}
+        {:block/id #uuid "65084207-c2c6-40fa-8eff-67c181b89e19",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Alle Seiten des Typs Artikel erscheinen unter anderem in der [Ansicht „Berichte“]()."}],
+       :block/content "### Artikel"}
+      {:block/id #uuid "65084207-44ea-46c7-bc2b-dd74b1645cb0",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-e58f-4ad9-8f86-43ad456ed3c8",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp ist für Inhalte gedacht, die entweder einen Startzeitpunkt oder einen (weit in der Zukunft liegenden) Endzeitpunkt oder beides haben. Für die Verwendung lesen Sie auch die [Beschreibung der Projektseiten](((64f57766-c81e-44cc-a9e7-5cdabf41fdb2)))."}
+        {:block/id #uuid "65084207-7d25-40d7-b63d-a97c4933649b",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Projekte sind ähnlich wie Artikel aufgebaut, mit dem Unterschied der genannten zeitlichen Begrenzung, die im Gegensatz zum Artikel nicht mit dem Veröffentlichungsdatum zusammenhängt. Zusätzlich können Projekte durch eine Schaltfläche als „Schulidentität“ markiert werden. Dies kann nur durch einen Administrator geschehen. Projekte, die als Schulidentität markiert worden sind, erscheinen auf der [Seite „Der GCM“](((64f57626-0c5f-40a9-ae65-2f60591e5327))) als Besonderheit, die den GCM ausmacht und prägt."}],
+       :block/content "### Projekt"}
+      {:block/id #uuid "65084207-264b-4af1-9ebc-aee8fcd61fbd",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-e615-4453-bbf1-083359c25f4a",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp ist für Seiten gedacht, welche über die verschiedenen Fächer an der Schule informieren. Lesen Sie auch die [Beschreibung der Unterrichtsseiten](((64f575c7-d11a-48ca-83e6-7c79e03520ff))). Dazu gibt es mehrere Abschnitte. Der Aufbau der Seiten dieses Typs wird maßgeblich durch das [Theme]([[Das Theme verändern]]) verändert."}
+        {:block/id #uuid "65084207-b59c-4b2a-809b-d84f580de48a",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Einige [Felder]() können nur durch einen Administrator verändert werden. So soll eine fehlerhafte Änderung, die maßgeblich die Funktionsfähigkeit der Seite bestimmt, verhindert werden. Dies ist nötig, da diese Seiten auch durch Benutzer mit niedrigeren Berechtigungen und Anforderungen bearbeitet wird. Die angesprochenen Felder sind: Seitentitel, Stufe. Die Felder werden durch das [Modul]([[Das Modul verändern]]) „GCMofficialModule“ gesperrt."}],
+       :block/content "### Unterrichtsfach"}
+      {:block/id #uuid "64f57e9a-915a-4e86-b0cd-359eb23c300c",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-0d98-48ba-a4ff-c2099cb94ec3",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp ist für Seiten gedacht, die die jeweiligen Schulstufen und ihre Besonderheiten beschreiben. Lesen Sie dazu die [Beschreibung der Stufenseiten](((64f576d3-2a3d-49b5-963c-8dec2cc3813a))). Eine besondere Rolle spielt hierbei das [Feld]() „Systemname“, welches eine kurze Version des Seitentitels enthalten soll, die anschließend vom [Theme]([[Das Theme verändern]]) und vom CMS anstatt des Seitentitels genutzt wird. Der Systemname erscheint zum Beispiel in dem [URL-Schema der Unterrichtsseiten]()."}],
+       :block/content "### Stufen"}
+      {:block/id #uuid "65084207-d3c0-433f-be74-eb5952077a38",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-f41f-4ffe-aa29-ee71abd61b00",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp soll die Bearbeitung der Startseite erleichtern. Der Aufbau der Startseite wird mit ihm durch das [Theme]([[Das Theme verändern]]) maßgeblich verändert."}],
+       :block/content "### Startseite"}
+      {:block/id #uuid "64f57ee6-9dfa-4bd0-848e-a90c2a3b0120",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-f6a8-4d93-8045-c3cdb2b108d9",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp soll die Bearbeitung der Standortseite erleichtern. Der Aufbau der Standortseite wird mit ihm durch das [Theme]([[Das Theme verändern]]) maßgeblich verändert."}
+        {:block/id #uuid "65084207-7167-4cdc-9bf0-92b98e860566",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Eine besondere Rolle spielt das Feld „Standort“. Hierbei handelt es sich um eine Referenz zu dem Seitenabschnittstyp (siehe unten) „Standort“. Die Verwendung eines Seitenabschnittstyps garantiert, dass alle ‚Orte‘ regelgerecht erstellt werden und gleich aussehen."}],
+       :block/content "### Standort"}
+      {:block/id #uuid "65084207-ccfb-4cad-90f2-e6bae04109d9",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-f6ed-4ecd-8f52-c0bd618b654d",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dieser Inhaltstyp soll die Bearbeitung einer Fehlerseite (wie der 404-Fehlerseite) erleichtern. Der Aufbau dieser wird mit ihm durch das [Theme]([[Das Theme verändern]]) maßgeblich verändert."}],
+       :block/content "### Fehlerseite"}],
+     :block/content "## Bestehende Inhaltstypen"}
+    {:block/id #uuid "64f46814-8758-4012-b88e-7d06b8ccc162",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-8b33-46a0-b46c-ae665134b82e",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Seitenabschnittstypen werden durch das [Modul]() „Paragraphs“ ermöglicht."}
+      {:block/id #uuid "65084207-a612-4158-a266-01b93e49f3ee",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Im Grunde gleichen sie den Inhaltstypen, mit dem Unterschied, dass es sich nicht um vorgefertigte Seiten sondern eben um vorgefertigte Seitenabschnitte handelt. Seitenabschnittstypen können auch als Inhaltstypen von nicht eigenständigen Unterseiten verstanden werden. Ähnlich den Inhaltstypen ermöglichen auch sie, dass ihre Struktur und ihr Aussehen festgelegt ist und durch das [Theme]() verändert werden kann."}
+      {:block/id #uuid "65084207-a0ea-4c7a-b807-75356f975c8a",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Eine Übersicht über alle Seitenabschnittstypen finden Sie im [Bereich „Struktur“ der Benutzeroberfläche](((64f56fc5-43a2-4a01-85b2-cf0a516965e3))) auf der Seite [https://gcm.schule/dev/gcmofficial/admin/structure/paragraphs_type](https://gcm.schule/dev/gcmofficial/admin/structure/paragraphs_type)"}
+      {:block/id #uuid "65084207-f83f-47d4-9ed7-e7bc1983fc10",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Seitenabschnittstypen können als Feld vom Typ *Entitätsreferenz-Revisionen* einem Inhaltstypen (in seinem [Seitenbearbeitungsformular](((64f46814-5e6d-4ce3-aeda-0c91acd81873)))) hinzugefügt werden."}
+      {:block/id #uuid "65084207-6121-40f8-a3dc-9f00b5159c4b",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Ein Beispiel für die Verwendung eines Seitenabschnittstyps finden Sie beim [Inhaltstyp „Standort“](((64f57ee6-9dfa-4bd0-848e-a90c2a3b0120)))."}],
+     :block/content "## Seitenabschnittstypen"})}
+  {:block/id #uuid "656ae85f-9280-4ac6-bff4-97a2271df157",
+   :block/page-name "Es ist etwas schiefgelaufen.",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-80d4-4e51-988c-3585e7965653",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-f8f7-4688-811e-331769394090",
+       :block/properties {:type "toc", :chapter 2},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae860-18ab-4e81-a92f-db274934b89c",
+   :block/page-name "Das Modul verändern",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-ef9e-4d1d-8f73-72a5d0750453",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-a280-4fc6-8da3-eef7a65dd6ad",
+       :block/properties {:type "toc", :chapter 17},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae85f-7fc6-49b7-a783-e727dd2efad2",
+   :block/page-name "Updates: Drupal aktualisieren",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-145b-4f54-a5c0-18c7efa790bd",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-4e8e-4d2b-a857-a2a22a5b5599",
+       :block/properties {:type "toc", :chapter 18},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae85f-e37d-4e70-bcbe-795aff319474",
+   :block/page-name "Schnellübersicht",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-af28-44b6-a5e2-68a1b0c21cae",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-de11-4d55-8111-2c5b6bbb370e",
+       :block/properties {:type "toc", :chapter 4},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae861-fa05-4882-9b7d-adec1e8ec311",
+   :block/page-name "Inhaltsänderung",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-d41d-4aec-9a01-81faf890feff",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-2b39-43b1-b89e-3a44fdec6a02",
+       :block/properties {:type "toc", :chapter 10},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084208-1943-4d4e-8972-95e60bde8f53",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die Änderung des Inhalts auf den verschiedenen [Seiten]([[Alle Seiten o. Aufbau Website]]) geschieht durch ein Bearbeitungsformular."}
+    {:block/id #uuid "65084208-839f-4c4a-ae57-10fd3f186624",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Jede eigenständige, nicht automatisch generierte Seite, besitzt ein solches Formular. Der Aufbau dessen wird von dem [Inhaltstyp]([[Inhaltstypen]]) der Seite bestimmt. Die Felder des Inhaltstyps übertragen sich auf die Felder des Bearbeitungsformulars der Seite."}
+    {:block/id #uuid "65084208-e8c5-4e47-acbc-f192c0931832",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-0375-41b8-8d0a-6371424d661e",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Über die Schaltfläche „Bearbeiten“ in der [Inhaltsübersicht]([[Inhaltsübersicht]]) ![Schaltfläche „Bearbeiten“]()\n Suchen Sie dazu die jeweilige Seite in der Liste oder mithilfe des Filters oben auf der Seite."}
+      {:block/id #uuid "65084208-12e0-47f8-9624-7772bf635866",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Über die Seite selbst: Öffnen Sie die gewünschte Seite, während Sie angemeldet sind. Im oberen Teil der Seite finden Sie Schaltflächen. Klicken Sie auf die Schaltfläche „Bearbeiten“, um zu dem Formular zu gelangen. ![Schaltfläche „Bearbeiten“]()"}],
+     :block/content
+     "Die Bearbeitungsformulare der Seiten sind durch zwei Wege erreichbar:"}
+    {:block/id #uuid "65084208-6c0a-46f5-b1ed-3a7c7498290a",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Füllen Sie das Formular aus oder ändern die angezeigten Felder, um auch den Inhalt der Seite zu ändern."}
+    {:block/id #uuid "65084208-6733-4ceb-9213-eed5ae872d19",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Um die Änderungen zu sichern, klicken Sie im unteren Bereich des Formulars auf die Schaltfläche ![„Speichern“](). Mit einem Klick auf die Schaltfläche „Preview“ können Sie sehen, wie die Seite nach den Änderungen aussehen würde. Bitte beachten Sie, dass die Vorschau nicht ganz dem tatsächlichen Aussehen entspricht, da die Seite für nicht angemeldete Benutzer anders aussehen kann."}
+    {:block/id #uuid "65084208-5ffd-4fb7-9abf-5c9251f2a4b3",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "[#A] Dass die Änderungen gespeichert sind, heißt nicht automatisch, dass die Änderungen bereits veröffentlicht, also auch für nicht angemeldete Nutzer sichtbar sind. Es wird lediglich eine neue „Revision“ erstellt. Um die Änderungen für alle sichtbar zu machen, muss die neue Revision veröffentlicht werden. Dies geschieht im Rahmen des Arbeitsablaufs „Editoral“ und erfordert weitere Schritte (siehe unten)."}
+    {:block/id #uuid "64f46814-c36a-4efb-90d1-01413210b08c",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-491c-4fbd-a4f6-fa9b18a311f3",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Die Veröffentlichung von Inhalten auf der Website wird durch Arbeitsabläufe koordiniert. Unterschiedliche Teilnehmer – angemeldete Benutzer – in diesen Arbeitsabläufen übernehmen bestimmte Aufgaben, um den Inhalt schließlich zu veröffentlichen."}
+      {:block/id #uuid "65084208-5931-432c-a415-393a3c526d90",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Die Arbeitsabläufe werden durch das [Modul]([[Themes, Module & Technologien]]) „Workflow“ ermöglicht."}
+      {:block/id #uuid "65084208-dbdb-4cf0-ab89-0fa75cf02ea1",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Eine Übersicht über alle Arbeitsabläufe findet sich auf der Website: [https://gcm.schule/dev/gcmofficial/admin/config/workflow/workflows](https://gcm.schule/dev/gcmofficial/admin/config/workflow/workflows)."}
+      {:block/id #uuid "65084208-f0e6-439c-ae1b-a3d57f5115fc",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Ohne einen Arbeitsablauf könnten Inhalte direkt und von der gleichen Person, die den Inhalt verfasst hat, veröffentlicht werden. Um die Qualität und Korrektheit der Beiträge zu garantieren, benutzt diese Website deswegen den Arbeitsablauf „Editoral“. Dieser tritt vor allem auf den Unterrichtsseiten in Kraft."}
+      {:block/id #uuid "65084208-d424-4a9d-89b4-bf658f962063",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084208-632a-4528-aa2f-1452ca2cd14f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084208-d2c3-497a-b487-be470003e3fd",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "*Entwurf*: Wenn eine Seite durch einen **Autor** geändert oder neu erstellt wird, wird eine neue „Revision“ (oder auch „Update“) im Stadium *Entwurf* erstellt."}
+          {:block/id #uuid "65084208-5091-46df-a200-7a4b17736ba5",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "*Revision*: Wenn der Entwurf durch den jeweiligen **Autor** der neuen „Revision“ *zur Revision freigegeben wird*, ändert sich das Stadium zu *Revision*. Das gibt den Inhalt für die **Moderatoren** frei."}
+          {:block/id #uuid "65084208-b7c7-4b04-996a-56b6dbe0711e",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "*Veröffentlicht*: Wenn ein **Moderator** die „Revision“ anschließend freigibt, wird die „Revision“ schließlich *veröffentlicht*."}
+          {:block/id #uuid "65084208-d3f5-4ed5-b572-f88a8dde79d2",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "*Archiviert*: Nach der *Veröffentlichung* können **Moderatoren** den Inhalt wieder *archivieren*, beziehungsweise aus dem Stadium *Archiviert* wiederherstellen."}],
+         :block/content
+         "Der Arbeitsablauf „Editoral“ besteht aus mehren Stadien. Das aktuelle Stadium einer jeden eigenständigen, nicht automatisch generierten Seite, kann unten in ihrem Bearbeitungsformular an dem Feld „Aktueller Status“ abgelesen werden. Der Ablauf sieht folgende Stadien vor ([Teilnehmer]([[Benutzerverwaltung]]) **hervorgehoben**):"}],
+       :block/content "### Arbeitsablauf „Editoral“"}
+      {:block/id #uuid "65084208-1de2-44c0-b0c4-6d95417d3cd9",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Damit ein Inhalt von einem Stadium in ein anderes wechseln kann, wurden „Übergänge“ definiert. Diese steuern, wie die Stadien geändert werden dürfen. Desweiteren lassen sich Teilnehmer für verschiedene Übergänge festlegen. Lesen Sie dazu [Kapitel 12.4](). Nur wenn ein Teilnehmer das Recht an einem Übergang besitzt, kann er das Stadium, wie durch den Übergang beschrieben, ändern."}
+      {:block/id #uuid "65084208-941b-42b4-8ea8-efce2ad25c6c",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Um das Stadium einer „Revision“ nun zu ändern, wählen Sie bitte unten im Bearbeitungsformular der betroffenen Seite im Feld „Ändern in“ das neue Stadium aus und **speichern** die Änderung. Eine Übersicht über alle neuen, noch nicht veröffentlichten Inhalte findet sich zudem in der [Inhaltsübersicht]([[Inhaltsübersicht]]) im Tab [Inhalt/Moderierter Inhalt](https://gcm.schule/dev/gcmofficial/admin/content/moderated). Auch werden alle **Moderatoren** über neue,  nicht veröffentlichte „Revisionen“ per Email informiert. Die Einstellung dazu findet sich auf der Seite [https://gcm.schule/dev/gcmofficial/admin/config/workflow/notifications](https://gcm.schule/dev/gcmofficial/admin/config/workflow/notifications)."}
+      {:block/id #uuid "65084208-df24-41b1-9a15-f5e5f58d5dd5",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Alle Stadien (genannt „Status“) und Übergänge finden sich in dem Bearbeitungsformular des Arbeitsablaufs."}],
+     :block/content "## Arbeitsabläufe"})}
+  {:block/id #uuid "656ae85f-84a0-425f-93ef-80d1e6b5a1c0",
+   :block/page-name "Dieses Handbuch",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-ae00-40f2-87c7-893ac1a25acc",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-4031-4141-9199-4730aaa99dd8",
+       :block/properties {:type "toc", :chapter 1},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae85f-8b98-47f0-9370-1e439c5a51df",
+   :block/page-name "Ich will etwas ändern.",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-f490-4ed2-a1e7-3ee7ae88f567",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-20ea-40b3-a78d-13bb04e662ff",
+       :block/properties {:type "toc", :chapter 3},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae860-294f-470c-9423-48b548f7a477",
+   :block/page-name "Aufbau CMS o. Wo finde ich was?",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-900a-4759-bfbb-2ab25b5dce06",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-6fe7-4f98-b559-70972b293ce9",
+       :block/properties {:type "toc", :chapter 5},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084207-7301-48a0-b9a8-2a2035a594c5",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Um die Gestalt und Funktionsweise der Schulwebsite umzusetzen, wird das Content Management System (CMS) „[Drupal](https://drupal.org/)“ genutzt."}
+    {:block/id #uuid "65084207-c0e7-4676-b9d0-d62fd29b128e",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Das Backend der Website, mithilfe derer sie verändert werden kann, lässt sich dabei in zwei Bereiche gliedern: die **Benutzeroberfläche** und das **Dateisystem**. Während die Benutzeroberfläche durch einen Browser online unter der Adresse [https://gcm.schule/dev/gcmofficial/user](https://gcm.schule/dev/gcmofficial/user) zu erreichen ist, ist das Dateisystem nur durch einen FTP-Clienten wie [FileZilla](https://filezilla-project.org/index.php) zu erreichen."}
+    {:block/id #uuid "65084207-fd46-44ab-a7a5-0d34fd90c137",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Neben dem Backend besteht die Website zudem aus einer Datenbank, die von Drupal automatisch verwaltet wird. Hier werden unter anderem (Seiten-)Einstellungen, die textuellen Inhalte auf den Seiten und die angemeldeten Benutzer gespeichert."}
+    {:block/id #uuid "65084207-0dc6-4a23-968b-43a2e63d6895",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die eigentlichen Inhalte auf den Seiten werden neben der Datenbank auch im Dateisystem des Servers gespeichert; dabei handelt es sich um unterschiedliche Informationen und nicht um eine Kopie der Datenbank."}
+    {:block/id #uuid "65084207-91ff-41c0-b71a-ed712315d6a7",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-e338-4256-ac42-9c482177ecc6",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Mithilfe der Benutzeroberfläche können (ausschließlich) angemeldete Benutzer den **Inhalt**, die **Einstellungen** und geringfügig das **Aussehen** und die **Verhaltensweisen** der Website ändern. Dazu gibt es mehrere Bereiche, auf die über ein Menü zugegriffen werden kann: ![Menü]()"}
+      {:block/id #uuid "64f56fb1-469d-4d81-a0c0-a45926411390",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-87ce-4f3f-b533-0438ddf69303",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier lässt sich der Inhalt der Website verändern, also alle Informationen die nicht seitenübergreifend sondern nur spezifisch sind. Dazu gehören textuelle und mediale Inhalte. Mehr dazu erfahren Sie im [Kapitel 7]([[Inhaltsübersicht]]) und [Kapitel 10]([[Inhaltsänderung]])."}],
+       :block/content "### Der Bereich ![„Inhalt“]()"}
+      {:block/id #uuid "64f56fc5-43a2-4a01-85b2-cf0a516965e3",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-df0c-4be1-ad43-193464b339db",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier lässt sich der Aufbau der Website verändern, seitenübergreifende Informationen verändern und die Regeln von automatisch generierten Seiten anpassen: Mehr dazu finden Sie im [Kapitel 13]([[Aufbau der Website verändern]]) und [Kapitel 14]([[Ansichten: Inhalte gefiltert anzeigen]]). Außerdem findet sich der Bereich „Taxonomie“ hier: Sehen Sie dazu [Kapitel 9]([[Taxonomie]])."}],
+       :block/content "### Der Bereich ![„Struktur“]()"}
+      {:block/id #uuid "65084207-436d-402d-accf-4fe6aec052af",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-02b0-42e4-a15d-4ca4628ba769",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier kann das Aussehen der Website, also die Art, wie die Inhalte dem Nutzer präsentiert werden, angepasst werden"}
+        {:block/id #uuid "65084207-a81d-481f-9cb8-7d2acaea0413",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dazu wird für die Website und die Benutzeroberfläche jeweils ein sogenanntes „Theme“ ausgewählt, welches das Aussehen steuert, mehr dazu erfahren Sie im [Kapitel 15.1](). Die Auswahl des Themes erfolgt über eine Schaltfläche: ![dieses Theme auswählen](). Bevor das Theme für die Website ausgewählt werden kann, muss es zunächst installiert werden. Das derzeitige Theme, das im weiteren nur abgeändert werden sollte, ist bereits installiert und aktualisiert sich automatisch, wie in [Kapitel 15]([[Themes, Module & Technologien]]) beschrieben. Sollte dennoch ein anderes Theme ausgewählt werden, denken Sie daran, es zunächst zu installieren; die nicht installierten Themes befinden sich im unteren Abschnitt des Bereichs: ![nicht installierte Themes]()"}
+        {:block/id #uuid "65084207-684d-4313-9ef2-22453b91c43b",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Das Theme der Benutzeroberfläche, das „Verwaltungs-Theme“ ist bereits festgelegt und aktualisiert sich ebenfalls automatisch. Für die Auswahl eines anderen Verwaltungsthemes beachten Sie bitte [Kapitel 16.3]()"}],
+       :block/content "### Der Bereich ![„Design“]()"}
+      {:block/id #uuid "65084207-4d44-4e48-9e5b-f261ff905f55",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-9189-4ad8-b63e-97fc37c90fc4",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier können Module der Seite hinzugefügt werden, welche die Funktionalität dieser erweitern oder verändern. Die Installation eines nicht installierten Moduls geschieht über eine Schaltfläche: ![Schaltfläche](). Ein eigenes Modul für diese Website ist bereits installiert und aktualisiert sich wie in [Kapitel 15]([[Themes, Module & Technologien]]) beschrieben. Ebenfalls können sie hier auf Updates geprüft werden und aktualisiert werden. Mehr dazu im [Kapitel 15.2]() und [Kapitel 17]([[Das Modul verändern]]). Auch verfügbare, offizielle Drupal-Updates werden hier angezeigt."}],
+       :block/content "### Der Bereich ![„Erweitern“]()"}
+      {:block/id #uuid "64f5701f-9136-48f0-8c35-481f6ab7074d",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-1e23-45e9-8de7-4b1f6da1f579",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier finden sich Einstellungen, die die gesamte Website betreffen, beziehungsweise weder einer einzelnen Seite noch einer [Seitengruppe]([[Inhaltstypen]]) zugeordnet werden kann, und Fehlerberichte."}],
+       :block/content "### Der Bereich ![„Konfiguration“]()"}
+      {:block/id #uuid "65084207-761a-4a9b-a4c8-546261e1a53a",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-5f87-473e-a5d4-2f58136ccb4b",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Hier findet sich die Benutzerverwaltung: Es können Benutzer erstellt, gelöscht und ihnen bestimmte Rechte verliehen werden. Mehr dazu im [Kapitel 12]([[Benutzerverwaltung]])."}],
+       :block/content "### Der Bereich ![„Benutzer“]()"}],
+     :block/content "## Benutzeroberfläche"}
+    {:block/id #uuid "65084207-2d95-40d6-b589-22121df41aab",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-ab0a-4435-b6ec-8ffb023252b1",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Das Dateisystem ermöglicht einen tieferen Eingriff in die **Funktionsweise**, die **Verhaltensweisen** und das **Aussehen** der Website, als dass es die Benutzeroberfläche ermöglicht. Hier liegen auch alle Steuerdateien des CMS und Inhalte der einzelnen Seiten."}
+      {:block/id #uuid "65084207-76c7-4164-9fb1-4493b2d82a8b",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Im top-level Verzeichnis finden sich dazu mehrere Ordner und Dateien (siehe Abb. 5.1)."}
+      {:block/id #uuid "65084207-6fe6-4d66-986a-9965b285d93c",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Im Ordner „site“ befinden sich Informationen zu spezifischen Seiten, sowie alle medialen Inhalte auf den Seiten. Dieser Ordner wird automatisch von Drupal verwaltet und sollte manuell nicht verändert werden."}
+      {:block/id #uuid "65084207-f739-490b-8f2c-d28f9b6ca1d0",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Im Ordner „drupal“ befinden sich alle Dateien, die das CMS steuern und zur Funktionsweise und dem Auftritt der Website im Netz beitragen. Diese Dateien agieren als das eigentliche Framework und sollten nur durch offizielle Updates verändert werden."}
+      {:block/id #uuid "65084207-3fb4-49ec-843b-8f0fe935a4db",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "[#A] Im Ordner „themes“ befinden sich Dateien, die das Aussehen der Website steuern. Außerdem befinden sich hier Dateien, die die Funktionsweise des Frameworks/die Verhaltensweise der Website so abändern oder erweitern, dass sie den Aufbau der Website, wie sie online einzusehen ist, ändern. Mehr dazu erfahren Sie im [Kapitel 15.1]() und [Kapitel 16]([[Das Theme verändern]])"}
+      {:block/id #uuid "65084207-12ba-45d8-ba74-bdb079e5c683",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "[#A] Im Ordner „modules“ befinden sich Dateien, die die Funktionsweise des Frameworks/die Verhaltensweise der Website abändern oder erweitern. Teils überschneiden sie sich mit den Dateien im Ordner „themes“, mehr dazu im [Kapitel 15.3](). Die Module werden von anderen Entwicklern der Drupal-Community bereitgestellt. Außerdem befindet sich hier ein eigenes Modul für diese Website. Mehr dazu im [Kapitel 15.2]() und [Kapitel 17]([[Das Modul verändern]])."}
+      {:block/id #uuid "65084207-3b6a-4566-9bc0-6d7a2cd18d68",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Auf die weiteren Ordner wird im Folgenden nicht eingegangen. Sie werden teilweise von Drupal automatisch verwaltet und müssen und sollten in der Regel nicht manuell verändert werden."}],
+     :block/content "## Dateisystem"})}
+  {:block/id #uuid "656ae861-890c-4793-b2d5-3040841ba405",
+   :block/page-name "Aufbau der Website verändern",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-7475-47b8-8c3d-4bf3c1cc71cf",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-2527-4a6a-9e77-5d2c73387025",
+       :block/properties {:type "toc", :chapter 13},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "65084206-c86f-4d44-8d86-bbaf2612bf42",
+   :block/page-name "Abbildungsverzeichnis",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084206-acec-47de-ba4f-792b8c74f064",
+     :block/properties
+     {:query-table false, :query-properties "[:block]"},
+     :block/format :markdown,
+     :block/children [],
+     :block/content "{{query \"Abb.\"}}"})}
+  {:block/id #uuid "65084196-a10c-4d3b-9756-3240dab14a8d",
+   :block/page-name "Sep 17th, 2023",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084196-046e-4edd-9142-c7ec3fa41fae",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content ""})}
+  {:block/id #uuid "656ae861-884a-4a91-919c-f406cbb42b21",
+   :block/page-name "Taxonomie",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-bafe-4e12-abba-81b54048f051",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-ed19-4ca8-815f-bf753166dec6",
+       :block/properties {:type "toc", :chapter 9},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084208-16cc-47f1-ab14-a53c8af61a99",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die Taxonomie in Drupal ist ein System zur Kategorisierung von Seiten."}
+    {:block/id #uuid "65084208-f76a-4ac3-9193-08721b737c20",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Dabei ist es möglich, Kategorietypen, so genannte „Vokabulare“, zu erstellen. Ein Vokabular kann auch als Kategoriebereich verstanden werden und beinhaltet die eigentlichen Kategorien. Für eine Verdeutlichung des Begriffs, beachten Sie bitte die unten stehenden Beispiele. Die Kategorien in Drupal heißen „Begriffe“. Eine Übersicht über alle Vokabulare und ihre Begriffe findet sich auf der Seite: [https://gcm.schule/dev/gcmofficial/admin/structure/taxonomy](https://gcm.schule/dev/gcmofficial/admin/structure/taxonomy)."}
+    {:block/id #uuid "65084208-0f42-40a0-9475-82010be669cd",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Mit den Begriffen angegebener Vokabulare lassen sich dann etwa die Einträge in [Ansichten]([[Ansichten: Inhalte gefiltert anzeigen]]) filtern. Ein Beispiel findet sich auf der [Seite „Neuigkeiten“](((64f57700-9a38-4b95-9834-bfc8e420f660))): Hier lassen sich die Berichte nach dem Vokabular *Tags* (siehe unten) filtern."}
+    {:block/id #uuid "64f5f710-eda0-406a-9140-86795496e6f7",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-1efe-4ae3-8290-6aabc44f173b",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084208-88b5-4344-b06c-874c5f8beea1",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dies ist das Standard-Vokabular zum kategoriesieren von Berichten und Projekten. Ein Bericht kann zum Beispiel mit dem Tag „Schulfest“ versehen werden, wenn es in seinem Inhalt um ein Schulfest geht."}],
+       :block/content "### Tags"}
+      {:block/id #uuid "65084208-4920-4520-ad28-bacf8e54e5b3",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084208-18ca-4f27-a864-63cd9d50c5fd",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084208-41e0-4b12-ba4d-239f4276981f",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "[#A] Um die korrekte Funktionsfähigkeit der Website aufrecht zu erhalten, achten Sie bitte darauf, dass der Name des Begriffs mit dem Titel der Unterrichtsseite des Fachs vollständig übereinstimmt. Der Grund liegt in einer Verwendung des Vokabulars im [Theme]([[Das Theme verändern]]). Achten Sie ebenso darauf, dass ausschließlich Begriffe, die Fächer beschreiben, in diesem Vokabular stehen."}],
+         :block/content
+         "Mithilfe dieses Vokabulars können Berichte und Projekte bestimmten Fächer zugeordnet werden. Ein Projekt des Mathematik-Unterrichts kann so in den Begriff „Mathematik“ eingeordnet werden."}],
+       :block/content "### Fächer"}
+      {:block/id #uuid "65084208-bff8-4ede-87d8-92f6c59c2ee0",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084208-94d7-445e-8618-71b801a5d58c",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084208-c080-4607-b229-a5d69fa6d2c9",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "[#A] Um die korrekte Funktionsfähigkeit der Website aufrecht zu erhalten, achten Sie bitte darauf, dass der Name des Begriffs mit dem Systemnamen der [Stufe](((64f57e9a-915a-4e86-b0cd-359eb23c300c))) vollständig übereinstimmt. Der Grund liegt in einer Verwendung des Vokabulars im [Theme]([[Das Theme verändern]]). Achten Sie ebenso darauf, dass ausschließlich Begriffe für die Unterrichtsstufen in diesem Vokabular stehen."}],
+         :block/content
+         "Mithilfe dieses Vokabulars können Berichte und Projekte bestimmten Stufen (Grund-, Mittel-, Oberstufe) zugeordnet werden. Ein Projekt, welches in der Grundstufe angeboten wird, kann so mit dem Begriff „Grundstufe“ gekennzeichnet werden."}],
+       :block/content "### Stufen"}],
+     :block/content "## Bestehende Vokabulare"}
+    {:block/id #uuid "65084208-1e3a-42e7-98d0-01bca5bc2561",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Die unterschiedlichen Begriffe erhalten jeweils eigene Übersichtsseiten, auf denen alle Seiten aufgelistet sind, die in diesen Begriff einkategorisiert worden sind (dies geschiet neben den bereits existierenden Ansichten). Auf diese Übersichtsseiten kann mit einem Klick auf den Begriff zugegriffen werden ([Beispiel öffnen](https://gcm.schule/dev/gcmofficial/taxonomy/term/26)). Es handelt sich dabei um eine [Ansicht]([[Ansichten: Inhalte gefiltert anzeigen]]), die je nach Begriff generiert wird ([Ansicht bearbeiten](https://gcm.schule/dev/gcmofficial/admin/structure/views/view/taxonomy_term)). Hinweis: Diese Übersichtsseiten enthalten nicht zu jedem Zeitpunkt *alle* ihnen zugeordneten Seiten: Dies ist eventuell erst der Fall, wenn die Seite vollständig [indiziert](https://gcm.schule/dev/gcmofficial/admin/config/search/pages) wurde."}
+    {:block/id #uuid "65084208-c9a5-4300-a594-9ba0a13a288f",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Um die Kategoriesierung eines [Inhaltstypen]([[Inhaltstypen]]) zu ermöglichen, muss in dem [Seitenbearbeitungsformular]() des Inhaltstypen ein Feld mit dem Typ „Entitätsreferenzierung“ erstellt werden und das gewünschte Vokabular ausgewählt werden. Dies ermöglicht die Kategoriesierung in Begriffe des ausgewählten Vokabulars, nicht jedoch in die nicht ausgewählten Vokabulare. Ebenso ist es nicht möglich, eine Seite in einen, noch nicht in dem Vokabular vorhandenen Begriff einzuordnen. Das kann allerdings in den Feldeinstellungen umgangen werden. In diesem Fall wird jeder nicht vorhandene Begriff automatisch dem Vokabular hinzugefügt."})}
+  {:block/id #uuid "656ae861-95ed-4cf6-8e4f-1878f60e1aa6",
+   :block/page-name "Ansichten: Inhalte gefiltert anzeigen",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-5ec0-4c35-bf91-b67b349d376e",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-ff27-46fc-b8fb-1b1254b42291",
+       :block/properties {:type "toc", :chapter 14},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae861-85c7-46b6-a7ca-6eee0ef4f906",
+   :block/page-name "Inhaltsübersicht",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-bad7-4643-9e8f-ff9be704d6ab",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-8c22-4c3c-9303-ab9b110a52b8",
+       :block/properties {:type "toc", :chapter 7},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084208-7a67-4b13-ae70-22b933338585",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Hierbei handelt es sich um die Seite: [https://gcm.schule/dev/gcmofficial/admin/content](https://gcm.schule/dev/gcmofficial/admin/content)."}
+    {:block/id #uuid "65084208-a025-4985-94f2-ad9b956d3e65",
+     :block/properties {:heading 3},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-4e93-4e06-96b5-4abe2c473ace",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Es findet sich eine Übersichtstabelle *(Abb. 5.2)* aller eigenständigen, *nicht automatisch generierten* Seiten im [Bereich „Inhalt“ der Benutzeroberfläche](((64f56fb1-469d-4d81-a0c0-a45926411390)))."}
+      {:block/id #uuid "65084208-96dd-4d79-a6c5-70b7afc8712a",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "In der ersten Spalte findet sich der Name der Seite und eventuell die Zuordnung zu einer Stufe (Grund-, Mittel-, Oberstufe) in Klammern."}
+      {:block/id #uuid "65084208-3adb-4db2-8219-36e18792a272",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "In der Spalte rechts daneben findet sich der [Inhaltstyp]([[Inhaltstypen]]) der jeweiligen Seite."}
+      {:block/id #uuid "65084208-be54-4eab-b076-92f2d37ddd19",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Über Schaltflächen (![Schaltfläche „Bearbeiten“]()) am rechten Ende der Tabelle können die Seiten z.B. bearbeitet oder gelöscht werden. Wenn eine Seite bearbeitet wird, öffnet sich ein neues Formular: Sehen Sie dazu [Kapitel 10]([[Inhaltsänderung]])."}],
+     :block/content "### Der Tab ![„Inhalt“]()"}
+    {:block/id #uuid "65084208-828e-4c0c-8d2b-9e711d73446b",
+     :block/properties {:heading 3},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-fcfc-44c2-b5b0-2090e48f7e79",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Neben der Inhaltsübersicht gibt es eine Übersicht über alle nicht veröffentlichten Seiten oder nicht veröffentlichten Änderungen von Seiten. Hier können bestimmte Personen diese Änderungen bestätigen und damit veröffentlichen. Mehr dazu im [Kapitel 10]([[Inhaltsänderung]]) und [Kapitel 12.4]()."}],
+     :block/content "### Der Tab ![„Kommentare“]()"}
+    {:block/id #uuid "65084208-0498-4715-9833-1342fe030b37",
+     :block/properties {:heading 3},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-4191-4705-8320-41ab275d23bb",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Weiterhin existiert eine Übersicht über alle auf der Website genutzten medialen Inhalte und Dateien."}
+      {:block/id #uuid "65084208-d8e4-4285-8aa8-260fe50de169",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "In dieser Tabelle werden alle diese Dateien aufgeführt. Mit einem Klick auf den Namen sind sie einsehbar. In der Spalte „Verwendet in“ (wenn diese Spalte nicht angezeigt wird, ist eventuell ein Klick auf die Schaltfläche „Alle Spalten zeigen“ notwendig) wird außerdem angezeigt, auf welchen Seiten die Datei sichtbar ist, bzw. verwendet wird."}],
+     :block/content "### Der Tab ![„Dateien“]()"}
+    {:block/id #uuid "65084208-5bd3-40c4-b870-9f46cae0db21",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Es handelt sich bei allen Tabs um spezielle [Ansichten]([[Ansichten: Inhalte gefiltert anzeigen]])."})}
+  {:block/id #uuid "656ae861-06fb-4cd6-83da-7561b06f42ab",
+   :block/page-name "Benutzerverwaltung",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-f2e2-471b-958b-cfe794c7a137",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-70de-4dba-bdca-8557e246765e",
+       :block/properties {:type "toc", :chapter 12},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae861-aa84-4ad2-9233-103bfffa53ab",
+   :block/page-name "Inhaltserstellung",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-a30a-4148-935a-b0701cf53f25",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-d33d-426b-bb2b-253ac3b6c08a",
+       :block/properties {:type "toc", :chapter 11},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"}
+    {:block/id #uuid "65084207-485b-484c-ad58-1824e27e480c",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Neben der [Veränderung bestehender Seiten]([[Inhaltsänderung]]) ermöglichen Seitenbearbeitungsformulare ebenso die Erstellung neuer Seiten."}
+    {:block/id #uuid "65084207-ea04-4725-93e9-7d1787abba10",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-9c49-4162-9002-5fab6d5b1c53",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Bei [bestehenden Inhaltstypen](((64f5804b-576f-456d-abc1-66a8688f8cb4))) geschieht dies durch die Schaltfläche ![Neuen Inhalt erstellen]() in der [Inhaltsübersicht]([[Inhaltsübersicht]]) oder in den Verknüpfungen (![Schaltfläche „Verknüpfungen“]())."}
+      {:block/id #uuid "65084207-8c32-4dd4-a81f-28cb76dcf152",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Zunächst muss der [Inhaltstyp]([[Inhaltstypen]]) der zu erstellenden Seite ausgewählt werden. Anschließend öffnet sich ein Seitenbearbeitungsformular, wie durch den Inhaltstyp beschrieben. Mit einem Klick auf die Schaltfläche „speichern“, wird die Seite erstellt. Eventuell ist sie jedoch nicht gleich sichtbar, da wie bei der [Inhaltsänderung]([[Inhaltsänderung]]) erst eine Revision erstellt wird, welche einen [Arbeitsablauf](((64f46814-c36a-4efb-90d1-01413210b08c))) durchlaufen muss."}
+      {:block/id #uuid "65084207-1309-4a4b-80df-4845527acd41",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-92a5-45a1-96f3-eeb23334ea86",
+         :block/properties {:heading 3},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-d1aa-4931-b3ef-9cb56a432e61",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Der Titel der Unterrichtsseite sollte genau dem Namen des beschriebenen Fachs entsprechen und **keine weiteren Informationen** (wie Alternativen, Abkürzungen oder Stufendifferenzierungen) enthalten."}
+          {:block/id #uuid "65084207-f772-489a-b578-4014eb7b9c7b",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Jede Stufe, in der das Fach unterrichtet wird, bekommt eine eigene Version – eine eigene Unterrichtsseite – des Fachs. Legen Sie die Stufe/Version der neuen Unterrichtsseite im Feld „Stufe“ des Seitenbearbeitungsformulars fest. Die unterschiedlichen Seiten der Stufen/Versionen müssen für eine fehlerfreie Funktionsweise der Website in ihrem Seitentitel **identisch** sein: Alle drei Seiten des Fachs Deutsch heißen so mit dem Titel „Deutsch“."}
+          {:block/id #uuid "65084207-174e-4fb7-b2e2-251743beb348",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-03c2-4ae0-8908-20980a1f303a",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "(Erstellen Sie wenn nötig einen neuen [Benutzer]([[Benutzerverwaltung]]).)"}
+            {:block/id #uuid "65084207-6e15-44e7-883e-e9e76cc3faa8",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Finden Sie als Administrator den Bereich „Authoring information“ im [Bearbeitungsformular]([[Inhaltsänderung]]) der jeweiligen Seite *(siehe Abb. 11.1)*."}
+            {:block/id #uuid "65084207-591f-47d7-8061-0ce69ef0704d",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Geben Sie nun im Feld „Geschrieben von“ den Benutzernamen des gewünschten Benutzers ein und **speichern** Sie die Änderungen. Der Benutzer kann nun die Unterrichtsseite verändern; der Administrator behält aber weiterhin das Recht, die Seite ebenfalls zu verändern. Beachten Sie, dass sich der Autor der Seite **nicht** nachträglich ändert, falls ein anderer Benutzer (z.B. der Administrator) als der im Feld „Geschrieben von“ Angegebene die Seite verändert."}],
+           :block/content
+           "Wenn eine neue Unterrichtsseiten erstellt wird, kann kein [Fachleiter]() automatisch darauf zugreifen. Damit der zuständige Fachleiter die Seite weiter bearbeiten kann, muss dieser als Autor der Seite festgelegt werden:"}
+          {:block/id #uuid "65084207-9f70-420e-8491-cc28f2f18f57",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Falls es sich bei der neuen Unterrichtsseite um ein neues, noch nicht auf der Seite erschienenes Fach handelt, muss der **exakte** Titel des Unterrichtsseite (der Name des Fachs) als Begriff dem Vokabular „Fächer“ hinzugefügt werden. Lesen Sie dazu [Kapitel 9]([[Taxonomie]])."}
+          {:block/id #uuid "65084207-e31e-42e7-93b2-34ecb46866f9",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Falls es sich bei der neuen Unterrichtsseite um ein neues, noch nicht auf der Seite erschienenes Fach handelt, sollte die „Version“ der Unterrichtsseite *mit der niedrigsten Stufe* dem Hauptmenü hinzugefügt werden. Neben dem im [Kapitel 13.1]() beschriebenen Ansatz können Sie dazu auch das Formular im Bereich „Menüeinstellungen“ des Seitenbearbeitungsformulars nutzen. Im Feld „Übergeordneter Link“ sollte dann entweder „-- Unterricht“ oder eine der Unterkategorien (für naturwissenschaftliche Fächer beispielsweise „---- MINT“) ausgewählt werden. Der Linktitel sollte dem Namen des Fachs oder seiner Abkürzung – solange für Laien verständlich – entsprechen."}],
+         :block/content "### Unterrichtsseiten"}
+        {:block/id #uuid "65084207-cf9a-468a-9dc5-65fd2d924506",
+         :block/properties {:heading 3},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-2e4f-4fba-a725-a2ec8885e176",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Falls es sich bei der neuen Stufenseite um eine neue, noch nicht auf der Seite erschienenen Stufe handelt, muss der **exakte** Wert des Feldes (siehe unten) „Systemname“ als Begriff dem Vokabular „Stufen“ hinzugefügt werden. Lesen Sie dazu [Kapitel 9]([[Taxonomie]])."}
+          {:block/id #uuid "650847ec-247b-4429-ad53-d3b407b550a0",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Wählen Sie einen Systemnamen für die Stufe, dieser sollte möglichst nur Zeichen des englischen Alphabets enthalten."}
+          {:block/id #uuid "656ae861-af50-4597-a8cb-40ba7be48d6d",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "656ae861-ca83-4b93-9030-5ce0790a7ebc",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Der Linktitel sollte eine einfache Bezeichnung der Stufe sein."}
+            {:block/id #uuid "656ae861-0137-46c5-b911-bbf9212d5bc6",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Der Übergeordnete Link sollte \"-- Stufen\" oder ggf. eine Überkategorie für mehrere Stufen unter diesem Link sein."}
+            {:block/id #uuid "656ae861-394c-4ac9-a941-2a7bcbe5ab27",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Mit der Gewichtung wird ausgewählt, wie weit oben die Stufe im Menü erscheint."}],
+           :block/content
+           "Setzen Sie einen Haken im Kästchen \"Menüpunkt erstellen\" unter den \"Menüeinstellungen\" auf der rechten Seite."}
+          {:block/id #uuid "65084719-7a1c-4636-8cb0-c36db2cc9e61",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084719-1f23-4926-b40f-d4ad05f63fff",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Bennen Sie die neue Ansicht nach folgendem Schema: \"Aktuelles <Stufenbezeichnung>\""}
+            {:block/id #uuid "65084719-bf84-4dbc-9574-3428d5db6369",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Ändern Sie in den Filterkriterien die *Inhalt: Stufe* zu der neu Erstellten"}
+            {:block/id #uuid "65084719-5f67-4b25-8b66-54ecec504ed9",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084719-f76d-443e-a6d8-93ac112e5610",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Um die ID herauszufinden, öffnen Sie die Seite [\"Neuigkeiten\"](((64f57700-9a38-4b95-9834-bfc8e420f660))) oder [\"Projekte\"](((65084206-881e-4ccd-bb2e-6c0e543218bb))) und filtern Sie nach der neuen Stufe. In der URL lässt sich die Tag ID ablesen. Beispiel Grundstufe (Seite \"Projekte\"): \"https://gcm.schule/dev/gcmofficial/projekte?field_thema_target_id=&**field_stufe_tag_target_id=26**&field_faecher_tag_target_id=&field_beginn_value=&field_ende_value=&sort_by=field_beginn_value&sort_order=DESC\""}],
+             :block/content
+             "Ändern Sie im Bereich Seitennavigation im Feld *Anzeige verlinken: Benutzerdefinierte URL* die Zahl am Ende (/berichte?field_stufe_tag_target_id=**26**) zu der der Tag ID des neu erstellten Taxonomie-Begriffs."}
+            {:block/id #uuid "65084719-507a-419c-a156-e42fbf8df0f4",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084719-df10-4767-aa38-1684c1e50968",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Schränken Sie anschließend die Seiten auf die neu erstellte Stufenseite ein."}
+              {:block/id #uuid "65084719-1946-475e-aec6-c31fcbd943fa",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Schränken Sie außerdem den Inhaltstyp auf Stufen ein."}],
+             :block/content
+             "Fügen Sie die Ansicht als neuen Block im [Blocklayout]([[Aufbau der Website verändern]]) hinzu"}],
+           :block/content
+           "**Duplizieren** Sie die [Ansicht]([[Ansichten: Inhalte gefiltert anzeigen]]) \"Aktuelles Grundstufe\""}
+          {:block/id #uuid "65084719-a519-4f50-b22b-22b245a66e8e",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Wiederholen Sie den obigen Prozess mit der Ansicht \"Projekte Grundstufe\" bzw. \"Projekte <Stufenbezeichnung>\""}
+          {:block/id #uuid "65084719-2fe4-4af0-ae9f-62f35d2b1cbe",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084719-4845-4fad-9c76-0ee06199af9e",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "6508492b-2e08-4671-b3c0-77946ef980ee",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content "```html\n<div class=\"stufen\">\n```"}],
+             :block/content "Suchen Sie nach folgender Zeile:"}
+            {:block/id #uuid "65084719-4afa-4238-9422-9bdfb358acc8",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084719-1be6-4720-885c-95cd35eccf65",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "```twig\n{% if \"<$ Systemname (field_kurzform) von Inhaltstyp Stufe (zugehörige Stufen-Seite) $>\" in stufen %}\n<a class=\"btn-like\" {% if content.field_stufe[0]|render==\"<$ Stufe (field_stufe) von Inhaltstyp Unterrichtsfach (der Stufe zugehöriger Begriff in den Listen-Einstellungen nach dem `|`) $>\" %} id=\"currentgrade\" {% endif %}\n    href=\"/dev/gcmofficial/fach/<$ Systemname (field_kurzform) von Inhaltstyp Stufe (zugehörige Seite) in maschienenlesbarer Form (Gehen Sie auf eine Unterrichtsseite dieser Stufe und betrachten Sie die URL) $>/{{ node.label }}\"><$ Von Ihnen gewählte Bezeichnung der Stufe für die Schaltflächen $></a>\n{% endif %}\n```"}],
+             :block/content
+             "Fügen Sie innerhalb dieses `div`s folgendes Schema an passender Stelle ein (vergleichen Sie dazu bitte ähnliche Zeilen in diesem `div`) und ändern Sie es gemäß ihrer neu erstellten Stufe ab - Zu ändernde Stellen sind markiert mit `<$ ... $>`:"}],
+           :block/content
+           "Im Folgenden müssen die Schaltflächen der [Unterrichtsseiten](((65084207-92a5-45a1-96f3-eeb23334ea86))) angepasst werden *(Abb. )*. Öffnen Sie dazu im [Theme]([[Das Theme verändern]]) die Datei `node--fachbereich.html.twig`"}],
+         :block/content "### Stufenseiten"}
+        {:block/id #uuid "65084207-9d2f-4cae-ac81-8528ae1f91fd",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "**Erstellen Sie keine neuen Seiten mit den folgenden Inhaltstypen**: Startseite, Standort. – Verändern Sie stattdessen die Bestehenden."}],
+       :block/content
+       "[#A] Einige [Seiten]([[Alle Seiten o. Aufbau Website]]) weisen Besonderheiten auf und erfordern weitere Schritte:"}],
+     :block/content "## Bestehender Inhaltstyp"}
+    {:block/id #uuid "64f46814-5e6d-4ce3-aeda-0c91acd81873",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-ecbc-4ef1-8f42-3f06ffc141da",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-df60-4829-a582-c0e798ff9aa4",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Öffnen Sie die [Übersichtsseite der Inhaltstypen](https://gcm.schule/dev/gcmofficial/admin/structure/types) und klicken Sie auf ![Neuen Inhaltstyp erstellen]()"}
+        {:block/id #uuid "65084207-5251-4bd2-9fa5-b4a91f253e29",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-0d11-454d-8fa3-dc036e3f7f58",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Achten Sie bitte darauf, dass in den \"Veröffentlichungseinstellungen\" ein **Häckchen bei \"Neue Revision erstellen\"** gesetzt ist, um eine ordnungsgemäße Weiternutzung des Inhaltstyps zu gewährleisten."}
+          {:block/id #uuid "65084207-77ed-477e-b2d2-bb4c64fd5673",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "In den Anzeigeeinstellungen finden Sie ein Feld, in dem Sie die Datums und Autoreninformationen (siehe Abb. 11.2) (de-)aktivieren können."}],
+         :block/content
+         "Es öffnet sich ein Formular, in dem Sie die Einstellungen für alle Seiten, die diesem Inhaltstyp angehören, verändern können."}
+        {:block/id #uuid "65084207-9cd2-407f-9fee-86a8ebfd2be9",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Klicken Sie auf ![Speichern und Felder verwalten]()"}
+        {:block/id #uuid "65084207-ee88-41f3-92d3-e6356bb28873",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Nun können Sie unterschiedliche Bereiche für bestimmte Informationen festlegen (z.B. ein Bereich für \"Wichtige Notizen\"), sowie Metadaten und [Taxonomie]() für die Seiten einrichten. Dafür bedienen Sie sich Feldern. Sie fügen ein neues Feld mit einem Klick auf ![Feld hinzufügen]() hinzu"}],
+       :block/content
+       "Für jede Ansammlung von ähnlichen, noch nicht bestehenden Seiten, auf die kein [bestehender Inhaltstyp](((64f5804b-576f-456d-abc1-66a8688f8cb4))) angewendet werden kann, sollte ein neuer [Inhaltstyp]([[Inhaltstypen]]) erstellt werden:"}
+      {:block/id #uuid "64f89b14-fe90-4cd3-a797-1ad8abdf1670",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-43fa-41c1-b489-2f56ca78377f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Felder sind vorgefertigte Bereiche innerhalb einer Seite, welche durch den Inhaltstyp definiert werden. Da das [Theme]([[Das Theme verändern]]) auf die Felder zugreifen kann, können ihre Position und ihre Darstellung angepasst werden."}
+        {:block/id #uuid "65084207-c7fa-4653-b2dc-5ab6a81cb304",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Der Inhalt der Felder, der durch das [Seitenbearbeitungsformular]([[Inhaltsänderung]]) beschrieben wird, wird in durch das Feld in die Datenbank geschrieben und ausgelesen. Die genaue Art und Weise dessen wird durch den Feldtyp (siehe unten) bestimmt."}
+        {:block/id #uuid "65084207-6aaf-4e4a-90fa-79b69985e8d9",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Wenn Sie ein neues Feld erstellen (siehe oben), werden Sie zunächst nach dem Feldtyp (siehe unten) gefragt. Alternativ können Sie ein bereits bestehendes Feld auswählen. Dies ist ratsam, wenn Sie die gleiche Funktion, Aufgabe oder Struktur über mehrere Inhaltstypen hinweg planen."}
+        {:block/id #uuid "65084207-8d23-408c-b98b-ed7e2cf0f79d",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Felder nehmen immer nur einen vorher festgelegten Datentyp entgegen. Es handelt sich bei diesem Typ aber nicht nur um den Datentyp der Daten in der Datenbank, deswegen wird er wird „Feldtyp“ genannt. Der Feldtyp ermöglicht eine genauere Einteilung und legt zudem die Aufgabe des Feldes fest."}
+        {:block/id #uuid "65084207-84d1-44a0-9bae-6b7520d68740",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die Funktion und die Datentypen eines Feldtyps sind in der Regel durch die Bennenung des Feldtyps intuitiv verständlich."}
+        {:block/id #uuid "65084207-8791-4f09-85d9-5fd73574ed92",
+         :block/properties {:heading 4},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-cbd9-449c-b555-92ee6ed6863b",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-8193-46f6-a1e5-f46bf1124883",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content "Auch: **Entitätsreferenzierung**"}
+            {:block/id #uuid "65084207-cf82-4a92-8ef1-aa920b96678a",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084207-ceef-4db2-bde1-c3d2e718506c",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Die verfügbaren Begriffe werden durch die Auswahl eines (oder mehrerer) [Vokabulars](((64f5f710-eda0-406a-9140-86795496e6f7))) bestimmt."}],
+             :block/content
+             "Hierbei handelt es sich um einen Link zu der Seite eines (oder mehrerer) in der Regel bereits bestehendem [[Taxonomie]]-Begriffs."}
+            {:block/id #uuid "65084207-a9d3-4279-afce-8846e8539214",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Mit diesem Feld lassen sich auch beliebig viele Begriffe hinzufügen, um die jeweilige Seite zu kategorisieren (Lesen Sie auch dazu „Taxonomie“)."}
+            {:block/id #uuid "65084207-38bd-42de-9266-5ce712fee977",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Um die Erstellung eines neuen Begriffs mit dem Seitenbearbeitungsformular zu ermöglichen, aktivieren Sie in den Einstellungen zu dem Referenztyp die Checkbox „Referenzierte Entitäten erstellen, sofern diese nicht bereits existieren“ *(Abb. 11.2)*."}],
+           :block/content "**Referenz**: Taxonomie-Begriff"}
+          {:block/id #uuid "65084207-b4de-405d-ad18-14077267f249",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-b7d9-4fd2-9685-fa7ce4f3e6fd",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content "Auch: **Entitätsreferenzierung**"}
+            {:block/id #uuid "65084207-dd20-4216-927f-5e0121b3dee9",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Hierbei handelt es sich um einen Link zu der Vorstellungsseite eines bereits bestehenden [Benutzers]([[Benutzerverwaltung]])."}
+            {:block/id #uuid "65084207-fc23-41f9-9e44-f6756d43fc81",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Ebenfalls möglich wäre eine Kategorisierung der Seiten nach Benutzern (Zum Beispiel lässt sich so eine Liste an Beteiligten umsetzen)."}],
+           :block/content "**Referenz**: Benutzer"}
+          {:block/id #uuid "65084207-a727-4bc2-95a1-d0a98861339f",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-f17e-454a-9355-6b3a3471cb0e",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content "Auch: **Entitätsreferenzierung**"}
+            {:block/id #uuid "65084207-8a6a-4c12-a7b5-0d921411d063",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Hierbei handelt es sich um eine Weiterleitung zu einem beliebigen Inhalt."}
+            {:block/id #uuid "65084207-4238-4ee2-82f9-3d9f922e3d87",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Bei diesem „Inhalt“ handelt es sich um alles, was keine Seite, Inhaltstyp oder Seitenabschnittstyp darstellt. Beispiele sind Menülinks, Kommentare oder aber auch bereits hochgeladene Dateien."}
+            {:block/id #uuid "65084207-d963-40c6-80b6-2472d17804df",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Die Benutzung dieses Feldtyps für einfache Zwecke ist nicht empfohlen. Benutzen Sie stattdessen den jeweiligen eigenen Feldtyp für den gewünschten Inhalt."}],
+           :block/content "**Referenz**: Inhalt"}
+          {:block/id #uuid "65084207-51c1-49bc-9bc3-4e2e90b6cd4b",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-0d16-4dfc-9e4b-722d1b989d34",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Bei dem Inhalt handelt es sich um reinen, unformatierten Text."}
+            {:block/id #uuid "65084207-3d2e-447b-8b18-1da7d3151811",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Der Text wird durch das Feld nicht im Nachhinein verändert: Es werden keine zusätzlichen HTML-Tags oder Attribute hinzugefügt."}
+            {:block/id #uuid "65084207-3812-4dea-8343-850127ecec74",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084207-1411-4425-bc75-6ec9dad5dfd5",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Sie können damit auch Metadaten, welche nur der Verarbeitung durch das Theme/Modul dienen, mit diesem Feldtyp speichern."}],
+             :block/content
+             "Aus diesem Grund ist dieser Feldtyp ratsam, wenn der Text durch das Theme oder das Modul weiter verwendet wird, da diese direkt auf den Text zugreifen können."}],
+           :block/content "**Text**: Klartext"}
+          {:block/id #uuid "65084207-8f84-4213-9dba-b0a2d47a1778",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-b83a-4756-8c29-c010f777176b",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Dieses Feld kann immer nur genau einen von zwei Werten (z.B. 1/0, wahr/falsch, Ja/Nein) annehmen."}
+            {:block/id #uuid "65084207-8a38-49ba-a2d6-0ec8ea91ddc4",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Die beiden Werte können durch die Formularfelder *„An“-Beschriftung* und *„Aus“-Beschriftung* bei Bearbeitung des Felds angepasst werden."}
+            {:block/id #uuid "65084207-f238-472f-b9b5-b5bf4059ef50",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Stellen Sie in den Anzeigeeinstellungen des Inhaltstyps die *Anzeige* dieses Felds (Zahnrad-Icon) am besten auf 1/0 um, wenn sie den Wert einfacher durch das [Theme]([[Das Theme verändern]]) auslesen wollen."}],
+           :block/content "**Algemein**: Boolesch"}
+          {:block/id #uuid "65084207-1cb6-44ff-9482-82c47a460999",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-82e0-4f99-be10-8cfedf8d4cb0",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Hierbei handelt es sich um ein Eingabefeld für eine Zeitangabe mit Datum, Stunden, Minuten und Sekunden."}
+            {:block/id #uuid "65084207-add1-49e8-bc6a-04d7dfe1217c",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Es wird standardmäßig auf den Veränderungszeitpunkt der Seite gestellt."}],
+           :block/content "**Algemein**: Zeitstempel"}
+          {:block/id #uuid "65084207-48db-46df-bde1-b58de8ac1382",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-529e-4efb-bbf9-5a1c39083f9c",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content "Auch: **Entitätsreferenz-Revision**"}
+            {:block/id #uuid "65084207-5540-48ea-b020-60f4cb5a62d9",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Hierbei handelt es sich um die Einbettung eines (oder mehrerer) [Seitenabschnitts](((64f46814-8758-4012-b88e-7d06b8ccc162)))."}
+            {:block/id #uuid "65084207-0e28-4e9e-94a0-5aa7f92cd404",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084207-7422-4356-853d-924937a5c8dc",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Im jeweiligen [Seitenbearbeitungsformular]([[Inhaltsänderung]]) können neue Seitenabschnitte durch die Schaltfläche „Neuen Eintrag hinzufügen“ am unteren Ende dieser Liste erstellt werden."}
+              {:block/id #uuid "65084207-908b-4695-9ffa-ef8318267b53",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Die Seitenabschnitte präsentieren sich im Seitenbearbeitungsformular der Seite, in welche sie eingebettet sind, als eigene Formulare, welche durch ihren Seitenabschnittstypen definiert sind."}],
+             :block/content
+             "Dabei wird eine Liste von Seitenabschnitt-Entitäten eines bestimmten Seitenabschnittstypen erstellt."}],
+           :block/content "**Referenzrevisionen**: Seitenabschnitt"}],
+         :block/content "#### Auswahl besonderer Feldtypen"}
+        {:block/id #uuid "65084207-f5e4-43d9-a04c-1df34ec3798f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Wenn Sie den Feldtyp *Bild* wählen, lesen Sie bitte auch den unten stehenden Abschnitt zu *Bildstilen*."}
+        {:block/id #uuid "65084207-ec6a-4064-b58b-0ae6b99eaeac",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Jedem Feld wird neben dem festgelegten Titel bei der Erstellung ein maschinenlesbarer Systemname zugeordnet, über den das Theme und andere Bestandteile des Systems auf das Feld und dessen Inhalt zugreifen können."}
+        {:block/id #uuid "65084207-a79a-4357-8c41-3f367defc7ad",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "[#A] Bitte beachten Sie, dass alle Felder, welche im Nachhinein durch das Theme verwendet werden sollen - auch solche, welche nicht angezeigt werden sollen - im Reiter „Anzeige verwalten“ der Einstellungen des Inhaltstyps sich im aktivierten Bereich befinden sollten. Befinden sie sich im Bereich „Deaktiviert“, so kann auch das Theme nicht mehr auf sie zugreifen. Das Theme ist allerdings in der Lage, das Feld im Nachhinein auszublenden."}],
+       :block/content "### Felder"}
+      {:block/id #uuid "65084207-e503-469b-9676-5ae26f1d85e6",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-a9dc-4f7e-8e31-f9669ed039b6",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-c7e2-4e63-b2aa-54e6068af7d3",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Zu den wichtigen Bildern zählen zum Beispiel diejenigen in den „Titelbild“-Feldern"}],
+         :block/content
+         "Aus datensparenden Gründen, die sowohl ökologisch als auch wegen einer erhöhten Benutzerfreundlichkeit durch kürzere Ladezeiten begründet sind, sollte die Größe von besonders wichtigen oder großen Bildern an den Bildschirm des Clients angepasst und entsprechend vor-skaliert zu dem Client übertragen werden."}
+        {:block/id #uuid "65084207-857b-4577-83e1-606e07e5166f",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Dies wird durch das [Modul]([[Themes, Module & Technologien]]) „Responsive Image“ ermöglicht."}
+        {:block/id #uuid "65084207-5d91-4998-817b-b9f44da254be",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-e89c-42db-845a-693a94b22679",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content "Wählen Sie das Format „Responsives Bild“."}
+          {:block/id #uuid "65084207-b173-464f-a4a6-0652378bf3a6",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Passen Sie die Formateinstellungen (Zahnrad-Icon) an und wählen Sie einen responsiven Bildstil."}],
+         :block/content
+         "Um den angesprochenen Mechanismus zu nutzen, müssen alle betroffenen Felder (siehe oben) vom Typ „Bild“ in den Anzeigeeinstellungen des jeweiligen Inhaltstyps angepasst werden *(Abb. 11.3)*:"}
+        {:block/id #uuid "65084207-a1d6-4a44-b1b2-7b579f6bf8ae",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Eine Übersicht aller responsiven Bildstile findet sich auf der Seite [https://gcm.schule/dev/gcmofficial/admin/config/media/responsive-image-style](https://gcm.schule/dev/gcmofficial/admin/config/media/responsive-image-style). Hier lassen sich die Bildstile auch konfigurieren."}
+        {:block/id #uuid "65084207-1b2e-4ab6-bb6f-d8502f9c25ed",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Lesen Sie [hier](), wie auch das Theme auf responsive Bildstile zugreifen kann."}],
+       :block/content "### Bildstile"}],
+     :block/content "## Neuer Inhaltstyp"}
+    {:block/id #uuid "65084207-df07-4043-b5c5-f2f1273f5371",
+     :block/properties {:heading 2},
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-8b73-48bf-8e00-ce90d9572ef7",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Standartmäßig folgt die URL einer jeden [Seite]([[Alle Seiten o. Aufbau Website]]) folgendem Schema: \n`/node/<num>`"}
+      {:block/id #uuid "65084207-73db-4d85-85b8-84cbe01e4e67",
+       :block/properties nil,
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "Um die URLs für Besucher intuitiver zu gestalten, sodass sich die Seiten besser gemerkt werden können, bzw. besser über sie gesprochen werden kann, lassen sich die URLs über die Seite [URL-Aliase](https://gcm.schule/dev/gcmofficial/admin/config/search/path) der Benutzeroberfläche im [Bereich „Konfiguration“](((64f5701f-9136-48f0-8c35-481f6ab7074d))) anpassen. Dies geschieht auf zwei Arten:"}
+      {:block/id #uuid "65084207-42d5-4f43-9002-a4b2e6f8e5a3",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-6d3a-4729-ac68-2f5902bd4fce",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Um die URL einer einzelnen Seite zu verändern (ein Beispiel ist die [Über-Uns-Seite](((64f57626-0c5f-40a9-ae65-2f60591e5327)))) gehen Sie bitte auf die Seite URL-Aliase."}
+        {:block/id #uuid "65084207-cf92-497c-b528-4beef657184f",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Sie befinden sich im Tab „Liste“. Klicken Sie auf die Schaltfläche ![Alias hinzufügen]()."}
+        {:block/id #uuid "65084207-adbd-4f77-a285-7de3696ab075",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-df98-4d73-a333-2c198dbf8c35",
+           :block/properties nil,
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Die Sprache können Sie auf „- Nicht festgelegt -“ belassen. Ansonsten wählen Sie bitte die Sprache aus, in der die Seite geschrieben ist. Der Alias sollte dementsprechend auch in dieser Sprache geschrieben sein. Standardmäßig ist die Sprache der Website „Deutsch“."}],
+         :block/content
+         "Füllen Sie das Formular aus und klicken Sie auf „Speichern“."}],
+       :block/content "### Einzelne Seiten"}
+      {:block/id #uuid "65084207-92de-491d-9e5a-03af457ab78e",
+       :block/properties {:heading 3},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084207-b371-4799-84c6-eb6fe6ef20d3",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Neben der Möglichkeit, die URL einer einzelnen Seite anzupassen, können Sie auch die URL von mehreren gleichartigen Seiten anpassen. Generell sollte die Regel sein, dass nur für (und am besten auch für jeden) [[Inhaltstypen]] ein sogenanntes URL-Muster erstellt werden sollte."}
+        {:block/id #uuid "65084207-d56d-4f5a-a9c3-fd51df5c8ea8",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die URLs der gleichartigen Seiten folgen nach der Erstellung des Musters einem vorgegebenen Schema. Einzelne Seiten der gleichartigen Seiten werden nicht, solange nicht manuell verändert, von diesem Schema abweichen. Außerdem bekommt jede neue Seite bei der Erstellung automatisch einen URL-Alias nach dem vorgegebenen Schema."}
+        {:block/id #uuid "65084207-6ad6-4796-b7b0-1fb3c8b4e739",
+         :block/properties nil,
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Die genannte Funktionalität wird durch das [Modul]([[Themes, Module & Technologien]]) „Pathauto“ ermöglicht."}
+        {:block/id #uuid "65084207-79bc-4738-8ca7-4f24f9a46bc8",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Eine Übersicht über alle Muster/Schemas findet sich auf der Seite URL-Aliase (siehe oben) unter dem Tab „Muster“."}
+        {:block/id #uuid "65084207-ba73-4a7f-846a-b8f91ccc8a52",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Um ein neues Muster zu erstellen, klicken Sie auf die Schaltfläche ![Pathauto-Muster hinzufügen]()."}
+        {:block/id #uuid "65084207-f182-46e3-b04f-54a6e223d3cc",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "Wählen Sie „Inhalt“ als Art des Musters im folgenden Formular und vergeben Sie einen Namen."}
+        {:block/id #uuid "65084207-dced-4072-8d9c-48c7bf5930bf",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084207-93a0-413d-8583-8209d3454634",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "Wählen Sie zunächst den betroffenen Inhaltstyp (Sie können auch mehrere wählen, dies wird aber aus Gründen der Eindeutigkeit nicht empfohlen)"}
+          {:block/id #uuid "65084207-258a-47d8-a5f9-af09dc929abd",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084207-4104-4069-8930-ecc9f7099a11",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "Trennen Sie Kategorien oder Unterseiten mit „/“ (Bsp.: `/tutorial/kapitel-11`)."}
+            {:block/id #uuid "65084207-ee01-44e7-8f0e-43d657801c86",
+             :block/properties nil,
+             :block/format :markdown,
+             :block/children
+             [{:block/id #uuid "65084207-98d9-43b9-82c9-d66de491b69c",
+               :block/properties nil,
+               :block/format :markdown,
+               :block/children [],
+               :block/content
+               "Alle verfügbaren Token können Sie mit einem Klick auf die Schaltfläche „Alle verfügbaren Token durchsuchen“ einsehen. Es öffnet sich ein Popup. Mit Klick auf das jeweilige Token wird es automatisch in das Formularfeld eingefügt, solange es fokussiert ist."}],
+             :block/content
+             "Sie können sich dabei sogenannten „Token“ behelfen, welche automatisch für jede Seite angepasst/erstellt werden. Ein Beispiel ist das Token „[node:title]“ - Mit ihm lässt sich der Seitentitel in die URL einbinden (Bsp.: `kapitel-11` ist zu spezifisch, mit `[node:title]` kann der Titel dieses Kapitels automatisch eingefügt werden. Das Muster `/tutorial/[node:title]` würde sich also in diesem Fall zu `/tutorial/inhaltserstellung` auflösen)."}],
+           :block/content
+           "Sie können nun ein Muster vorschreiben: Schreiben Sie in das Formularfeld „Pfadmuster“ das gewünschte URL-Schema."}],
+         :block/content
+         "Sobald Sie speichern, können Sie das Muster anpassen."}],
+       :block/content "### Mehrere ähnliche Seiten"}],
+     :block/content "## Benutzerdefinierte URL"})}
+  {:block/id #uuid "656ae861-94ad-4c82-853f-a0d4259bf4ea",
+   :block/page-name "Themes, Module & Technologien",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-bb16-4191-a11f-a7ec61b5d6a1",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084208-5ce3-4bfa-85b2-959ec64c7a90",
+       :block/properties {:type "toc", :chapter 15},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "656ae85f-f1af-4893-a0c0-3ec69c62fbc1",
+   :block/page-name "Sep 4th, 2023",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084206-ebb2-4d8d-b85e-a53e99130d61",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084206-dc76-497e-adb6-074e688f560e",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-a122-4059-8a61-19b4c6d14f83",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "LATER Vorraussetzungen / Annahmen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+        {:block/id #uuid "65084206-a8b0-4f33-9a22-592efafe00d9",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "LATER Wie ist dieses Dokument zu lesen?\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+        {:block/id #uuid "65084206-9c91-4978-94a0-d724126cd642",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "LATER Andere Informations- und Lernmaterials-Quellen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+        {:block/id #uuid "65084206-11e1-4202-83b0-178488f01083",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "LATER Übersetzung deutscher und englischer CMS-spezifischer Begriffe\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}],
+       :block/content
+       "LATER [[Dieses Handbuch]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-2651-4adf-b337-2bdc13b88430",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "LATER [[Es ist etwas schiefgelaufen.]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-9cc6-4ec8-bb59-9a2313ad378d",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "LATER [[Ich will etwas ändern.]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-76eb-4b57-8a47-b21e8761957a",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "LATER [[Schnellübersicht]] / Index\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-963e-4152-9d04-b557c03e6000",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-6aee-4ace-a527-df9525275adf",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "DONE Benutzeroberfläche\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+        {:block/id #uuid "65084206-da9f-4f97-9c96-31bcfbdad0a7",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "DONE Dateisystem\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}],
+       :block/content
+       "DONE [[Aufbau CMS o. Wo finde ich was?]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-f7ed-4f8c-9dfa-93b2e95cb730",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-4680-469e-8b5e-d2e4483195d8",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "DONE Seiten-Typen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}],
+       :block/content
+       "NOW [[Alle Seiten o. Aufbau Website]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\nCLOCK: [2023-12-02 Sat 09:19:56]\n:END:"}
+      {:block/id #uuid "65084206-ed5e-4ad0-9db2-e605855da3dc",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "DONE [[Inhaltsübersicht]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-a918-4c89-bdd3-47e53986bad3",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-7156-480a-bb42-46aa1c9febc4",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Seitenabschnittstypen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\nCLOCK: [2023-12-02 Sat 09:20:09]\n:END:"}],
+       :block/content
+       "NOW [[Inhaltstypen]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\nCLOCK: [2023-12-02 Sat 09:20:08]\n:END:"}
+      {:block/id #uuid "65084206-06f5-40f7-8375-ed159e73a788",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "DONE [[Taxonomie]] und deren Verwendung auf der Website\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-0011-45e2-a014-f05ac0670a5a",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-7559-4472-9f1f-83d2b8e65dd3",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "DONE Arbeitsabläufe\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}],
+       :block/content
+       "DONE [[Inhaltsänderung]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:13:59]--[2023-09-04 Mon 18:14:01] =>  00:00:02\nCLOCK: [2023-09-04 Mon 18:14:05]--[2023-09-04 Mon 18:14:06] =>  00:00:01\n:END:"}
+      {:block/id #uuid "65084206-cc61-4e21-b945-425b2d232ce2",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-b04b-42fa-8920-d39c414e3870",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content "DONE Bestehender Inhaltstyp"}
+        {:block/id #uuid "65084206-30b9-4185-817a-9c0eb43ecdc8",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084206-7a88-4bfe-812c-cda793a4a12b",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "DONE Felder\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]--[2023-09-04 Mon 18:15:54] =>  00:00:23\nCLOCK: [2023-09-04 Mon 18:15:55]--[2023-09-10 Sun 08:03:26] =>  133:47:31\n:END:"}
+          {:block/id #uuid "65084206-c128-4115-8a7c-08d99e64ca72",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "DONE Bildstile\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]--[2023-09-10 Sun 08:58:07] =>  134:42:36\n:END:"}],
+         :block/content
+         "DONE Neuer Inhaltstyp\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:14:54]--[2023-09-04 Mon 18:15:50] =>  00:00:56\nCLOCK: [2023-09-04 Mon 18:15:51]--[2023-09-04 Mon 18:15:53] =>  00:00:02\n:END:"}
+        {:block/id #uuid "65084206-e115-4bc8-b2b8-590b39bcd1cf",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "DONE URL Schema\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]--[2023-09-11 Mon 18:22:09] =>  168:06:38\n:END:"}],
+       :block/content
+       "DONE [[Inhaltserstellung]]\n:LOGBOOK:\nCLOCK: [2023-09-10 Sun 08:04:24]\nCLOCK: [2023-09-10 Sun 08:04:25]--[2023-09-11 Mon 18:22:10] =>  34:17:45\n:END:"}
+      {:block/id #uuid "65084206-a0be-4e65-911c-b0ddc9c96a02",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-cc16-47f8-82a8-9a098ec6bb42",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Befugnisse & Rollen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-a7f3-40e5-840f-96bb1df15343",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Neue Person als Fachleiter festlegen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-b70d-4a32-ae51-5a8faa67e820",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Neue Rolle erstellen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-8a21-4a6a-a614-b8d57757a041",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Benutzerbefugnisse bei Inhaltsänderungen ändern\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+       :block/content
+       "NOW [[Benutzerverwaltung]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+      {:block/id #uuid "65084206-f004-4387-92e1-1c3a346d27c3",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-ae62-48d1-87c4-ea740a3be1ac",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Menüs\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-e76f-4ef0-88fc-71f3fefac50d",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Blockschema\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+       :block/content
+       "NOW [[Aufbau der Website verändern]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+      {:block/id #uuid "65084206-7ac2-44d2-a9f5-589f01ca3bf1",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "NOW [[Ansichten: Inhalte gefiltert anzeigen]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+      {:block/id #uuid "65084206-e323-42b8-8952-6387b49835e8",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-6bae-453c-9491-02c12775b66e",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Themes: Aussehen der Website verändern\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-ba27-4353-8f02-f585f81614ae",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Module: Funktionen hinzufügen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-04a9-4bb4-a59b-420ecacfa018",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Themes VS Module\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-4394-41a4-9a0b-1b3a2b592882",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW PHP auf der Website\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-1968-4154-8cab-c860e4ddb001",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Einführung in Twig\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-f5e2-42dc-9841-64148eaef638",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Website Rendering-Prozess\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+       :block/content
+       "NOW [[Themes, Module & Technologien]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+      {:block/id #uuid "65084206-cb46-453d-8700-6b7dddafec7a",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children
+       [{:block/id #uuid "65084206-3bb6-4059-84e5-68f4294d5848",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children [],
+         :block/content
+         "NOW Benutzeroberfläche: Kleine Anpassungen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+        {:block/id #uuid "65084206-9ce2-4867-9446-4d4445eb737a",
+         :block/properties {:logseq.order-list-type "number"},
+         :block/format :markdown,
+         :block/children
+         [{:block/id #uuid "65084206-c9ee-47dc-9124-8de6559b4923",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW Benennungs-Vorgaben für Dateinamen\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-bc81-4807-a6f0-0fd0998cf521",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW Alle bestehenden Seiten im Dateisystem\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-3fcb-4daf-b0e1-d0acae4099c4",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW Aussehen verändern mit CSS\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-0190-4d24-8f15-d2df4906c2a4",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW Verhalten verändern mit JS\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-88b2-424f-b4f0-f54b695c1866",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084206-d502-479c-83d7-2d1bbc7273da",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "NOW Inhaltstyp\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+            {:block/id #uuid "65084206-2553-49fb-b59b-f51d475ce3ab",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "NOW Einzelne Website\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+           :block/content
+           "NOW Rendering: Seiten-Struktur verändern\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-d447-4d7f-a912-2cb8caf6d7ca",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children
+           [{:block/id #uuid "65084206-a865-4699-a177-a955cea1f039",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "NOW Warum & Wann\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+            {:block/id #uuid "65084206-f169-4231-b356-25bd61a68487",
+             :block/properties {:logseq.order-list-type "number"},
+             :block/format :markdown,
+             :block/children [],
+             :block/content
+             "NOW Benennungs-Vorgaben & Wie\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+           :block/content
+           "NOW Preprocessing verändern\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-9a4a-4f11-8731-3962171a79f0",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW ... Bei einer neuen Website oder einem neuen Inhaltstyp\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-7471-4912-aa4a-c216778dc944",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW Drupal-interner Aufbau einer Seite\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+          {:block/id #uuid "65084206-ca58-4de9-9de0-15c79488e6b8",
+           :block/properties {:logseq.order-list-type "number"},
+           :block/format :markdown,
+           :block/children [],
+           :block/content
+           "NOW Verwaltungs-Theme\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+         :block/content
+         "NOW Im Dateisystem\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+       :block/content
+       "NOW [[Das Theme verändern]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+      {:block/id #uuid "65084206-62f3-4dc7-a555-eea912c6707e",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "NOW [[Das Modul verändern]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}
+      {:block/id #uuid "65084206-404f-4fb3-aa5a-34a4b1dece93",
+       :block/properties {:logseq.order-list-type "number"},
+       :block/format :markdown,
+       :block/children [],
+       :block/content
+       "NOW [[Updates: Drupal aktualisieren]]\n:LOGBOOK:\nCLOCK: [2023-09-04 Mon 18:15:31]\n:END:"}],
+     :block/content "Chapter Writing Plan"})}
+  {:block/id #uuid "656ae861-ad1d-4520-9553-ff5a90d42f65",
+   :block/page-name "Das Theme verändern",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084207-3585-4ed0-93e5-730a8cce88e7",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children
+     [{:block/id #uuid "65084207-8204-43f7-b12c-442696d00a10",
+       :block/properties {:type "toc", :chapter 16},
+       :block/format :markdown,
+       :block/children [],
+       :block/content ""}],
+     :block/content "{{renderer :tocgen2}}"})}
+  {:block/id #uuid "65084208-d7c3-4c62-a724-480c27574b0b",
+   :block/page-name "Inhaltsverzeichnis",
+   :block/properties nil,
+   :block/children
+   ({:block/id #uuid "65084208-b808-4430-918e-aa7fa156f0b4",
+     :block/properties nil,
+     :block/format :markdown,
+     :block/children [],
+     :block/content
+     "Klicken Sie **neben** den Seitentitel, um Unterkapitel zu sehen"}
+    {:block/id #uuid "65084208-a49e-45f7-9854-9c3e576a0c0d",
+     :block/properties
+     {:query-table true,
+      :query-properties "[:page :chapter]",
+      :query-sort-by "chapter",
+      :query-sort-desc false},
+     :block/format :markdown,
+     :block/children [],
+     :block/content "{{query (property :type \"toc\")}}"})})}
