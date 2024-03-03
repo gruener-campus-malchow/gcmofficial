@@ -31,7 +31,6 @@ function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Fo
 {
    try {
       if ($form['#id'] == 'views-exposed-form-berichte-page-1') {
-         $form['created_wrapper']['created_op']['#options']['='] = t("am");
          $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
          $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
          $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
@@ -39,6 +38,10 @@ function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Fo
          $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
       }
       $form['actions']['submit']['#value'] = t('Filter anwenden');
+      if ($form['#id'] == 'views-exposed-form-projekte-page-1') {
+         $form['field_beginn_value']['#type'] = 'date';
+         $form['field_ende_value']['#type'] = 'date';
+      }
    } catch (Exception $ex) {
       $form['debug_info'] = [
          '#type' => 'checkbox',
@@ -48,6 +51,28 @@ function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Fo
    }
 }
 
+function gcmofficialmodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+   $roles = \Drupal::currentUser()->getRoles();
+   // allow only certain roles to set high priority on articles and projects
+   if (in_array($form_id, ["node_article_form", "node_article_edit_form", "node_projekt_form", "node_projekt_edit_form"])) {
+      $allowedRole = "administrator";
+      $allowed = in_array($allowedRole, $roles);
+      if (!$allowed) {
+         unset($form["field_prioritaet"]);
+      }
+   }
+   // allow only certain roles to set a project as school identity
+   if (in_array($form_id, ["node_projekt_form", "node_projekt_edit_form"])) {
+      $allowedRole = "administrator";
+      $allowed = in_array($allowedRole, $roles);
+      if (!$allowed) {
+         unset($form["field_schulidentitaet"]);
+      }
+   }
+}
+
+// allow only certain roles to change the title and stufe of a fachbereich page
 function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
    $allowedRole = "administrator";
