@@ -19,9 +19,13 @@
 		{# <p class="stufenString">{{ stufenString }}</p> #}
         {# create menu to switch stufe of unterrichtsfach #}
         <div class="stufen">
+            {% if "jül" in stufen %}
+            <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe - JÜL" %} id="currentgrade" {% endif %}
+                href="/dev/gcmofficial/fach/juel/{{ node.label }}">Grundstufe JÜL</a>
+            {% endif %}
             {% if "grundstufe" in stufen %}
-            <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe" %} id="currentgrade" {% endif %}
-                href="/dev/gcmofficial/fach/grundstufe/{{ node.label }}">Grundstufe</a>
+            <a class="btn-like" {% if content.field_stufe[0]|render=="Grundstufe - 4-6" %} id="currentgrade" {% endif %}
+                href="/dev/gcmofficial/fach/grundstufe/{{ node.label }}">Grundstufe Klassen 4-6</a>
             {% endif %}
             {% if "mittelstufe" in stufen %}
             <a class="btn-like" {% if content.field_stufe[0]|render=="Mittelstufe" %} id="currentgrade" {% endif %}

@@ -17,6 +17,15 @@ function gcmofficial_preprocess_paragraph__standort(&$variables)
     }
   }
 
+  $address = strip_tags($paragraph->field_adresse->value);
+  $address = array_filter(explode("\n", str_replace("\r", "\n", $address)));
+  $address = implode(", ", $address);
+  $variables['plain'] = [
+    'title' => $paragraph->field_location_title->value,
+    'longitude' => $paragraph->field_longitude->value,
+    'latitude' => $paragraph->field_latitude->value,
+    'address' => $address
+  ];
 }
 
 // administered through Responsive Image module
@@ -86,19 +95,34 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
     '#default_value' => theme_get_setting('themecolor_textOnPrimary'),
     '#description' => t('Geben Sie hier die Farbe an, in der der Text erscheinen soll, der sich auf mit der Primärfarbe oder ihrem dunklen Ton gefärbten Flächen befindet. Sie sollte einen hohen Kontrast zur Primärfarbe haben.'),
   ];
+  $form['themeclasses_enlargeImages'] = [
+    '#type' => 'textfield',
+    '#title' => t('Bilder vergrößern'),
+    '#default_value' => theme_get_setting('themeclasses_enlargeImages'),
+    '#description' => t('Geben Sie hier einen CSS-Selektor an, der alle Container-Elemente auswählt, dessen Bilder vergrößert werden können sollen. Bsp.: \'.field-type-image, #imagebox\''),
+  ];
 }
 
 // -> all pages of content type fachbereich (UI name: Unterrichtsfach)
 function gcmofficial_preprocess_node__fachbereich(&$variables)
 {
   // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
-  $view = views_get_view_result('fachbereiche');
   $variables['stufen'] = [];
-  foreach ($view as $v) {
-    $title = get_object_vars($v)['_entity']->get('title')->getValue()[0]['value'];
-    if ($variables['node']->getTitle() === $title) {
-      // BIG and I mean BIG pain in the...
-      array_push($variables['stufen'], get_object_vars($v)['_entity']->get('field_stufe')->getValue()[0]['value']);
+  $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+  $nids = $query->condition('type', 'fachbereich')->execute();
+  if (is_array($nids)) {
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    if (is_array($nodes)) {
+      // $variables['stufenString'] = "";
+      foreach ($nodes as $n) {
+        $title = $n->label();
+        if ($variables['node']->getTitle() === $title) {
+          $stufeField = $n->get('field_stufe');
+          if (!$stufeField->isEmpty()) {
+            array_push($variables['stufen'], $stufeField->getValue()[0]['value']);
+          }
+        }
+      }
     }
   }
 }
@@ -126,6 +150,7 @@ function gcmofficial_preprocess_html(&$variables)
   $variables['themecolor_text'] = theme_get_setting('themecolor_text');
   $variables['themecolor_textOnPrimary'] = theme_get_setting('themecolor_textOnPrimary');
   $variables['themecolor_pageBackground'] = theme_get_setting('themecolor_pageBackground');
+  $variables['themeclasses_enlargeImages'] = theme_get_setting('themeclasses_enlargeImages');
 }
 
 // -> Homepage
@@ -155,4 +180,21 @@ function gcmofficial_preprocess_node__startseite(&$variables)
       }
     }
   }
+}
+
+// Interne (benutzereingeschränkte) Seiten
+function gcmofficial_preprocess_node__intern(&$variables)
+{
+    $permitted_roles_raw = $variables["node"]->get('field_permitted')->referencedEntities();
+    $user_roles = \Drupal::currentUser()->getRoles();
+    $allowed = false;
+    foreach ($permitted_roles_raw as $role) {
+        if ( in_array($role->get("id"), $user_roles) ) {
+            $allowed = true;
+            break;
+        }
+    }
+    if (!$allowed) {
+        throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException();
+    }
 }

@@ -4,16 +4,22 @@
         display: none;
     }
 </style>
+{# Show random background image #}
 {{ content.field_bildergalerie }}
 <script>
     var src = document.querySelectorAll(".field--name-field-bildergalerie img")[Math.floor(Math.random() * {{ content.field_bildergalerie['#items']|length - 1 }})].src;
     console.log(src);
-    let content = document.getElementsByClassName("dialog-off-canvas-main-canvas")[0];
-    content.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${src}") no-repeat center`;
-    content.style.backgroundSize = "cover"; 
-    content.style.color = "var(--text-on-primary)";
+    if (!src) {
+        content.style.backgroundColor = "green";
+    } else {
+        let content = document.getElementsByClassName("dialog-off-canvas-main-canvas")[0];
+        content.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${src}") no-repeat center`;
+        content.style.backgroundSize = "cover"; 
+        content.style.color = "var(--text-on-primary)";
+    }
 </script>
 <noscript>
     {{ content.field_bildergalerie[0] }}
+    <head><link rel=stylesheet href="themes/custom/gcmofficial/css/fehlerseite_noscript.css"></head>
 </noscript>
-<div id="fehlerseitentext">{{ content.body }}</div>
+<div id="fehlerseitentext" style="margin-bottom:200px;">{{ content.body }}</div>

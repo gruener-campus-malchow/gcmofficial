@@ -1,12 +1,13 @@
-{% if content.field_image|render %}
+{# Nothing too fancy, just displaying an article with author information #}
+{% if content.field_titelbild|render %}
 {{ attach_library('gcmofficial/titelbild') }}
 <div id="titelbild">
-    {{ content.field_image }}
+    {{ content.field_titelbild }}
 </div>
 {% endif %}
 <div class="article-content">
     <div class="authoring-information">
         Geschrieben von <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a> am {{ date }}
     </div>
-    {{ content|without('field_image') }}
+    {{ content|without('field_titelbild') }}
 </div>

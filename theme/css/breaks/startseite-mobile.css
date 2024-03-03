@@ -24,7 +24,7 @@ h2 {
 }
 
 #titelbild .field--name-field-titelbild {
-    width: 118%;
+    width: 100%;
 }
 
 #titelbild .button-container {
@@ -42,4 +42,12 @@ h2 {
 #block-views-block-aktuelles-block-1 {
     margin-top: 4.5em;
     padding-top: 0;
+}
+
+.view-kurzmeldungen {
+    display: none;
+}
+
+footer {
+    margin-bottom: 0;
 }

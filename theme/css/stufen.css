@@ -1,0 +1,15 @@
+.block-views {
+  border-top: 2px solid white;
+}
+
+.views-element-container .more-link {
+  padding-bottom: 1em;
+}
+
+.views-element-container .more-link a {
+  color: white;
+}
+
+.block-system-main-block {
+  margin-bottom: 1.5em;
+}
