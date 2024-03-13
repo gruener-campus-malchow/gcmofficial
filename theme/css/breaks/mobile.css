@@ -70,11 +70,16 @@ header .site-name {
     justify-content: center;
     align-items: center;
     height: 12.16vw;
+    line-height: 6vw;
 }
 
 header .site-name a {
     font-size: 3.2vw;
     transform: translateY(1.5vw);
+}
+
+.site-name .site-slogan {
+    font-size: 2.6vw;
 }
 
 .site-logo {
@@ -197,10 +202,15 @@ footer .site-logo {
     margin-left: -5%;
 }
 
+footer .site-logo img {
+    width: 20vw;
+    width: max(80px, 20vw);
+}
+
 footer .site-name {
     margin: 1vw 0 0 0;
     font-size: inherit;
-    line-height: 12.16vw;
+    line-height: 15.16vw;
     width: unset;
 }
 
@@ -235,9 +245,9 @@ nav#block-gcmofficial-footer {
   margin: 0;
 }
 
-div#block-schulpreis {
-  width: min-content;
-  float: left;
+div#block-socialmediaicons .field--name-body,
+div#block-schulpreis .field--name-body {
+  margin-top: 0;
 }
 
 div#block-schulpreis img {
