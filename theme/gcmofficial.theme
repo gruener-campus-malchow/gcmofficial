@@ -106,6 +106,14 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
 // -> all pages of content type fachbereich (UI name: Unterrichtsfach)
 function gcmofficial_preprocess_node__fachbereich(&$variables)
 {
+  // get all available Stufen
+  $allOptions = [];
+  $fieldDefinitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', 'fachbereich');
+  if (isset($fieldDefinitions['field_stufe'])) {
+    $allOptions = options_allowed_values($fieldDefinitions['field_stufe']->getFieldStorageDefinition());
+  }
+  $variables['stufen_all'] = array_keys($allOptions);
+  $variables['stufen_labels'] = array_values($allOptions);
   // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
   $variables['stufen'] = [];
   $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
@@ -113,7 +121,6 @@ function gcmofficial_preprocess_node__fachbereich(&$variables)
   if (is_array($nids)) {
     $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
     if (is_array($nodes)) {
-      // $variables['stufenString'] = "";
       foreach ($nodes as $n) {
         $title = $n->label();
         if ($variables['node']->getTitle() === $title) {
