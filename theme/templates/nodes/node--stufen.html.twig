@@ -1,4 +1,3 @@
-#}
 {# Shows information about a "Stufe" and provides a link to the view with an applied filter #}
 {{ attach_library('gcmofficial/stufen') }}
 {% if content.field_titelbild|render %}
@@ -7,5 +6,4 @@
     {{ content.field_titelbild }}
 </div>
 {% endif %}
-<a href="/dev/gcmofficial/fach?field_stufe_value={{ kurzform }}">Zu den Unterrichtsfächern</a>
 {{ content.body }}
