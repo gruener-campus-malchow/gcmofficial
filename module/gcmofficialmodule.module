@@ -113,3 +113,31 @@ function gcmofficialmodule_node_view(array &$build, $entity, $display, $view_mod
       return $replaced;
    };
 }
+
+/**
+ * Implements hook_entity_presave().
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+
+// -> change content before it's saved into the database (by adding/upating content via Drupal UI)
+function gcmofficialmodule_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+   $compareTimeOf = array(
+      'auszeichnung' => 'field_auszeichnungsdatum',
+      'article' => 'field_relevanz',
+      'projekt' => 'field_beginn',
+      'termin' => 'field_termin'
+   );
+   $compareTimeField = 'field_compare_time';
+
+   if (array_key_exists($entity->bundle(), $compareTimeOf)) {
+      $dtFieldName = $compareTimeOf[$entity->bundle()];
+      if ($entity->hasField($compareTimeField) && $entity->hasField($dtFieldName)) {
+         if ($entity->get($dtFieldName)->isEmpty()) {
+            $dtime = $entity->get("created")->value;
+         } else {
+            $dtime = strtotime($entity->get($dtFieldName)->value);
+         }
+         $entity->set($compareTimeField, $dtime);
+      }
+   }
+}
