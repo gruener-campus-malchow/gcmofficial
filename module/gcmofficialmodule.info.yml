@@ -9,3 +9,4 @@ dependencies:
   - drupal:node
   - drupal:field
   - drupal:views
+  - pathauto

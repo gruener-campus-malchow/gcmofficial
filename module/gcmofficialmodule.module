@@ -141,3 +141,43 @@ function gcmofficialmodule_entity_presave(\Drupal\Core\Entity\EntityInterface $e
       }
    }
 }
+
+/**
+ * Implements hook_pathauto_alias_alter() from module pathauto
+ *
+ * @param string $alias
+ *   The automatic alias after token replacement and strings cleaned.
+ * @param array $context
+ *   An associative array of additional options, with the following elements:
+ *   - 'module': The module or entity type being aliased.
+ *   - 'op': A string with the operation being performed on the object being
+ *     aliased. Can be either 'insert', 'update', 'return', or 'bulkupdate'.
+ *   - 'source': A string of the source path for the alias (e.g. 'node/1').
+ *     This can be altered by reference.
+ *   - 'data': An array of keyed objects to pass to token_replace().
+ *   - 'type': The sub-type or bundle of the object being aliased.
+ *   - 'language': A string of the language code for the alias (e.g. 'en').
+ *     This can be altered by reference.
+ *   - 'pattern': A string of the pattern used for aliasing the object.
+ */
+function gcmofficialmodule_pathauto_alias_alter(&$alias, array &$context) {
+   // change general prefix (schulleben/) for articles etc. to specific (inspektion-evaluation/) if specified by tags (field_tags)
+   $decideOn = 'field_tags';
+   $prefixGeneral = "schulleben";
+   $specialPrefixes = array(
+      "Schulinspektion" => "inspektion-evaluation",
+      "Evaluation und Vergleichsarbeiten" => "inspektion-evaluation"
+   );
+   
+   if ($context['data']['node']->hasField($decideOn)) {
+      $tags = $context['data']['node']->get($decideOn);
+      if (!$tags->isEmpty()) {
+         foreach ($tags->referencedEntities() as $tag) {
+            if (array_key_exists($tag->label(), $specialPrefixes)) {
+               $alias = str_replace($prefixGeneral.'/', $specialPrefixes[$tag->label()].'/', $alias);
+               break;
+            }
+         }
+      }
+   }
+}
