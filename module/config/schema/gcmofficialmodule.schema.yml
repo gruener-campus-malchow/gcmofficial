@@ -1,0 +1,13 @@
+gcmofficialmodule.settings:
+  type: config_object
+  label: 'Einstellungen GCMOfficialModule'
+  mapping:
+    users_change_stufe:
+      type: string
+      label: 'Benutzer mit erweiterten Bearbeitungsberechtigungen des Inhaltstyps fachbereich'
+    users_change_prioritaet:
+      type: string
+      label: 'Benutzer mit Berechtigungen zum Setzen des Felds field_prioritaet'
+    users_change_schulidentitaet:
+      type: string
+      label: 'Benutzer mit Berechtigungen zum Setzen des Felds field_schulidentitaet'

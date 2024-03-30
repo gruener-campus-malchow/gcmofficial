@@ -1,0 +1,7 @@
+gcmofficialmodule.settings:
+  path: '/admin/config/content/gcmofficialmodule'
+  defaults:
+    _form: 'Drupal\gcmofficialmodule\Form\GcmofficialSettingsForm'
+    _title: 'Einstellungen GCMOfficialModule'
+  requirements:
+    _permission: 'administer site configuration'

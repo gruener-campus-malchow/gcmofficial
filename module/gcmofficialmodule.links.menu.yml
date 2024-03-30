@@ -1,0 +1,5 @@
+gcmofficialmodule.settings:
+  title: 'Einstellungen GCMOfficialModule'
+  description: 'Einstellungen für benutzerdefiniertes Modul GCMOfficialModule anpassen'
+  route_name: gcmofficialmodule.settings
+  parent: system.admin_config_content

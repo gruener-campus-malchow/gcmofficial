@@ -1,0 +1,3 @@
+services:
+  gcmofficialmodule.service:
+    class: Drupal\gcmofficialmodule\GcmofficialmoduleService
