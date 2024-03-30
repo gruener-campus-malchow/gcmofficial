@@ -6,13 +6,6 @@
  */
 
 /**
- * Implements hook_form_FORM_ID_alter().
- * @param $form
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- * @param $form_id
- */
-
-/**
  * To get a list of available options:
 
  $outS = '';
@@ -27,21 +20,31 @@
 
  */
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+
 function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
    try {
-      if ($form['#id'] == 'views-exposed-form-berichte-page-1') {
+      if ($form['#id'] == 'views-exposed-form-sammlung-schulleben-page-1') {
          $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
          $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
+         // $form['created_wrapper']['created']['#type'] = 'date';
          $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
          $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("enthält alle");
          $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
-      }
-      $form['actions']['submit']['#value'] = t('Filter anwenden');
-      if ($form['#id'] == 'views-exposed-form-projekte-page-1') {
          $form['field_beginn_value']['#type'] = 'date';
          $form['field_ende_value']['#type'] = 'date';
       }
+      if ($form['#id'] == 'views-exposed-form-inspektion-evaluation-page-1') {
+         $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
+         $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
+      }
+      $form['actions']['submit']['#value'] = t('Filter anwenden');
    } catch (Exception $ex) {
       $form['debug_info'] = [
          '#type' => 'checkbox',
@@ -90,6 +93,14 @@ function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal
       array_push($form["field_stufe"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
    }
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ * @param $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ * @param $view_mode
+ */
 
 // -> every node if rendered
 function gcmofficialmodule_node_view(array &$build, $entity, $display, $view_mode)

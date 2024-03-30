@@ -4,3 +4,8 @@ type: module
 package: Custom
 core_version_requirement: ^8 || ^9
 version: 1.0
+
+dependencies:
+  - drupal:node
+  - drupal:field
+  - drupal:views
