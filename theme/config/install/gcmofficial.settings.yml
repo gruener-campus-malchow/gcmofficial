@@ -5,3 +5,4 @@ themecolor_accent: #285DBF
 themecolor_accentLight: #DDE7F8
 themecolor_text: black
 themecolor_textOnPrimary: white
+themeclasses_enlargeImages: .field--name-field-bildergalerie, .field--name-field-titelbild

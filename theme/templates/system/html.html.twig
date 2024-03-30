@@ -22,15 +22,18 @@
     *
     * Variables available through custom theme:
     * themecolor
-    *           _darkgreen
-    *           _darkgreen_transparent
-    *           _green
-    *           _lightgreen
-    *           _blue
-    *           _lightblue
+    *           _pageBackground
+    *           _text
+    *           _primaryDark
+    *           _primaryDarkTransparent
+    *           _primary
+    *           _primaryLight
+    *           _textOnPrimary
+    *           _accent
+    *           _accentLight
     *
     * @see template_preprocess_html()
-    * @see gcmofficial_preprocess_html()
+    * @see gcmofficial_preprocess_page()
     *
     * @ingroup themeable
     */
@@ -39,12 +42,16 @@
 <html{{ html_attributes }}>
     <head>
     <head-placeholder token="{{ placeholder_token }}">
+    <meta name="robots" content="noindex,nofollow">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
     <style>
         :root {
         {# check if themecolor variables exist and are not empty, then add them to :root #}
+        {% if themecolor_pageBackground|default %}
+            --background: {{ themecolor_pageBackground }};
+        {% endif %}
         {% if themecolor_text|default %}
             --text: {{ themecolor_text }};
         {% endif %}
@@ -83,6 +90,9 @@
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
+    <script>
+        var enlargeImagesContainerClasses = "{{ themeclasses_enlargeImages }}";
+    </script>
     <js-bottom-placeholder token="{{ placeholder_token }}">
     </body>
 </html>

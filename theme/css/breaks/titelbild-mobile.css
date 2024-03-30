@@ -9,11 +9,6 @@ header {
     max-height: unset !important;
 }
 
-#titelbild .field--name-field-titelbild {
-    margin-left: -5.5%; 
-    width: 111%;
-}
-
 #block-gcmofficial-page-title,
 #block-gcmofficial-breadcrumbs {
     position: absolute;

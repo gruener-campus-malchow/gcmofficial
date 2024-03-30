@@ -1,10 +1,10 @@
 #titelbild {
     border-bottom: 2px solid #666;
+    width: 100% !important;
+    padding: 0 !important;
 }
 
 #titelbild .field--name-field-titelbild {
-    margin-left: -12.5%;
-    width: 125%;
     height: 25vw;
 }
 
@@ -19,6 +19,11 @@
     background-color: black;
     text-align: center;
     color: white;
+}
+
+#titelbild .field__item .btn-enlarge {
+    left: 0;
+    top: 0;
 }
 
 #titelbild .field__item img,

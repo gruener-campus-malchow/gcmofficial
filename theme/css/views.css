@@ -28,6 +28,10 @@
     padding: 0.2em 0.32em;
 }
 
+#edit-actions {
+    margin-top: 2em;
+}
+
 .form-type-select::after {
     content: '⌵';
     color: white;
@@ -45,6 +49,13 @@
     background-color: darkgreen;
     background-color: var(--primary-dark);
     padding-right: 1vw;
+}
+
+.form-type-select .description {
+    position: absolute;
+    margin: 1em -1em;
+    color: black;
+    color: var(--text);
 }
 
 .view-content {
@@ -126,7 +137,8 @@
     padding: 0.5em 0.8em;
     line-height: 2.5em;
     border-radius: 3px;
-    font-size: 0.8em
+    font-size: 0.8em;
+    white-space: nowrap;
 }
 
 .views-field-field-faecher-tag a,
@@ -238,7 +250,8 @@
     background: var(--primary-dark);
 }
 
-.view-id-fachbereiche .view-content {
+.view-id-fachbereiche .view-content,
+.view-id-index .view-content  {
     background: transparent;
     padding-top: 0 !important;
 }

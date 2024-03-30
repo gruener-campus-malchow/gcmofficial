@@ -4,6 +4,8 @@ var lastScrollY = 0;
 var ticking = false;
 
 window.addEventListener("DOMContentLoaded", () => {
+    // hide kurzmeldungen
+    let kurzmeldungen = document.getElementById("block-views-block-kurzmeldungen-block-1");
     // add parallax effect
     slideimages = document.querySelectorAll("#titelbild .field__item img, #titelbild .field__item video");
     if (window.innerWidth > 500) { // no mobile because of lagging
@@ -12,6 +14,11 @@ window.addEventListener("DOMContentLoaded", () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     parallax(lastScrollY);
+                    if (lastScrollY > document.body.clientHeight * 0.08) {
+                        kurzmeldungen.style.display = "none";
+                    } else {
+                        kurzmeldungen.style.display = "initial";
+                    }
                     ticking = false;
                 });
                 ticking = true;

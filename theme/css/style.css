@@ -102,6 +102,10 @@ button:hover,
     background-color: var(--primary);
 }
 
+.block .contextual {
+    display: none;
+}
+
 .form-type-select {
     pointer-events: none;
 }
@@ -141,6 +145,12 @@ h5,
 .field__label {
     font-size: 1.44em;
     margin: 0.8em 0;
+}
+
+.field--label-inline .field__label {
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5em;
 }
 
 a {

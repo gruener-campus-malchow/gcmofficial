@@ -15,10 +15,9 @@ if (slides_out_func.length > 1) {
     }
     document.addEventListener("DOMContentLoaded", ontheload);
 }
+
 // immediately switches slides
-var slideIndex = 0;
-function toggle(fw) {
-    let slides = document.querySelectorAll("#titelbild .field__item");
+function toggle(fw, slides, slideIndex) {
     if (slides.length <= 1) {
         return true
     }
@@ -46,12 +45,15 @@ function toggle(fw) {
     };
     console.log("slide index: ", slideIndex);
     console.log("current slide: ", slides[slideIndex]);
+    return slideIndex;
 }
+
+var slidesSlideIndex = 0;
 function togglefw() {
-    toggle(true);
+    slidesSlideIndex = toggle(true, document.querySelectorAll("#titelbild .field__item"), slidesSlideIndex);
 }
 function togglebw() {
-    toggle(false);
+    slidesSlideIndex = toggle(false, document.querySelectorAll("#titelbild .field__item"), slidesSlideIndex);
 }
 function main() {
     autoswitch = setInterval(togglefw, 8000);
@@ -103,3 +105,10 @@ function ontheload() {
 
     main(); // start slideshow
 }
+
+var newsSlideIndex = 0;
+function newsticker() {
+    newsSlideIndex = toggle(true, document.querySelectorAll("#block-views-block-kurzmeldungen-block-1 .views-row"), newsSlideIndex);
+}
+
+setInterval(newsticker, 8000);
