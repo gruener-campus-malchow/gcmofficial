@@ -45,37 +45,37 @@ class GcmofficialSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Erweiterte Berechtigungen zur Änderung der Unterrichts- und Lernangebotsseiten'),
       '#default_value' => $config->get('users_change_stufe'),
-      '#description' => $this->t('Geben Sie hier die <em>Systemnamen</em> der Benuzerrollen ein, die zur Änderung des Titels und der Jahrgänge auf den Seiten der Unterrichts- und Lernangebote berechtigt sind. Geben Sie eine Komma-seperierte (Komma+Leerzeichen: ", ") Liste an: rolle1, rolle2, ... .'),
+      '#description' => $this->t('Geben Sie hier die <em>Systemnamen</em> der Benuzerrollen ein, die zur Änderung des Titels und der Jahrgänge auf den Seiten der Unterrichts- und Lernangebote berechtigt sind. Geben Sie eine Komma-separierte (Komma+Leerzeichen: ", ") Liste an: rolle1, rolle2, ... .'),
     ];
     $form['users_change_prioritaet'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Berechtigung zur Änderung des Felds Hohe Priorität'),
       '#default_value' => $config->get('users_change_prioritaet'),
-      '#description' => $this->t('Geben Sie hier die <em>Systemnamen</em> der Benuzerrollen ein, die zur Änderung des Felds Hohe Priorität (field_prioritaet) bei Artikeln und Projekten berechtigt sind. Geben Sie eine Komma-seperierte (Komma+Leerzeichen: ", ") Liste an: rolle1, rolle2, ... .'),
+      '#description' => $this->t('Geben Sie hier die <em>Systemnamen</em> der Benuzerrollen ein, die zur Änderung des Felds Hohe Priorität (field_prioritaet) bei Artikeln und Projekten berechtigt sind. Geben Sie eine Komma-separierte (Komma+Leerzeichen: ", ") Liste an: rolle1, rolle2, ... .'),
     ];
     $form['users_change_schulidentitaet'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Berechtigung zur Änderung des Felds Schulidentität'),
       '#default_value' => $config->get('users_change_schulidentitaet'),
-      '#description' => $this->t('Geben Sie hier die <em>Systemnamen</em> der Benuzerrollen ein, die zur Änderung des Felds Schulidentität (field_schulidentitaet) bei Projekten berechtigt sind. Geben Sie eine Komma-seperierte (Komma+Leerzeichen: ", ") Liste an: rolle1, rolle2, ... .'),
+      '#description' => $this->t('Geben Sie hier die <em>Systemnamen</em> der Benuzerrollen ein, die zur Änderung des Felds Schulidentität (field_schulidentitaet) bei Projekten berechtigt sind. Geben Sie eine Komma-separierte (Komma+Leerzeichen: ", ") Liste an: rolle1, rolle2, ... .'),
     ];
     $form['views_filter_change_created'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Ansichten Filter mit Feld Geschrieben am'),
       '#default_value' => $config->get('views_filter_change_created'),
-      '#description'=> $this->t('Geben Sie hier die IDs der Ansichten-Filter an, welche einen Wrapper für das Feld Geschrieben am (created) aufweisen und verändert werden sollen. Geben Sie eine Komma-seperierte (Komma+Leerzeichen: ", ") Liste an: id1, id2, ... .'),
+      '#description'=> $this->t('Geben Sie hier die IDs der Ansichten-Filter an, welche einen Wrapper für das Feld Geschrieben am (created) aufweisen und verändert werden sollen. Geben Sie eine Komma-separierte (Komma+Leerzeichen: ", ") Liste an: id1, id2, ... .'),
     ];
     $form['views_filter_change_tags'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Ansichten Filter mit Feld Thematik'),
       '#default_value' => $config->get('views_filter_change_tags'),
-      '#description'=> $this->t('Geben Sie hier die IDs der Ansichten-Filter an, welche einen Wrapper für das Feld Thematik (field_tags) aufweisen und verändert werden sollen. Geben Sie eine Komma-seperierte (Komma+Leerzeichen: ", ") Liste an: id1, id2, ... .'),
+      '#description'=> $this->t('Geben Sie hier die IDs der Ansichten-Filter an, welche einen Wrapper für das Feld Thematik (field_tags) aufweisen und verändert werden sollen. Geben Sie eine Komma-separierte (Komma+Leerzeichen: ", ") Liste an: id1, id2, ... .'),
     ];
     $form['views_filter_change_projekt'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Ansichten Filter mit Feldern Beginn und Ende (Projekt)'),
       '#default_value' => $config->get('views_filter_change_projekt'),
-      '#description'=> $this->t('Geben Sie hier die IDs der Ansichten-Filter an, welche die Felder Beginn (field_beginn) und Ende (field_ende) aufweisen und verändert werden sollen. Geben Sie eine Komma-seperierte (Komma+Leerzeichen: ", ") Liste an: id1, id2, ... .'),
+      '#description'=> $this->t('Geben Sie hier die IDs der Ansichten-Filter an, welche die Felder Beginn (field_beginn) und Ende (field_ende) aufweisen und verändert werden sollen. Geben Sie eine Komma-separierte (Komma+Leerzeichen: ", ") Liste an: id1, id2, ... .'),
     ];
     $form['compare_time_field'] = [
       '#type' => 'textfield',
@@ -117,15 +117,15 @@ class GcmofficialSettingsForm extends ConfigFormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
-    // make sure that these configs are comma seperated lists
+    // make sure that these configs are comma separated lists
     $csep = array(
       'users_change_stufe',
       'users_change_prioritaet',
       'users_change_schulidentitaet',
     );
     foreach ($csep as $key) {
-      if (preg_match('/^([a-z]+, )*[a-z]+$/', $form_state->getValue($key)) != 1) {
-        $form_state->setErrorByName($key, t('Bitte geben Sie eine Komma-seperierte Liste an!'));
+      if (preg_match('/^([a-z_]+, )*[a-z_]+$/', $form_state->getValue($key)) != 1) {
+        $form_state->setErrorByName($key, t('Bitte geben Sie eine Komma-separierte Liste an!'));
       }
     }
 
@@ -136,7 +136,7 @@ class GcmofficialSettingsForm extends ConfigFormBase {
     );
     foreach ($csepid as $key) {
       if (preg_match('/^([a-z\-\d]+, )*[a-z\-\d]+$/', $form_state->getValue($key)) != 1) {
-        $form_state->setErrorByName($key, t('Bitte geben Sie eine Komma-seperierte Liste an!'));
+        $form_state->setErrorByName($key, t('Bitte geben Sie eine Komma-separierte Liste an!'));
       }
     }
 

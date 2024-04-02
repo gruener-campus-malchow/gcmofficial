@@ -60,12 +60,11 @@ function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Fo
 function gcmofficialmodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
    if (preg_match('/^node_.+_form$/', $form_id)) {
-      $roles = \Drupal::currentUser()->getRoles();
+      $user = \Drupal::currentUser();
       // allow only certain roles to set high priority on content / a project as school identity
       foreach(array("prioritaet", "schulidentitaet") as $aspect) {
          if (in_array("field_".$aspect, $form)) {
-            $allowedRoles = \Drupal::service('gcmofficialmodule.service')->get_allowed_roles_from_config("users_change_".$aspect);
-            $allowed = \Drupal::service('gcmofficialmodule.service')->intersect($allowedRoles, $roles);
+            $allowed = \Drupal::service('gcmofficialmodule.service')->user_is_allowed($user, "users_change_".$aspect);
             if (!$allowed) {
                unset($form["field_".$aspect]);
             }
@@ -77,9 +76,8 @@ function gcmofficialmodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
 // allow only certain roles to change the title and stufe of a fachbereich page
 function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
-   $roles = \Drupal::currentUser()->getRoles();
-   $allowedRoles = \Drupal::service('gcmofficialmodule.service')->get_allowed_roles_from_config("users_change_stufe");
-   $allowed = \Drupal::service('gcmofficialmodule.service')->intersect($allowedRoles, $roles);
+   $user = \Drupal::currentUser();
+   $allowed = \Drupal::service('gcmofficialmodule.service')->user_is_allowed($user, "users_change_stufe");
    if (!$allowed) {
       $form["title"]["widget"][0]["value"]["#attributes"]["readonly"] = "readonly";
       array_push($form["title"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
