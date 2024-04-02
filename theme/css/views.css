@@ -295,6 +295,23 @@
     margin: 0;
 }
 
+#edit-begins-with--wrapper {
+  width: 100%;
+}
+
+#edit-begins-with--wrapper input {
+  display: none;
+}
+
+#edit-begins-with--wrapper label {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#edit-begins-with--wrapper input:checked+label {
+  color: var(--primary-dark);
+}
+
 .view-footer {
     padding-bottom: 1em;
     color: white;
