@@ -251,7 +251,8 @@
 }
 
 .view-id-fachbereiche .view-content,
-.view-id-index .view-content  {
+.view-id-index .view-content,
+.views-no-bg .view-content  {
     background: transparent;
     padding-top: 0 !important;
 }
