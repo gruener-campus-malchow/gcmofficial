@@ -1,0 +1,48 @@
+/* height equals 40% of the viewports' height minus the height of the header */
+#titelbild,
+#titelbild .field__item {
+    height: calc(40vh - 21vw) !important;
+}
+
+/* term used in calc() uses height of #titelbild */
+#block-gcmofficial-breadcrumbs {
+    margin-top: calc(40vh - 19vw + 0.5em);
+}
+
+#block-gcmofficial-page-title {
+    margin-top: calc(40vh - 19vw + 3em);
+}
+
+
+.stufen {
+    flex-direction: column;
+}
+
+.stufen a {
+    margin-left: 0;
+    margin-top: 1em;
+    width: inherit;
+}
+
+.stufen a:nth-child(1) {
+    margin-top: 0;
+}
+
+.aside-container > div:first-child {
+    margin-top: calc(15vw + 5em);
+}
+
+@media all and (max-width: 500px) {
+    .aside-container > div:first-child {
+        margin-top: calc(22vw + 5em);
+    }
+
+    .stufen {
+        max-width: unset;
+    }
+
+    .field--name-field-bildergalerie .field__item {
+        margin: 2vw;
+    }
+
+}

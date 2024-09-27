@@ -1,0 +1,18 @@
+body {
+    background-color: white;
+    color: black; !important
+}
+#fehlerseitentext {
+    color: black; !important
+    margin-top: 2vw;
+    margin-left: 24vw;
+    margin-right: 6vw;
+}
+.btn-enlarge {
+    display: none !important;
+}
+h1 {
+    color: black; !important
+    margin-left: 24vw;
+    margin-right: 6vw;
+}

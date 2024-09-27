@@ -1,27 +1,11 @@
-.grid {
-    margin-top: unset;
-    grid-template-columns: repeat(2, 1fr);
+#Leitbild {
+  font-size: 2.35vw;
 }
 
-.grid p {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-end: 2;
+.leitbild__center {
+  width: 30%;
 }
 
-.columns {
-    flex-direction: column;
-}
-
-.columns div:nth-child(2) {
-    margin: 1em 0 1em 0;
-}
-
-.columns h3 {
-    position: relative;
-    width: unset;
-}
-
-.columns ul {
-    margin-top: 0;
+.leitbild__boxen {
+  width: 100%;
 }

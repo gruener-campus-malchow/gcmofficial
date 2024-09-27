@@ -1,26 +1,67 @@
 /* general section */
-
 :root {
-    --darkgreen: #507f1a;
-    --darkgreen-transparent: #507f1add;
-    --green: #75a73a;
-    --lightgreen: #ecffc7;
-    --blue: #2c56a0;
+    --background: white;
+    --text: black;
+    --primary-dark: darkgreen;
+    --primary-dark-transparent: darkgreen;
+    --primary: green;
+    --primary-light: palegreen;
+    --text-on-primary: white;
+    --accent: royalblue;
+    --accent-light: powderblue;
+}
+
+.dialog-off-canvas-main-canvas {
+    /* removes invisible text */
+    font-size: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body,
+header,
+footer {
+    background-color: var(--background);
 }
 
 header,
 #main,
 footer {
     width: 100%;
-    font-size: min(1em, 1.8vw);
+    font-size: max(min(1.05rem, 1.8vw), 16px);
+    line-height: 1.5em;
+    color: var(--text);
+    font-family: "Lato", sans-serif;
 }
 
 header .region-branding,
 header #block-hauptnavigation,
-#main .region-content,
 footer .region-footer {
     width: 80%;
     margin: 0 10%;
+}
+
+/* Grant every block of the page the same padding as the overall page (see above)
+   Exceptions: Breadcrumbs, title, and main content block
+   Instead of the main content block, every element in it, the fields of the page will be granted a padding */
+#main .region-content > *,
+#main .region-content .block-system-main-block > * {
+  padding: 0 10%;
+  width: 80%;
+}
+
+#main .region-content .block-system-breadcrumb-block,
+#main .region-content .block-page-title-block {
+  padding: 0;
+  margin-left: 10%;
+  width: unset;
+}
+
+#main .region-content .block-system-main-block {
+  padding: 0;
+  width: 100%;
 }
 
 /* remove Safari's default design of buttons */
@@ -33,14 +74,20 @@ select {
     -webkit-border-radius: 0;
 }
 
+input {
+    background-color: var(--background);
+}
+
 input[type=button],
 input[type=submit],
 button,
 .form-type-select,
 .btn-like {
-    background-color: var(--darkgreen);
+    background-color: darkgreen;
+    background-color: var(--primary-dark);
     border: none;
     color: white;
+    color: var(--text-on-primary);
     padding: 0.16rem 0.8rem;
     text-align: center;
 }
@@ -49,12 +96,33 @@ input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
 .form-type-select:hover,
+.form-type-select:focus-within,
 .btn-like:hover {
-    background-color: var(--green);
+    background-color: green;
+    background-color: var(--primary);
+}
+
+.block .contextual {
+    display: none;
+}
+
+.form-type-select {
+    pointer-events: none;
 }
 
 select {
     border: none;
+    background-color: transparent;
+    width: 7em;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+select:focus {
+    background-color: inherit;
+}
+
+select option {
     background-color: inherit;
 }
 
@@ -69,24 +137,46 @@ h3,
 h4,
 h5,
 .field__label {
-    color: var(--blue);
+    color: royalblue;
+    color: var(--accent);
+    line-height: 1em;
 }
 
 .field__label {
-    font-size: 1.9vw;
+    font-size: 1.44em;
     margin: 0.8em 0;
 }
 
+.field--label-inline .field__label {
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5em;
+}
+
 a {
-    color: var(--green);
+    color: green;
+    color: var(--primary);
 }
 
 a:visited {
-    color: var(--darkgreen);
+    color: darkgreen;
+    color: var(--primary-dark);
 }
 
 a.btn-like:visited {
     color: white;
+    color: var(--text-on-primary);
+}
+
+hr {
+    margin: 2em auto;
+    border-color: #ddd;
+}
+
+/* prevent tables from protruding beyond the page */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* End general section */
@@ -98,23 +188,36 @@ header .region-branding {
 }
 
 #block-gcmofficial-branding {
-    flex: 0 1 72%;
+    flex: 0 1 66%;
 }
 
 header .site-name {
     float: right;
-    margin-top: 5%;
+    margin-top: 2vw;
+    line-height: 3vw;
+}
+
+.site-name {
+    color: var(--text);
+    font-family: Poppins;
+    letter-spacing: 0.03em;
 }
 
 .site-name a {
     color: black;
+    color: var(--text);
     text-decoration: none;
-    font-family: Poppins;
 }
 
 header .site-name a {
     font-weight: 700;
     font-size: 2.2vw;
+}
+
+.site-name .site-slogan {
+    font-weight: 500;
+    font-size: 1.7vw;
+    text-align: center;
 }
 
 .site-logo img {
@@ -127,50 +230,101 @@ header .site-logo img {
 
 #block-gcmofficial-search input[type=search] {
     width: 10vw;
-    border: 1.5px solid var(--darkgreen);
+    border: 1.5px solid darkgreen;
+    border: 1.5px solid var(--primary-dark);
 }
 
 header .region-navigation {
-    background-color: var(--darkgreen);
+    background-color: darkgreen;
+    background-color: var(--primary-dark);
 }
 
 #block-hauptnavigation ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 0;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+#block-hauptnavigation ul#superfish-main {
+    flex-direction: row;
 }
 
 #block-hauptnavigation li {
-    background-color: var(--darkgreen);
+    background-color: darkgreen;
+    background-color: var(--primary-dark);
     transition: background-color 0.2s;
 }
 
 #block-hauptnavigation li:hover {
-    background-color: var(--green);
+    background-color: green;
+    background-color: var(--primary);
 }
 
 #block-hauptnavigation li a,
 #block-hauptnavigation li span {
     color: white;
+    color: var(--text-on-primary);
     padding: 1.5vw 2vw;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#block-hauptnavigation li span {
+    cursor: default;
+    cursor: context-menu;
+}
+
+#block-hauptnavigation li a:hover {
+    text-decoration: underline;
 }
 
 #block-hauptnavigation .is-active {
-    color: var(--lightgreen);
+    color: palegreen;
+    color: var(--primary-light);
 }
 
-#block-hauptnavigation li span::after {
+#block-hauptnavigation a.menuparent::after,
+#block-hauptnavigation span.menuparent::after {
+    display: inline-block;
     content: '⌵';
-    margin-left: 0.6em;
+    margin-left: 0.5em;
+    transform: translateY(-0.1em);
+    text-decoration: none;
 }
 
 #superfish-main li ul {
     margin-top: 0.91vw;
 }
 
+/* hide text, add rule */
+.menu-seperator {
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    padding: 0 !important;
+    border-top: 1px solid white;
+    border-top: 1px solid var(--text-on-primary);
+    overflow: hidden;
+    line-height: 0;
+    margin-bottom: 6px !important;
+    cursor: default !important;
+}
+
 ul.sf-menu::after {
     display: none;
+}
+
+.node__meta {
+    color: #666;
+    font-style: italic;
+}
+
+.authoring-information {
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+    color: #666;
 }
 
 #main {
@@ -189,18 +343,26 @@ ul.sf-menu::after {
 #main .region-content th,
 #main .region-content td {
     border: 0.1vw solid black;
+    border: 0.1vw solid var(--text);
     padding: 0.5vw;
 }
 
-#main fieldset {
+.form--inline fieldset {
     border: none;
     padding: 0;
-    float: left;
     width: 30%;
 }
 
+.form--inline fieldset legend {
+    float: left;
+    margin-top: 1vw;
+    margin-right: 1em;
+    padding: 0.16rem 0;
+    line-height: 1.65em;
+}
+
 .form--inline .form-item {
-    margin: 1vw 0;
+    margin-top: 1vw;
 }
 
 .aside-container {
@@ -215,11 +377,13 @@ ul.sf-menu::after {
 
 .aside-container aside {
     flex: 1;
-    margin: 6vw 0 0 3vw;
-    font-size: 0.7em;
+    margin: 6em 0 0 3vw;
+    font-size: 0.8em;
+    line-height: 1.3em;
     padding: 2.2em;
     height: min-content;
-    background-color: var(--darkgreen);
+    background-color: darkgreen;
+    background-color: var(--primary-dark);
     color: white;
 }
 
@@ -229,20 +393,24 @@ button,
 .form-type-select,
 .btn-like,
 .aside-container aside {
-    border-radius: 0.2rem;
+    border-radius: 3px;
 }
 
 .aside-container aside a {
-    color: var(--lightgreen);
+    color: palegreen;
+    color: var(--primary-light);
 }
 
 .aside-container aside a:visited {
     color: white;
+    color: var(--text-on-primary);
 }
 
 .aside-container aside .btn-like {
     background-color: white;
-    color: var(--darkgreen);
+    background-color: var(--background);
+    color: darkgreen;
+    color: var(--primary-dark);
 }
 
 .aside-container aside .btn-like:hover {
@@ -250,64 +418,24 @@ button,
 }
 
 .aside-container aside a.btn-like:visited {
-    color: var(--darkgreen);
+    color: darkgreen;
+    color: var(--primary-dark);
 }
 
 .aside-container aside h2,
 .aside-container aside h3,
 .aside-container aside .field__label {
     color: white;
+    color: var(--text-on-primary);
 }
 
 .aside-container aside .field__label {
-    font-size: 1.4vw;
-}
-
-/* Ansichten */
-
-.form-type-select::after {
-    content: '⌵';
-    color: white;
-}
-
-.form-type-select {
-    background-color: var(--darkgreen);
-    padding-right: 1vw;
-}
-
-.view-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.views-row {
-    flex: 0 1 30%;
-}
-
-.view-content .views-row h2 {
     font-size: 1.4em;
 }
 
-.view-content a {
-    color: var(--blue);
-}
-
-.feed-icon {
-    margin-top: 2em;
-    padding-top: 0.1em;
-    width: 15em;
-    height: 1.4em;
-    text-indent: 2em;
-    background-size: contain;
-}
-
-/* End Ansichten */
-
 footer {
     margin-top: 5vw;
+    padding-top: 1em;
 }
 
 footer .site-name {
@@ -315,6 +443,11 @@ footer .site-name {
     margin: 4vw 0 0 0;
     font-size: 1.4vw;
     float: right;
+}
+
+footer .menu--footer ul {
+    display: flex;
+    align-items: flex-end;
 }
 
 footer .menu--footer ul li {
@@ -326,7 +459,74 @@ footer .menu--footer ul li:first-child {
     margin-left: unset;
 }
 
-/* .menu--footer if account menu and footer menu are switched */
+/* .menu--footer if account menu and footer menu are switched
 footer .menu--account {
     float: right;
+} */
+
+ul.menu a.is-active {
+    color: var(--text);
+}
+
+.social {
+  width: 100vw;
+  height: 100vh;
+}
+
+.social__media {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 50px;
+  height: min-content;
+}
+
+.social__icon {
+  height: 100%;
+  list-style: none;
+  margin-inline: 8px;
+  margin-bottom: 8px;
+}
+
+.social__icon-img {
+  height: 20px;
+  height: max(1em, 20px);
+}
+
+nav#block-gcmofficial-footer {
+    width: 66%;
+}
+
+div#block-socialmediaicons,
+div#block-schulpreis {
+    width: 100%;
+}
+
+div#block-socialmediaicons {
+    margin: 1rem 0 1rem 0;
+}
+
+div#block-schulpreis {
+    margin-bottom: 1.5em;
+}
+
+div#block-schulpreis a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div#block-schulpreis img {
+    margin-left: 1.5em;
+    margin-right: 8px;
+    width: auto;
+    height: 1.6em;
+}
+
+.authoring-information {
+    width: 100%;
+    display: block;
 }
