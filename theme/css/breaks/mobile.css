@@ -1,43 +1,93 @@
 header,
 #main,
 footer {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
-header .region-branding,
 header #block-hauptnavigation,
-#main .region-content,
 footer .region-footer {
     width: 90%;
     margin: 0 5%;
+}
+
+/* Grant every block of the page the same padding as the overall page (see above)
+   Exceptions: Breadcrumbs, title, and main content block
+   Instead of the main content block, every element in it, the fields of the page will be granted a padding */
+#main .region-content > *,
+#main .region-content .block-system-main-block > *,
+#main .region-content .block-system-main-block > .views-element-container .view > * {
+  padding: 0 5%;
+  width: 90%;
+}
+
+#main .region-content .block-system-breadcrumb-block,
+#main .region-content .block-page-title-block {
+  padding: 0;
+  margin-left: 5%;
+  width: unset;
+}
+
+#main .region-content .block-system-main-block,
+#main .region-content .block-system-main-block > .views-element-container {
+  padding: 0;
+  width: 100%;
+}
+
+header {
+    padding-top: 1em;
+    border-bottom: 3px green solid;
+}
+
+header .region-branding {
+    margin: 0;
 }
 
 .btn-like {
     padding: 0.4em 0.8em;
 }
 
+h1 {
+    font-size: 1.8em;
+}
+
 h2,
 .field__label {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 header .region-branding {
     display: unset;
 }
 
+/* 12.16vw = height of .site-logo */
 header .site-name {
     float: none;
-    text-align: center;
-    margin: 3vw 0;
+    margin: 0;
+    margin-top: -12.16vw;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 12.16vw;
+    line-height: 6vw;
 }
 
 header .site-name a {
     font-size: 3.2vw;
+    transform: translateY(1.5vw);
+}
+
+.site-name .site-slogan {
+    font-size: 2.6vw;
+}
+
+.site-logo {
+    display: block;
+    line-height: 0;
 }
 
 .site-logo img {
-    position: absolute;
-    margin: -4vw 0;
     width: 18vw;
     margin-left: 3%;
 }
@@ -50,12 +100,23 @@ header .site-logo img {
     display: none;
 }
 
-#superfish-main-toggle {
+/* 12.16vw = height of .site-logo */
+.sf-accordion-toggle {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 12.16vw;
+    margin-top: calc(-12.16vw - 1em);
+    margin-left: 83%;
+}
+
+#superfish-main-toggle {
+    display: block;
     text-align: right;
-    width: 7%;
+    width: 7vw;
     height: 7vw;
-    margin: -12.4vw 0 0 83%;
+    margin: 0;
     background-image: url("../../assets/menuicon.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -90,7 +151,12 @@ header .site-logo img {
     padding: 6vw 5%;
 }
 
+#block-hauptnavigation li a.menuparent {
+    text-decoration: none;
+}
+
 #block-hauptnavigation ul ul li {
+    background-color: green;
     background-color: var(--green);
 }
 
@@ -108,6 +174,7 @@ header .site-logo img {
     position: absolute;
     margin-top: -0.2vw;
     background-color: white;
+    color: darkgreen;
     color: var(--darkgreen);
     padding: 0.4vw 0 0.4vw 0;
     width: 16%;
@@ -115,28 +182,12 @@ header .site-logo img {
 }
 
 .aside-container {
-    display: unset;
+    display: block;
 }
 
 .aside-container aside {
     margin: 10vw 0 0 0;
 }
-
-/* Ansichten */
-
-.view-filters input {
-    max-width: 87vw;
-}
-
-.view-content {
-    flex-direction: column;
-}
-
-.view-content .views-row h2 {
-    font-size: min(1.3em, 6vw);
-}
-
-/* End Ansichten */
 
 footer {
     margin-top: 10vw;
@@ -147,12 +198,19 @@ footer {
 }
 
 footer .site-logo {
+    display: inline-block;
     margin-left: -5%;
+}
+
+footer .site-logo img {
+    width: 20vw;
+    width: max(80px, 20vw);
 }
 
 footer .site-name {
     margin: 1vw 0 0 0;
     font-size: inherit;
+    line-height: 15.16vw;
     width: unset;
 }
 
@@ -176,4 +234,26 @@ footer .menu--footer ul li {
 
 footer .menu--footer ul li:last-child {
     padding-right: 0;
+}
+
+nav#block-gcmofficial-footer {
+  width: 100%;
+  position: relative;
+}
+
+.social__media {
+  margin: 0;
+}
+
+div#block-socialmediaicons .field--name-body,
+div#block-schulpreis .field--name-body {
+  margin-top: 0;
+}
+
+div#block-schulpreis img {
+  margin-left: 0;
+}
+
+div#block-schulpreis p {
+  font-size: 0.7em;
 }

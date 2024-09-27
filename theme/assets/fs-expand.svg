@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50.447006mm"
+   height="50.452011mm"
+   viewBox="0 0 50.447006 50.452011"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename=".\voldec.svg"
+   inkscape:export-xdpi="24.383997"
+   inkscape:export-ydpi="24.383997"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1645"
+       sodipodi:insensitive="true"
+       style="fill:#ffffff;fill-opacity:1">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1637"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="0"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1641"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="-19.54501"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g1651"
+       transform="rotate(-90,25.226005,25.226005)"
+       sodipodi:insensitive="true"
+       style="fill:#ffffff;fill-opacity:1">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1647"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="0"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1649"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="-19.54501"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g1670"
+       transform="rotate(180,25.223505,25.223505)"
+       sodipodi:insensitive="true"
+       style="fill:#ffffff;fill-opacity:1">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1666"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="0"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1668"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="-19.54501"
+         transform="scale(-1)" />
+    </g>
+    <g
+       id="g1676"
+       transform="rotate(90,25.223505,25.223505)"
+       sodipodi:insensitive="true"
+       style="fill:#ffffff;fill-opacity:1"
+       inkscape:export-filename=".\fs.svg"
+       inkscape:export-xdpi="24.383997"
+       inkscape:export-ydpi="24.383997">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1672"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="0"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.892354;stroke-linejoin:bevel;stroke-dasharray:none"
+         id="rect1674"
+         width="10.109386"
+         height="19.54501"
+         x="-10.109386"
+         y="-19.54501"
+         transform="scale(-1)" />
+    </g>
+  </g>
+</svg>

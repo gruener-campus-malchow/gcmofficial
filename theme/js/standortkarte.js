@@ -41,12 +41,15 @@ window.onload = () => {
         marker.on("mousedown", markSite(marker, sitesBook[x], false));
         allMarkers[autoId(sitesBook, x, "marker")] = marker;
         var node = gebaeude_divs[x].getElementsByClassName("field--name-field-adresse")[0];
+        var btnCont = document.createElement("div");
+        btnCont.style = "flex-direction: row; flex-wrap: wrap; justify-content: left; column-gap: 0.5em;"
+        node.appendChild(btnCont);
 
 
         var buttonel = document.createElement('button');
         buttonel.setAttribute("id", autoId(sitesBook, x));
         buttonel.innerText = "Auf Karte markieren";
-        node.appendChild(buttonel);
+        btnCont.appendChild(buttonel);
         document.getElementById(autoId(sitesBook, x)).addEventListener('click', myFunc, false);;
         document.getElementById(autoId(sitesBook, x)).myParam = sitesBook[x];
         function myFunc(evt) {
@@ -59,7 +62,7 @@ window.onload = () => {
             var buttoncop = document.createElement('button');
             buttoncop.setAttribute("id", autoId(sitesBook, x, "btncop"));
             buttoncop.innerText = "Adresse kopieren";
-            node.appendChild(buttoncop);
+            btnCont.appendChild(buttoncop);
             document.getElementById(autoId(sitesBook, x, "btncop")).addEventListener('click', diehard, false);;
             document.getElementById(autoId(sitesBook, x, "btncop")).dieParam = sitesBook[x];
             function diehard(evt) {

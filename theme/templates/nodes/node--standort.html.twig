@@ -3,7 +3,9 @@
 <script>
 var sitesBook = [];
 </script>
-<div id="map" class="deactivated"></div>
+<div>
+    <div id="map" class="deactivated"></div>
+</div>
 <noscript>
     {{ content.field_beschreibung_karte }}
     <style>
@@ -11,7 +13,7 @@ var sitesBook = [];
     </style>
 </noscript>
 {{ content.field_standort }}
+{{ content.body }}
 <div id="roomnumbers">
 {{ content.field_raumnummern }}
 </div>
-{{ content.body }}

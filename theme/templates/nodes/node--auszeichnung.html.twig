@@ -1,0 +1,6 @@
+
+{# Nothing too fancy, just displaying an award with author information #}
+<div class="authoring-information">
+    Geschrieben von <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a> am {{ date }}
+</div>
+{{ content }}

@@ -2,27 +2,36 @@
     margin-top: 0;
 }
 
-.aside-container div:first-child {
-    margin-top: 9vw;
+.aside-container > div:first-child {
+    margin-top: calc(9vw + 2em);
 }
 
 .aside-container aside div:first-child {
     margin-top: 0;
 }
 
-#titelbild {margin-top: -18.4px;}
+.aside-container aside div {
+    margin-top: 1em;
+}
+
+#titelbild {
+    margin-top: -1.5em;
+}
 
 .stufen {
-  margin-top: 0 !important;
-  max-width: 50vw;
-  display: flex;
+    margin-top: 0 !important;
+    max-width: 50vw;
+    display: flex;
 }
 
 .stufen a {
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
-  margin-left: 2em;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 2em;
 }
 
 .stufen a:nth-child(1) {
@@ -30,10 +39,13 @@
 }
 
 #currentgrade {
-  background-color: white;
-  color: var(--darkgreen);
-  box-shadow: inset 0 0 0 2px var(--darkgreen);
-  cursor: default;
+    background-color: white;
+    background-color: var(--background);
+    color: darkgreen;
+    color: var(--primary-dark);
+    box-shadow: inset 0 0 0 2px darkgreen;
+    box-shadow: inset 0 0 0 2px var(--primary-dark);
+    cursor: default;
 }
 
 .field--name-field-bildergalerie .field__items {
@@ -49,41 +61,4 @@
 
 .field--name-field-bildergalerie .field__item img {
     height: 100%;
-}
-
-.popup {
-    max-width: 100% !important;
-    width: 100%;
-    height: 100vh;
-    background-color: #000000aa;
-    position: fixed;
-    z-index: 500;
-    overflow: scroll;
-    direction: rtl;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-
-.popup img {
-    max-width: 80%;
-    margin: 5vh 0;
-    height: auto;
-    width: unset !important;
-    direction: ltr;
-}
-
-@media all and (max-width: 500px) {
-    .aside-container div:first-child {
-        margin-top: 22vw;
-    }
-
-    .stufen {
-        max-width: unset;
-    }
-
-    .field--name-field-bildergalerie .field__item {
-        margin: 2vw;
-    }
-
 }

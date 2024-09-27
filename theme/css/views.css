@@ -1,0 +1,323 @@
+#main .region-content .block-system-main-block > .views-element-container {
+  padding: 0;
+  width: 100%;
+}
+
+#main .region-content .block-system-main-block > .views-element-container .view > * {
+  padding: 0 10%;
+  width: 80%;
+}
+
+#main .region-content .block-system-main-block > .views-element-container .view .view-content {
+  padding-top: 10%;
+}
+
+.view-filters {
+    margin: 0.5em 0 2em 0;
+}
+
+.views-exposed-form .form-item {
+    display: inline-block;
+    margin-right: 2em;
+    float: none;
+}
+
+.views-exposed-form .form-item input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.2em 0.32em;
+}
+
+#edit-actions {
+    margin-top: 2em;
+}
+
+.form-type-select::after {
+    content: '⌵';
+    color: white;
+    color: var(--text-on-primary);
+    position: absolute;
+    margin-left: -1em;
+    transform: translateY(-0.1em);
+}
+
+.form-type-select select {
+    position: relative;
+}
+
+.form-type-select {
+    background-color: darkgreen;
+    background-color: var(--primary-dark);
+    padding-right: 1vw;
+}
+
+.form-type-select .description {
+    position: absolute;
+    margin: 1em -1em;
+    color: black;
+    color: var(--text);
+}
+
+.view-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.views-row {
+    flex: 0 1 30%;
+    margin-bottom: 4vw;
+    overflow-wrap: break-word;
+}
+
+.views-field-field-prioritaet {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: orange;
+}
+
+.views-field-field-titelbild {
+  overflow: hidden;
+  width: 100%;
+  height: 14vw;
+}
+
+.views-field-field-titelbild img {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  transform: translateY(calc(-50% + 7vw));
+}
+
+.view-content .views-row h2 {
+    font-size: 1.4em;
+}
+
+.view-content a {
+    color: royalblue;
+    color: var(--accent);
+}
+
+.views-field-created {
+    color: #666;
+    font-style: italic;
+}
+
+.views-field-field-beginn ~ .views-field-created {
+    display: none;
+}
+
+.views-field-title {
+    display: block;
+    width: 100%;
+    font-size: 1.15em;
+    margin-top: 1em;
+}
+
+
+.views-table .views-field-title {
+    display: table-cell;
+    width: unset;
+    font-size: 1em;
+}
+
+.views-field-field-stufe-tag a,
+.views-field-field-faecher-tag a,
+.field--name-field-stufe-tag a,
+.field--name-field-faecher-tag a {
+    text-decoration: none;
+    background-color: palegreen;
+    background-color: var(--primary-light);
+    color: black;
+    color: var(--text);
+    font-weight: bold;
+    padding: 0.5em 0.8em;
+    line-height: 2.5em;
+    border-radius: 3px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.views-field-field-faecher-tag a,
+.field--name-field-faecher-tag a {
+    background-color: powderblue;
+    background-color: var(--accent-light);
+}
+
+.view-fachbereiche .view-content a {
+    display: block;
+    box-shadow: 0 0 0 2px darkgreen inset;
+    box-shadow: 0 0 0 2px var(--primary-dark) inset;
+    color: darkgreen;
+    color: var(--primary-dark);
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 0.5em 0;
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.view-fachbereiche .view-content a:hover,
+.view-fachbereiche .view-content a:active {
+    box-shadow: 0 0 0 1.5px green inset;
+    box-shadow: 0 0 0 1.5px var(--primary) inset;
+    color: green;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.view-fachbereiche .views-row {
+    margin-bottom: 3em;
+}
+
+.feed-icon {
+    margin-top: 2em;
+    padding-top: 0.1em;
+    width: 15em;
+    height: 1.4em;
+    text-indent: 2em;
+    background-size: contain;
+}
+
+.field--name-field-stufe-tag .field__item,
+.field--name-field-faecher-tag .field__item {
+    display: inline;
+}
+.field--name-field-ende, .field--name-field-beginn{
+    color: #666;
+    font-style: italic;
+}
+
+.field--name-field-beginn {
+    float: left;
+    margin-right: 1em;
+}
+
+.field--name-field-stufe-tag {
+    float: left;
+    margin-right: 1em;
+}
+
+.views-field-field-beginn,
+.views-field-field-ende {
+    display: flex;
+    color: #666;
+    margin-right: 2em;
+}
+
+.views-field-field-beginn {
+    float: left;
+}
+
+.field--name-field-beginn::before {
+    content: "Ab ";
+}
+
+.field--name-field-ende::before {
+    content: "bis ";
+}
+
+.field--name-field-beginn + .field--name-field-ende {
+    text-transform: lowercase;
+}
+
+.views-field-field-beginn + .views-field-field-ende {
+    text-transform: lowercase;
+}
+
+.views-field-field-beginn .field-content,
+.views-field-field-ende .field-content {
+    padding-left: 0.2em;
+}
+
+.views-field-field-beginn ~ .views-field-body,
+.field--name-field-stufe-tag ~ .field,
+.field--name-field-faecher-tag ~ .field {
+    float: left;
+    width: 100%;
+}
+
+.field--name-field-stufe-tag ~ .field--name-field-faecher-tag {
+    width: unset;
+}
+
+.block-views,
+.view-content {
+    background: var(--primary-dark);
+}
+
+.view-id-fachbereiche .view-content,
+.view-id-index .view-content,
+.views-no-bg .view-content  {
+    background: transparent;
+    padding-top: 0 !important;
+}
+
+.block-views h2 {
+    padding-top: 1em;
+    color: white;
+}
+
+.views-row {
+    background: white;
+    border-radius: 20px;  
+    padding-bottom: 1em;views  
+}
+
+.view-kurzmeldungen .views-row {
+    background: unset;
+}
+
+.views-field {
+    padding: 0 1em;
+    width: calc(100% - 2em);
+}
+
+.views-field-field-beginn ~ .views-field-body {
+    width: calc(100% - 2em);
+}
+
+.views-field-field-titelbild,
+.views-field-field-prioritaet {
+    padding: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.views-field-field-prioritaet ~ .views-field-field-titelbild {
+    border-radius: 0;
+}
+
+.view-kurzmeldungen .views-field-title {
+    margin: 0;
+}
+
+#edit-begins-with--wrapper {
+  width: 100%;
+}
+
+#edit-begins-with--wrapper input {
+  display: none;
+}
+
+#edit-begins-with--wrapper label {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#edit-begins-with--wrapper input:checked+label {
+  color: var(--primary-dark);
+}
+
+.view-footer {
+    padding-bottom: 1em;
+    color: white;
+}
+
+.view-footer a {
+    color: white;
+}
