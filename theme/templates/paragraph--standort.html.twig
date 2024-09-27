@@ -59,14 +59,6 @@
       <div>
           <div>
               {{ content.field_adresse }}
-              <noscript>
-                {{ content.field_longitude }}
-                {{ content.field_latitude }}
-                <style>
-                  .site button {display: none;}
-                </style>
-              </noscript>
-              <button>Auf Karte markieren</button>
               {{ content.field_body }}
           </div>
           {# see gcmofficial.theme -> gcmofficial_preprocess_paragraph__standort for variable "roomnumbers" #}
@@ -77,3 +69,12 @@
     {% endblock %}
   </div>
 {% endblock paragraph %}
+{# following script adds a site-describing object to 'sitesBook' used in standortkarte.js #}
+<script>
+    sitesBook.push({
+        "title": "{{ plain.title }}",
+        "longitude": {{ plain.longitude }},
+        "latitude": {{ plain.latitude }},
+        "address": "{{ plain.address }}"
+    });
+</script>

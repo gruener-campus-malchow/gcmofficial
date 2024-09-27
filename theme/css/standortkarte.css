@@ -9,6 +9,42 @@
     max-height: 100%;
 }
 
+#map.deactivated {
+    pointer-events: none;
+}
+
+#map.deactivated .leaflet-control-container {
+    display: none;
+}
+
+#map.deactivated > * {
+    opacity: 0.4;
+}
+
+#map.deactivated::after {
+    content: 'Klicken Sie, um die Karte zu aktivieren';
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 1.5em;
+    padding-top: calc(60% / 1.7 - 1em);
+    text-align: center;
+    background: url("../assets/Icons/ads_click.svg");
+    background-repeat: no-repeat;
+    background-position: 50% calc(50% / 1.7 - 1em);
+    background-size: 8%;
+    background-color: black;
+}
+
+#map.deactivated .leaflet-pane {
+    display: none;
+}
+
+#map.deactivated .leaflet-tile-pane, .leaflet-map-pane {
+    display: initial !important;
+}
+
 .site button {
     display: block;
     margin: 0.4em 0 1em 0;
