@@ -1,15 +1,6 @@
-## Todo
-
-* Steuerungselemente am unteren Rand
-* (advanced) vertical parallax scrolling
-
 ## Ideen
 
-* slideswitch
-  * fade in / fade out mit opacity
-* buttons
-  * hover effekt mit opacity / transparency
-  * hover effekt mit minimalem enlarge
-* parallax scrolling mit js package
-* 2000x linksbutton -> sexshrek
-* 2000x rechtsbutton -> gayshit
+* CSV Import AG / Termine - mit Modul 'Feeds' (+ evtl. Modul 'Feeds Paragraph' (beta))
+* Umleitung Taxonomy Terms zur Ansicht 'Schulleben' mit gesetzten Filtern
+* Kalender-Import - [Google Calendar Import](https://www.drupal.org/project/google_calendar)
+* Anmeldung mittels OAuth - [Simple OAuth (OAuth2) & OpenID Connect](https://www.drupal.org/project/simple_oauth)
