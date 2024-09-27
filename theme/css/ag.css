@@ -1,3 +1,31 @@
 .dropbutton {
   display: none;
 }
+
+#main .region-content .paragraphs-table th {
+  border-color: darkgreen;
+  border-color: var(--primary-dark);
+  border-right-color: white;
+  border-right-color: var(--background);
+}
+
+#main .region-content .paragraphs-table th:last-child {
+  border-right-color: darkgreen;
+  border-right-color: var(--primary-dark);
+}
+
+.paragraphs-table th {
+  background-color: darkgreen;
+  background-color: var(--primary-dark);
+  color: white;
+  color: var(--text-on-primary);
+}
+
+.paragraphs-table th em {
+  padding: 0.2em;
+}
+
+.paragraphs-table tr.even {
+  background-color: palegreen;
+  background-color: var(--primary-light);
+}
