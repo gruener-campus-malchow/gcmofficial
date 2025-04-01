@@ -116,7 +116,7 @@ function gcmofficial_preprocess_node__fachbereich(&$variables)
   $variables['stufen_labels'] = array_values($allOptions);
   // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
   $variables['stufen'] = [];
-  $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+  $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery()->accessCheck(FALSE);
   $nids = $query->condition('type', 'fachbereich')->execute();
   if (is_array($nids)) {
     $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
@@ -176,14 +176,19 @@ function gcmofficial_preprocess_node__startseite(&$variables)
         if (isset($file->description)) {
           $filedesc = $file->description;
         }
-        array_push($variables["slideshow"], array(
+        $mediadetails = array(
           "title" => $file->entity->getFilename(),
-          "uri" => $fileuri,
-          "url" => file_create_url($fileuri),
           "type" => $filetype, // e.g. 'video/mp4'
           "format" => explode("/", $filetype, 2)[0], // should be either 'image' or 'video'
           "alt" => $filedesc
-        ));
+        );
+        if ($mediadetails["format"] == "image") {
+          $mediadetails["uri"] = $fileuri;
+        } else {
+          // inside parenthesis: create absolute url from uri; outside parenthesis: then transform absolute url to relative url (relative to Drupal root)
+          $mediadetails["url"] = \Drupal::service('file_url_generator')->transformRelative(\Drupal::service('file_url_generator')->generateAbsoluteString($fileuri));
+        }
+        array_push($variables["slideshow"], $mediadetails);
       }
     }
   }
