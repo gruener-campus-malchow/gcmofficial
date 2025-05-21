@@ -5,7 +5,7 @@ views_filter_change_created: 'views-exposed-form-sammlung-schulleben-page-1, vie
 views_filter_change_tags: 'views-exposed-form-sammlung-schulleben-page-1'
 views_filter_change_projekt: 'views-exposed-form-sammlung-schulleben-page-1'
 compare_time_field: 'field_compare_time'
-compare_time_date_fields: '{"auszeichnung": "field_auszeichnungsdatum", "article": "field_relevanz", "projekt": "field_beginn", "termin": "field_termin"}'
+compare_time_date_fields: '{"article": "created", "projekt": "field_beginn", "termin": "field_termin"}'
 url_alias_field_tags: 'field_tags'
 url_alias_search_for: 'schulleben'
 url_alias_replace_with: '{"Schulinspektion": "inspektion-evaluation", "Evaluation und Vergleichsarbeiten": "inspektion-evaluation"}'
