@@ -7,17 +7,16 @@
 
 /**
  * To get a list of available options:
-
- $outS = '';
- foreach (array_keys($form) as $el) {
-    $outS .= $el . '/';
- }
- $form['info_check'] = [
-    '#type' => 'checkbox',
-    '#title' => t($outS),
-    '#required' => TRUE,
- ];
-
+ *
+ * $outS = '';
+ * foreach (array_keys($form) as $el) {
+ * $outS .= $el . '/';
+ * }
+ * $form['info_check'] = [
+ * '#type' => 'checkbox',
+ * '#title' => t($outS),
+ * '#required' => TRUE,
+ * ];
  */
 
 /**
@@ -29,66 +28,76 @@
 
 function gcmofficialmodule_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
-   try {
-      $formsCreated = explode(', ', \Drupal::service('gcmofficialmodule.service')->get_config('views_filter_change_created'));
-      if (in_array($form['#id'], $formsCreated)) {
-         $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
-         $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
-         // $form['created_wrapper']['created']['#type'] = 'date'; // doesn't work
-      }
-      $formsTags = explode(', ', \Drupal::service('gcmofficialmodule.service')->get_config('views_filter_change_tags'));
-      if (in_array($form['#id'], $formsTags)) {
-         $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
-         $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("enthält alle");
-         $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
-      }
-      $formsProject = explode(', ', \Drupal::service('gcmofficialmodule.service')->get_config('views_filter_change_projekt'));
-      if (in_array($form['#id'], $formsProject)) {
-         $form['field_beginn_value']['#type'] = 'date';
-         $form['field_ende_value']['#type'] = 'date';
-      }
-      $form['actions']['submit']['#value'] = t('Filter anwenden');
-   } catch (Exception $ex) {
-      $form['debug_info'] = [
-         '#type' => 'checkbox',
-         '#title' => t('DEBUG: Some error occured'),
-         '#required' => TRUE,
-      ];
-   }
+    try {
+        $formsCreated = explode(', ', \Drupal::service('gcmofficialmodule.service')->get_config('views_filter_change_created'));
+        if (in_array($form['#id'], $formsCreated)) {
+            $form['created_wrapper']['created_op']['#options']['<='] = t("vor dem");
+            $form['created_wrapper']['created_op']['#options']['>='] = t("nach dem");
+            // $form['created_wrapper']['created']['#type'] = 'date'; // doesn't work
+        }
+        $formsTags = explode(', ', \Drupal::service('gcmofficialmodule.service')->get_config('views_filter_change_tags'));
+        if (in_array($form['#id'], $formsTags)) {
+            $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['or'] = t("enthält");
+            $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['and'] = t("enthält alle");
+            $form['field_tags_target_id_wrapper']['field_tags_target_id_op']['#options']['not'] = t("enthält nicht");
+        }
+        $formsProject = explode(', ', \Drupal::service('gcmofficialmodule.service')->get_config('views_filter_change_projekt'));
+        if (in_array($form['#id'], $formsProject)) {
+            $form['field_beginn_value']['#type'] = 'date';
+            $form['field_ende_value']['#type'] = 'date';
+        }
+        $form['actions']['submit']['#value'] = t('Filter anwenden');
+    } catch (Exception $ex) {
+        $form['debug_info'] = [
+            '#type' => 'checkbox',
+            '#title' => t('DEBUG: Some error occured'),
+            '#required' => TRUE,
+        ];
+    }
 }
 
 function gcmofficialmodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
-   if (preg_match('/^node_.+_form$/', $form_id)) {
-      $user = \Drupal::currentUser();
-      // allow only certain roles to set high priority on content / a project as school identity
-      foreach(array("prioritaet", "schulidentitaet") as $aspect) {
-         if (in_array("field_".$aspect, $form)) {
-            $allowed = \Drupal::service('gcmofficialmodule.service')->user_is_allowed($user, "users_change_".$aspect);
-            if (!$allowed) {
-               unset($form["field_".$aspect]);
+    if (preg_match('/^node_.+_form$/', $form_id)) {
+        $user = \Drupal::currentUser();
+        // allow only certain roles to set high priority on content / a project as school identity
+        foreach (array("prioritaet", "schulidentitaet") as $aspect) {
+            if (in_array("field_" . $aspect, $form)) {
+                $allowed = \Drupal::service('gcmofficialmodule.service')->user_is_allowed($user, "users_change_" . $aspect);
+                if (!$allowed) {
+                    unset($form["field_" . $aspect]);
+                }
             }
-         }
-      }
-   }
+        }
+    }
 }
 
 // allow only certain roles to change the title and stufe of a fachbereich page
 function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
-   $user = \Drupal::currentUser();
-   $allowed = \Drupal::service('gcmofficialmodule.service')->user_is_allowed($user, "users_change_stufe");
-   if (!$allowed) {
-      $form["title"]["widget"][0]["value"]["#attributes"]["readonly"] = "readonly";
-      array_push($form["title"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
-      $stufeDefault = $form["field_stufe"]["widget"]["#default_value"][0];
-      foreach (array_keys($form["field_stufe"]["widget"]["#options"]) as $key) {
-         if ($key != $stufeDefault) {
-            unset($form["field_stufe"]["widget"]["#options"][$key]);
-         }
-      }
-      array_push($form["field_stufe"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
-   }
+    $user = \Drupal::currentUser();
+    $allowed = \Drupal::service('gcmofficialmodule.service')->user_is_allowed($user, "users_change_stufe");
+    if (!$allowed) {
+        $form["title"]["widget"][0]["value"]["#attributes"]["readonly"] = "readonly";
+        array_push($form["title"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
+        $stufeDefault = $form["field_stufe"]["widget"]["#default_value"][0];
+        foreach (array_keys($form["field_stufe"]["widget"]["#options"]) as $key) {
+            if ($key != $stufeDefault) {
+                unset($form["field_stufe"]["widget"]["#options"][$key]);
+            }
+        }
+        array_push($form["field_stufe"]["#attributes"]["class"], "no-edit");  // .no-edit as used by GCMofficialManage-theme
+
+        // disable all autocompletion fields
+        $index = 0;
+        while (array_key_exists($index, $form["field_zugehoerig"]["widget"])) {
+            $form["field_zugehoerig"]["widget"][$index]["target_id"]["#attributes"]["readonly"] = "readonly";
+            $index++;
+        }
+        // disable add more button
+        $form["field_zugehoerig"]["widget"]["add_more"]["#attributes"]["disabled"] = "disabled";
+        array_push($form["field_zugehoerig"]["#attributes"]["class"], "no-edit"); // .no-edit as used by GCMofficialManage-theme
+    }
 }
 
 /**
@@ -102,13 +111,13 @@ function gcmofficialmodule_form_node_fachbereich_edit_form_alter(&$form, \Drupal
 // -> every node if rendered
 function gcmofficialmodule_node_view(array &$build, $entity, $display, $view_mode)
 {
-   // after the node is processed and rendered
-   $build['#post_render'][] = function ($html, array $elements) {
-      // wraps every table in a wrapper div with the class "table-wrapper"
-      $replaced = str_replace('<table', '<div class="table-wrapper"><table', $html);
-      $replaced = str_replace('</table>', '</table></div>', $replaced);
-      return $replaced;
-   };
+    // after the node is processed and rendered
+    $build['#post_render'][] = function ($html, array $elements) {
+        // wraps every table in a wrapper div with the class "table-wrapper"
+        $replaced = str_replace('<table', '<div class="table-wrapper"><table', $html);
+        $replaced = str_replace('</table>', '</table></div>', $replaced);
+        return $replaced;
+    };
 }
 
 /**
@@ -116,26 +125,27 @@ function gcmofficialmodule_node_view(array &$build, $entity, $display, $view_mod
  * @param \Drupal\Core\Entity\EntityInterface $entity
  */
 
-function gcmofficialmodule_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
-   $compareTimeOf = json_decode(\Drupal::service('gcmofficialmodule.service')->get_config('compare_time_date_fields'), true);
-   if (!is_null($compareTimeOf)) {
-      $compareTimeField = \Drupal::service('gcmofficialmodule.service')->get_config('compare_time_field');
+function gcmofficialmodule_entity_presave(\Drupal\Core\Entity\EntityInterface $entity)
+{
+    $compareTimeOf = json_decode(\Drupal::service('gcmofficialmodule.service')->get_config('compare_time_date_fields'), true);
+    if (!is_null($compareTimeOf)) {
+        $compareTimeField = \Drupal::service('gcmofficialmodule.service')->get_config('compare_time_field');
 
-      if (array_key_exists($entity->bundle(), $compareTimeOf)) {
-         $dtFieldName = $compareTimeOf[$entity->bundle()];
-         if ($entity->hasField($compareTimeField) && $entity->hasField($dtFieldName)) {
-            if ($entity->get($dtFieldName)->isEmpty() || $dtFieldName == "created") {
-               $dtime = $entity->get("created")->value;
-            } else {
-               $dtime = strtotime($entity->get($dtFieldName)->value);
-               if (!$dtime) {
-                  $dtime = $entity->get("created")->value;
-               }
+        if (array_key_exists($entity->bundle(), $compareTimeOf)) {
+            $dtFieldName = $compareTimeOf[$entity->bundle()];
+            if ($entity->hasField($compareTimeField) && $entity->hasField($dtFieldName)) {
+                if ($entity->get($dtFieldName)->isEmpty() || $dtFieldName == "created") {
+                    $dtime = $entity->get("created")->value;
+                } else {
+                    $dtime = strtotime($entity->get($dtFieldName)->value);
+                    if (!$dtime) {
+                        $dtime = $entity->get("created")->value;
+                    }
+                }
+                $entity->set($compareTimeField, $dtime);
             }
-            $entity->set($compareTimeField, $dtime);
-         }
-      }
-   }
+        }
+    }
 }
 
 /**
@@ -156,23 +166,24 @@ function gcmofficialmodule_entity_presave(\Drupal\Core\Entity\EntityInterface $e
  *     This can be altered by reference.
  *   - 'pattern': A string of the pattern used for aliasing the object.
  */
-function gcmofficialmodule_pathauto_alias_alter(&$alias, array &$context) {
-   // change general prefix (e.g. schulleben/) for articles etc. to specific (e.g. inspektion-evaluation/) if specified by tags (e.g. field_tags)
-   $decideOn = \Drupal::service('gcmofficialmodule.service')->get_config('url_alias_field_tags');
-   $prefixGeneral = \Drupal::service('gcmofficialmodule.service')->get_config('url_alias_search_for');
-   $specialPrefixes = json_decode(\Drupal::service('gcmofficialmodule.service')->get_config('url_alias_replace_with'), true);
-   
-   if (array_key_exists('node', $context['data']) && !is_null($specialPrefixes)) {
-      if ($context['data']['node']->hasField($decideOn)) {
-         $tags = $context['data']['node']->get($decideOn);
-         if (!$tags->isEmpty()) {
-            foreach ($tags->referencedEntities() as $tag) {
-               if (array_key_exists($tag->label(), $specialPrefixes)) {
-                  $alias = str_replace($prefixGeneral.'/', $specialPrefixes[$tag->label()].'/', $alias);
-                  break;
-               }
+function gcmofficialmodule_pathauto_alias_alter(&$alias, array &$context)
+{
+    // change general prefix (e.g. schulleben/) for articles etc. to specific (e.g. inspektion-evaluation/) if specified by tags (e.g. field_tags)
+    $decideOn = \Drupal::service('gcmofficialmodule.service')->get_config('url_alias_field_tags');
+    $prefixGeneral = \Drupal::service('gcmofficialmodule.service')->get_config('url_alias_search_for');
+    $specialPrefixes = json_decode(\Drupal::service('gcmofficialmodule.service')->get_config('url_alias_replace_with'), true);
+
+    if (array_key_exists('node', $context['data']) && !is_null($specialPrefixes)) {
+        if ($context['data']['node']->hasField($decideOn)) {
+            $tags = $context['data']['node']->get($decideOn);
+            if (!$tags->isEmpty()) {
+                foreach ($tags->referencedEntities() as $tag) {
+                    if (array_key_exists($tag->label(), $specialPrefixes)) {
+                        $alias = str_replace($prefixGeneral . '/', $specialPrefixes[$tag->label()] . '/', $alias);
+                        break;
+                    }
+                }
             }
-         }
-      }
-   }
+        }
+    }
 }
