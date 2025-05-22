@@ -1,0 +1,8 @@
+themecolor_primaryDark: #507F1A
+themecolor_primary: #75A73A
+themecolor_primaryLight: #ECFFC7
+themecolor_accent: #285DBF
+themecolor_accentLight: #DDE7F8
+themecolor_text: black
+themecolor_textOnPrimary: white
+themeclasses_enlargeImages: .field--name-field-bildergalerie, .field--name-field-titelbild

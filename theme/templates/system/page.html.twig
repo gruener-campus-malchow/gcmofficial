@@ -1,0 +1,46 @@
+﻿{# Standard page with some styling #}
+<header aria-label="Site header">
+   <div id="prototypeNotice">
+      <style>
+         #prototypeNotice > * {
+            position: fixed;
+            top: 0;
+            width: 100%;
+         }
+
+         #prototypeNotice label {
+            z-index: 1001;
+            margin: 0.7em 0.7em;
+         }
+
+         #prototypeNotice input {
+            display: none;
+         }
+
+         #prototypeNotice input:checked ~ label,
+         #prototypeNotice input:checked ~ p {
+            display: none;
+         }
+
+         #prototypeNotice p {
+            margin: 0;
+            padding: 1em 0;
+            text-align: center;
+            background-color: yellow;
+            color: black !important;
+            z-index: 1000;
+            text-indent: 3em;
+         }
+      </style>
+      <input type="checkbox" id="closePrototypeNotice"><label for="closePrototypeNotice" class="symbol">close</label>
+      <p>Bitte beachten: Dies ist eine Arbeitsversion der Schulwebsite. Es handelt sich <strong>nicht</strong> um die offizielle Webpräsentation des GCM! Besuchen Sie folgende Adresse für die offizielle Schulwebsite: <a href="https://gruener-campus-malchow.de/">https://gruener-campus-malchow.de/</a></p>
+   </div>
+   {{ page.branding }}
+   {{ page.navigation }}
+</header>
+<section id="main">
+   {{ page.content }}
+</section>
+<footer aria-label="Site footer">
+   {{ page.footer }}
+</footer>

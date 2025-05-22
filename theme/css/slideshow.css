@@ -1,0 +1,65 @@
+#titelbild .field__item,
+#titelbild .button-container {
+    transition: opacity 1s;
+}
+
+#titelbild .button-container {
+    margin-top: -25vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media all and (max-width: 730px) {
+    #titelbild .button-container {
+        margin-top: calc((70vh - 21vw) * -1);
+    }
+}
+
+.slideshow-hidden {
+    opacity: 0;
+}
+
+.slideshow-hidden video {
+    display: none;
+}
+
+#titelbild button {
+    padding: min(1em, 2.5vw);
+    z-index: 2;
+    transition: 0.07s;
+    margin: 2.4%;
+    opacity: 0.6;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#titelbild button:nth-child(1) {
+    padding-right: min(0.75em, 2.3vw);
+}
+
+#titelbild button:nth-child(2) {
+    padding-left: min(0.95em, 2.4vw);
+}
+
+#titelbild button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+#titelbild button:active {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+#titelbild button.btn-enlarge {
+    padding: 0.16rem 0.8rem;
+    opacity: 1;
+}
+
+#titelbild button.btn-enlarge:hover,
+#titelbild button.btn-enlarge:active {
+    transform: none;
+    opacity: 1;
+}

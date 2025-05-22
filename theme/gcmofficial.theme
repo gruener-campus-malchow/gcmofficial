@@ -1,0 +1,212 @@
+<?php
+
+/**
+ * @param $variables
+ */
+
+// -> content type "standort", checks if there should be an explanation of roomnumbers
+// which is specified by a checkbox-input in Drupal UI (inside a Paragraph element -> see Paragraph module)
+function gcmofficial_preprocess_paragraph__standort(&$variables)
+{
+  $paragraph = $variables['paragraph'];
+
+  if (!$paragraph->field_roomnumber_radio->isEmpty()) { // would produce error if empty, checks if there is a checkbox input
+    $roomnumbers = $paragraph->field_roomnumber_radio->value; // bool: whether or not there should be a link
+    if (!empty($roomnumbers)) {
+      $variables['roomnumbers'] = $roomnumbers; // add bool to variables to be accessed by Twig template (paragraph--standort.html.twig)
+    }
+  }
+
+  $address = strip_tags($paragraph->field_adresse->value);
+  $address = array_filter(explode("\n", str_replace("\r", "\n", $address)));
+  $address = implode(", ", $address);
+  $variables['plain'] = [
+    'title' => $paragraph->field_location_title->value,
+    'longitude' => $paragraph->field_longitude->value,
+    'latitude' => $paragraph->field_latitude->value,
+    'address' => $address
+  ];
+}
+
+// administered through Responsive Image module
+function gcmofficial_preprocess_responsive_image(&$variables)
+{
+  // have to be responsive image types
+  $eager_styles = [ // TODO: set with theme setting
+    'wide',
+  ];
+
+  // disables lazy loading of images with the image styles $eager_styles by setting the img element attribute "loading" to "eager"
+  // (Drupal loads every image lazily by default)
+  if (in_array($variables['responsive_image_style_id'], $eager_styles, TRUE)) {
+    $variables['img_element']['#attributes']['loading'] = 'eager';
+  }
+}
+
+// change settings of GCMofficialStandard (Drupal UI -> Manage -> Design / Theme -> GCMofficialStandard -> settings)
+function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  // add fields to change subject conditions in stufen and save to theme settings
+  $form['themecolor_pageBackground'] = [
+    '#type' => 'color',
+    '#title' => t('Seitenhintergrund'),
+    '#default_value' => theme_get_setting('themecolor_pageBackground'),
+    '#description' => t('Geben Sie hier die Farbe des Seitenhintergrunds an.'),
+  ];
+  $form['themecolor_primaryDark'] = [
+    '#type' => 'color',
+    '#title' => t('Primärfarbe (dunkel)'),
+    '#default_value' => theme_get_setting('themecolor_primaryDark'),
+    '#description' => t('Geben Sie hier einen dunklen Ton der Primärfarbe an. Dieser wird sehr häufig genutzt.'),
+  ];
+  $form['themecolor_primary'] = [
+    '#type' => 'color',
+    '#title' => t('Primärfarbe'),
+    '#default_value' => theme_get_setting('themecolor_primary'),
+    '#description' => t('Geben Sie hier die Primärfarbe an. Die Primärfarbe ist die am häufigst genutzte Farbe des Farbschemas und sollte den GCM repräsentieren.'),
+  ];
+  $form['themecolor_primaryLight'] = [
+    '#type' => 'color',
+    '#title' => t('Primärfarbe (hell)'),
+    '#default_value' => theme_get_setting('themecolor_primaryLight'),
+    '#description' => t('Geben Sie hier einen hellen Ton der Primärfarbe an.'),
+  ];
+  $form['themecolor_accent'] = [
+    '#type' => 'color',
+    '#title' => t('Akzentfarbe'),
+    '#default_value' => theme_get_setting('themecolor_accent'),
+    '#description' => t('Geben Sie hier die Akzentfarbe an. Die Akzentfarbe wird nur an Stellen benutzt, die besonderer Hervorhebung bedürfen. Sie sollte sich von der Primärfarbe abheben aber trotzdem mit ihr harmonieren.'),
+  ];
+  $form['themecolor_accentLight'] = [
+    '#type' => 'color',
+    '#title' => t('Akzentfarbe (hell)'),
+    '#default_value' => theme_get_setting('themecolor_accentLight'),
+    '#description' => t('Geben Sie hier einen hellen Ton der Akzentfarbe an.'),
+  ];
+  $form['themecolor_text'] = [
+    '#type' => 'color',
+    '#title' => t('Text'),
+    '#default_value' => theme_get_setting('themecolor_text'),
+    '#description' => t('Geben Sie hier die Farbe an, in der der Großteil des Textes erscheinen soll. Sie sollte einen hohen Kontrast zum Seitenhintergrund haben.'),
+  ];
+  $form['themecolor_textOnPrimary'] = [
+    '#type' => 'color',
+    '#title' => t('Text auf Flächen'),
+    '#default_value' => theme_get_setting('themecolor_textOnPrimary'),
+    '#description' => t('Geben Sie hier die Farbe an, in der der Text erscheinen soll, der sich auf mit der Primärfarbe oder ihrem dunklen Ton gefärbten Flächen befindet. Sie sollte einen hohen Kontrast zur Primärfarbe haben.'),
+  ];
+  $form['themeclasses_enlargeImages'] = [
+    '#type' => 'textfield',
+    '#title' => t('Bilder vergrößern'),
+    '#default_value' => theme_get_setting('themeclasses_enlargeImages'),
+    '#description' => t('Geben Sie hier einen CSS-Selektor an, der alle Container-Elemente auswählt, dessen Bilder vergrößert werden können sollen. Bsp.: \'.field-type-image, #imagebox\''),
+  ];
+}
+
+// -> all pages of content type fachbereich (UI name: Unterrichtsfach)
+function gcmofficial_preprocess_node__fachbereich(&$variables)
+{
+  // get all available Stufen
+  $allOptions = [];
+  $fieldDefinitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', 'fachbereich');
+  if (isset($fieldDefinitions['field_stufe'])) {
+    $allOptions = options_allowed_values($fieldDefinitions['field_stufe']->getFieldStorageDefinition());
+  }
+  $variables['stufen_all'] = array_keys($allOptions);
+  $variables['stufen_labels'] = array_values($allOptions);
+  // add subjects to subject conditions as used by Twig template (node--fachbereich.html.twig)
+  $variables['stufen'] = [];
+  $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery()->accessCheck(FALSE);
+  $nids = $query->condition('type', 'fachbereich')->execute();
+  if (is_array($nids)) {
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    if (is_array($nodes)) {
+      foreach ($nodes as $n) {
+        $title = $n->label();
+        if ($variables['node']->getTitle() === $title) {
+          $stufeField = $n->get('field_stufe');
+          if (!$stufeField->isEmpty()) {
+            array_push($variables['stufen'], $stufeField->getValue()[0]['value']);
+          }
+        }
+      }
+    }
+  }
+}
+
+// -> all pages of content type stufen, rendered by node--stufen.html.twig
+function gcmofficial_preprocess_node__stufen(&$variables)
+{
+  $node = $variables['node'];
+
+  $variables['kurzform'] = $node->field_kurzform->value;
+}
+
+// -> every page
+function gcmofficial_preprocess_html(&$variables)
+{
+  // set theme colors to be added to inline CSS by Twig template (html.html.twig)
+  // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
+  //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
+  $variables['themecolor_primaryDark'] = theme_get_setting('themecolor_primaryDark');
+  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark') . "dd";
+  $variables['themecolor_primary'] = theme_get_setting('themecolor_primary');
+  $variables['themecolor_primaryLight'] = theme_get_setting('themecolor_primaryLight');
+  $variables['themecolor_accent'] = theme_get_setting('themecolor_accent');
+  $variables['themecolor_accentLight'] = theme_get_setting('themecolor_accentLight');
+  $variables['themecolor_text'] = theme_get_setting('themecolor_text');
+  $variables['themecolor_textOnPrimary'] = theme_get_setting('themecolor_textOnPrimary');
+  $variables['themecolor_pageBackground'] = theme_get_setting('themecolor_pageBackground');
+  $variables['themeclasses_enlargeImages'] = theme_get_setting('themeclasses_enlargeImages');
+}
+
+// -> Homepage
+function gcmofficial_preprocess_node__startseite(&$variables)
+{
+  // gather all relevant information of files in field_diashow for rendering in node--startseite.html.twig
+  $variables["slideshow"] = [];
+  $field_name = "field_diashow"; // TODO: get from theme setting
+  if ($variables["node"]->hasField($field_name)) {
+    $field = $variables["node"]->get($field_name);
+    if (!$field->isEmpty()) {
+      foreach ($field as $file) {
+        $fileuri = $file->entity->getFileUri();
+        $filetype = $file->entity->getMimeType();
+        $filedesc = null;
+        if (isset($file->description)) {
+          $filedesc = $file->description;
+        }
+        $mediadetails = array(
+          "title" => $file->entity->getFilename(),
+          "type" => $filetype, // e.g. 'video/mp4'
+          "format" => explode("/", $filetype, 2)[0], // should be either 'image' or 'video'
+          "alt" => $filedesc
+        );
+        if ($mediadetails["format"] == "image") {
+          $mediadetails["uri"] = $fileuri;
+        } else {
+          // inside parenthesis: create absolute url from uri; outside parenthesis: then transform absolute url to relative url (relative to Drupal root)
+          $mediadetails["url"] = \Drupal::service('file_url_generator')->transformRelative(\Drupal::service('file_url_generator')->generateAbsoluteString($fileuri));
+        }
+        array_push($variables["slideshow"], $mediadetails);
+      }
+    }
+  }
+}
+
+// Interne (benutzereingeschränkte) Seiten
+function gcmofficial_preprocess_node__intern(&$variables)
+{
+    $permitted_roles_raw = $variables["node"]->get('field_permitted')->referencedEntities();
+    $user_roles = \Drupal::currentUser()->getRoles();
+    $allowed = false;
+    foreach ($permitted_roles_raw as $role) {
+        if ( in_array($role->get("id"), $user_roles) ) {
+            $allowed = true;
+            break;
+        }
+    }
+    if (!$allowed) {
+        throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException();
+    }
+}

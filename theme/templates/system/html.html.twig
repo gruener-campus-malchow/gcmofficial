@@ -1,0 +1,98 @@
+{#
+/**
+    * @file
+    * Default theme implementation for the basic structure of a single Drupal page.
+    *
+    * Variables:
+    * - logged_in: A flag indicating if user is logged in.
+    * - root_path: The root path of the current page (e.g., node, admin, user).
+    * - node_type: The content type for the current node, if the page is a node.
+    * - head_title: List of text elements that make up the head_title variable.
+    *   May contain one or more of the following:
+    *   - title: The title of the page.
+    *   - name: The name of the site.
+    *   - slogan: The slogan of the site.
+    * - page_top: Initial rendered markup. This should be printed before 'page'.
+    * - page: The rendered page markup.
+    * - page_bottom: Closing rendered markup. This variable should be printed after
+    *   'page'.
+    * - db_offline: A flag indicating if the database is offline.
+    * - placeholder_token: The token for generating head, css, js and js-bottom
+    *   placeholders.
+    *
+    * Variables available through custom theme:
+    * themecolor
+    *           _pageBackground
+    *           _text
+    *           _primaryDark
+    *           _primaryDarkTransparent
+    *           _primary
+    *           _primaryLight
+    *           _textOnPrimary
+    *           _accent
+    *           _accentLight
+    *
+    * @see template_preprocess_html()
+    * @see gcmofficial_preprocess_page()
+    *
+    * @ingroup themeable
+    */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+    <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <meta name="robots" content="noindex,nofollow">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+    <style>
+        :root {
+        {# check if themecolor variables exist and are not empty, then add them to :root #}
+        {% if themecolor_pageBackground|default %}
+            --background: {{ themecolor_pageBackground }};
+        {% endif %}
+        {% if themecolor_text|default %}
+            --text: {{ themecolor_text }};
+        {% endif %}
+        {% if themecolor_primaryDark|default %}
+            --primary-dark: {{ themecolor_primaryDark }};
+        {% endif %}
+        {% if themecolor_primaryDarkTransparent|default %}
+            --primary-dark-transparent: {{ themecolor_primaryDarkTransparent }};
+        {% endif %}
+        {% if themecolor_primary|default %}
+            --primary: {{ themecolor_primary }};
+        {% endif %}
+        {% if themecolor_primaryLight|default %}
+            --primary-light: {{ themecolor_primaryLight }};
+        {% endif %}
+        {% if themecolor_textOnPrimary|default %}
+            --text-on-primary: {{ themecolor_textOnPrimary }};
+        {% endif %}
+        {% if themecolor_accent|default %}
+            --accent: {{ themecolor_accent }};
+        {% endif %}
+        {% if themecolor_accentLight|default %}
+            --accent-light: {{ themecolor_accentLight }};
+        {% endif %}
+        }
+    </style>
+    </head>
+    <body{{ attributes }}>
+    {#
+        Keyboard navigation/accessibility link to main content section in
+        page.html.twig.
+    #}
+    <a href="#main-content" class="visually-hidden focusable">
+        {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <script>
+        var enlargeImagesContainerClasses = "{{ themeclasses_enlargeImages }}";
+    </script>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+    </body>
+</html>

@@ -1,0 +1,47 @@
+.btn-enlarge {
+    position: absolute;
+    margin: 0.5em;
+    background-color: rgba(40, 40, 40, 0.4);
+    border-radius: 2em;
+    line-height: 1.5;
+}
+
+.btn-enlarge span {
+    vertical-align: top;
+}
+
+.btn-enlarge:hover {
+    background-color: rgba(40, 40, 40, 0.6);
+}
+
+.popup {
+    max-width: 100% !important;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000aa;
+    position: fixed;
+    z-index: 500;
+    overflow: scroll;
+    direction: rtl;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup img {
+    max-width: 80%;
+    margin: 5vh 0;
+    height: auto;
+    width: unset !important;
+    direction: ltr;
+}
+
+.popup p {
+    color: white;
+    position: sticky;
+    bottom: 1em;
+    background-color: #0006;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}

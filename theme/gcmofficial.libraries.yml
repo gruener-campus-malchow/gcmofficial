@@ -1,0 +1,109 @@
+global-styling:
+  version: 1.x
+  js:
+    js/script.js: {}
+    js/popupImages.js: {}
+  css:
+    theme:
+      css/fonts.css: {}
+      css/style.css: {}
+      css/views.css: {}
+      css/breaks/mobile.css: {media: all and (max-width: 730px)}
+      css/breaks/views-mobile.css: {media: all and (max-width: 730px)}
+      css/breaks/small.css: {media: all and (min-width: 730px)}
+      css/breaks/desktop-small.css: {media: all and (min-aspect-ratio: 121/100)}
+      css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
+      css/popupImages.css: {}
+
+ag:
+  js:
+    js/ag.js: {}
+  css:
+    theme:
+      css/ag.css: {}
+
+stufen:
+  css:
+    theme:
+      css/stufen.css: {}
+
+fachbereich:
+  js:
+    js/fachbereich.js: {}
+  css:
+    theme:
+      css/fachbereich.css: {}
+      css/breaks/fachbereich-mobile.css: {media: all and (max-width: 730px)}
+
+startseite:
+  js:
+    js/startseite.js: {}
+  css:
+    theme:
+      css/startseite.css: {}
+      css/breaks/startseite-mobile.css: {media: all and (max-width: 730px)}
+      css/breaks/startseite-desktop.css: {media: all and (min-aspect-ratio: 121/100)}
+
+titelbild:
+  js:
+    js/slideshow.js: {media: screen and (min-width: 500px)}
+    js/titelbild.js: {}
+  css:
+    theme:
+      css/titelbild.css: {}
+      css/breaks/titelbild-mobile.css: {media: all and (max-width: 730px)}
+      css/slideshow.css: {}
+
+standort:
+  js:
+    js/leaflet/leaflet.js: {}
+    js/standortkarte.js: {}
+  css:
+    theme:
+      js/leaflet/leaflet.css: {}
+      css/standort.css: {}
+      css/standortkarte.css: {}
+
+ueberuns:
+  css:
+    theme:
+      css/ueber-uns.css: {}
+      css/breaks/ueber-uns-mobile.css: {media: all and (max-width: 730px)}
+
+timetables:
+  css:
+    theme:
+      css/timetables.css: {}
+
+fehlerseite:
+  css:
+    theme:
+      css/fehlerseite.css: {}
+      css/breaks/fehlerseite-mobile.css: {media: all and (max-width: 730px)}
+
+views:
+  js:
+    js/view-filters.js: {}
+
+terminplaner:
+  js:
+    js/terminplaner.js: {}
+  css:
+    theme:
+      css/terminplaner.css: {}
+        
+devguide:
+  js:
+    js/devguide/main.js: {}
+    js/devguide/interact.min.js: {}
+    js/devguide/highlight.min.js: {}
+    js/devguide/katex.min.js: {}
+    js/devguide/html2canvas.min.js: {}
+    js/devguide/code-editor.js: {}
+    js/devguide/custom.js: {}
+  css:
+    theme:
+      css/devguide/tabler-icons.min.css: {}
+      css/devguide/style.css: {}
+      css/devguide/custom.css: {}
+      css/devguide/export.css: {}

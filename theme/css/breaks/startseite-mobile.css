@@ -1,0 +1,53 @@
+h2 {
+    margin-top: 3em;
+}
+
+#herobox {
+    top: max(26vh, 22vw);
+    left: 0;
+    height: min-content;
+    padding: 0.5em 20% !important;
+    width: 60% !important;
+    max-height: max(35vh, 26.4vw);
+    border-radius: 0;
+}
+
+#herobox p {
+    font-size: max(min(0.8em, 2.6vh), 2.5vw);
+    text-align: left;
+}
+
+#herobox h2 {
+    margin-top: 0.5em;
+    font-size: max(min(1.3em, 3vh), 2.7vw);
+    text-align: center;
+}
+
+#titelbild .field--name-field-titelbild {
+    width: 100%;
+}
+
+#titelbild .button-container {
+    margin-top: calc((70vh - 21vw)*-1) !important;
+}
+
+#titelbild .button-container button {
+    background-color: transparent;
+}
+
+.aside-container {
+    margin-top: 0;
+}
+
+#block-views-block-aktuelles-block-1 {
+    margin-top: 4.5em;
+    padding-top: 0;
+}
+
+.view-kurzmeldungen {
+    display: none;
+}
+
+footer {
+    margin-bottom: 0;
+}

@@ -1,0 +1,23 @@
+.view-filters input {
+    max-width: 87vw;
+}
+
+.view-content {
+    flex-direction: column;
+}
+
+.views-row {
+    width: 100%;
+}
+
+.views-field-field-titelbild {
+  height: 32vw;
+}
+
+.views-field-field-titelbild img {
+  transform: translateY(calc(-50% + 16vw));
+}
+
+.view-content .views-row h2 {
+    font-size: min(1.3em, 6vw);
+}

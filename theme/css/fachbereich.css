@@ -1,0 +1,76 @@
+.field--name-body {
+    margin-top: 0 !important;
+}
+
+.aside-container > div:first-child {
+    margin-top: calc(9vw + 2em);
+}
+
+.aside-container aside {
+    margin-top: calc(2vw + 5.2em);
+}
+
+.aside-container aside div:first-child {
+    margin-top: 0;
+}
+
+.aside-container aside div {
+    margin-top: 1em;
+}
+
+#titelbild {
+    margin-top: -1.5em;
+}
+
+.stufen {
+    margin-top: 0 !important;
+    max-width: 50vw;
+    display: flex;
+}
+
+.stufen a {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 2em;
+}
+
+.stufen a:nth-child(1) {
+    margin-left: 0;
+}
+
+#currentgrade {
+    background-color: white;
+    background-color: var(--background);
+    color: darkgreen;
+    color: var(--primary-dark);
+    box-shadow: inset 0 0 0 2px darkgreen;
+    box-shadow: inset 0 0 0 2px var(--primary-dark);
+    cursor: default;
+}
+
+img.align-left {
+    padding-right: 1em;
+}
+
+img.align-right {
+    padding-left: 1em;
+}
+
+.field--name-field-bildergalerie .field__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7vw;
+}
+
+.field--name-field-bildergalerie .field__item {
+    flex: 1 0 30%;
+}
+
+.field--name-field-bildergalerie .field__item img {
+    height: 100%;
+    object-fit: cover;
+}

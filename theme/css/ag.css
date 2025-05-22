@@ -1,0 +1,45 @@
+.block-views, .view-content {
+  background: transparent;
+}
+
+.view-content {
+  display: block;
+  overflow-x: scroll;
+}
+
+.form-item-field-jahrgang-bis-value {
+  display: none !important;
+}
+
+#main .region-content .view-content th {
+  border-color: darkgreen;
+  border-color: var(--primary-dark);
+  border-right-color: white;
+  border-right-color: var(--background);
+}
+
+#main .region-content .view-content th:last-child {
+  border-right-color: darkgreen;
+  border-right-color: var(--primary-dark);
+}
+
+.view-content th {
+  background-color: darkgreen;
+  background-color: var(--primary-dark);
+  color: white;
+  color: var(--text-on-primary);
+  padding: 0.2em;
+}
+
+.view-content tr:nth-child(2n) {
+  background-color: palegreen;
+  background-color: var(--primary-light);
+}
+
+.views-field-field-flyer {
+  text-align: center;
+}
+
+.views-field-field-flyer a {
+  text-decoration: none;
+}

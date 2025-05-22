@@ -1,0 +1,5 @@
+@media all and (min-width: 1000px) {
+    .views-row {
+        flex: 0 1 30%;
+    }
+}

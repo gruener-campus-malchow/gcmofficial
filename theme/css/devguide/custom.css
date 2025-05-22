@@ -1,0 +1,33 @@
+#root {
+    font-size: max(min(1.05rem, 1.8vw), 16px);
+}
+
+.priority::before {
+  content: 'warning';
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  transform: translateY(0.25em);
+}
+
+.priority {
+  opacity: 1;
+  color: red;
+  font-size: 0;
+}
+
+.priority:hover {
+  color: darkred;
+}
