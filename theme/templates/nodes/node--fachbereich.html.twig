@@ -21,7 +21,7 @@
 			{% for stufe in stufen_all %}
               {% if stufe in stufen %}
 				<a class="btn-like" {% if content.field_stufe[0]|render==stufen_labels[loop.index0] %} id="currentgrade" {% endif %}
-                    href="{{url('<front>')}}/unterricht-lernen/{{ node.label|lower|replace({' ': '-', 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss'}) }}/{{ stufe }}">{{ stufen_labels[loop.index0] }}</a>
+                    href="{{url('<front>')}}/unterricht-lernen/{{ node.label|lower|replace({' / ':'-', ' ': '-', 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss'}) }}/{{ stufe }}">{{ stufen_labels[loop.index0] }}</a>
               {% endif %}
 			{% endfor %}
         </div>
