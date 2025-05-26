@@ -15,7 +15,7 @@
     background: var(--primary-dark);
     border-radius: 0.2em 0.2em 0 0;
 }
-.claneder-view-table tbody {
+.calendar-view-table tbody {
     background: var(--primary);
 }
 .calendar-view-table .next-month,
