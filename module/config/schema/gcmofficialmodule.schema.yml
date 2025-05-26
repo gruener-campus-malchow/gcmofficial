@@ -1,0 +1,37 @@
+gcmofficialmodule.settings:
+  type: config_object
+  label: 'Einstellungen GCMOfficialModule'
+  mapping:
+    users_change_stufe:
+      type: string
+      label: 'Benutzer mit erweiterten Bearbeitungsberechtigungen des Inhaltstyps fachbereich'
+    users_change_prioritaet:
+      type: string
+      label: 'Benutzer mit Berechtigungen zum Setzen des Felds field_prioritaet'
+    users_change_schulidentitaet:
+      type: string
+      label: 'Benutzer mit Berechtigungen zum Setzen des Felds field_schulidentitaet'
+    views_filter_change_created:
+      type: string
+      label: 'Form IDs von Ansichten in deren Filtern der Filter created geaendert werden soll'
+    views_filter_change_tags:
+      type: string
+      label: 'Form IDs von Ansichten in deren Filtern der Filter field_tags_target_id geaendert werden soll'
+    views_filter_change_projekt:
+      type: string
+      label: 'Form IDs von Ansichten in deren Filtern die Filter field_beginn und field_ende des Inhaltstyps projekt geaendert werden sollen'
+    compare_time_field:
+      type: string
+      label: 'Systemname des Felds, in dem eine vergleichbare Zeit als Zeitstempel aus allen betroffenen Inhaltstypen gespeichert ist'
+    compare_time_date_fields:
+      type: string
+      label: 'JSON Objekt, das beschreibt welche Felder fuer den Zeitvergleich mit Konfiguration compare_time_field je nach Inhaltstyp vorgesehen sind'
+    url_alias_field_tags:
+      type: string
+      label: 'Systemname des Felds, in dem die Taxonomie Begriffe stehen, welche fuer die Aenderung des URL Aliases vorgesehen sind'
+    url_alias_search_for:
+      type: string
+      label: 'Platzhalter, der in Aliasen je nach Taxonomie Begriff ersetzt werden soll'
+    url_alias_replace_with:
+      type: string
+      label: 'JSON Objekt, das beschreibt, wie der URL Alias je nach Taxonomie Begriff ersetzt werden soll'

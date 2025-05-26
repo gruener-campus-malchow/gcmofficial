@@ -1,0 +1,17 @@
+.no-edit input, .no-edit select {
+  filter: brightness(0.9);
+}
+
+.no-edit input {
+  opacity: 0.8;
+}
+
+.no-edit select {
+  opacity: 0.6;
+}
+
+.no-edit > div::after {
+  content: "Sie sind nicht berechtigt, diesen Wert zu ändern.";
+  display: block;
+  color: red;
+}

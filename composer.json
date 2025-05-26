@@ -1,0 +1,5 @@
+{
+    "require": {
+        "drupal/superfish": "^1.4"
+    }
+}
