@@ -1,0 +1,60 @@
+﻿{#
+ Variables provided by custom theme:
+ stufen: List of Stufen of this Fachbereich
+ 
+ @see gcmofficial_preprocess_node__fachbereich()
+#}
+
+
+{{ attach_library('gcmofficial/fachbereich') }}
+{{ attach_library('gcmofficial/titelbild') }}
+<div id="titelbild">
+    {{ content.field_titelbild }}
+</div>
+<div class="aside-container">
+    <div>
+        <div class="authoring-information">
+            Geschrieben von <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a> am {{ node.getChangedTime()|format_date('custom', 'd.m.Y') }}
+        </div>
+        {# create menu to switch stufe of unterrichtsfach #}
+        <div class="stufen">
+			{% for stufe in stufen_all %}
+              {% if stufe in stufen %}
+				<a class="btn-like" {% if content.field_stufe[0]|render==stufen_labels[loop.index0] %} id="currentgrade" {% endif %}
+                    href="{{url('<front>')}}/unterricht-lernen/{{ node.label|lower|replace({' ': '-', 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss'}) }}/{{ stufe }}">{{ stufen_labels[loop.index0] }}</a>
+              {% endif %}
+			{% endfor %}
+        </div>
+        <p><strong>Kontakt:</strong> <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a></p>
+        <p>
+            <strong>Hier finden Sie weitere Inhalte:</strong>
+        </p>
+        <ul>
+            {% if content.field_dateien|render %}
+            <li><a href="#anchor-dateien">Dateien</a></li>
+            {% endif %}
+            {% if content.field_schuelerarbeiten|render %}
+            <li><a href="#anchor-schuelerarbeiten">Schüler*innenarbeiten</a></li>
+            {% endif %}
+            {% if content.field_bildergalerie|render %}
+            <li><a href="#anchor-bildergalerie">Bildergalerie</a></li>
+            {% endif %}
+            <li><a href="{{url('<front>')}}/schulleben?field_faecher_tag_target_id={{ node.label }}">{{ node.label }} im Schulleben</a>
+            </li>
+        </ul>
+        {{ content.body }}
+        {{ content.field_zugehoerig }}
+    </div>
+    {% if content.field_links|render %}
+    <aside>
+        {{ content.field_notes }}
+        {{ content.field_links }}
+    </aside>
+    {% endif %}
+</div>
+<div id="anchor-dateien"></div>
+{{ content.field_dateien }}
+<div id="anchor-schuelerarbeiten"></div>
+{{ content.field_schuelerarbeiten }}
+<div id="anchor-bildergalerie"></div>
+{{ content.field_bildergalerie }}

@@ -1,0 +1,64 @@
+.field--name-body {
+    margin-top: 0;
+}
+
+.aside-container > div:first-child {
+    margin-top: calc(9vw + 2em);
+}
+
+.aside-container aside div:first-child {
+    margin-top: 0;
+}
+
+.aside-container aside div {
+    margin-top: 1em;
+}
+
+#titelbild {
+    margin-top: -1.5em;
+}
+
+.stufen {
+    margin-top: 0 !important;
+    max-width: 50vw;
+    display: flex;
+}
+
+.stufen a {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 2em;
+}
+
+.stufen a:nth-child(1) {
+    margin-left: 0;
+}
+
+#currentgrade {
+    background-color: white;
+    background-color: var(--background);
+    color: darkgreen;
+    color: var(--primary-dark);
+    box-shadow: inset 0 0 0 2px darkgreen;
+    box-shadow: inset 0 0 0 2px var(--primary-dark);
+    cursor: default;
+}
+
+.field--name-field-bildergalerie .field__items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field--name-field-bildergalerie .field__item {
+    flex: 30%;
+    height: fit-content;
+    margin: 0.5vw;
+}
+
+.field--name-field-bildergalerie .field__item img {
+    height: 100%;
+}

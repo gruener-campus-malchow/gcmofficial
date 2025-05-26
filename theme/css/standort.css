@@ -1,0 +1,32 @@
+.field--name-field-standort {
+    display: flex;
+    flex-direction: column;
+}
+
+.field--name-field-standort > .field__item {
+    padding-bottom: 2.5em;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 1.5em;
+}
+
+.site img {
+    width: 40%;
+    height: auto !important;
+    float: left;
+    margin-right: 10%;
+}
+
+.site div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: min-content;
+}
+
+.site p {
+    margin: 0;
+}
+
+.site a {
+    margin-top: 1em;
+}

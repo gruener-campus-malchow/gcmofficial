@@ -1,0 +1,109 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/Poppins/Poppins-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/Poppins/Poppins-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/Poppins/Poppins-ExtraBold.ttf');
+	font-weight: 800;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../assets/Lato/Lato-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../assets/Lato/Lato-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Cabin';
+	src: url('../assets/Cabin/Cabin-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Cabin';
+	src: url('../assets/Cabin/Cabin-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('../assets/Rubik/Rubik-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('../assets/Rubik/Rubik-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+    font-display: swap;
+}
+
+/* see MaterialSymbols_README.md */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/Icons/MaterialSymbolsRoundedNew.woff2') format('woff2'),
+    url('../assets/Icons/MaterialSymbolsRoundedNew.ttf') format('truetype');
+  font-display: block;
+}
+
+.symbol {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+

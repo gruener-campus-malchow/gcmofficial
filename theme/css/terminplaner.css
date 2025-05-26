@@ -1,0 +1,66 @@
+#main .region-content .block-system-main-block > .views-element-container .view .view-content {
+    background: unset;
+    padding-top: unset;
+}
+
+.view-grouping {
+    width: 100%;
+}
+
+.view-terminplan .view-grouping-header {
+    display: none;
+}
+
+.calendar-view-table thead th {
+    background: var(--primary-dark);
+    border-radius: 0.2em 0.2em 0 0;
+}
+.calendar-view-table tbody {
+    background: var(--primary);
+}
+.calendar-view-table .next-month,
+.calendar-view-table .previous-month {
+    background: var(--primary-dark);
+    color: var(--calendar-view-color-evil);
+}
+
+.calendar-view-table .current-month {
+    background: var(--primary);
+    color: var(--calendar-view-color-evil);
+}
+
+.calendar-view-table td{
+    border: 0.15vw solid var(--primary-dark);
+}
+
+.calendar-view-table .next-month .calendar-view-day__number,
+.calendar-view-table .previous-month .calendar-view-day__number {
+    background: var(--primary-dark);
+}
+
+.calendar-view-table td:hover {
+    background-color: var(--primary-dark);
+}
+
+.calendar-view-table .calendar-view-day__number {
+    background: var(--primary-dark);
+}
+.calendar-view-table .calendar-view-day__number:hover{
+    background: var(--primary);
+}
+.calendar-view-table .calendar-view-day:hover .calendar-view-day__number {
+    background: var(--primary-dark);
+}
+
+.today {
+    background-color: var(--primary-dark) !important;
+}
+
+.today .calendar-view-day {
+    background-color: var(--primary);
+}
+
+.today:hover .calendar-view-day {
+    background-color: var(--primary-dark);
+}
+

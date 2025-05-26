@@ -1,0 +1,72 @@
+{#
+ Variables provided by custom theme:
+ slideshow: list of the data of all files to be displayed in #titelbild as slideshow
+            each element (file) consists of:
+             - title: the title or name of the file
+             - uri: the location of the file in Drupal's file system -> only if format == image!
+             - url: the address to the file -> not if format == image!
+             - type: the filetype, e.g. "image/png" or "video/mp4"
+             - format: simple filetype, "image" or "video"
+             - alt: description of the file, used for "alt" attribute of images
+
+ @see gcmofficial_preprocess_node__startseite()
+#}
+
+{{ attach_library('gcmofficial/titelbild') }}
+{{ attach_library('gcmofficial/startseite') }}
+<div id="titelbild">
+    {# add every image or video in field_titelbild or slideshow to the page #}
+    {{ content.field_titelbild }}
+    {% if slideshow|length > 0 %}
+        {# following div imitates div created by content.field_titelbild #}
+        <div class="field field--name-field-titelbild field--type-image field--type-video field--label-hidden field__items">
+        {% set firstFile = true %}
+        {% for file in slideshow %}
+            <div class="field__item{% if (not firstFile) %} slideshow-hidden{% endif %}">
+                {% if file.format == "image" %}
+                    {# rendered by Responsive Image module
+                       @see gcmofficial_preprocess_responsive_image() #}
+                    {% set image = {
+                        "#theme": "responsive_image",
+                        "#responsive_image_style_id": "wide",
+                        "#uri": file.uri,
+                        "#attributes": { "alt": file.alt },
+                        }
+                    %}
+                    {{ image }}
+                {% elseif file.format == "video" %}
+                    <video muted="true" width="100%">
+                        <source src="{{ file.url }}" type="{{ file.type }}">
+                        <p>{{ file.alt }}: <a href="{{ file.url }}">Video {{ file.title }} herunterladen</a></p>
+                    </video>
+                    <ul class="video-controls">
+                        <li><button class="play">Abspielen</button></li>
+                        <li><button class="unmute">Ton ein</button></li>
+                        <li><button class="volinc">Lautstärke+</button></li>
+                        <li><button class="voldec">Lautstärke-</button></li>
+                        <li><button class="fullscreen">Vollbild</button></li>
+                    </ul>
+                {% else %}
+                    <a href="{{ file.url }}">{{ file.title }}</a>
+                {% endif %}
+            </div>
+            {% set firstFile = false %}
+        {% endfor %}
+        </div>
+    {% endif %}
+</div>
+<div id="herobox">
+    {{ content.field_banner }}
+</div>
+<div class="aside-container">
+    <main>
+        {{ content.body }}
+    </main>
+    <aside id="contact">
+        {{ content.field_kontaktbox }}
+        <div class="kontakt-links">
+            <a class="btn-like" href="{{ url('<front>') }}/kontakt">☞ Kontaktseite</a>
+            <a class="btn-like" href="{{ url('<front>') }}/standort">☞ Standortseite</a>
+        </div>
+    </aside>
+</div>
