@@ -1,0 +1,9 @@
+#block-gcmofficial-content .field--name-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5em;
+}
+
+#block-gcmofficial-content .field--name-body > div {
+  max-width: 100%;
+}
