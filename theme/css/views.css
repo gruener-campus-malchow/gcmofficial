@@ -132,8 +132,10 @@
 
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
-.field--name-field-stufe-tag a,
-.field--name-field-faecher-tag a {
+.views-field-field-tags a,
+.field--name-field-stufe-tag .field__item,
+.field--name-field-faecher-tag .field__item,
+.field--name-field-tags .field__item {
     text-decoration: none;
     background-color: palegreen;
     background-color: var(--primary-light);
@@ -150,36 +152,15 @@
 }
 
 .views-field-field-faecher-tag a,
-.field--name-field-faecher-tag a {
+.field--name-field-faecher-tag .field__item {
     background-color: powderblue;
     background-color: var(--accent-light);
 }
 
-.view-fachbereiche .view-content a {
-    display: block;
-    box-shadow: 0 0 0 2px darkgreen inset;
-    box-shadow: 0 0 0 2px var(--primary-dark) inset;
-    color: darkgreen;
-    color: var(--primary-dark);
-    border-radius: 3px;
-    text-decoration: none;
-    padding: 0.5em 0;
-    width: 100%;
-    margin-bottom: 0.5em;
-    text-align: center;
-}
-
-.view-fachbereiche .view-content a:hover,
-.view-fachbereiche .view-content a:active {
-    box-shadow: 0 0 0 1.5px green inset;
-    box-shadow: 0 0 0 1.5px var(--primary) inset;
-    color: green;
-    color: var(--primary);
-    text-decoration: underline;
-}
-
-.view-fachbereiche .views-row {
-    margin-bottom: 3em;
+.views-field-field-tags a,
+.field--name-field-tags .field__item {
+    background-color: gold;
+    background-color: var(--accent-two-light);
 }
 
 .feed-icon {
@@ -192,20 +173,17 @@
 }
 
 .field--name-field-stufe-tag .field__item,
-.field--name-field-faecher-tag .field__item {
+.field--name-field-faecher-tag .field__item,
+.field--name-field-tags .field__item {
     display: inline;
 }
-.field--name-field-ende, .field--name-field-beginn{
+.field--name-field-ende, .field--name-field-beginn {
     color: #666;
     font-style: italic;
+    line-height: 2.5em;
 }
 
 .field--name-field-beginn {
-    float: left;
-    margin-right: 1em;
-}
-
-.field--name-field-stufe-tag {
     float: left;
     margin-right: 1em;
 }
@@ -242,14 +220,14 @@
     padding-left: 0.2em;
 }
 
-.views-field-field-beginn ~ .views-field-body,
-.field--name-field-stufe-tag ~ .field,
-.field--name-field-faecher-tag ~ .field {
+.views-field-field-beginn ~ .views-field-body {
     float: left;
     width: 100%;
 }
 
-.field--name-field-stufe-tag ~ .field--name-field-faecher-tag {
+.field--name-field-stufe-tag ~ .field--name-field-faecher-tag,
+.field--name-field-stufe-tag ~ .field--name-field-tags,
+.field--name-field-faecher-tag ~ .field--name-field-tags {
     width: unset;
 }
 

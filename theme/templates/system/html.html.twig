@@ -31,6 +31,7 @@
     *           _textOnPrimary
     *           _accent
     *           _accentLight
+    *           _accentLight_two
     *
     * @see template_preprocess_html()
     * @see gcmofficial_preprocess_page()
@@ -75,6 +76,9 @@
         {% endif %}
         {% if themecolor_accentLight|default %}
             --accent-light: {{ themecolor_accentLight }};
+        {% endif %}
+        {% if themecolor_accentLight_two|default %}
+            --accent-two-light: {{ themecolor_accentLight_two }};
         {% endif %}
         }
     </style>
