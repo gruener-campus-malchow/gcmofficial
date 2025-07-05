@@ -10,12 +10,9 @@
     width: 100%;
 }
 
-.views-field-field-titelbild {
+.views-field-field-titelbild,
+.views-field-field-titelbild .field-content {
   height: 32vw;
-}
-
-.views-field-field-titelbild img {
-  transform: translateY(calc(-50% + 16vw));
 }
 
 .view-content .views-row h2 {
