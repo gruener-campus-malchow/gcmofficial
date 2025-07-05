@@ -46,15 +46,6 @@ header .region-branding {
     padding: 0.4em 0.8em;
 }
 
-h1 {
-    font-size: 1.8em;
-}
-
-h2,
-.field__label {
-    font-size: 1.4em;
-}
-
 header .region-branding {
     display: unset;
 }
