@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 var clone = target.cloneNode(true);
                 clone.removeChild(clone.firstChild);
+<<<<<<< HEAD
+=======
+                clone.classList.add("popup");
+>>>>>>> main
                 clone.addEventListener("click", (e) => {
                     var target = e.target;
                     if (target.tagName.toLowerCase() == "img") {
@@ -27,10 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     document.body.removeChild(target);
                 });
+<<<<<<< HEAD
                 imageDescription = document.createElement("p");
                 imageDescription.innerText = clone.getElementsByTagName("img")[0].getAttribute("alt");
                 clone.classList.add("popup");
                 clone.appendChild(imageDescription);
+=======
+>>>>>>> main
                 document.body.prepend(clone);
             });
         });

@@ -1,0 +1,2 @@
+This is GCMofficialManage
+Directory: gcmofficialmanage

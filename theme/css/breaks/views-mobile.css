@@ -1,13 +1,13 @@
 .view-filters input {
-    max-width: 87vw;
+  max-width: 87vw;
 }
 
 .view-content {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .views-row {
-    width: 100%;
+  width: 100%;
 }
 
 .views-field-field-titelbild {
@@ -19,5 +19,5 @@
 }
 
 .view-content .views-row h2 {
-    font-size: min(1.3em, 6vw);
+  font-size: min(1.3em, 6vw);
 }

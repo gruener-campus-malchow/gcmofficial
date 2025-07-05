@@ -48,7 +48,8 @@
     max-height: 100vh !important;
 }
 
-#main .field--name-body, .article-content {
+#main .field--name-body,
+.article-content {
     margin-top: 9em;
 }
 

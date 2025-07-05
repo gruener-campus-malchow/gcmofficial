@@ -1,15 +1,15 @@
-#main .region-content .block-system-main-block > .views-element-container {
-  padding: 0;
-  width: 100%;
+#main .region-content .block-system-main-block>.views-element-container {
+    padding: 0;
+    width: 100%;
 }
 
-#main .region-content .block-system-main-block > .views-element-container .view > * {
-  padding: 0 10%;
-  width: 80%;
+#main .region-content .block-system-main-block>.views-element-container .view>* {
+    padding: 0 10%;
+    width: 80%;
 }
 
-#main .region-content .block-system-main-block > .views-element-container .view .view-content {
-  padding-top: 10%;
+#main .region-content .block-system-main-block>.views-element-container .view .view-content {
+    padding-top: 10%;
 }
 
 .view-filters {
@@ -66,7 +66,8 @@
 }
 
 .views-row {
-    flex: 0 1 30%; /* overridden by breaks/... */
+    flex: 0 1 30%;
+    /* overridden by breaks/... */
     margin-bottom: 4vw;
     overflow-wrap: break-word;
 }
@@ -80,17 +81,17 @@
 }
 
 .views-field-field-titelbild {
-  overflow: hidden;
-  width: 100%;
-  height: 14vw;
-  background-color: #ddd;
+    overflow: hidden;
+    width: 100%;
+    height: 14vw;
+    background-color: #ddd;
 }
 
 .views-field-field-titelbild img {
-  width: 100%;
-  height: 100%;
-  transform: translateY(-50%);
-  transform: translateY(calc(-50% + 7vw));
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 7vw));
 }
 
 .view-content .views-row h2 {
@@ -107,7 +108,7 @@
     font-style: italic;
 }
 
-.views-field-field-beginn ~ .views-field-created {
+.views-field-field-beginn~.views-field-created {
     display: none;
 }
 
@@ -190,7 +191,9 @@
 .field--name-field-faecher-tag .field__item {
     display: inline;
 }
-.field--name-field-ende, .field--name-field-beginn{
+
+.field--name-field-ende,
+.field--name-field-beginn {
     color: #666;
     font-style: italic;
 }
@@ -224,11 +227,11 @@
     content: "bis ";
 }
 
-.field--name-field-beginn + .field--name-field-ende {
+.field--name-field-beginn+.field--name-field-ende {
     text-transform: lowercase;
 }
 
-.views-field-field-beginn + .views-field-field-ende {
+.views-field-field-beginn+.views-field-field-ende {
     text-transform: lowercase;
 }
 
@@ -237,14 +240,14 @@
     padding-left: 0.2em;
 }
 
-.views-field-field-beginn ~ .views-field-body,
-.field--name-field-stufe-tag ~ .field,
-.field--name-field-faecher-tag ~ .field {
+.views-field-field-beginn~.views-field-body,
+.field--name-field-stufe-tag~.field,
+.field--name-field-faecher-tag~.field {
     float: left;
     width: 100%;
 }
 
-.field--name-field-stufe-tag ~ .field--name-field-faecher-tag {
+.field--name-field-stufe-tag~.field--name-field-faecher-tag {
     width: unset;
 }
 
@@ -255,7 +258,7 @@
 
 .view-id-fachbereiche .view-content,
 .view-id-index .view-content,
-.views-no-bg .view-content  {
+.views-no-bg .view-content {
     background: transparent;
     padding-top: 0 !important;
 }
@@ -267,8 +270,9 @@
 
 .views-row {
     background: white;
-    border-radius: 20px;  
-    padding-bottom: 1em;views  
+    border-radius: 20px;
+    padding-bottom: 1em;
+    views
 }
 
 .view-kurzmeldungen .views-row {
@@ -280,7 +284,7 @@
     width: calc(100% - 2em);
 }
 
-.views-field-field-beginn ~ .views-field-body {
+.views-field-field-beginn~.views-field-body {
     width: calc(100% - 2em);
 }
 
@@ -291,7 +295,7 @@
     border-radius: 20px 20px 0 0;
 }
 
-.views-field-field-prioritaet ~ .views-field-field-titelbild {
+.views-field-field-prioritaet~.views-field-field-titelbild {
     border-radius: 0;
 }
 
@@ -300,20 +304,20 @@
 }
 
 #edit-begins-with--wrapper {
-  width: 100%;
+    width: 100%;
 }
 
 #edit-begins-with--wrapper input {
-  display: none;
+    display: none;
 }
 
 #edit-begins-with--wrapper label {
-  text-decoration: underline;
-  cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #edit-begins-with--wrapper input:checked+label {
-  color: var(--primary-dark);
+    color: var(--primary-dark);
 }
 
 .view-footer {
