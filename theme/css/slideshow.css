@@ -36,6 +36,10 @@
     user-select: none;
 }
 
+#titelbild .button-container button {
+    background: none;
+}
+
 #titelbild button:nth-child(1) {
     padding-right: min(0.75em, 2.3vw);
 }

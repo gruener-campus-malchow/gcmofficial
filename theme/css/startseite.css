@@ -122,11 +122,11 @@
     height: fit-content;
     background-color: darkgreen;
     background-color: var(--primary-dark-transparent);
-    padding: 1rem 1.6rem !important;
+    padding: 0 1.5em !important;
     color: white;
     color: var(--text-on-primary);
-    border-radius: 2.5px;
-    font-size: 1.4em;
+    border-radius: 0.4em;
+    font-size: 1.2em;
     right: 10%;
     transition: opacity 1s;
 }

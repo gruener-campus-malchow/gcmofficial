@@ -52,17 +52,25 @@
     cursor: default;
 }
 
+img.align-left {
+    padding-right: 1em;
+}
+
+img.align-right {
+    padding-left: 1em;
+}
+
 .field--name-field-bildergalerie .field__items {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.7vw;
 }
 
 .field--name-field-bildergalerie .field__item {
-    flex: 30%;
-    height: fit-content;
-    margin: 0.5vw;
+    flex: 1 0 30%;
 }
 
 .field--name-field-bildergalerie .field__item img {
     height: 100%;
+    object-fit: cover;
 }
