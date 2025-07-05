@@ -15,7 +15,9 @@ global-styling:
       css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
       css/popupImages.css: {}
 
-ags:
+ag:
+  js:
+    js/ag.js: {}
   css:
     theme:
       css/ag.css: {}
@@ -45,7 +47,6 @@ startseite:
 titelbild:
   js:
     js/slideshow.js: {media: screen and (min-width: 500px)}
-    js/titelbild.js: {}
   css:
     theme:
       css/titelbild.css: {}
@@ -54,11 +55,11 @@ titelbild:
 
 standort:
   js:
-    https://unpkg.com/leaflet@1.9.3/dist/leaflet.js: {type: external, attributes: { integrity: sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=, crossorigin: true }}
+    js/leaflet/leaflet.js: {}
     js/standortkarte.js: {}
   css:
     theme:
-      https://unpkg.com/leaflet@1.9.3/dist/leaflet.css: {type: external, attributes: { integrity: sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=, crossorigin: true }}
+      js/leaflet/leaflet.css: {}
       css/standort.css: {}
       css/standortkarte.css: {}
 
@@ -67,6 +68,11 @@ ueberuns:
     theme:
       css/ueber-uns.css: {}
       css/breaks/ueber-uns-mobile.css: {media: all and (max-width: 730px)}
+
+timetables:
+  css:
+    theme:
+      css/timetables.css: {}
 
 fehlerseite:
   css:

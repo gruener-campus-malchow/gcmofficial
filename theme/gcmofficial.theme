@@ -75,13 +75,19 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
     '#type' => 'color',
     '#title' => t('Akzentfarbe'),
     '#default_value' => theme_get_setting('themecolor_accent'),
-    '#description' => t('Geben Sie hier die Akzentfarbe an. Die Akzentfarbe wird nur an Stellen benutzt, die besonderer Hervorhebung bedürfen. Sie sollte sich von der Primärfarbe abheben aber trotzdem mit ihr harmonieren.'),
+    '#description' => t('Geben Sie hier die Akzentfarbe an. Die Akzentfarbe wird nur an Stellen benutzt, die besonderer Hervorhebung bedürfen. Sie sollte sich von der Primärfarbe abheben aber trotzdem mit ihr harmonieren. Erklärung (en): https://www.clrn.org/what-colors-should-you-use-as-accent-colors-in-art/'),
   ];
   $form['themecolor_accentLight'] = [
     '#type' => 'color',
     '#title' => t('Akzentfarbe (hell)'),
     '#default_value' => theme_get_setting('themecolor_accentLight'),
     '#description' => t('Geben Sie hier einen hellen Ton der Akzentfarbe an.'),
+  ];
+  $form['themecolor_accentLight_two'] = [
+    '#type' => 'color',
+    '#title' => t('Akzentfarbe 2 (hell)'),
+    '#default_value' => theme_get_setting('themecolor_accentLight_two'),
+    '#description' => t('Geben Sie hier einen hellen Ton als 2. Akzentfarbe an.'),
   ];
   $form['themecolor_text'] = [
     '#type' => 'color',
@@ -149,11 +155,12 @@ function gcmofficial_preprocess_html(&$variables)
   // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
   //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
   $variables['themecolor_primaryDark'] = theme_get_setting('themecolor_primaryDark');
-  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark') . "dd";
+  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark') . "bb";
   $variables['themecolor_primary'] = theme_get_setting('themecolor_primary');
   $variables['themecolor_primaryLight'] = theme_get_setting('themecolor_primaryLight');
   $variables['themecolor_accent'] = theme_get_setting('themecolor_accent');
   $variables['themecolor_accentLight'] = theme_get_setting('themecolor_accentLight');
+  $variables['themecolor_accentLight_two'] = theme_get_setting('themecolor_accentLight_two');
   $variables['themecolor_text'] = theme_get_setting('themecolor_text');
   $variables['themecolor_textOnPrimary'] = theme_get_setting('themecolor_textOnPrimary');
   $variables['themecolor_pageBackground'] = theme_get_setting('themecolor_pageBackground');
