@@ -1,4 +1,4 @@
-#main menu {
+#quicklinks {
     --spacing: 1em;
     width: 100%;
     width: calc(100% + var(--spacing));
@@ -9,7 +9,7 @@
     flex-wrap: wrap;
 }
 
-#main menu a {
+#quicklinks a {
     border: 2px solid darkgreen;
     border: 2px solid var(--primary-dark);
     color: darkgreen;
@@ -26,8 +26,8 @@
     text-align: center;
 }
 
-#main menu a:hover,
-#main menu a:active {
+#quicklinks a:hover,
+#quicklinks a:active {
     border-color: green;
     border-color: var(--primary);
     color: green;
@@ -39,7 +39,7 @@ h2 {
     margin-top: 3em;
 }
 
-#Leitbild {
+/* #Leitbild {
   margin-top: 3em;
   width: 100%;
   display: flex;
@@ -111,3 +111,4 @@ h2 {
   overflow: hidden;
   line-height: 130%;
 }
+*/
