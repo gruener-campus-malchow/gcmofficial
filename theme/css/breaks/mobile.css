@@ -203,8 +203,8 @@ footer .site-logo {
 }
 
 footer .site-logo img {
-    width: 20vw;
-    width: max(80px, 20vw);
+    width: 8.5em;
+    width: max(80px, min(27vw, 8.5em));
 }
 
 footer .site-name {
@@ -249,6 +249,12 @@ div#block-socialmediaicons .field--name-body,
 div#block-schulpreis .field--name-body {
   margin-top: 0;
 }
+
+
+div#block-schulpreis {
+  min-height: 6em;
+}
+
 
 div#block-schulpreis img {
   margin-left: 0;

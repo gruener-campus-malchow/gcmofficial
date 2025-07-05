@@ -42,8 +42,6 @@
             <li><a href="{{url('<front>')}}/schulleben?field_faecher_tag_target_id={{ node.label }}">{{ node.label }} im Schulleben</a>
             </li>
         </ul>
-        {{ content.body }}
-        {{ content.field_zugehoerig }}
     </div>
     {% if content.field_links|render %}
     <aside>
@@ -51,6 +49,10 @@
         {{ content.field_links }}
     </aside>
     {% endif %}
+</div>
+<div class="main-content">
+    {{ content.body }}
+    {{ content.field_zugehoerig }}
 </div>
 <div id="anchor-dateien"></div>
 {{ content.field_dateien }}
