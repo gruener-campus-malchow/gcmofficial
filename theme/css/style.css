@@ -16,7 +16,7 @@
     font-size: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -46,22 +46,22 @@ footer .region-footer {
 /* Grant every block of the page the same padding as the overall page (see above)
    Exceptions: Breadcrumbs, title, and main content block
    Instead of the main content block, every element in it, the fields of the page will be granted a padding */
-#main .region-content > *,
-#main .region-content .block-system-main-block > * {
-  padding: 0 10%;
-  width: 80%;
+#main .region-content>*,
+#main .region-content .block-system-main-block>* {
+    padding: 0 10%;
+    width: 80%;
 }
 
 #main .region-content .block-system-breadcrumb-block,
 #main .region-content .block-page-title-block {
-  padding: 0;
-  margin-left: 10%;
-  width: unset;
+    padding: 0;
+    margin-left: 10%;
+    width: unset;
 }
 
 #main .region-content .block-system-main-block {
-  padding: 0;
-  width: 100%;
+    padding: 0;
+    width: 100%;
 }
 
 /* remove Safari's default design of buttons */
@@ -136,10 +136,32 @@ h2,
 h3,
 h4,
 h5,
+h6,
 .field__label {
     color: royalblue;
     color: var(--accent);
     line-height: 1em;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1.17em;
+}
+
+h5,
+h6 {
+    font-size: 1em;
 }
 
 .field__label {
@@ -148,9 +170,9 @@ h5,
 }
 
 .field--label-inline .field__label {
-  font-size: 1em;
-  margin: 0;
-  line-height: 1.5em;
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.5em;
 }
 
 a {
@@ -469,31 +491,31 @@ ul.menu a.is-active {
 }
 
 .social {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 .social__media {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 50px;
-  height: min-content;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50px;
+    height: min-content;
 }
 
 .social__icon {
-  height: 100%;
-  list-style: none;
-  margin-inline: 8px;
-  margin-bottom: 8px;
+    height: 100%;
+    list-style: none;
+    margin-inline: 8px;
+    margin-bottom: 8px;
 }
 
 .social__icon-img {
-  height: 20px;
-  height: max(1em, 20px);
+    height: 20px;
+    height: max(1em, 20px);
 }
 
 nav#block-gcmofficial-footer {

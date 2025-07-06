@@ -24,8 +24,9 @@
     overflow: scroll;
     direction: rtl;
     display: flex;
-    justify-content: center;
-    align-items: start;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .popup img {
@@ -34,4 +35,13 @@
     height: auto;
     width: unset !important;
     direction: ltr;
+}
+
+.popup p {
+    color: white;
+    position: sticky;
+    bottom: 1em;
+    background-color: #0006;
+    padding: 0.5em;
+    border-radius: 0.5em;
 }

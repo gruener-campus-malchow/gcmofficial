@@ -2,8 +2,10 @@
     border-bottom: 2px solid #666;
     width: 100% !important;
     padding: 0 !important;
+    height: 25vw;
 }
 
+#titelbild,
 #titelbild .field--name-field-titelbild {
     height: 25vw;
 }
@@ -46,7 +48,8 @@
     max-height: 100vh !important;
 }
 
-#main .field--name-body, .article-content {
+#main .field--name-body,
+.article-content {
     margin-top: 9em;
 }
 

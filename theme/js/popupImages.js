@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     document.body.removeChild(target);
                 });
+                imageDescription = document.createElement("p");
+                imageDescription.innerText = clone.getElementsByTagName("img")[0].getAttribute("alt");
+                clone.classList.add("popup");
+                clone.appendChild(imageDescription);
                 document.body.prepend(clone);
             });
         });

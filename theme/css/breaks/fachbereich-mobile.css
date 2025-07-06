@@ -28,21 +28,17 @@
     margin-top: 0;
 }
 
-.aside-container > div:first-child {
+.aside-container>div:first-child {
     margin-top: calc(15vw + 5em);
 }
 
 @media all and (max-width: 500px) {
-    .aside-container > div:first-child {
+    .aside-container>div:first-child {
         margin-top: calc(22vw + 5em);
     }
 
     .stufen {
         max-width: unset;
-    }
-
-    .field--name-field-bildergalerie .field__item {
-        margin: 2vw;
     }
 
 }

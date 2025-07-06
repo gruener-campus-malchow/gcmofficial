@@ -48,6 +48,7 @@
     transform: scale(1.1);
     opacity: 0.8;
 }
+
 #titelbild button:active {
     transform: scale(1.3);
     opacity: 1;

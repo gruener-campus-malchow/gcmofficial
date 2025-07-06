@@ -1,9 +1,13 @@
 .field--name-body {
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 
-.aside-container > div:first-child {
+.aside-container>div:first-child {
     margin-top: calc(9vw + 2em);
+}
+
+.aside-container aside {
+    margin-top: calc(2vw + 5.2em);
 }
 
 .aside-container aside div:first-child {
@@ -48,17 +52,25 @@
     cursor: default;
 }
 
+img.align-left {
+    padding-right: 1em;
+}
+
+img.align-right {
+    padding-left: 1em;
+}
+
 .field--name-field-bildergalerie .field__items {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.7vw;
 }
 
 .field--name-field-bildergalerie .field__item {
-    flex: 30%;
-    height: fit-content;
-    margin: 0.5vw;
+    flex: 1 0 30%;
 }
 
 .field--name-field-bildergalerie .field__item img {
     height: 100%;
+    object-fit: cover;
 }
