@@ -63,14 +63,25 @@ img.align-right {
 .field--name-field-bildergalerie .field__items {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 0.7vw;
+    aspect-ratio: 3/2;
 }
 
 .field--name-field-bildergalerie .field__item {
-    flex: 1 0 30%;
+    width: 33.33%;
+    width: calc(33.33% - 0.47vw) /* gap 0.7vw / 3 * 2 = 0.47 */
 }
 
-.field--name-field-bildergalerie .field__item img {
-    height: 100%;
-    object-fit: cover;
+@media all and (max-aspect-ratio: 1) {
+.field--name-field-bildergalerie .field__item {
+    width: 50%;
+    width: calc(50% - 0.47vw) /* gap 0.7vw / 3 * 2 = 0.47 */
+}
+}
+
+.field--name-field-bildergalerie .field__item img  {
+    width: 100%;
+    height: auto;
+    border-radius: 1.2vw;
 }
