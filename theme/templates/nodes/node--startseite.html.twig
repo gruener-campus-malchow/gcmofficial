@@ -14,7 +14,7 @@
 
 {{ attach_library('gcmofficial/titelbild') }}
 {{ attach_library('gcmofficial/startseite') }}
-<div id="titelbild">
+<div id="titelbild" role="presentation">
     {# add every image or video in field_titelbild or slideshow to the page #}
     {{ content.field_titelbild }}
     {% if slideshow|length > 0 %}
@@ -55,16 +55,19 @@
         </div>
     {% endif %}
 </div>
-<div id="herobox">
+<div id="herobox" role="complementary">
     {{ content.field_banner }}
+    {% if kurzmeldungen is not empty %}
+        {{ kurzmeldungen }}
+    {% endif %}
 </div>
 <div class="aside-container">
     <main>
         {{ content.body }}
     </main>
-    <aside id="contact">
+    <aside id="contact" role="complementary">
         {{ content.field_kontaktbox }}
-        <div class="kontakt-links">
+        <div class="kontakt-links" role="navigation">
             <a class="btn-like" href="{{ url('<front>') }}/kontakt">☞ Kontaktseite</a>
             <a class="btn-like" href="{{ url('<front>') }}/standort">☞ Standortseite</a>
         </div>

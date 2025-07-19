@@ -199,6 +199,12 @@ function gcmofficial_preprocess_node__startseite(&$variables)
       }
     }
   }
+  // add Kurzmeldungen view to variables for rendering in node--startseite.html.twig
+  $variables['kurzmeldungen'] = [
+    '#type' => 'view',
+    '#name' => 'kurzmeldungen',
+    '#display_id' => 'block_1',
+  ];
 }
 
 // Interne (benutzereingeschränkte) Seiten
