@@ -74,6 +74,11 @@ timetables:
     theme:
       css/timetables.css: {}
 
+uebersichtunterricht:
+  css:
+    theme:
+      css/overview-ugl.css: {}
+
 fehlerseite:
   css:
     theme:
