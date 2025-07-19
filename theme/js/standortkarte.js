@@ -1,12 +1,19 @@
-window.onload = () => {
+window.addEventListener("DOMContentLoaded", function () {
     const mapContainer = document.getElementById("map");
     // [top left (x), top left (y), bottom right (x), bottom right (y)]
     const mapDim = [mapContainer.offsetLeft, mapContainer.offsetTop, mapContainer.offsetLeft + mapContainer.offsetWidth, mapContainer.offsetTop + mapContainer.offsetHeight];
 
+    const map = L.map('map');
+
     // map is 'deactivated' by default to prevent the mousepointer getting stuck on the map in an attempt to scroll the page
     function activateMap() {
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
         mapContainer.classList.remove("deactivated");
-        document.body.removeEventListener("mousedown", checkActivateMap); // event listener not needed anymore
+        document.body.removeEventListener("mousedown", checkActivateMap); // event listener not needed anymor
+        map.setView([52.571, 13.488], 16); // center, zoom
     }
 
     function checkActivateMap(e) {
@@ -19,13 +26,7 @@ window.onload = () => {
 
     document.body.addEventListener("mousedown", checkActivateMap);
 
-    const map = L.map('map').setView([52.5670, 13.4950], 14);
-
     // https://leafletjs.com/reference.html
-    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
 
     const gebaeude_divs = document.querySelectorAll(".site");
 
@@ -33,12 +34,16 @@ window.onload = () => {
         return identifier + (sitesBook[index].latitude * 10000).toString() + (sitesBook[index].longitude * 10000).toString();
     }
 
-    let x = 0;
+    let x = sitesBook.length - 1;
     // array 'sitesBook' built with Twig, inspect via browser console
     var allMarkers = {};
-    while (x < sitesBook.length) {
+    function myFunc(evt) {
+        console.log(evt.currentTarget.myParam);
+        markSite(allMarkers[autoId([evt.currentTarget.myParam], 0, "marker")], evt.currentTarget.myParam);
+    }
+    while (x >= 0) {
         var marker = L.marker([sitesBook[x].latitude, sitesBook[x].longitude]).addTo(map);
-        marker.on("mousedown", markSite(marker, sitesBook[x], false));
+        marker.on("mousedown", markSite.bind(null, marker, sitesBook[x], false));
         allMarkers[autoId(sitesBook, x, "marker")] = marker;
         var node = gebaeude_divs[x].getElementsByClassName("field--name-field-adresse")[0];
         var btnCont = document.createElement("div");
@@ -52,10 +57,6 @@ window.onload = () => {
         btnCont.appendChild(buttonel);
         document.getElementById(autoId(sitesBook, x)).addEventListener('click', myFunc, false);;
         document.getElementById(autoId(sitesBook, x)).myParam = sitesBook[x];
-        function myFunc(evt) {
-            console.log(evt.currentTarget.myParam);
-            markSite(allMarkers[autoId([evt.currentTarget.myParam], 0, "marker")], evt.currentTarget.myParam);
-        }
 
 
         if (navigator.clipboard) {
@@ -71,20 +72,24 @@ window.onload = () => {
                 docopy(passonto);
             }
         }
-        x++;
+        x--;
     }
 
     function markSite(marker, site, scrollToMap = true) {
         if (scrollToMap) {
-            document.getElementById("map").scrollIntoView();
             activateMap();
+            document.getElementById("map").scrollIntoView();
         }
         let popupText = "<b>" + site.title +
             "</b><br><p>Route: <a href=https://www.openstreetmap.org/directions?from=&to=" +
             site.latitude + "%2C" + site.longitude + "&route=%3B#map=16/" + site.latitude + "/" +
             site.longitude + ">OSM</a> / <a href='https://www.google.com/maps/dir//" +
             site.latitude + "," + site.longitude + "'>Google Maps</a></p>";
-        marker.bindPopup(popupText).openPopup();
+        map.setView([site.latitude, site.longitude], 17); // center, zoom
+        const popup = marker.bindPopup(popupText);
+        if (scrollToMap) {
+            popup.openPopup();
+        }
     }
 
     function docopy(gebaeude_forcop) {
@@ -102,4 +107,4 @@ window.onload = () => {
         );
     }
 
-};
+});
