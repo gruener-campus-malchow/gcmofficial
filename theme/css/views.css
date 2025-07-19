@@ -130,12 +130,18 @@
     font-size: 1em;
 }
 
+.article-content .field--name-field-stufe-tag,
+.article-content .field--name-field-faecher-tag,
+.article-content .field--name-field-tags {
+    width: unset;
+}
+
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
 .views-field-field-tags a,
-.field--name-field-stufe-tag .field__item,
-.field--name-field-faecher-tag .field__item,
-.field--name-field-tags .field__item {
+.field--name-field-stufe-tag .field__item a,
+.field--name-field-faecher-tag .field__item a,
+.field--name-field-tags .field__item a {
     text-decoration: none;
     background-color: palegreen;
     background-color: var(--primary-light);
@@ -152,13 +158,13 @@
 }
 
 .views-field-field-faecher-tag a,
-.field--name-field-faecher-tag .field__item {
+.field--name-field-faecher-tag .field__item a {
     background-color: powderblue;
     background-color: var(--accent-light);
 }
 
 .views-field-field-tags a,
-.field--name-field-tags .field__item {
+.field--name-field-tags .field__item a {
     background-color: gold;
     background-color: var(--accent-two-light);
 }
@@ -223,12 +229,6 @@
 .views-field-field-beginn ~ .views-field-body {
     float: left;
     width: 100%;
-}
-
-.field--name-field-stufe-tag ~ .field--name-field-faecher-tag,
-.field--name-field-stufe-tag ~ .field--name-field-tags,
-.field--name-field-faecher-tag ~ .field--name-field-tags {
-    width: unset;
 }
 
 .block-views,
