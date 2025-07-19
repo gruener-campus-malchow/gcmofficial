@@ -1,12 +1,12 @@
 {# a page with a title image #}
 {% if content.field_titelbild|render %}
 {{ attach_library('gcmofficial/titelbild') }}
-<div id="titelbild">
+<div id="titelbild" role="complementary">
     {{ content.field_titelbild }}
 </div>
 {% endif %}
 <div class="aside-container">
-    <div>
+    <div role="main">
     {{ content.body }}
     </div>
 </div>

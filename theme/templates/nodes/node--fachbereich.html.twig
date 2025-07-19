@@ -8,11 +8,11 @@
 
 {{ attach_library('gcmofficial/fachbereich') }}
 {{ attach_library('gcmofficial/titelbild') }}
-<div id="titelbild">
+<div id="titelbild" role="presentation">
     {{ content.field_titelbild }}
 </div>
 <div class="aside-container">
-    <div>
+    <div role="complementary">
         <div class="authoring-information">
             Geschrieben von <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}"><span>{{ node.getOwner.label }}</span></a> am {{ node.getChangedTime()|format_date('custom', 'd.m.Y') }}
         </div>
@@ -50,13 +50,13 @@
     </aside>
     {% endif %}
 </div>
-<div class="main-content">
+<div class="main-content" role="main">
     {{ content.body }}
     {{ content.field_zugehoerig }}
 </div>
-<div id="anchor-dateien"></div>
+<div id="anchor-dateien" role="complementary"></div>
 {{ content.field_dateien }}
-<div id="anchor-schuelerarbeiten"></div>
+<div id="anchor-schuelerarbeiten" role="complementary"></div>
 {{ content.field_schuelerarbeiten }}
-<div id="anchor-bildergalerie"></div>
+<div id="anchor-bildergalerie" role="complementary"></div>
 {{ content.field_bildergalerie }}
