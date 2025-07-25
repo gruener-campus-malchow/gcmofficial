@@ -126,6 +126,30 @@
     font-size: 1em;
 }
 
+.views-field-view-node a {
+    text-decoration: none;
+    background-color: blue;
+    background-color: var(--accent);
+    color: white;
+    color: var(--text-on-primary);
+    font-weight: bold;
+    padding: 0 0.8em;
+    line-height: 2.5em;
+    border-radius: 3px;
+    font-size: 0.8em;
+    float: left;
+    margin: 0 1em;
+}
+
+.views-field-body p {
+    margin-bottom: 0.2em;
+}
+.views-field-view-node:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
 .field--name-field-stufe-tag .field__item,
@@ -143,6 +167,8 @@
     white-space: nowrap;
     float: left;
     margin: 0.25em;
+    margin-left: 0em;
+    margin-right: 0.25em
 }
 
 .views-field-field-faecher-tag a,
