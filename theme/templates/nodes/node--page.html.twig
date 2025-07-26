@@ -1,23 +1,11 @@
 {# a page with a title image #}
 {% if content.field_titelbild|render %}
-{{ attach_library('gcmofficial/titelbild') }}
-<div id="titelbild" role="complementary">
-    {{ content.field_titelbild }}
-</div>
+    {{ attach_library('gcmofficial/titelbild') }}
+    <div id="titelbild" role="complementary">
+        {{ content.field_titelbild }}
+    </div>
 {% endif %}
-<div class="aside-container">
-    <div class="TOC">
-        <h2>Table of Contents</h2>
-        {% if header_names is not empty %}
-            {% for header in header_names %}
-                <a class="btn-like" href="#header-{{ loop.index0 }}">{{ header }}</a>
-            {% endfor %}
-        {% else %}
-            <p>No headers found.</p>
-        {% endif %}
-    </div>
-    <div role="main">
-        {{ content }}
-    </div>
-</div>
+
+        {{ content.body }}
+
 {{ content.field_dateien }}
