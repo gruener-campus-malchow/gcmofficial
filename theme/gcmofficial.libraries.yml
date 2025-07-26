@@ -35,6 +35,13 @@ fachbereich:
       css/fachbereich.css: {}
       css/breaks/fachbereich-mobile.css: {media: all and (max-width: 730px)}
 
+gallery:
+  js:
+    js/gallery.js: {}
+  css:
+    theme:
+      css/gallery.css: {}
+
 startseite:
   js:
     js/startseite.js: {}
@@ -47,7 +54,6 @@ startseite:
 titelbild:
   js:
     js/slideshow.js: {media: screen and (min-width: 500px)}
-    js/titelbild.js: {}
   css:
     theme:
       css/titelbild.css: {}
@@ -75,6 +81,11 @@ timetables:
     theme:
       css/timetables.css: {}
 
+uebersichtunterricht:
+  css:
+    theme:
+      css/overview-ugl.css: {}
+
 fehlerseite:
   css:
     theme:
@@ -94,6 +105,9 @@ terminplaner:
         
 devguide:
   js:
+    js/devguide/react.production.min.js: {}
+    js/devguide/react-dom.production.min.js: {}
+    js/devguide/ui.js: {}
     js/devguide/main.js: {}
     js/devguide/interact.min.js: {}
     js/devguide/highlight.min.js: {}

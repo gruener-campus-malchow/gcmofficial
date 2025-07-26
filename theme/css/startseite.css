@@ -1,5 +1,6 @@
 #block-gcmofficial-page-title {
-    display: none;
+    width: 0 !important;
+    height: 0;
 }
 
 #titelbild,
@@ -122,11 +123,11 @@
     height: fit-content;
     background-color: darkgreen;
     background-color: var(--primary-dark-transparent);
-    padding: 1rem 1.6rem !important;
+    padding: 0 1.5em !important;
     color: white;
     color: var(--text-on-primary);
-    border-radius: 2.5px;
-    font-size: 1.4em;
+    border-radius: 0.4em;
+    font-size: 1.2em;
     right: 10%;
     transition: opacity 1s;
 }
@@ -186,83 +187,37 @@
     flex: 0 1 47%;
 }
 
+.view-kurzmeldungen {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-bottom: 1em;
+}
+
 .view-kurzmeldungen .view-content {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 2em;
-  background-color: darkgreen;
-  background-color: var(--primary-dark);
-  height: 2.8em;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  /* justify-content: left; */
-  flex-wrap: nowrap;
-  z-index: 100;
+  background: none;
+  display: inline-block;
 }
 
 .view-kurzmeldungen .views-row {
-  position: absolute;
-  display: flex;
-  align-items: center;
+  width: 40vw;
+  display: inline-block;
   margin: 0;
-  /* flex: 0; */
-  transition: opacity 1s;
   padding: 0;
+  max-height: 2.5em;
+  overflow: hidden;
+  border-radius: 0;
 }
 
-.view-kurzmeldungen .field-content {
+.view-kurzmeldungen .views-field {
   color: white;
-  color: var(--text-on-primary);
-  text-decoration: none;
-  display: block;
-  /* margin-right: 20px; */
-  width: max-content;
-}
-.view-kurzmeldungen .field-content a {
-  color: white;
-  color: var(--text-on-primary);
-  text-decoration: none;
+  padding: 0;
+  font-size: 0.8em;
+  display: inline;
+  font-stlye: normal;
 }
 
-/* .view-kurzmeldungen .views-row::before {
-  content: '+++';
-  color: white;
-  color: var(--text-on-primary);
-  font-style: normal;
-}
-
-.view-kurzmeldungen .views-row:nth-child(1)::before {
-  content: '';
-} */
-
-.view-kurzmeldungen .views-field,
-.view-kurzmeldungen .views-row::before {
-  margin-left: 0.3em;
-}
-
-.view-kurzmeldungen .views-field-title,
-.view-kurzmeldungen .views-field-created {
-  font-size: 1em;
-  font-style: normal;
-}
-
-.view-kurzmeldungen a {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 2.8em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary);
-    color: white;
-    z-index: 101;
-    text-decoration: none;
-    padding-left: 0.55em;
-    padding-right: 0.8em;
+#herobox .view-kurzmeldungen .views-field a::before {
+  content: '↗ ';
 }
 
 .cssfile {

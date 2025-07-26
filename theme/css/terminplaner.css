@@ -1,4 +1,4 @@
-#main .region-content .block-system-main-block>.views-element-container .view .view-content {
+#main .region-content .block-system-main-block > .views-element-container .view .view-content {
     background: unset;
     padding-top: unset;
 }
@@ -15,11 +15,9 @@
     background: var(--primary-dark);
     border-radius: 0.2em 0.2em 0 0;
 }
-
-.calendar-view-table tbody {
+.calender-view-table tbody {
     background: var(--primary);
 }
-
 .calendar-view-table .next-month,
 .calendar-view-table .previous-month {
     background: var(--primary-dark);
@@ -31,7 +29,7 @@
     color: var(--calendar-view-color-evil);
 }
 
-.calendar-view-table td {
+.calendar-view-table td{
     border: 0.15vw solid var(--primary-dark);
 }
 
@@ -47,11 +45,9 @@
 .calendar-view-table .calendar-view-day__number {
     background: var(--primary-dark);
 }
-
-.calendar-view-table .calendar-view-day__number:hover {
+.calendar-view-table .calendar-view-day__number:hover{
     background: var(--primary);
 }
-
 .calendar-view-table .calendar-view-day:hover .calendar-view-day__number {
     background: var(--primary-dark);
 }
@@ -67,3 +63,4 @@
 .today:hover .calendar-view-day {
     background-color: var(--primary-dark);
 }
+

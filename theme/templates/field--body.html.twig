@@ -1,0 +1,26 @@
+{% if header_names is not empty %}
+    <div class="TOC">
+        <h2>Inhaltsverzeichnis</h2>
+        <ol>
+            {% for header in header_names %}
+                <li><a href="#header-{{ loop.index0 }}">{{ header }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endif %}
+
+<div class="aside-container">
+    <div role="main">
+        {% if multiple %}
+            <div{{ attributes }}>
+                {% for item in items %}
+                    <div{{ item.attributes }}>{{ item.content }}</div>
+                {% endfor %}
+            </div>
+        {% else %}
+            {% for item in items %}
+                <div{{ attributes }}>{{ item.content }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

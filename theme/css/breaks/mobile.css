@@ -13,24 +13,24 @@ footer .region-footer {
 /* Grant every block of the page the same padding as the overall page (see above)
    Exceptions: Breadcrumbs, title, and main content block
    Instead of the main content block, every element in it, the fields of the page will be granted a padding */
-#main .region-content>*,
-#main .region-content .block-system-main-block>*,
-#main .region-content .block-system-main-block>.views-element-container .view>* {
-    padding: 0 5%;
-    width: 90%;
+#main .region-content > *,
+#main .region-content .block-system-main-block > *,
+#main .region-content .block-system-main-block > .views-element-container .view > * {
+  padding: 0 5%;
+  width: 90%;
 }
 
 #main .region-content .block-system-breadcrumb-block,
 #main .region-content .block-page-title-block {
-    padding: 0;
-    margin-left: 5%;
-    width: unset;
+  padding: 0;
+  margin-left: 5%;
+  width: unset;
 }
 
 #main .region-content .block-system-main-block,
-#main .region-content .block-system-main-block>.views-element-container {
-    padding: 0;
-    width: 100%;
+#main .region-content .block-system-main-block > .views-element-container {
+  padding: 0;
+  width: 100%;
 }
 
 header {
@@ -194,8 +194,8 @@ footer .site-logo {
 }
 
 footer .site-logo img {
-    width: 20vw;
-    width: max(80px, 20vw);
+    width: 8.5em;
+    width: max(80px, min(27vw, 8.5em));
 }
 
 footer .site-name {
@@ -228,23 +228,29 @@ footer .menu--footer ul li:last-child {
 }
 
 nav#block-gcmofficial-footer {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .social__media {
-    margin: 0;
+  margin: 0;
 }
 
 div#block-socialmediaicons .field--name-body,
 div#block-schulpreis .field--name-body {
-    margin-top: 0;
+  margin-top: 0;
 }
 
+
+div#block-schulpreis {
+  min-height: 6em;
+}
+
+
 div#block-schulpreis img {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 div#block-schulpreis p {
-    font-size: 0.7em;
+  font-size: 0.7em;
 }
