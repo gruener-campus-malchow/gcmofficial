@@ -32,10 +32,7 @@ function gcmofficial_preprocess_paragraph__standort(&$variables)
 function gcmofficial_preprocess_responsive_image(&$variables)
 {
   // have to be responsive image types
-  $eager_styles = [ // TODO: set with theme setting
-    'wide',
-  ];
-
+  $eager_styles = explode(", ", theme_get_setting('load_eager_styles'));
   // disables lazy loading of images with the image styles $eager_styles by setting the img element attribute "loading" to "eager"
   // (Drupal loads every image lazily by default)
   if (in_array($variables['responsive_image_style_id'], $eager_styles, TRUE)) {
@@ -75,13 +72,19 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
     '#type' => 'color',
     '#title' => t('Akzentfarbe'),
     '#default_value' => theme_get_setting('themecolor_accent'),
-    '#description' => t('Geben Sie hier die Akzentfarbe an. Die Akzentfarbe wird nur an Stellen benutzt, die besonderer Hervorhebung bedürfen. Sie sollte sich von der Primärfarbe abheben aber trotzdem mit ihr harmonieren.'),
+    '#description' => t('Geben Sie hier die Akzentfarbe an. Die Akzentfarbe wird nur an Stellen benutzt, die besonderer Hervorhebung bedürfen. Sie sollte sich von der Primärfarbe abheben aber trotzdem mit ihr harmonieren. Erklärung (en): https://www.clrn.org/what-colors-should-you-use-as-accent-colors-in-art/'),
   ];
   $form['themecolor_accentLight'] = [
     '#type' => 'color',
     '#title' => t('Akzentfarbe (hell)'),
     '#default_value' => theme_get_setting('themecolor_accentLight'),
     '#description' => t('Geben Sie hier einen hellen Ton der Akzentfarbe an.'),
+  ];
+  $form['themecolor_accentLight_two'] = [
+    '#type' => 'color',
+    '#title' => t('Akzentfarbe 2 (hell)'),
+    '#default_value' => theme_get_setting('themecolor_accentLight_two'),
+    '#description' => t('Geben Sie hier einen hellen Ton als 2. Akzentfarbe an.'),
   ];
   $form['themecolor_text'] = [
     '#type' => 'color',
@@ -100,6 +103,18 @@ function gcmofficial_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\
     '#title' => t('Bilder vergrößern'),
     '#default_value' => theme_get_setting('themeclasses_enlargeImages'),
     '#description' => t('Geben Sie hier einen CSS-Selektor an, der alle Container-Elemente auswählt, dessen Bilder vergrößert werden können sollen. Bsp.: \'.field-type-image, #imagebox\''),
+  ];
+  $form['load_eager_styles'] = [
+    '#type' => 'textfield',
+    '#title' => t('Eager-Loading Bildstile'),
+    '#default_value' => theme_get_setting('load_eager_styles'),
+    '#description' => t('Geben Sie hier die IDs der Bildstile (Responsive Image Style) an, die mit Eager-Loading geladen werden sollen. Diese werden standardmäßig mit Lazy-Loading geladen. Trennen Sie mehrere IDs mit Komma. Bsp.: \'wide, large\'.'),
+  ];
+  $form['mixed_slideshow_field'] = [
+    '#type' => 'textfield',
+    '#title' => t('Diashow-Feld'),
+    '#default_value' => theme_get_setting('mixed_slideshow_field'),
+    '#description' => t('Geben Sie hier den Namen des Feldes auf der Startseite an, das die Diashow enthält. Hiermit können sowohl Bilder als auch Videos dort dargestellt werden.'),
   ];
 }
 
@@ -149,11 +164,12 @@ function gcmofficial_preprocess_html(&$variables)
   // please ensure to set following veriables correctly to safeguard the website is displayed properly!:
   //   themecolor_darkgreen, themecolor_darkgreen_transparent, themecolor_green, themecolor_lightgreen, themecolor_blue, themecolor_lightblue
   $variables['themecolor_primaryDark'] = theme_get_setting('themecolor_primaryDark');
-  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark') . "dd";
+  $variables['themecolor_primaryDarkTransparent'] = theme_get_setting('themecolor_primaryDark') . "bb";
   $variables['themecolor_primary'] = theme_get_setting('themecolor_primary');
   $variables['themecolor_primaryLight'] = theme_get_setting('themecolor_primaryLight');
   $variables['themecolor_accent'] = theme_get_setting('themecolor_accent');
   $variables['themecolor_accentLight'] = theme_get_setting('themecolor_accentLight');
+  $variables['themecolor_accentLight_two'] = theme_get_setting('themecolor_accentLight_two');
   $variables['themecolor_text'] = theme_get_setting('themecolor_text');
   $variables['themecolor_textOnPrimary'] = theme_get_setting('themecolor_textOnPrimary');
   $variables['themecolor_pageBackground'] = theme_get_setting('themecolor_pageBackground');
@@ -165,7 +181,7 @@ function gcmofficial_preprocess_node__startseite(&$variables)
 {
   // gather all relevant information of files in field_diashow for rendering in node--startseite.html.twig
   $variables["slideshow"] = [];
-  $field_name = "field_diashow"; // TODO: get from theme setting
+  $field_name = theme_get_setting('mixed_slideshow_field');
   if ($variables["node"]->hasField($field_name)) {
     $field = $variables["node"]->get($field_name);
     if (!$field->isEmpty()) {
@@ -192,6 +208,12 @@ function gcmofficial_preprocess_node__startseite(&$variables)
       }
     }
   }
+  // add Kurzmeldungen view to variables for rendering in node--startseite.html.twig
+  $variables['kurzmeldungen'] = [
+    '#type' => 'view',
+    '#name' => 'kurzmeldungen',
+    '#display_id' => 'block_1',
+  ];
 }
 
 // Interne (benutzereingeschränkte) Seiten

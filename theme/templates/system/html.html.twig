@@ -31,6 +31,7 @@
     *           _textOnPrimary
     *           _accent
     *           _accentLight
+    *           _accentLight_two
     *
     * @see template_preprocess_html()
     * @see gcmofficial_preprocess_page()
@@ -76,6 +77,9 @@
         {% if themecolor_accentLight|default %}
             --accent-light: {{ themecolor_accentLight }};
         {% endif %}
+        {% if themecolor_accentLight_two|default %}
+            --accent-two-light: {{ themecolor_accentLight_two }};
+        {% endif %}
         }
     </style>
     </head>
@@ -84,7 +88,7 @@
         Keyboard navigation/accessibility link to main content section in
         page.html.twig.
     #}
-    <a href="#main-content" class="visually-hidden focusable">
+    <a href="#main-content" class="visually-hidden focusable" role="navigation">
         {{ 'Skip to main content'|t }}
     </a>
     {{ page_top }}

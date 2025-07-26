@@ -1,5 +1,5 @@
 #root {
-  font-size: max(min(1.05rem, 1.8vw), 16px);
+    font-size: max(min(1.05rem, 1.8vw), 16px);
 }
 
 .priority::before {

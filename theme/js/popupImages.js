@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 var clone = target.cloneNode(true);
                 clone.removeChild(clone.firstChild);
-                clone.classList.add("popup");
                 clone.addEventListener("click", (e) => {
                     var target = e.target;
                     if (target.tagName.toLowerCase() == "img") {

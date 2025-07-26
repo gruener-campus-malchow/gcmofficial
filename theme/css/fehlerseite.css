@@ -8,7 +8,7 @@ body {
     margin-top: 2vw;
     margin-left: 24vw;
     margin-right: 6vw;
-    width: 50%;
+    width: 50% !important;
 }
 .region-content {
     color: white;
