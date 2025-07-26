@@ -6,13 +6,18 @@
 </div>
 {% endif %}
 <div class="aside-container">
-    <!--<div class="TOC">
-        {% for header in header_names %}
+    <div class="TOC">
+        <h2>Table of Contents</h2>
+        {% if header_names is not empty %}
+            {% for header in header_names %}
                 <a class="btn-like" href="#header-{{ loop.index0 }}">{{ header }}</a>
-        {% endfor %}
-    </div>-->
+            {% endfor %}
+        {% else %}
+            <p>No headers found.</p>
+        {% endif %}
+    </div>
     <div role="main">
-        {{ content.body }}
+        {{ content }}
     </div>
 </div>
 {{ content.field_dateien }}

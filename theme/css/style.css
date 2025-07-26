@@ -563,3 +563,7 @@ div#block-schulpreis img {
     width: 100%;
     display: block;
 }
+
+.TOC {
+    display: none;
+}

@@ -233,8 +233,18 @@ function gcmofficial_preprocess_node__intern(&$variables)
     }
 }
 
-function gcmofficial_preprocess_page(&$variables)
-{
+/*
+function gcmofficial_preprocess_page(&$variables)  {
+    $field_name = "body";
+    if ($variables["node"]->hasField($field_name)) {
+        $body = $variables["node"]->get($field_name);
+        if (!$body->isEmpty()) {
+            $body->setValue("TEST");
+            dsm($body->value);
+        }
+    }
+    $body = $variables["node"];
+    kint($body);
     // Initialize an array to hold header names.
     $header_names = [];
 
@@ -278,4 +288,46 @@ function gcmofficial_preprocess_page(&$variables)
     }
     dsm($variables);
 
-}
+*/
+
+    /**
+     * Implements hook_preprocess_field__FIELD_NAME().
+     *
+     * Replace FIELD_NAME with the machine name of your body field (e.g., 'body').
+     */
+    function gcmofficial_preprocess_field__body(&$variables) {
+        // Check if the field is for a node and the view mode is 'full' (or whatever you need).
+        if (isset($variables['element']['#object']) && $variables['element']['#object'] instanceof \Drupal\node\NodeInterface && $variables['element']['#view_mode'] == 'full') {
+            // Get the current field content as a render array.
+            $items = $variables['items'];
+
+            $header_names = [];
+            // Iterate through each item of the field (useful if it's a multi-value field).
+            foreach ($items as &$item) {
+                if (isset($item['content']['#text']) && is_string($item['content']['#text'])) {
+                    $original_markup = $item['content']['#text'];
+
+                    // Ensure original markup is UTF-8
+                    $original_markup = mb_convert_encoding($original_markup, 'HTML-ENTITIES', 'UTF-8');
+
+                    $dom = new \DOMDocument('1.0', 'UTF-8');
+                    @$dom->loadHTML( $original_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+                    $xpath = new \DOMXPath($dom);
+                    $nodes = $xpath->query('//h1 | //h2 | //h3 | //h4 | //h5 | //h6');
+
+                    foreach ($nodes as $index => $node) {
+                        $header_name = trim($node->textContent); // Get the text content of the header.
+                        $header_names[] = $header_name; // Save the header name in the array.
+                        $node->setAttribute('id', '#header-' . ($index));
+                    }
+
+                    // Save the modified HTML back as UTF-8
+                    $item['content']['#text'] = $dom->saveHTML();
+                }
+            }
+
+            $variables['items'] = $items;
+            $variables['header_names'] = $header_names;
+        }
+    }
