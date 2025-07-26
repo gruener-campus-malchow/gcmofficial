@@ -6,8 +6,13 @@
 </div>
 {% endif %}
 <div class="aside-container">
+    <!--<div class="TOC">
+        {% for header in header_names %}
+                <a class="btn-like" href="#header-{{ loop.index0 }}">{{ header }}</a>
+        {% endfor %}
+    </div>-->
     <div role="main">
-    {{ content.body }}
+        {{ content.body }}
     </div>
 </div>
 {{ content.field_dateien }}
