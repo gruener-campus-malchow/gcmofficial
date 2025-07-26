@@ -308,7 +308,8 @@ function gcmofficial_preprocess_page(&$variables)  {
                     $original_markup = $item['content']['#text'];
 
                     // Ensure original markup is UTF-8
-                    $original_markup = mb_convert_encoding($original_markup, 'HTML-ENTITIES', 'UTF-8');
+                    $original_markup = mb_convert_encoding('<div>'.$original_markup.'</div>', 'HTML-ENTITIES', 'UTF-8');
+                    kint($original_markup);
 
                     $dom = new \DOMDocument('1.0', 'UTF-8');
                     @$dom->loadHTML( $original_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
