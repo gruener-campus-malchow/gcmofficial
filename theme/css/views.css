@@ -126,6 +126,10 @@
     font-size: 1em;
 }
 
+.views-field-view-node {
+    display: inline-block;
+}
+
 .views-field-view-node a {
     text-decoration: none;
     background-color: blue;
@@ -138,7 +142,6 @@
     border-radius: 3px;
     font-size: 0.8em;
     float: left;
-    margin: 0 1em;
 }
 
 .views-field-body p {
@@ -152,8 +155,10 @@
 
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
+.views-field-field-tags a,
 .field--name-field-stufe-tag .field__item,
-.field--name-field-faecher-tag .field__item {
+.field--name-field-faecher-tag .field__item,
+.field--name-field-tags .field{
     text-decoration: none;
     background-color: palegreen;
     background-color: var(--primary-light);
@@ -175,6 +180,12 @@
 .field--name-field-faecher-tag .field__item {
     background-color: powderblue;
     background-color: var(--accent-light);
+}
+
+.views-field-field-tags a,
+.field--name-field-tags .field__item {
+    background-color: palegoldenrod;
+    background-color: var(--accent-two-light);
 }
 
 .view-fachbereiche .view-content a {
@@ -298,7 +309,6 @@
     background: white;
     border-radius: 20px;
     padding-bottom: 1em;
-    views
 }
 
 .view-kurzmeldungen .views-row {
