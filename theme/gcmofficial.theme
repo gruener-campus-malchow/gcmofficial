@@ -233,12 +233,13 @@ function gcmofficial_preprocess_node__intern(&$variables)
     }
 }
 
-    /**
-     * Implements hook_preprocess_field__FIELD_NAME().
-     *
-     * Replace FIELD_NAME with the machine name of your body field (e.g., 'body').
-     */
-function gcmofficial_preprocess_field__body(&$variables) {
+/**
+ * Implements hook_preprocess_field__FIELD_NAME().
+ *
+ * Replace FIELD_NAME with the machine name of your body field (e.g., 'body').
+ */
+function gcmofficial_preprocess_field__body(&$variables)
+{
     // Check if the field is for a node and the view mode is 'full'
     if (isset($variables['element']['#object']) &&
         $variables['element']['#object'] instanceof \Drupal\node\NodeInterface &&
@@ -250,12 +251,13 @@ function gcmofficial_preprocess_field__body(&$variables) {
         }
 
         $items = $variables['items'];
+        $headers = [];
         $headerHierarchy = [];
         $headerStack = [];
 
         foreach ($items as &$item) {
             if (isset($item['content']['#text']) && is_string($item['content']['#text'])) {
-                $original_markup = mb_convert_encoding('<div>'.$item['content']['#text'].'</div>', 'HTML-ENTITIES', 'UTF-8');
+                $original_markup = mb_convert_encoding('<div>' . $item['content']['#text'] . '</div>', 'HTML-ENTITIES', 'UTF-8');
 
                 $dom = new \DOMDocument('1.0', 'UTF-8');
                 @$dom->loadHTML($original_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -263,48 +265,62 @@ function gcmofficial_preprocess_field__body(&$variables) {
                 $xpath = new \DOMXPath($dom);
                 $nodes = $xpath->query('//h1 | //h2 | //h3 | //h4 | //h5 | //h6');
 
-                foreach ($nodes as $index => $node) {
-                    $headerLevel = (int)substr($node->nodeName, 1);
-                    $header_name = trim(strip_tags($node->textContent));
-                    $headerId = $node->getAttribute('id') ?: 'header-' . $index;
-                    $node->setAttribute('id', $headerId);
+                foreach ($items as &$item) {
+                    if (isset($item['content']['#text']) && is_string($item['content']['#text'])) {
+                        $original_markup = mb_convert_encoding('<div>' . $item['content']['#text'] . '</div>', 'HTML-ENTITIES', 'UTF-8');
 
-                    $header = [
-                        'text' => $header_name,
-                        'id' => $headerId,
-                        'level' => $headerLevel,
-                        'children' => []
-                    ];
+                        // Parse HTML to extract headers.
+                        $dom = new \DOMDocument('1.0', 'UTF-8');
+                        @$dom->loadHTML($original_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
-                    $pointer = &$header;
+                        $xpath = new \DOMXPath($dom);
+                        $nodes = $xpath->query('//h2 | //h3 | //h4 | //h5 | //h6');
 
-                    // go up to last higher header
-                    while (!empty($headerStack) && $headerStack[count($headerStack) - 1]['level'] >= $headerLevel) {
-                        array_pop($headerStack);
+                        foreach ($nodes as $index => $node) {
+                            $headerLevel = (int)substr($node->nodeName, 1);
+                            $header_name = trim(strip_tags($node->textContent));
+                            $headerId = $node->getAttribute('id') ?: 'header-' . $index;
+                            $node->setAttribute('id', $headerId);
+
+                            // Create a unique header entry as a new array to avoid overwriting
+                            $headers[] = [
+                                'text' => $header_name,
+                                'id' => $headerId,
+                                'level' => $headerLevel,
+                                'children' => []
+                            ];
+                        }
+                        foreach ($headers as $header) {
+                            $level = $header['level'];
+                            $header['children'] = []; // Ensure children is an empty array
+
+                            // Remove items from stack until we find the correct parent level
+                            while (!empty($headerStack) && $headerStack[array_key_last($headerStack)]['level'] >= $level) {
+                                array_pop($headerStack);
+                            }
+
+                            if (empty($headerStack)) {
+                                // Top-level header
+                                $headerHierarchy[] = $header;
+                                $headerStack[] = &$headerHierarchy[array_key_last($headerHierarchy)];
+                            } else {
+                                // Child header
+                                $parent = &$headerStack[array_key_last($headerStack)];
+                                $parent['children'][] = $header;
+                                $headerStack[] = &$parent['children'][array_key_last($parent['children'])];
+                            }
+                        }
+                        kint($headerStack);
+
+
+                        // Save the modified HTML back
+                        $item['content']['#text'] = $dom->saveHTML();
                     }
-
-                    if (empty($headerStack)) {
-                        $headerHierarchy[] = [];
-                        $headerHierarchy[count($headerHierarchy) - 1] = $pointer;
-                    } else {
-                        $headerStack[count($headerStack) - 1]['children'][] = $pointer;
-                    }
-                    $headerStack[] = $pointer;
-                    kint($headerHierarchy);
                 }
-                kint($headerStack);
-                // Save the modified HTML back
-                $item['content']['#text'] = $dom->saveHTML();
+                kint($headerHierarchy);
+                $variables['items'] = $items;
+                $variables['header_hierarchy'] = $headerHierarchy;
             }
         }
-        kint($headerHierarchy);
-        $variables['items'] = $items;
-        $variables['header_hierarchy'] = $headerHierarchy;
     }
 }
-
-
-
-
-
-

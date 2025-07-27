@@ -1,6 +1,6 @@
 {% macro render_header_hierarchy(hierarchy) %}
     {% if hierarchy is not empty %}
-        <ol>
+        <ul>
             {% for header in hierarchy %}
                 <li>
                     <a href="#{{ header.id }}">{{ header.text }}</a>
@@ -9,7 +9,7 @@
                     {% endif %}
                 </li>
             {% endfor %}
-        </ol>
+        </ul>
     {% endif %}
 {% endmacro %}
 
