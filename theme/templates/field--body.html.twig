@@ -1,11 +1,24 @@
-{% if header_names is not empty %}
-    <div class="TOC">
-        <h2>Inhaltsverzeichnis</h2>
+{% macro render_header_hierarchy(hierarchy) %}
+    {% if hierarchy is not empty %}
         <ol>
-            {% for header in header_names %}
-                <li><a href="#header-{{ loop.index0 }}">{{ header }}</a></li>
+            {% for header in hierarchy %}
+                <li>
+                    <a href="#{{ header.id }}">{{ header.text }}</a>
+                    {% if header.children is not empty %}
+                        {{ _self.render_header_hierarchy(header.children) }}
+                    {% endif %}
+                </li>
             {% endfor %}
         </ol>
+    {% endif %}
+{% endmacro %}
+
+{% import _self as macros %}
+
+{% if header_hierarchy is not empty %}
+    <div class="TOC">
+        <h2>Inhaltsverzeichnis</h2>
+        {{ macros.render_header_hierarchy(header_hierarchy) }}
     </div>
 {% endif %}
 
