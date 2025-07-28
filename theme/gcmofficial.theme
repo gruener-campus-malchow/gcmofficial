@@ -276,13 +276,17 @@ function gcmofficial_preprocess_field__body(&$variables)
                         $xpath = new \DOMXPath($dom);
                         $nodes = $xpath->query('//h2 | //h3 | //h4 | //h5 | //h6');
 
+                        // Loop through all header nodes found and extract necessary data
                         foreach ($nodes as $index => $node) {
                             $headerLevel = (int)substr($node->nodeName, 1);
-                            $header_name = trim(strip_tags($node->textContent));
+                            $header_name = trim(preg_replace(
+                                '/\s+/',  // Replace consecutive whitespace characters (spaces, tabs, newlines) with a single space
+                                ' ',
+                                strip_tags($node->textContent)  // Remove HTML tags from the text
+                            ));
                             $headerId = $node->getAttribute('id') ?: 'header-' . $index;
                             $node->setAttribute('id', $headerId);
 
-                            // Create a unique header entry as a new array to avoid overwriting
                             $headers[] = [
                                 'text' => $header_name,
                                 'id' => $headerId,
@@ -290,6 +294,7 @@ function gcmofficial_preprocess_field__body(&$variables)
                                 'children' => []
                             ];
                         }
+                        // Build the hierarchical structure for headers
                         foreach ($headers as $header) {
                             $level = $header['level'];
                             $header['children'] = []; // Ensure children is an empty array
@@ -310,14 +315,10 @@ function gcmofficial_preprocess_field__body(&$variables)
                                 $headerStack[] = &$parent['children'][array_key_last($parent['children'])];
                             }
                         }
-                        kint($headerStack);
-
-
                         // Save the modified HTML back
                         $item['content']['#text'] = $dom->saveHTML();
                     }
                 }
-                kint($headerHierarchy);
                 $variables['items'] = $items;
                 $variables['header_hierarchy'] = $headerHierarchy;
             }
