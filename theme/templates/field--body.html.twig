@@ -22,18 +22,14 @@
     </div>
 {% endif %}
 
-<div class="aside-container">
-    <div role="main">
-        {% if multiple %}
-            <div{{ attributes }}>
-                {% for item in items %}
-                    <div{{ item.attributes }}>{{ item.content }}</div>
-                {% endfor %}
-            </div>
-        {% else %}
-            {% for item in items %}
-                <div{{ attributes }}>{{ item.content }}</div>
-            {% endfor %}
-        {% endif %}
+{% if multiple %}
+    <div{{ attributes }}>
+        {% for item in items %}
+            <div{{ item.attributes }}>{{ item.content }}</div>
+        {% endfor %}
     </div>
-</div>
+{% else %}
+    {% for item in items %}
+        <div{{ attributes }}>{{ item.content }}</div>
+    {% endfor %}
+{% endif %}
