@@ -138,8 +138,8 @@ h4,
 h5,
 h6,
 .field__label {
-    color: royalblue;
-    color: var(--accent);
+    color: darkgreen;
+    color: var(--primary-dark);
     line-height: 1em;
 }
 
