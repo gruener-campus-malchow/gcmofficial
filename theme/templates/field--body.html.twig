@@ -22,6 +22,7 @@
     </div>
 {% endif %}
 
+<div class="field--name-body">
 {% if multiple %}
     <div{{ attributes }}>
         {% for item in items %}
@@ -33,3 +34,4 @@
         <div{{ attributes }}>{{ item.content }}</div>
     {% endfor %}
 {% endif %}
+</div>

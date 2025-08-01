@@ -28,8 +28,6 @@ stufen:
       css/stufen.css: {}
 
 fachbereich:
-  js:
-    js/fachbereich.js: {}
   css:
     theme:
       css/fachbereich.css: {}
