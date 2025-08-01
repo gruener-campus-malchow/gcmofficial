@@ -1,6 +1,7 @@
 #block-gcmofficial-page-title {
     width: 0 !important;
     height: 0;
+    overflow: hidden;
 }
 
 #titelbild,
@@ -132,6 +133,11 @@
     transition: opacity 1s;
 }
 
+#herobox .field--name-field-banner {
+    max-height: calc(66vh - 8.58vw - 2em);
+    overflow: hidden;
+}
+
 #herobox h2,
 #herobox a {
     color: white;
@@ -140,11 +146,9 @@
 
 #herobox h2 {
     font-size: 1.8em;
-    /* font-family: "Cabin"; */
 }
 
 #herobox a::before {
-    /* content: '↗ '; */
     content: '☞ ';
     font-size: 1.2em;
 }
@@ -188,24 +192,25 @@
 }
 
 .view-kurzmeldungen {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
   margin-bottom: 1em;
 }
 
 .view-kurzmeldungen .view-content {
   background: none;
   display: inline-block;
+  width: 100%;
 }
 
 .view-kurzmeldungen .views-row {
-  width: 40vw;
+  width: 100%;
   display: inline-block;
   margin: 0;
   padding: 0;
   max-height: 2.5em;
   overflow: hidden;
   border-radius: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .view-kurzmeldungen .views-field {
