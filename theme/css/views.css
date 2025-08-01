@@ -66,10 +66,10 @@
 }
 
 .views-row {
-    flex: 0 1 30%;
-    /* overridden by breaks/... */
+    flex: 0 1 30%; /* overridden by breaks */
     margin-bottom: 4vw;
     overflow-wrap: break-word;
+    z-index: 2;
 }
 
 .views-field-field-prioritaet {
@@ -81,17 +81,21 @@
 }
 
 .views-field-field-titelbild {
-    overflow: hidden;
-    width: 100%;
-    height: 14vw;
-    background-color: #ddd;
+  overflow: hidden;
+  width: 100%;
+  height: 20vw;
+  background-color: #ddd;
+}
+
+.views-field-field-titelbild .field-content {
+  width: 100%;
+  height: 20vw;
 }
 
 .views-field-field-titelbild img {
-    width: 100%;
-    height: 100%;
-    transform: translateY(-50%);
-    transform: translateY(calc(-50% + 7vw));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .view-content .views-row h2 {
@@ -126,10 +130,39 @@
     font-size: 1em;
 }
 
+.views-field-view-node {
+    display: inline-block;
+}
+
+.views-field-view-node a {
+    text-decoration: none;
+    background-color: blue;
+    background-color: var(--accent);
+    color: white;
+    color: var(--text-on-primary);
+    font-weight: bold;
+    padding: 0 0.8em;
+    line-height: 2.5em;
+    border-radius: 3px;
+    font-size: 0.8em;
+    float: left;
+}
+
+.views-field-body p {
+    margin-bottom: 0.2em;
+}
+.views-field-view-node:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .views-field-field-stufe-tag a,
 .views-field-field-faecher-tag a,
-.field--name-field-stufe-tag .field__item,
-.field--name-field-faecher-tag .field__item {
+.views-field-field-tags a,
+.field--name-field-stufe-tag .field__item a,
+.field--name-field-faecher-tag .field__item a,
+.field--name-field-tags .field__item a {
     text-decoration: none;
     background-color: palegreen;
     background-color: var(--primary-light);
@@ -142,13 +175,19 @@
     font-size: 0.8em;
     white-space: nowrap;
     float: left;
-    margin: 0.25em;
+    margin: 0.25em 0.25em 0.25em 0;
 }
 
 .views-field-field-faecher-tag a,
-.field--name-field-faecher-tag .field__item {
+.field--name-field-faecher-tag .field__item a {
     background-color: powderblue;
     background-color: var(--accent-light);
+}
+
+.views-field-field-tags a,
+.field--name-field-tags .field__item a {
+    background-color: gold;
+    background-color: var(--accent-two-light);
 }
 
 .view-fachbereiche .view-content a {
@@ -187,8 +226,16 @@
     background-size: contain;
 }
 
+.field--name-field-stufe-tag,
+.field--name-field-faecher-tag,
+.field--name-field-tags {
+    float: left;
+    width: unset !important;
+}
+
 .field--name-field-stufe-tag .field__item,
-.field--name-field-faecher-tag .field__item {
+.field--name-field-faecher-tag .field__item,
+.field--name-field-tags .field__item {
     display: inline;
 }
 
@@ -199,11 +246,6 @@
 }
 
 .field--name-field-beginn {
-    float: left;
-    margin-right: 1em;
-}
-
-.field--name-field-stufe-tag {
     float: left;
     margin-right: 1em;
 }
@@ -224,7 +266,7 @@
 }
 
 .field--name-field-ende::before {
-    content: "bis ";
+    content: "Bis ";
 }
 
 .field--name-field-beginn+.field--name-field-ende {
@@ -238,17 +280,6 @@
 .views-field-field-beginn .field-content,
 .views-field-field-ende .field-content {
     padding-left: 0.2em;
-}
-
-.views-field-field-beginn~.views-field-body,
-.field--name-field-stufe-tag~.field,
-.field--name-field-faecher-tag~.field {
-    float: left;
-    width: 100%;
-}
-
-.field--name-field-stufe-tag~.field--name-field-faecher-tag {
-    width: unset;
 }
 
 .block-views,
@@ -272,7 +303,6 @@
     background: white;
     border-radius: 20px;
     padding-bottom: 1em;
-    views
 }
 
 .view-kurzmeldungen .views-row {
@@ -290,13 +320,14 @@
 
 .views-field-field-titelbild,
 .views-field-field-prioritaet {
+    position: relative;
     padding: 0;
     width: 100%;
     border-radius: 20px 20px 0 0;
 }
 
 .views-field-field-prioritaet~.views-field-field-titelbild {
-    border-radius: 0;
+    top: -1.5em;
 }
 
 .view-kurzmeldungen .views-field-title {

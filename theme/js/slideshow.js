@@ -106,9 +106,10 @@ function ontheload() {
     main(); // start slideshow
 }
 
+// rotate news ticker
 var newsSlideIndex = 0;
 function newsticker() {
-    newsSlideIndex = toggle(true, document.querySelectorAll("#block-views-block-kurzmeldungen-block-1 .views-row"), newsSlideIndex);
+    newsSlideIndex = toggle(true, document.querySelectorAll("#view-kurzmeldungen .views-row"), newsSlideIndex);
 }
 
 setInterval(newsticker, 8000);
