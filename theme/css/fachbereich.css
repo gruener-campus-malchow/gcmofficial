@@ -2,7 +2,7 @@
     margin-top: 0 !important;
 }
 
-.aside-container>div:first-child {
+.aside-container > div:first-child {
     margin-top: calc(9vw + 2em);
 }
 
@@ -58,19 +58,4 @@ img.align-left {
 
 img.align-right {
     padding-left: 1em;
-}
-
-.field--name-field-bildergalerie .field__items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7vw;
-}
-
-.field--name-field-bildergalerie .field__item {
-    flex: 1 0 30%;
-}
-
-.field--name-field-bildergalerie .field__item img {
-    height: 100%;
-    object-fit: cover;
 }

@@ -29,6 +29,13 @@
     flex-direction: column;
 }
 
+.popup::before {
+  content: 'Noch einmal Klicken zum Schließen';
+  color: white;
+  position: absolute;
+  top: 0.4em;
+}
+
 .popup img {
     max-width: 80%;
     margin: 5vh 0;
@@ -44,4 +51,5 @@
     background-color: #0006;
     padding: 0.5em;
     border-radius: 0.5em;
+    direction: ltr;
 }

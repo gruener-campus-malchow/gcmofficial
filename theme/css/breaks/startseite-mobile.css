@@ -8,8 +8,11 @@ h2 {
     height: min-content;
     padding: 0.5em 20% !important;
     width: 60% !important;
-    max-height: max(35vh, 26.4vw);
     border-radius: 0;
+}
+
+#herobox .field--name-field-banner {
+    max-height: calc(max(35vh, 26.4vw) - 2em);
 }
 
 #herobox p {
@@ -42,10 +45,6 @@ h2 {
 #block-views-block-aktuelles-block-1 {
     margin-top: 4.5em;
     padding-top: 0;
-}
-
-.view-kurzmeldungen {
-    display: none;
 }
 
 footer {

@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.field--name-field-standort>.field__item {
+.field--name-field-standort > .field__item {
     padding-bottom: 2.5em;
     border-bottom: 2px solid #ddd;
     margin-bottom: 1.5em;

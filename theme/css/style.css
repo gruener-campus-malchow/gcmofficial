@@ -9,6 +9,7 @@
     --text-on-primary: white;
     --accent: royalblue;
     --accent-light: powderblue;
+    --accent-two-light: gold;
 }
 
 .dialog-off-canvas-main-canvas {
@@ -46,22 +47,22 @@ footer .region-footer {
 /* Grant every block of the page the same padding as the overall page (see above)
    Exceptions: Breadcrumbs, title, and main content block
    Instead of the main content block, every element in it, the fields of the page will be granted a padding */
-#main .region-content>*,
-#main .region-content .block-system-main-block>* {
-    padding: 0 10%;
-    width: 80%;
+#main .region-content > *,
+#main .region-content .block-system-main-block > * {
+  padding: 0 10%;
+  width: 80%;
 }
 
 #main .region-content .block-system-breadcrumb-block,
 #main .region-content .block-page-title-block {
-    padding: 0;
-    margin-left: 10%;
-    width: unset;
+  padding: 0;
+  margin-left: 10%;
+  width: unset;
 }
 
 #main .region-content .block-system-main-block {
-    padding: 0;
-    width: 100%;
+  padding: 0;
+  width: 100%;
 }
 
 /* remove Safari's default design of buttons */
@@ -138,8 +139,8 @@ h4,
 h5,
 h6,
 .field__label {
-    color: royalblue;
-    color: var(--accent);
+    color: darkgreen;
+    color: var(--primary-dark);
     line-height: 1em;
 }
 
@@ -152,16 +153,15 @@ h2 {
 }
 
 h3 {
-    font-size: 1.25em;
+   font-size: 1.25em;
 }
 
 h4 {
-    font-size: 1.17em;
+   font-size: 1.17em;
 }
 
-h5,
-h6 {
-    font-size: 1em;
+h5, h6 {
+   font-size: 1em;
 }
 
 .field__label {
@@ -170,9 +170,9 @@ h6 {
 }
 
 .field--label-inline .field__label {
-    font-size: 1em;
-    margin: 0;
-    line-height: 1.5em;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5em;
 }
 
 a {
@@ -455,16 +455,23 @@ button,
     font-size: 1.4em;
 }
 
+#main .field--name-body > :not(img),
+.article-content > :not(img) {
+    display: inline-block;
+    width: 100%;
+}
+
 footer {
     margin-top: 5vw;
     padding-top: 1em;
 }
 
-footer .site-name {
-    width: 65vw;
-    margin: 4vw 0 0 0;
-    font-size: 1.4vw;
-    float: right;
+footer .block-system-branding-block {
+    position: absolute;
+}
+
+footer .site-logo img {
+    width: min(25vw, 9em);
 }
 
 footer .menu--footer ul {
@@ -491,31 +498,31 @@ ul.menu a.is-active {
 }
 
 .social {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .social__media {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 50px;
-    height: min-content;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 50px;
+  height: min-content;
 }
 
 .social__icon {
-    height: 100%;
-    list-style: none;
-    margin-inline: 8px;
-    margin-bottom: 8px;
+  height: 100%;
+  list-style: none;
+  margin-inline: 8px;
+  margin-bottom: 8px;
 }
 
 .social__icon-img {
-    height: 20px;
-    height: max(1em, 20px);
+  height: 20px;
+  height: max(1em, 20px);
 }
 
 nav#block-gcmofficial-footer {
@@ -524,7 +531,8 @@ nav#block-gcmofficial-footer {
 
 div#block-socialmediaicons,
 div#block-schulpreis {
-    width: 100%;
+    width: 70%;
+    margin-left: 30%;
 }
 
 div#block-socialmediaicons {
@@ -533,6 +541,10 @@ div#block-socialmediaicons {
 
 div#block-schulpreis {
     margin-bottom: 1.5em;
+    min-height: 6.5em;
+    display: flex;
+    justify-content: end;
+    align-items: end;
 }
 
 div#block-schulpreis a {
@@ -551,4 +563,8 @@ div#block-schulpreis img {
 .authoring-information {
     width: 100%;
     display: block;
+}
+/*
+.TOC {
+    display: none;
 }

@@ -10,22 +10,22 @@ function gcmofficial_preprocess_paragraph__standort(&$variables)
 {
     $paragraph = $variables['paragraph'];
 
-  if (!$paragraph->field_roomnumber_radio->isEmpty()) { // would produce error if empty, checks if there is a checkbox input
-    $roomnumbers = $paragraph->field_roomnumber_radio->value; // bool: whether or not there should be a link
-    if (!empty($roomnumbers)) {
-      $variables['roomnumbers'] = $roomnumbers; // add bool to variables to be accessed by Twig template (paragraph--standort.html.twig)
+    if (!$paragraph->field_roomnumber_radio->isEmpty()) { // would produce error if empty, checks if there is a checkbox input
+        $roomnumbers = $paragraph->field_roomnumber_radio->value; // bool: whether or not there should be a link
+        if (!empty($roomnumbers)) {
+            $variables['roomnumbers'] = $roomnumbers; // add bool to variables to be accessed by Twig template (paragraph--standort.html.twig)
+        }
     }
-  }
 
-  $address = strip_tags($paragraph->field_adresse->value);
-  $address = array_filter(explode("\n", str_replace("\r", "\n", $address)));
-  $address = implode(", ", $address);
-  $variables['plain'] = [
-    'title' => $paragraph->field_location_title->value,
-    'longitude' => $paragraph->field_longitude->value,
-    'latitude' => $paragraph->field_latitude->value,
-    'address' => $address
-  ];
+    $address = strip_tags($paragraph->field_adresse->value);
+    $address = array_filter(explode("\n", str_replace("\r", "\n", $address)));
+    $address = implode(", ", $address);
+    $variables['plain'] = [
+        'title' => $paragraph->field_location_title->value,
+        'longitude' => $paragraph->field_longitude->value,
+        'latitude' => $paragraph->field_latitude->value,
+        'address' => $address
+    ];
 }
 
 // administered through Responsive Image module

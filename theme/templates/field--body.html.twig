@@ -1,0 +1,37 @@
+{% macro render_header_hierarchy(hierarchy) %}
+    {% if hierarchy is not empty %}
+        <ul>
+            {% for header in hierarchy %}
+                <li>
+                    <a href="#{{ header.id }}">{{ header.text }}</a>
+                    {% if header.children is not empty %}
+                        {{ _self.render_header_hierarchy(header.children) }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% import _self as macros %}
+
+{% if header_hierarchy is not empty %}
+    <div class="TOC">
+        <h2>Inhaltsverzeichnis</h2>
+        {{ macros.render_header_hierarchy(header_hierarchy) }}
+    </div>
+{% endif %}
+
+<div class="field--name-body">
+{% if multiple %}
+    <div{{ attributes }}>
+        {% for item in items %}
+            <div{{ item.attributes }}>{{ item.content }}</div>
+        {% endfor %}
+    </div>
+{% else %}
+    {% for item in items %}
+        <div{{ attributes }}>{{ item.content }}</div>
+    {% endfor %}
+{% endif %}
+</div>
