@@ -2,7 +2,6 @@
     --spacing: 1em;
     width: 100%;
     width: calc(100% + var(--spacing));
-    margin-top: 9em;
     padding: 0;
     display: flex;
     justify-content: space-between;

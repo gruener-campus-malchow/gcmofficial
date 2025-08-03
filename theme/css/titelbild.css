@@ -40,16 +40,30 @@
     max-height: 100vh;
 }
 
-#main .field--name-body, .article-content {
-    margin-top: 9em;
+.field--name-body, .article-content {
+    margin-top: calc(9vw + 2em);
 }
 
-#main .aside-container .field--name-body {
+.aside-container .field--name-body,
+.article-content .field--name-body,
+footer .field--name-body {
     margin-top: 0;
 }
 
-#main .article-content .field--name-body {
+.aside-container > div:first-child {
+    margin-top: calc(9vw + 2em);
+}
+
+.aside-container aside {
+    margin-top: calc(2vw + 5.2em);
+}
+
+.aside-container aside div:first-child {
     margin-top: 0;
+}
+
+.aside-container aside div {
+    margin-top: 1em;
 }
 
 #main {

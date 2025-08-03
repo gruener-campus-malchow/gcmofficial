@@ -2,22 +2,6 @@
     margin-top: 0 !important;
 }
 
-.aside-container > div:first-child {
-    margin-top: calc(9vw + 2em);
-}
-
-.aside-container aside {
-    margin-top: calc(2vw + 5.2em);
-}
-
-.aside-container aside div:first-child {
-    margin-top: 0;
-}
-
-.aside-container aside div {
-    margin-top: 1em;
-}
-
 #titelbild {
     margin-top: -1.5em;
 }

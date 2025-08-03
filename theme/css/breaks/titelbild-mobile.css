@@ -22,3 +22,15 @@ header {
 .field--name-body {
     margin-top: calc(22vw + 2em);
 }
+
+.aside-container > div:first-child,
+.article-content {
+    margin-top: calc(15vw + 5em);
+}
+
+@media all and (max-width: 500px) {
+    .aside-container > div:first-child,
+    .article-content {
+        margin-top: calc(22vw + 5em);
+    }
+}
