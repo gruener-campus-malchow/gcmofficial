@@ -257,10 +257,21 @@ function gcmofficial_preprocess_field__body(&$variables)
 
         foreach ($items as &$item) {
             if (isset($item['content']['#text']) && is_string($item['content']['#text'])) {
-                $original_markup = mb_convert_encoding('<div>' . $item['content']['#text'] . '</div>', 'HTML-ENTITIES', 'UTF-8');
+                // Try with explicit HTML5 meta tag
+                $original_markup = '<meta charset="utf-8"><div>' . $item['content']['#text'] . '</div>';
+                //$original_markup = htmlentities($original_markup, ENT_QUOTES, 'UTF-8');
+
 
                 $dom = new \DOMDocument('1.0', 'UTF-8');
-                @$dom->loadHTML($original_markup, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+                $dom->xmlVersion = '1.0';
+                $dom->encoding = 'UTF-8';
+
+                @$dom->loadHTML($original_markup,
+                    LIBXML_HTML_NOIMPLIED |
+                    LIBXML_HTML_NODEFDTD |
+                    LIBXML_NOERROR |
+                    LIBXML_NOWARNING
+                );
 
                 $xpath = new \DOMXPath($dom);
                 $nodes = $xpath->query('//h1 | //h2 | //h3 | //h4 | //h5 | //h6');
@@ -274,7 +285,6 @@ function gcmofficial_preprocess_field__body(&$variables)
                     ));
                     $headerId = $node->getAttribute('id') ?: 'header-' . $index;
                     $node->setAttribute('id', $headerId);
-
                     $headers[] = [
                         'text' => $header_name,
                         'id' => $headerId,
@@ -304,7 +314,7 @@ function gcmofficial_preprocess_field__body(&$variables)
                     }
                 }
                 // Save the modified HTML back
-                $item['content']['#text'] = $dom->saveHTML();
+                $item['content']['#text'] = $dom->saveHTML($dom->getElementsByTagName('div')->item(0));
             }
         }
         $variables['items'] = $items;

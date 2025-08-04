@@ -7,6 +7,8 @@ libraries:
   - gcmofficial/global-styling
 
 base theme: classy
+dependencies:
+  - classy:classy
 regions:
   branding: Branding
   navigation: Main navigation
