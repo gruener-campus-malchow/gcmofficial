@@ -1,19 +1,27 @@
+critical:
+  header: true
+  js:
+    js/menu.js: {}
+
+# CSS hierarchy: base < layout < component < state (not in use) < theme
+#                lower files have higher importance than higher files when in same library
 global-styling:
-  version: 1.x
   js:
     js/script.js: {}
     js/popupImages.js: {}
   css:
-    theme:
+    base:
       css/fonts.css: {}
       css/style.css: {}
+    component:
       css/views.css: {}
-      css/breaks/mobile.css: {media: all and (max-width: 730px)}
       css/breaks/views-mobile.css: {media: all and (max-width: 730px)}
+      css/popupImages.css: {}
+    layout:
+      css/breaks/mobile.css: {media: all and (max-width: 730px)}
       css/breaks/small.css: {media: all and (min-width: 730px)}
       css/breaks/desktop-small.css: {media: all and (min-aspect-ratio: 121/100)}
       css/breaks/desktop.css: {media: all and (min-aspect-ratio: 17/10)}
-      css/popupImages.css: {}
 
 ag:
   js:
@@ -37,7 +45,7 @@ gallery:
   js:
     js/gallery.js: {}
   css:
-    theme:
+    component:
       css/gallery.css: {}
 
 startseite:
@@ -53,7 +61,7 @@ titelbild:
   js:
     js/slideshow.js: {media: screen and (min-width: 500px)}
   css:
-    theme:
+    component:
       css/titelbild.css: {}
       css/breaks/titelbild-mobile.css: {media: all and (max-width: 730px)}
       css/slideshow.css: {}
@@ -63,7 +71,7 @@ standort:
     js/leaflet/leaflet.js: {}
     js/standortkarte.js: {}
   css:
-    theme:
+    component:
       js/leaflet/leaflet.css: {}
       css/standort.css: {}
       css/standortkarte.css: {}

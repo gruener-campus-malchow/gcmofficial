@@ -4,12 +4,14 @@
     overflow: hidden;
 }
 
-#titelbild,
-#titelbild .field--name-field-titelbild,
-#titelbild .field__item {
-    height: calc(100vh - 13vw) !important;
-    max-height: 66.64vw;
-    min-height: 45vw;
+@media all and (min-width: 730px) {
+    #titelbild,
+    #titelbild .field--name-field-titelbild,
+    #titelbild .field__item {
+        height: calc(100vh - 13vw);
+        max-height: 66.64vw;
+        min-height: 45vw;
+    }
 }
 
 #titelbild img,

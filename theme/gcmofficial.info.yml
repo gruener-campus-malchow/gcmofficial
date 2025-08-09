@@ -4,9 +4,12 @@ description: 'Standard-Theme für die Schulwebsite'
 package: Other
 core_version_requirement: ^9 || ^10
 libraries:
+  - gcmofficial/critical
   - gcmofficial/global-styling
 
 base theme: classy
+dependencies:
+  - classy:classy
 regions:
   branding: Branding
   navigation: Main navigation
