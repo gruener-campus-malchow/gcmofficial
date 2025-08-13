@@ -1,7 +1,7 @@
 // ensure that every element has been loaded
 window.addEventListener("load", () => {
     const galerie = document.getElementsByClassName("field--name-field-bildergalerie")[0];
-    const items = Array.from(galerie.querySelectorAll("img"));
+    let items = Array.from(galerie.querySelectorAll("img"));
     imagesReady(galerie, items);
 });
 
@@ -17,25 +17,64 @@ function imagesReady(galerie, items) {
 
 function resizeGallery(galerie, items) {
     requestAnimationFrame(() => {
-        let relativeHeightSum = 0;
-        items.forEach((node) => {
-            let ratio = node.naturalWidth / node.naturalHeight;
-            if (ratio) {
-                relativeHeightSum += 1 / ratio;
+        const nCols = window.innerWidth >= window.innerHeight ? 3 : 2;
+        let virtualColumns = new Array(nCols).fill(0); // cumulative relative height sum
+        let virtualColumnsCollector = []; // objects, for determining position of last image
+        // fill virtual columns *naively*
+        // better algorithms could include a restriction of placement before/after already placed images or use Bayesian Optimization
+        while (items.length > 1) {
+            // just add image to smallest column
+            const smallest = virtualColumns.indexOf(Math.min(...virtualColumns));
+            // get the image to add -> when add to 1st column, use 1st image in items; when add to last column, use last image, etc.
+            let smallestIndex = smallest / (nCols - 1) * (items.length - 1);
+            let iterations = 1;
+            if (smallestIndex - Math.floor(smallestIndex) == 0.5) { // take 2 images instead if exactly half
+                smallestIndex -= 0.01; // guarantee Math.floor so that one image above and below is taken consecutively
+                iterations = 2;
             }
-        });
-        /* set aspect ratio of gallery so that there are n rows of images
-        * calculated by: sum of total relative height divided by number of rows and number of rows - 1
-        *                divided by 2 to get the average relative height optimum
-        *                divided by number of rows to get the corresponding aspect ratio
-        * I can't explain the factor N(rows) / 3; it was determined by trial and error
-        */
-        const nRows = window.innerWidth >= window.innerHeight ? 3 : 2;
-        relativeHeightSum += (items.length % nRows) * (relativeHeightSum / items.length); // guarantee that the last row is complete
-        const weight = ((nRows / 3) * (1 / (nRows - 1)) + (1 / nRows)) / 2;
-        const relativeHeightOptimum = relativeHeightSum * weight;
-        galerie.querySelector(".field__items").style.aspectRatio = "1/" + (relativeHeightOptimum / nRows).toFixed(2);
-        galerie.querySelector(".field__items").style.overflowX = "auto"; // sometimes the formula fails, e.g. if a long image is placed at an unsuitable position
+            smallestIndex = Math.round(smallestIndex);
+            for (let i = 0; i < iterations; i++) {
+                nextImage = items[smallestIndex];
+                // somehow the ratio naturalHeight/naturalWidth differs from offsetHeight/offsetWidth which the browser will finally use
+                // +0.01 -> offsetHeight/offsetWidth internal error (?)
+                virtualColumns[smallest] += nextImage.offsetHeight / nextImage.offsetWidth + 0.01;
+                virtualColumnsCollector.push([smallest, items[smallestIndex - 1], items[smallestIndex + 1]]);
+                items.splice(smallestIndex, 1)
+            }
+        }
+        // get neighboring columns of remaining image
+        const colBeforeAfter = [0, nCols - 1];
+        const colBeforeAfterSet = [false, false];
+        for (let im in virtualColumnsCollector) {
+            if (colBeforeAfterSet[0] && colBeforeAfterSet[1]) { break; }
+            im = virtualColumnsCollector[im];
+            for (let i = 0; i < 2; i++) {
+                if (colBeforeAfterSet[i]) { continue; }
+                if (im[i + 1] != undefined) {
+                    if (im[i + 1].src == items[0].src) {
+                        colBeforeAfter[i] = im[0];
+                        colBeforeAfterSet[i] = true;
+                    }
+                }
+            }
+        }
+        // add to smallest neighboring column
+        var smallest = null;
+        if (colBeforeAfter[0] == colBeforeAfter[1]) {
+            smallest = colBeforeAfter[0]
+        } else {
+            const selected = [virtualColumns[colBeforeAfter[0]]]
+            selected.push(virtualColumns[colBeforeAfter[1]]);
+            smallest = virtualColumns.indexOf(Math.min(...selected));
+        }
+        virtualColumns[smallest] += items[0].offsetHeight / items[0].offsetWidth + 0.01; // see above for +0.01
+
+        // determine height of container
+        const relativeHeightOptimum = Math.max(...virtualColumns);
+        galerie.querySelector(".field__items").style.aspectRatio = nCols + "/" + relativeHeightOptimum.toFixed(2);
+        // sometimes the algorithm fails, e.g. if a long image is placed at an unsuitable position
+        // can't be set beforehand via CSS as images won't fully load
+        galerie.querySelector(".field__items").style.overflowX = "auto";
     });
 }
 
