@@ -1,3 +1,0 @@
-fields in views:
-
-views-view-fields--VIEWNAME.html.twig

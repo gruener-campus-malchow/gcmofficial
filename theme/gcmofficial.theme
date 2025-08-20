@@ -216,20 +216,26 @@ function gcmofficial_preprocess_node__startseite(&$variables)
     ];
 }
 
-// Interne (benutzereingeschränkte) Seiten
-function gcmofficial_preprocess_node__intern(&$variables)
+function gcmofficial_preprocess_page(&$variables)
 {
-    $permitted_roles_raw = $variables["node"]->get('field_permitted')->referencedEntities();
-    $user_roles = \Drupal::currentUser()->getRoles();
-    $allowed = false;
-    foreach ($permitted_roles_raw as $role) {
-        if (in_array($role->get("id"), $user_roles)) {
-            $allowed = true;
-            break;
+    $route_match = \Drupal::routeMatch();
+    $node = $route_match->getParameter('node');
+    // Interne (benutzereingeschränkte) Seiten
+    if ($node instanceof \Drupal\node\NodeInterface && $node->getType() === 'intern') {
+        $permitted_roles_raw = $node->get('field_permitted')->referencedEntities();
+        $user_roles = \Drupal::currentUser()->getRoles();
+        $allowed = false;
+        foreach ($permitted_roles_raw as $role) {
+            if (in_array($role->get("id"), $user_roles)) {
+                $allowed = true;
+                break;
+            }
         }
-    }
-    if (!$allowed) {
-        throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException();
+        $variables['access_granted'] = $allowed;
+        if (!$allowed) {
+            // nur page.content wird hiervon verändert
+            throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException();
+        }
     }
 }
 

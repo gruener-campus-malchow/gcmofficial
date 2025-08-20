@@ -5,5 +5,18 @@
  */
 #}
 
-{{ attach_library('gcmofficial/devguide') }}
-{{ page.content }}
+{% if access_granted %}
+    {{ attach_library('gcmofficial/devguide') }}
+    {{ page.content }}
+{% else %}
+    <header aria-label="Site header">
+        {{ page.branding }}
+        {{ page.navigation }}
+    </header>
+    <section id="main">
+        {{ page.content }}
+    </section>
+    <footer aria-label="Site footer">
+        {{ page.footer }}
+    </footer>
+{% endif %}
