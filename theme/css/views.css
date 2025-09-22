@@ -78,6 +78,7 @@
     font-weight: bold;
     color: white;
     background-color: orange;
+    z-index: 2;
 }
 
 .views-field-field-titelbild {

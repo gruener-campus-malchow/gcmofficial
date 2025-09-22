@@ -5,6 +5,18 @@ window.addEventListener("DOMContentLoaded", function () {
 
     const map = L.map('map');
 
+    // calculating zoom level
+    const intended_map_width_kilometers = 0.9;
+    const R = 6378; // radius used by OpenStreetMap in km
+    const lat = 52.52;
+    // need to correct the radius as Mercator projection (OpenStreetMap) is not equidistant
+    const radius_at_lat = R * Math.cos(lat * Math.PI / 180);
+    // formula info: https://wiki.openstreetmap.org/wiki/Zoom_levels
+    // normal tile width is 256px, but we want the formula to use the actual width of the map container
+    // prefer lower zoom level = less zoomed in -> floor
+    const zoom_level = Math.floor(Math.log2((mapContainer.offsetWidth / 256) * ((2 * Math.PI * radius_at_lat) / intended_map_width_kilometers)));
+    console.log("calculated zoom level: " + zoom_level);
+
     // map is 'deactivated' by default to prevent the mousepointer getting stuck on the map in an attempt to scroll the page
     function activateMap() {
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,8 +24,8 @@ window.addEventListener("DOMContentLoaded", function () {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
         mapContainer.classList.remove("deactivated");
-        document.body.removeEventListener("mousedown", checkActivateMap); // event listener not needed anymor
-        map.setView([52.571, 13.488], 16); // center, zoom
+        document.body.removeEventListener("mousedown", checkActivateMap); // event listener not needed anymore
+        map.setView([52.571, 13.488], zoom_level); // center, zoom
     }
 
     function checkActivateMap(e) {

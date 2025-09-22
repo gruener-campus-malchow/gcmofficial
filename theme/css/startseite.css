@@ -123,6 +123,7 @@
     position: absolute;
     top: min(max(30vh, 16vw), 30vw);
     width: fit-content !important;
+    max-width: 25em;
     height: fit-content;
     background-color: darkgreen;
     background-color: var(--primary-dark-transparent);
@@ -213,6 +214,10 @@
   border-radius: 0;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
+}
+
+.view-kurzmeldungen .views-row.slideshow-hidden {
+  display: none;
 }
 
 .view-kurzmeldungen .views-field {

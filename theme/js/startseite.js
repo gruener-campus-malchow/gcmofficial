@@ -34,6 +34,15 @@ window.addEventListener("DOMContentLoaded", () => {
             videoContainer.getElementsByClassName("fullscreen")[0].addEventListener("click", toggleFullscreen);
         }
     }
+
+    // slideshow kurzmeldungen
+    const rows = document.querySelectorAll(".view-kurzmeldungen .views-row");
+    let currentIndex = 0;
+    setInterval(() => {
+        rows[currentIndex].classList.add("slideshow-hidden");
+        currentIndex = (currentIndex + 1) % rows.length;
+        rows[currentIndex].classList.remove("slideshow-hidden");
+    }, 8000); // same as normal slideshow
 });
 
 function parallax(scrollY) {

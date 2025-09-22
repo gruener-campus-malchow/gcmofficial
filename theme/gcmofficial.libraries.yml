@@ -16,6 +16,7 @@ global-styling:
     component:
       css/views.css: {}
       css/breaks/views-mobile.css: {media: all and (max-width: 730px)}
+      css/terminplaner.css: {media: all and (min-aspect-ratio: 121/100)}
       css/popupImages.css: {}
     layout:
       css/breaks/mobile.css: {media: all and (max-width: 730px)}
@@ -106,8 +107,8 @@ terminplaner:
   js:
     js/terminplaner.js: {}
   css:
-    theme:
-      css/terminplaner.css: {}
+    component:
+      css/terminplaner-calender-view.css: {}
         
 devguide:
   js:

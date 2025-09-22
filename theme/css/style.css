@@ -499,10 +499,6 @@ footer {
     padding-top: 1em;
 }
 
-footer .block-system-branding-block {
-    position: absolute;
-}
-
 footer .site-logo img {
     width: min(25vw, 9em);
 }
@@ -520,11 +516,6 @@ footer .menu--footer ul li {
 footer .menu--footer ul li:first-child {
     margin-left: unset;
 }
-
-/* .menu--footer if account menu and footer menu are switched
-footer .menu--account {
-    float: right;
-} */
 
 ul.menu a.is-active {
     color: var(--text);
@@ -562,35 +553,9 @@ nav#block-gcmofficial-footer {
     width: 66%;
 }
 
-div#block-socialmediaicons,
-div#block-schulpreis {
-    width: 70%;
-    margin-left: 30%;
-}
-
 div#block-socialmediaicons {
+    width: 70%;
     margin: 1rem 0 1rem 0;
-}
-
-div#block-schulpreis {
-    margin-bottom: 1.5em;
-    min-height: 6.5em;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-}
-
-div#block-schulpreis a {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-div#block-schulpreis img {
-    margin-left: 1.5em;
-    margin-right: 8px;
-    width: auto;
-    height: 1.6em;
 }
 
 .authoring-information {

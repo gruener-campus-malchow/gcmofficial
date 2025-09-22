@@ -2,7 +2,7 @@
   display: none;
 }
 
-#block-gcmofficial-main-menu > .menu > li:nth-of-type(3) {
+#block-gcmofficial-main-menu > .menu > li:nth-of-type(4) {
   display: block;
 }
 
@@ -11,7 +11,7 @@
   display: none;
 }
 
-#block-gcmofficial-main-menu > .menu > li > ul > .menu-item:nth-of-type(1n+3) {
+#block-gcmofficial-main-menu > .menu > li > ul > .menu-item:nth-of-type(1n+2) {
   display: block;
 }
 
